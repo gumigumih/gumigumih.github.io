@@ -1,13 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6314014806862092"
-     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ぐみのWebアプリ</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6314014806862092" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <meta property="og:title" content="ぐみのWebアプリ" />
+  <meta property="og:description" content="ぐみがつくった、ちょっと便利なWebアプリたちです。" />
+  <meta property="og:image" content="https://meggumi.com/ogp.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 </head>
-<body>
-    
+<body class="bg-gray-100 font-sans">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">ぐみのWebアプリ</h1>
+    <p class="text-center text-gray-600 text-sm mb-8">
+      ぐみがつくった、ちょっと便利なWebアプリたちです。
+    </p>
+
+    <div class="space-y-6">
+      <a href="https://warimaru.meggumi.com/" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+        <div class="w-full rounded-t-lg overflow-hidden">
+          <img src="https://warimaru.meggumi.com/ogp.png" alt="わりまるのサムネイル" class="w-full aspect-[1200/630] object-contain" />
+        </div>
+        <div class="p-6">
+          <h2 class="text-xl text-gray-800 font-bold">わりまる</h2>
+          <p class="text-gray-600 mt-2">飲み会や旅行の支払いを簡単に計算できるアプリ</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="mt-16">
+      <div class="">
+        <h2 class="text-xl font-bold mb-4 text-center flex items-center">
+            <span class="flex-1 border-b-2 border-amber-300"></span>
+            <span class="bg-amber-300 text-gray-700 px-2 py-1 rounded-md mx-4">アプリを作ってる人</span>
+            <span class="flex-1 border-b-2 border-amber-300"></span>
+        </h2>
+        <div class="flex items-start space-x-8 border-b-2 border-amber-300 pb-8 mb-8">
+          <div class="flex-shrink-0">
+            <img src="./assets/images/profile.jpg" alt="ぐみのアイコン" class="w-32 h-32 rounded-full border-4 border-white" />
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-bold text-gray-800">ぐみ</h3>
+            <p class="text-gray-600 mt-4 leading-relaxed">
+              PdMとして働きながら、趣味でWebアプリを作っています。<br>
+              使いやすく、見た目もかわいいアプリを作ることを心がけています。
+            </p>
+            <div class="mt-6 flex space-x-6">
+              <a href="https://twitter.com/gumigumih" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a href="https://github.com/gumigumih" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a href="https://zenn.dev/gumigumih" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
+                <i class="fas fa-book text-xl"></i>
+              </a>
+              <a href="https://qiita.com/gumigumih" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
+                <i class="fas fa-code text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-12 text-center text-gray-500 text-sm">
+      © 2025 ぐみ
+    </footer>
+  </div>
 </body>
 </html>
