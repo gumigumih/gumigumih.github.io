@@ -3,121 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ぐみのWebアプリ</title>
+  <title>ぐみ | Webアプリ開発</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6314014806862092" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <meta property="og:title" content="ぐみのWebアプリ" />
-  <meta property="og:description" content="ぐみがつくった、ちょっと便利なWebアプリたちです。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta property="og:title" content="ぐみ | Webアプリ開発" />
+  <meta property="og:description" content="使いやすく、見た目もかわいいWebアプリの開発を承ります。PdMとしての経験を活かした、ユーザー目線の開発を心がけています。" />
   <meta property="og:image" content="https://meggumi.com/ogp.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="description" content="使いやすく、見た目もかわいいWebアプリの開発を承ります。PdMとしての経験を活かした、ユーザー目線の開発を心がけています。" />
 </head>
-<body class="bg-gray-100 font-sans">
-  <div class="max-w-3xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-center text-gray-800 mb-2">ぐみのWebアプリ</h1>
-    <p class="text-center text-gray-600 text-sm mb-8">
-      ぐみがつくった、ちょっと便利なWebアプリたちです。
-    </p>
-
-    <div class="space-y-6">
-      <a href="https://warimaru.meggumi.com/" rel="noopener noreferrer" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
-        <div class="w-full rounded-t-lg overflow-hidden">
-          <img src="https://warimaru.meggumi.com/ogp.png" alt="わりまるのサムネイル" class="w-full aspect-[1200/630] object-contain" />
-        </div>
-        <div class="p-6">
-          <h2 class="text-xl text-gray-800 font-bold">わりまる</h2>
-          <p class="text-gray-600 mt-2">飲み会や旅行の支払いを簡単に計算できるアプリ</p>
-        </div>
-      </a>
+<body class="gradient-bg font-sans">
+  <!-- ヒーローセクション -->
+  <div class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden hero-bg">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-50/30 to-transparent"></div>
+    <div class="wave-bg">
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path id="wave1"></path>
+      </svg>
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path id="wave2"></path>
+      </svg>
+      <svg class="wave" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path id="wave3"></path>
+      </svg>
     </div>
+    <div class="text-center relative z-10">
+      <h1 class="text-7xl font-bold mb-6 font-raleway tracking-wide hero-text"><img src="./assets/images/logo_black.svg" alt="meg+gumi"></h1>
+      <p class="text-2xl text-gray-600 tracking-wide hero-subtitle mb-8">
+        Business Partner for Digital Solutions
+      </p>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+        ビジネスの成長を共に目指す、<br>
+        あなたのパートナーとして、<br>
+        最適なソリューションを提供します。
+      </p>
+    </div>
+    <div class="glow" id="glow"></div>
+    <div class="scroll-arrow text-gray-400 flex flex-col items-center">
+      <i class="fas fa-chevron-down text-4xl mb-2"></i>
+      <span class="text-sm tracking-wider font-raleway">SCROLL</span>
+    </div>
+  </div>
 
-    <div class="mt-16">
-      <div class="">
-        <h2 class="text-xl font-bold mb-4 text-center flex items-center">
-            <span class="flex-1 border-b-2 border-amber-300"></span>
-            <span class="bg-amber-300 text-gray-700 px-2 py-1 rounded-md mx-4">アプリを作ってる人</span>
-            <span class="flex-1 border-b-2 border-amber-300"></span>
-        </h2>
-        <div class="flex items-start space-x-8 border-b-2 border-amber-300 pb-8 mb-8">
+  <!-- SERVICESセクション -->
+  <div class="py-24 bg-white" id="services">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">SERVICES</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="bg-gray-50 rounded-2xl p-10 card-hover">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">Web制作・ディレクション</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            コーポレートサイトやランディングページの制作を承ります。
+            ユーザー目線のUI/UXデザインと、レスポンシブ対応で
+            あらゆるデバイスで最適な表示を実現します。
+            必要に応じて、デザイナー、フロントエンドエンジニアと
+            協力し、高品質なWebサイトを制作します。
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-10 card-hover">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">Unityシステムディレクション</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            Live2DやVTuberなど、Unityを用いたシステムの
+            ディレクションを承ります。
+            企画から実装まで、一貫したサポートを提供します。
+            必要に応じて、Unity開発の専門家と協力し、
+            高品質なシステムを構築します。
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-10 card-hover">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">Webアプリ開発・ディレクション</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            使いやすく、見た目も美しいWebアプリの開発を承ります。
+            Vue.js、Reactなど、プロジェクトに最適な技術を選定。
+            要件に応じて、適切な技術スタックを提案し、
+            高品質なアプリケーションを提供します。
+          </p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-10 card-hover">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">業務システム移行支援</h3>
+          <p class="text-gray-600 leading-relaxed text-lg">
+            Google Apps Script（GAS）からWebシステムへの
+            移行をサポートします。
+            既存の業務フローを分析し、最適なシステム設計を提案。
+            スムーズな移行と、業務効率の向上を実現します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUTセクション -->
+  <div class="py-24 bg-gray-50" id="about">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">ABOUT</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-start space-x-12 bg-white rounded-2xl shadow-lg p-12">
           <div class="flex-shrink-0">
-            <img src="./assets/images/profile.jpg" alt="ぐみのアイコン" class="w-32 h-32 rounded-full border-4 border-white" />
+            <img src="./assets/images/profile.jpg" alt="ぐみのアイコン" class="w-48 h-48 rounded-full border-4 border-white shadow-md" />
           </div>
           <div class="flex-1">
-            <h3 class="text-lg font-bold text-gray-800">ぐみ</h3>
-            <p class="text-gray-600 mt-4 leading-relaxed">
-              PdMとして働きながら、趣味でWebアプリを作っています。<br>
-              使いやすく、見た目もかわいいアプリを作ることを心がけています。
+            <h3 class="text-3xl font-bold text-gray-800 font-raleway mb-8">ぐみ</h3>
+            <p class="text-gray-600 leading-relaxed mb-8 text-lg">
+              PdMの経験を活かし、Webサイトやアプリケーションの企画・開発から業務システムの構築まで、<br>
+              ビジネス成長の両面から支援を行っています。<br><br>
+              技術面では、React、Vue.js、Node.js、Python、PHP、Ruby on Railsなど、<br>
+              プロジェクトに最適な技術を選定して開発を進めます。<br>
+              使いやすく、見た目も美しいプロダクトを作ることを心がけています。
             </p>
-            <div class="mt-6 flex space-x-6">
+            <p class="text-gray-600 leading-relaxed mb-10 text-lg">
+              プロジェクトの規模や要件に応じて、<br>
+              単独での対応、またはチームでの対応が可能です。<br>
+              チームの場合は、私がディレクションを担当し、<br>
+              各分野の専門家と協力して高品質な成果物を提供します。
+            </p>
+            <div class="flex space-x-10">
               <a href="https://twitter.com/gumigumih" target="_blank" rel="noopener noreferrer" 
                  class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
-                <i class="fab fa-twitter text-xl"></i>
+                <i class="fab fa-twitter text-3xl"></i>
               </a>
               <a href="https://github.com/gumigumih" target="_blank" rel="noopener noreferrer" 
                  class="text-gray-600 hover:text-amber-500 transition-colors duration-200">
-                <i class="fab fa-github text-xl"></i>
+                <i class="fab fa-github text-3xl"></i>
               </a>
               <a href="https://me.meggumi.com" target="_blank" rel="noopener noreferrer" 
-                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
-                <i class="fas fa-link text-xl"></i>
-                <span class="text-sm">他の活動はこちらから</span>
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-3">
+                <i class="fas fa-link text-3xl"></i>
+                <span class="text-lg">他の活動はこちらから</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="mt-16">
-      <h2 class="text-xl font-bold mb-4 text-center flex items-center">
-        <span class="flex-1 border-b-2 border-amber-300"></span>
-        <span class="bg-amber-300 text-gray-700 px-2 py-1 rounded-md mx-4">最新の記事</span>
-        <span class="flex-1 border-b-2 border-amber-300"></span>
-      </h2>
-      <div id="app">
-        <div v-if="error" class="col-span-full text-center text-gray-500">
-          <p>記事の取得に失敗しました。</p>
-          <p class="mt-2">
-            <a href="https://note.com/gumigumih" target="_blank" rel="noopener noreferrer" 
-               class="text-amber-500 hover:text-amber-600">
-              noteのプロフィールページ
-            </a>
-            から記事を確認できます。
-          </p>
-        </div>
-        <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article v-for="article in articles" :key="article.id" class="block bg-white rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1 overflow-hidden h-full flex flex-col">
-            <a :href="`https://note.com/gumigumih/n/${article.key}`" target="_blank" rel="noopener noreferrer">
-              <div class="w-full aspect-[1200/630] overflow-hidden">
-                <img :src="article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
+  <!-- WORKSセクション -->
+  <div class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">WORKS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg card-hover overflow-hidden">
+          <a href="https://warimaru.meggumi.com/" rel="noopener noreferrer" class="block">
+            <div class="w-full overflow-hidden">
+              <img src="https://warimaru.meggumi.com/ogp.png" alt="わりまるのサムネイル" class="w-full aspect-[1200/630] object-contain" />
+            </div>
+            <div class="p-8">
+              <div class="flex items-center gap-4 mb-4">
+                <h2 class="text-2xl text-gray-800 font-bold font-raleway">わりまる</h2>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-600 text-white">
+                  個人制作
+                </span>
               </div>
-              <div class="p-6 flex-1 flex flex-col">
-                <h3 class="text-lg font-bold text-gray-800 line-clamp-2">{{ article.name }}</h3>
-                <p class="text-gray-600 mt-2 line-clamp-3 flex-1">{{ article.body.replace(/\n/g, ' ').substring(0, 100) }}...</p>
-                <div class="mt-4 flex flex-wrap gap-2">
-                  <span v-for="tag in article.hashtags" :key="tag.hashtag.name" 
-                        class="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full">
-                    {{ tag.hashtag.name }}
-                  </span>
-                </div>
-                <div class="mt-4 flex items-center text-sm text-gray-500">
-                  <i class="far fa-calendar-alt mr-2"></i>
-                  <span>{{ formatDate(article.publishAt) }}</span>
-                </div>
-              </div>
-            </a>
-          </article>
+              <p class="text-gray-600 text-lg">飲み会や旅行の支払いを簡単に計算できるWebアプリ</p>
+            </div>
+          </a>
+          <div class="px-8 pb-8">
+            <div class="flex flex-wrap gap-6">
+              <a href="https://note.com/gumigumih/n/n1234567890" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
+                <i class="fas fa-book-open text-xl"></i>
+                <span>紹介記事</span>
+              </a>
+              <a href="https://zenn.dev/gumigumih/articles/warimaru-design" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
+                <i class="fas fa-lightbulb text-xl"></i>
+                <span>設計思想</span>
+              </a>
+              <a href="https://qiita.com/gumigumih/items/1234567890" target="_blank" rel="noopener noreferrer" 
+                 class="text-gray-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
+                <i class="fas fa-code text-xl"></i>
+                <span>技術Tips</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <footer class="mt-12 text-center text-gray-500 text-sm">
-      © 2025 ぐみ
-    </footer>
   </div>
 
-  <script src="assets/js/articles.js"></script>
+  <!-- MEDIAセクション -->
+  <div class="py-24 bg-gray-50" id="app">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">MEDIA</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <template v-for="article in articles" :key="article.id">
+          <a :href="`https://note.com/gumigumih/n/${article.key}`" target="_blank" rel="noopener noreferrer" 
+             class="bg-gray-50 rounded-2xl p-8 card-hover">
+            <div class="aspect-[16/9] mb-6 overflow-hidden rounded-lg">
+              <img :src="article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 font-raleway">{{ article.name }}</h3>
+            <p class="text-gray-600 line-clamp-2">{{ article.body }}</p>
+            <p class="text-gray-500 text-sm mt-4">{{ formatDate(article.publishAt) }}</p>
+          </a>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTセクション -->
+  <div class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">CONTACT</h2>
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl p-16">
+          <p class="text-gray-600 text-center mb-10 text-xl">
+            お仕事のご依頼やご相談は、以下のメールアドレスまでお気軽にお問い合わせください。<br>
+            <span class="text-amber-600 font-medium">contact@meggumi.com</span>
+          </p>
+          <div class="text-center">
+            <a href="mailto:contact@meggumi.com" class="inline-block bg-amber-500 text-white px-10 py-5 rounded-lg hover:bg-amber-600 transition-colors text-xl font-medium">
+              お問い合わせはこちら
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <footer class="py-12 text-center text-gray-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="mb-8">
+        <a href="/privacy-policy.html" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">プライバシーポリシー</a>
+        <a href="/terms.html" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">利用規約</a>
+        <a href="/sitemap.xml" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">サイトマップ</a>
+      </div>
+      <p class="text-lg">© 2024 ぐみ</p>
+    </div>
+  </footer>
+
+  <script src="./assets/js/articles.js"></script>
+  <script>
+    // グラデーションの玉のアニメーション
+    const glow = document.getElementById('glow');
+    let startTime = Date.now();
+    const amplitude = 30;
+    const period = 4000;
+
+    function animate() {
+      const elapsed = Date.now() - startTime;
+      const y = Math.sin(elapsed / period * Math.PI * 2) * amplitude;
+      glow.style.transform = `translate(-50%, calc(-50% + ${y}px))`;
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // 波のアニメーション
+    const wave1 = document.getElementById('wave1');
+    const wave2 = document.getElementById('wave2');
+    const wave3 = document.getElementById('wave3');
+    let waveTime = Date.now();
+
+    function generateWavePath(time, amplitude, frequency, phase) {
+      const points = [];
+      const width = 1440;
+      const height = 320;
+      const segments = 36;
+      const segmentWidth = width / segments;
+
+      for (let i = 0; i <= segments; i++) {
+        const x = i * segmentWidth;
+        const y = height - 100 + Math.sin((x * frequency + time + phase) * Math.PI / 180) * amplitude;
+        points.push(`${x},${y}`);
+      }
+
+      // 波の下部を閉じる
+      points.push(`${width},${height}`);
+      points.push(`0,${height}`);
+
+      return `M ${points.join(' L ')} Z`;
+    }
+
+    function animateWaves() {
+      const elapsed = Date.now() - waveTime;
+      const time = elapsed * 0.05;
+
+      // 各波に異なるパラメータを設定
+      wave1.setAttribute('d', generateWavePath(time, 30, 0.02, 0));
+      wave2.setAttribute('d', generateWavePath(time, 25, 0.03, 60));
+      wave3.setAttribute('d', generateWavePath(time, 20, 0.04, 120));
+
+      requestAnimationFrame(animateWaves);
+    }
+
+    animateWaves();
+  </script>
 </body>
 </html>

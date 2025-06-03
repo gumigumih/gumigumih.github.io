@@ -19,7 +19,14 @@ const app = createApp({
       }
     },
     formatDate(dateString) {
-      return new Date(dateString).toLocaleDateString('ja-JP');
+      if (!dateString) return '';
+      const date = new Date(dateString);
+      if (isNaN(date.getTime())) return '';
+      return date.toLocaleDateString('ja-JP', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
     }
   },
   mounted() {
