@@ -21,8 +21,9 @@
   <meta name="description" content="使いやすく、見た目もかわいいWebアプリの開発を承ります。PdMとしての経験を活かした、ユーザー目線の開発を心がけています。" />
 </head>
 <body class="gradient-bg font-sans" id="app">
+  <site-navigation></site-navigation>
   <!-- ヒーローセクション -->
-  <div class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden hero-bg">
+  <div class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden hero-bg" id="top">
     <div class="absolute inset-0 bg-gradient-to-br from-amber-50/30 to-transparent"></div>
     <wave-animation></wave-animation>
     <div class="text-center relative z-10">
@@ -136,7 +137,7 @@
   </div>
 
   <!-- WORKSセクション -->
-  <div class="py-24 bg-white">
+  <div class="py-24 bg-white" id="works">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">WORKS</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -180,7 +181,7 @@
   </div>
 
   <!-- MEDIAセクション -->
-  <div class="py-24 bg-gray-50">
+  <div class="py-24 bg-gray-50" id="media">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">MEDIA</h2>
       <article-list></article-list>
@@ -188,7 +189,7 @@
   </div>
 
   <!-- CONTACTセクション -->
-  <div class="py-24 bg-white">
+  <div class="py-24 bg-white" id="contact">
     <div class="max-w-7xl mx-auto px-4">
       <h2 class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title">CONTACT</h2>
       <div class="max-w-4xl mx-auto">
@@ -207,17 +208,7 @@
     </div>
   </div>
 
-  <!-- フッター -->
-  <footer class="py-12 text-center text-gray-500">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="mb-8">
-        <a href="/privacy-policy.html" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">プライバシーポリシー</a>
-        <a href="/terms.html" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">利用規約</a>
-        <a href="/sitemap.xml" class="text-gray-500 hover:text-amber-500 mx-6 transition-colors text-lg">サイトマップ</a>
-      </div>
-      <p class="text-lg">© 2024 ぐみ</p>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 
   <script>
     // グラデーションの玉のアニメーション
