@@ -1,21 +1,18 @@
 export default {
   name: 'Navigation',
   template: `
-    <nav class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50">
-      <ul class="space-y-4">
-        <li v-for="(item, index) in menuItems" :key="index">
-          <a :href="item.href" 
-             @click.prevent="scrollToSection(item.href)"
-             :class="[
-               'block px-4 py-2 rounded-lg transition-all duration-200 text-right',
-               currentSection === item.href 
-                 ? 'bg-amber-500 text-white font-medium' 
-                 : 'text-gray-500 hover:text-amber-500 hover:bg-amber-50'
-             ]">
-            {{ item.text }}
-          </a>
-        </li>
-      </ul>
+    <nav class="page-nav">
+      <a v-for="(item, index) in menuItems" 
+         :key="index"
+         :href="item.href" 
+         @click.prevent="scrollToSection(item.href)"
+         :class="[
+           'page-nav-item',
+           currentSection === item.href ? 'active' : ''
+         ]">
+        <span class="page-nav-label">{{ item.text }}</span>
+        <span class="page-nav-dot"></span>
+      </a>
     </nav>
   `,
   data() {
@@ -42,7 +39,6 @@ export default {
       }
     },
     updateCurrentSection() {
-      // 各セクションの位置を確認
       const viewportHeight = window.innerHeight
       const scrollPosition = window.scrollY + (viewportHeight / 3)
 
@@ -64,6 +60,7 @@ export default {
       if (this.currentSection !== href) {
         this.currentSection = href
         window.history.replaceState(null, '', href)
+        document.body.setAttribute('data-section', href.replace('#', ''))
       }
     },
     handleScroll() {
@@ -77,22 +74,16 @@ export default {
     }
   },
   mounted() {
-    // 初期セクションの設定
     this.currentSection = window.location.hash || '#top'
-    
-    // スクロールイベントの監視
+    document.body.setAttribute('data-section', this.currentSection.replace('#', ''))
     window.addEventListener('scroll', this.handleScroll, { passive: true })
-    
-    // ハッシュ変更の監視
     window.addEventListener('hashchange', () => {
       this.currentSection = window.location.hash || '#top'
+      document.body.setAttribute('data-section', this.currentSection.replace('#', ''))
     })
-
-    // 初期表示時に現在のセクションを更新
     this.updateCurrentSection()
   },
   beforeUnmount() {
-    // イベントリスナーの解除
     window.removeEventListener('scroll', this.handleScroll)
   }
 } 
