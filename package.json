@@ -15,7 +15,14 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clasp:login": "cd gas/contact-form && clasp login",
+    "clasp:create": "cd gas/contact-form && clasp create --type webapp",
+    "clasp:push": "cd gas/contact-form && clasp push",
+    "clasp:pull": "cd gas/contact-form && clasp pull",
+    "clasp:open": "cd gas/contact-form && clasp open",
+    "clasp:deploy": "cd gas/contact-form && clasp deploy",
+    "update-articles": "node scripts/update-articles.js"
   },
   "dependencies": {
     "asynckit": "^0.4.0",
@@ -41,5 +48,8 @@
     "mime-db": "^1.52.0",
     "mime-types": "^2.1.35",
     "proxy-from-env": "^1.1.0"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.4.2"
   }
 }

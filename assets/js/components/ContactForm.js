@@ -3,7 +3,7 @@ export default {
     <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12">
       <p class="text-gray-600 text-lg mb-8 text-center">
         お問い合わせは以下のフォームからお願いいたします。<br>
-        内容を確認次第、担当者よりご連絡させていただきます。
+        内容を確認次第、ご連絡させていただきます。
       </p>
       <div class="max-w-2xl mx-auto">
         <!-- フォーム -->
@@ -64,7 +64,7 @@ export default {
                 <i class="fas fa-check-circle text-3xl text-teal-600"></i>
               </div>
               <h3 class="text-xl font-bold text-teal-800 mb-2">送信が完了しました</h3>
-              <p class="text-teal-700 mb-4 max-w-md mx-auto">内容を確認次第、担当者よりご連絡させていただきます。</p>
+              <p class="text-teal-700 mb-4 max-w-md mx-auto">内容を確認次第、ご連絡させていただきます。</p>
               <div class="w-full max-w-xs h-1 bg-gradient-to-r from-teal-200 to-teal-300 rounded-full mt-4"></div>
             </div>
           </div>
