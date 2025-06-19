@@ -36,7 +36,7 @@ export default defineComponent({
        rel="noopener noreferrer" 
        class="bg-white rounded-2xl p-8 card-hover shadow-md hover:shadow-lg transition-all duration-300">
       <div class="aspect-[16/9] mb-6 overflow-hidden rounded-lg">
-        <img :src="article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
+        <img :src="article.localImagePath || article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
       </div>
       <div class="flex items-center gap-2 mb-4">
         <h3 class="text-xl font-bold text-gray-800 font-raleway">{{ article.name }}</h3>
