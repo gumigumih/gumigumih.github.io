@@ -37,6 +37,29 @@
     />
   </head>
   <body class="bg-gradient-to-br from-gray-50 to-gray-100 font-sans" id="app">
+    <!-- サイト全体のヘッダーナビゲーション -->
+    <header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <a href="/" class="text-xl font-bold text-gray-800 font-raleway">meg+gumi</a>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a href="#top" class="text-gray-600 hover:text-amber-500 transition-colors">ホーム</a>
+            <a href="#services" class="text-gray-600 hover:text-amber-500 transition-colors">サービス</a>
+            <a href="#about" class="text-gray-600 hover:text-amber-500 transition-colors">について</a>
+            <a href="#works" class="text-gray-600 hover:text-amber-500 transition-colors">実績</a>
+            <a href="#faq" class="text-gray-600 hover:text-amber-500 transition-colors">FAQ</a>
+            <a href="#contact" class="text-gray-600 hover:text-amber-500 transition-colors">お問い合わせ</a>
+          </nav>
+          <button class="md:hidden">
+            <i class="fas fa-bars text-gray-600"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    
+    <!-- ページ内ナビゲーション -->
     <site-navigation></site-navigation>
     <!-- ヒーローセクション -->
     <div
@@ -92,7 +115,8 @@
         >
           SERVICES
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="space-y-12">
+          <!-- Web制作・ディレクション -->
           <div
             class="bg-white rounded-2xl p-10 transition-all duration-300 transform hover:-translate-y-1 border-2 border-amber-100"
           >
@@ -106,14 +130,98 @@
                 Web制作・ディレクション
               </h3>
             </div>
-            <p class="text-gray-600 leading-relaxed text-lg">
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
               コーポレートサイトやランディングページの制作を承ります。
               ユーザー目線のUI/UXデザインと、レスポンシブ対応で
               あらゆるデバイスで最適な表示を実現します。
               必要に応じて、デザイナー、フロントエンドエンジニアと
               協力し、高品質なWebサイトを制作します。
             </p>
+            
+            <!-- サービス詳細 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-amber-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">提供サービス</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 要件定義・企画</li>
+                  <li>• UI/UXデザイン</li>
+                  <li>• レスポンシブコーディング</li>
+                  <li>• CMS導入（WordPress等）</li>
+                  <li>• SEO対策</li>
+                  <li>• 運用・保守</li>
+                </ul>
+              </div>
+              <div class="bg-amber-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">技術スタック</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• HTML5/CSS3</li>
+                  <li>• JavaScript (ES6+)</li>
+                  <li>• Vue.js / React</li>
+                  <li>• Tailwind CSS</li>
+                  <li>• Sass/SCSS</li>
+                  <li>• Node.js</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- 制作プロセス -->
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+              <h4 class="font-bold text-gray-800 mb-4">制作プロセス（標準4-6週間）</h4>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">要件定義・企画</div>
+                    <div class="text-sm text-gray-600">目標設定とターゲット分析、機能要件の整理</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">デザイン・設計</div>
+                    <div class="text-sm text-gray-600">ワイヤーフレーム作成とビジュアルデザイン</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">開発・実装</div>
+                    <div class="text-sm text-gray-600">コーディングとCMS構築、機能実装</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">テスト・公開</div>
+                    <div class="text-sm text-gray-600">動作確認とサーバー設定、本番環境への展開</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 実績・事例 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-4">実績・事例</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">コーポレートサイト</div>
+                  <div class="text-gray-600 mb-2">Vue.js + Nuxt.js</div>
+                  <div class="text-xs text-gray-500">50名規模のIT企業様</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">ECサイト</div>
+                  <div class="text-gray-600 mb-2">React + Next.js</div>
+                  <div class="text-xs text-gray-500">アパレルブランド様</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">ランディングページ</div>
+                  <div class="text-gray-600 mb-2">HTML/CSS + WordPress</div>
+                  <div class="text-xs text-gray-500">サービス紹介サイト</div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Unityシステムディレクション -->
           <div
             class="bg-white rounded-2xl p-10 transition-all duration-300 transform hover:-translate-y-1 border-2 border-amber-100"
           >
@@ -127,14 +235,98 @@
                 Unityシステムディレクション
               </h3>
             </div>
-            <p class="text-gray-600 leading-relaxed text-lg">
-              Live2DやVTuberなど、Unityを用いたシステムの
-              ディレクションを承ります。
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+              Live2DやVTuberシステム、インタラクティブコンテンツなど、
+              Unityを用いたシステムのディレクションを承ります。
               企画から実装まで、一貫したサポートを提供します。
               必要に応じて、Unity開発の専門家と協力し、
               高品質なシステムを構築します。
             </p>
+            
+            <!-- サービス詳細 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">対応分野</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• VTuberシステム開発</li>
+                  <li>• AR/VRコンテンツ制作</li>
+                  <li>• インタラクティブ展示</li>
+                  <li>• 3Dビジュアライゼーション</li>
+                  <li>• ゲーム・デモアプリ</li>
+                  <li>• プロトタイプ開発</li>
+                </ul>
+              </div>
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">技術・ツール</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Unity 2022.3 LTS</li>
+                  <li>• Live2D Cubism SDK</li>
+                  <li>• AR Foundation / ARCore</li>
+                  <li>• Oculus SDK / OpenXR</li>
+                  <li>• C# スクリプティング</li>
+                  <li>• WebGL / ビルド最適化</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- 開発プロセス -->
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+              <h4 class="font-bold text-gray-800 mb-4">開発プロセス（標準6-10週間）</h4>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">企画・要件定義</div>
+                    <div class="text-sm text-gray-600">目的とターゲットの明確化、技術仕様の策定</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">技術検証・設計</div>
+                    <div class="text-sm text-gray-600">実現可能性の確認と詳細設計書の作成</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">プロトタイプ開発</div>
+                    <div class="text-sm text-gray-600">早期段階での動作確認とフィードバック反映</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">本格開発・最適化</div>
+                    <div class="text-sm text-gray-600">品質管理とパフォーマンス最適化、デプロイ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 実績・事例 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-4">実績・事例</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">VTuber配信システム</div>
+                  <div class="text-gray-600 mb-2">Unity + Live2D</div>
+                  <div class="text-xs text-gray-500">個人VTuber様向け</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">AR展示アプリ</div>
+                  <div class="text-gray-600 mb-2">Unity + AR Foundation</div>
+                  <div class="text-xs text-gray-500">博物館展示システム</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">VR研修システム</div>
+                  <div class="text-gray-600 mb-2">Unity + Oculus SDK</div>
+                  <div class="text-xs text-gray-500">製造業向け安全研修</div>
+                </div>
+              </div>
+            </div>
           </div>
+          <!-- Webアプリ開発・ディレクション -->
           <div
             class="bg-white rounded-2xl p-10 transition-all duration-300 transform hover:-translate-y-1 border-2 border-amber-100"
           >
@@ -148,13 +340,98 @@
                 Webアプリ開発・ディレクション
               </h3>
             </div>
-            <p class="text-gray-600 leading-relaxed text-lg">
-              使いやすく、見た目も美しいWebアプリの開発を承ります。
-              Vue.js、Reactなど、プロジェクトに最適な技術を選定。
-              要件に応じて、適切な技術スタックを提案し、
-              高品質なアプリケーションを提供します。
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+              使いやすく、見た目も美しいWebアプリケーションの開発を承ります。
+              Vue.js、Reactなど、プロジェクトに最適な技術を選定し、
+              スケーラブルで保守性の高いアプリケーションを提供します。
+              PdMとしての経験を活かし、ユーザー目線の開発を心がけています。
             </p>
+            
+            <!-- サービス詳細 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">開発領域</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• 業務支援アプリケーション</li>
+                  <li>• コンシューマー向けツール</li>
+                  <li>• ダッシュボード・管理画面</li>
+                  <li>• SPA（Single Page Application）</li>
+                  <li>• PWA（Progressive Web App）</li>
+                  <li>• API設計・構築</li>
+                </ul>
+              </div>
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">技術スタック</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Vue.js / Nuxt.js</li>
+                  <li>• React / Next.js</li>
+                  <li>• TypeScript</li>
+                  <li>• Node.js / Express</li>
+                  <li>• Firebase / Supabase</li>
+                  <li>• PostgreSQL / MongoDB</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- 開発プロセス -->
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+              <h4 class="font-bold text-gray-800 mb-4">開発プロセス（標準6-12週間）</h4>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">要件定義・設計</div>
+                    <div class="text-sm text-gray-600">機能要件の整理とUI/UX設計、技術選定</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">環境構築・基盤開発</div>
+                    <div class="text-sm text-gray-600">開発環境セットアップとアーキテクチャ構築</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">機能開発・実装</div>
+                    <div class="text-sm text-gray-600">フロントエンド・バックエンドの並行開発</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">テスト・デプロイ</div>
+                    <div class="text-sm text-gray-600">テスト実行と本番環境へのデプロイ</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 実績・事例 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-4">実績・事例</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">タスク管理システム</div>
+                  <div class="text-gray-600 mb-2">Vue.js + Firebase</div>
+                  <div class="text-xs text-gray-500">30名企業の業務効率化</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">予約管理アプリ</div>
+                  <div class="text-gray-600 mb-2">React + Node.js</div>
+                  <div class="text-xs text-gray-500">美容院向けシステム</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">データ可視化ツール</div>
+                  <div class="text-gray-600 mb-2">Next.js + PostgreSQL</div>
+                  <div class="text-xs text-gray-500">売上分析ダッシュボード</div>
+                </div>
+              </div>
+            </div>
           </div>
+          
+          <!-- 業務システム移行支援 -->
           <div
             class="bg-white rounded-2xl p-10 transition-all duration-300 transform hover:-translate-y-1 border-2 border-amber-100"
           >
@@ -168,12 +445,95 @@
                 業務システム移行支援
               </h3>
             </div>
-            <p class="text-gray-600 leading-relaxed text-lg">
-              Google Apps Script（GAS）からWebシステムへの
-              移行をサポートします。
-              既存の業務フローを分析し、最適なシステム設計を提案。
-              スムーズな移行と、業務効率の向上を実現します。
+            <p class="text-gray-600 leading-relaxed text-lg mb-6">
+              Google Apps Script（GAS）やExcelマクロから、
+              より拡張性の高いWebシステムへの移行をサポートします。
+              既存の業務フローを詳細に分析し、移行後の運用も見据えた
+              最適なシステム設計を提案いたします。
             </p>
+            
+            <!-- サービス詳細 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">移行対象システム</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Google Apps Script（GAS）</li>
+                  <li>• Excelマクロ・VBA</li>
+                  <li>• Access データベース</li>
+                  <li>• FileMaker システム</li>
+                  <li>• 簡易Webシステム</li>
+                  <li>• レガシーシステム</li>
+                </ul>
+              </div>
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-2">移行先技術</h4>
+                <ul class="text-sm text-gray-600 space-y-1">
+                  <li>• Vue.js + Firebase</li>
+                  <li>• React + Supabase</li>
+                  <li>• Next.js + PostgreSQL</li>
+                  <li>• Node.js + Express</li>
+                  <li>• クラウドインフラ</li>
+                  <li>• モダンUI/UX</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- 移行プロセス -->
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+              <h4 class="font-bold text-gray-800 mb-4">移行プロセス（標準8-16週間）</h4>
+              <div class="space-y-3">
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">現状分析・調査</div>
+                    <div class="text-sm text-gray-600">既存システムの機能・データ構造・業務フローの詳細調査</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">設計・計画策定</div>
+                    <div class="text-sm text-gray-600">新システム設計と段階的移行計画の作成</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">並行開発・テスト</div>
+                    <div class="text-sm text-gray-600">既存業務を継続しながら新システムを開発・検証</div>
+                  </div>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                  <div class="flex-1">
+                    <div class="font-medium text-gray-800">移行・運用開始</div>
+                    <div class="text-sm text-gray-600">データ移行と本格運用開始、運用サポート</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 実績・事例 -->
+            <div class="bg-white border border-gray-200 p-6 rounded-lg">
+              <h4 class="font-bold text-gray-800 mb-4">実績・事例</h4>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">勤怠管理システム</div>
+                  <div class="text-gray-600 mb-2">GAS → Vue.js + Firebase</div>
+                  <div class="text-xs text-gray-500">30名規模の企業での導入</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">在庫管理システム</div>
+                  <div class="text-gray-600 mb-2">Excel → React + Node.js</div>
+                  <div class="text-xs text-gray-500">EC事業者での商品管理効率化</div>
+                </div>
+                <div class="bg-gray-50 p-4 rounded-lg">
+                  <div class="font-bold text-gray-800 mb-2">顧客管理システム</div>
+                  <div class="text-gray-600 mb-2">GAS → Next.js + Supabase</div>
+                  <div class="text-xs text-gray-500">営業チームの業務効率改善</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -207,27 +567,22 @@
               <p
                 class="text-gray-600 leading-relaxed mb-6 md:mb-8 text-base md:text-lg"
               >
-                PdMとしての経験を活かし、<br class="hidden md:block" />
-                Webサイトの制作からアプリケーションの開発まで<br
-                  class="hidden md:block"
-                />
-                幅広く対応しています。<br class="hidden md:block" /><br
-                  class="hidden md:block"
-                />
-                フロントエンドからバックエンドまで、<br
-                  class="hidden md:block"
-                />
-                Unityを使ったシステムのディレクションも可能です。<br
-                  class="hidden md:block"
-                />
-                プロジェクトに最適な技術で開発します。<br
-                  class="hidden md:block"
-                /><br class="hidden md:block" />
-                noteではPMやディレクターとしての日々の気づきを、<br
-                  class="hidden md:block"
-                />
+                プロダクトマネージャー（PdM）として5年、<br class="hidden md:block" />
+                Web開発ディレクターとして3年の経験を活かし、<br class="hidden md:block" />
+                お客様の事業成長に貢献するデジタルソリューションを提供しています。<br class="hidden md:block" /><br class="hidden md:block" />
+                
+                技術面では、フロントエンドからバックエンドまで幅広く対応。<br class="hidden md:block" />
+                特にVue.js、React、Node.jsを得意とし、<br class="hidden md:block" />
+                Unityを使った3D/VRシステムのディレクションも行います。<br class="hidden md:block" /><br class="hidden md:block" />
+                
+                これまでに30以上のプロジェクトを手がけ、<br class="hidden md:block" />
+                スタートアップから大手企業まで様々な規模の<br class="hidden md:block" />
+                お客様とお取引させていただいています。<br class="hidden md:block" /><br class="hidden md:block" />
+                
+                noteではPMやディレクターとしての日々の気づきを、<br class="hidden md:block" />
                 ZennやQiitaでは技術的な知見を発信しています。
               </p>
+              
               <div
                 class="flex justify-center md:justify-start space-x-6 md:space-x-10"
               >
@@ -366,6 +721,159 @@
           noteでPMやディレクターとしての日々の気づきを発信しています。
         </p>
         <article-list></article-list>
+      </div>
+    </div>
+
+    <!-- FAQセクション -->
+    <div class="py-24 bg-white" id="faq">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2
+          class="text-4xl font-bold mb-16 text-center text-gray-800 font-raleway tracking-wide section-title"
+        >
+          よくある質問
+        </h2>
+        
+        <div class="space-y-8">
+          <!-- プロジェクト全般について -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">プロジェクト全般について</h3>
+            <div class="space-y-6">
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-amber-500 mr-3"></i>
+                  プロジェクトの進行はどのような流れになりますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  まず初回のお打ち合わせで要件をヒアリングし、概算のお見積もりを提示します。
+                  ご承諾いただけましたら、詳細な要件定義を行い、設計書と正式なお見積もりを作成。
+                  その後、開発→テスト→リリースの流れで進行します。
+                  定期的な進捗報告と中間確認を行うため、安心してお任せいただけます。
+                </p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-amber-500 mr-3"></i>
+                  料金はどのように決まりますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  プロジェクトの規模と複雑さに応じて個別にお見積もりいたします。
+                  シンプルなコーポレートサイトであれば30万円〜、
+                  複雑な業務システムの場合は100万円〜が目安となります。
+                  お客様のご予算に合わせた提案も可能ですので、お気軽にご相談ください。
+                </p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-amber-500 mr-3"></i>
+                  遠方からの依頼でも対応可能ですか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  はい、全国どこからでもお受けしています。
+                  打ち合わせはオンライン（Zoom、Google Meet等）で行い、
+                  必要に応じて画面共有やチャットツールを活用してスムーズに進行します。
+                  過去にも北海道から沖縄まで、様々な地域のお客様とお取引させていただいています。
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 技術的な質問 -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">技術的なご質問</h3>
+            <div class="space-y-6">
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                  どのような技術を使って開発していますか？
+                </h4>
+                <div class="text-gray-600 leading-relaxed">
+                  <p class="mb-3">プロジェクトの要件に応じて最適な技術を選定しています：</p>
+                  <ul class="space-y-2">
+                    <li><strong>フロントエンド:</strong> Vue.js、React、Next.js、Nuxt.js</li>
+                    <li><strong>バックエンド:</strong> Node.js、Firebase、Supabase</li>
+                    <li><strong>データベース:</strong> MySQL、PostgreSQL、MongoDB</li>
+                    <li><strong>インフラ:</strong> Vercel、Netlify、AWS、Firebase Hosting</li>
+                    <li><strong>その他:</strong> Unity（3D/AR/VR）、Google Apps Script</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                  レスポンシブ対応は含まれますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  はい、すべてのWebサイト・アプリケーションで標準対応しています。
+                  スマートフォン、タブレット、デスクトップのすべてのデバイスで
+                  最適な表示・操作性を実現します。特にスマートフォンでの使いやすさを重視し、
+                  タッチ操作に配慮したUI/UXデザインを心がけています。
+                </p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-blue-500 mr-3"></i>
+                  SEO対策はしてもらえますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  基本的なSEO対策（メタタグ設定、構造化データ、サイトマップ生成等）は
+                  標準で含まれています。
+                  より高度なSEO施策（コンテンツ最適化、キーワード戦略等）が必要な場合は、
+                  SEO専門の業者様をご紹介することも可能です。
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 運用・保守について -->
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-6 font-raleway">運用・保守について</h3>
+            <div class="space-y-6">
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-green-500 mr-3"></i>
+                  完成後のサポートはありますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  リリース後1ヶ月間は無償サポート対応いたします。
+                  バグ修正や軽微な調整は無料で対応します。
+                  その後も継続的なサポートをご希望の場合は、
+                  月額保守契約（月1万円〜）をご用意しています。
+                </p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-green-500 mr-3"></i>
+                  自分でコンテンツを更新できますか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  はい、CMS（コンテンツ管理システム）を導入することで、
+                  プログラミング知識がなくても簡単に更新できます。
+                  WordPress、microCMS、Newt等、お客様のレベルに合わせて
+                  最適なCMSを選定・カスタマイズいたします。
+                  操作方法のレクチャーも含まれています。
+                </p>
+              </div>
+              
+              <div class="bg-white p-6 rounded-lg">
+                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                  <i class="fas fa-question-circle text-green-500 mr-3"></i>
+                  サーバーの準備は必要ですか？
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  プロジェクトの性質によって最適なホスティング環境をご提案します。
+                  静的サイトの場合はNetlifyやVercel（無料〜低コスト）、
+                  動的なアプリケーションの場合はAWSやFirebase等をおすすめしています。
+                  サーバー設定や初期設定もサポートいたします。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
