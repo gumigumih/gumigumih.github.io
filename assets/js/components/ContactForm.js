@@ -1,7 +1,7 @@
 export default {
   template: `
-    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12">
-      <p class="text-gray-600 text-lg mb-8 text-center">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+      <p class="text-slate-600 text-lg mb-8 text-center">
         お問い合わせは以下のフォームからお願いいたします。<br>
         内容を確認次第、ご連絡させていただきます。
       </p>
@@ -9,44 +9,44 @@ export default {
         <!-- フォーム -->
         <form v-if="!submitStatus" @submit.prevent="submitForm" class="space-y-6">
           <div class="space-y-2">
-            <label for="name" class="block text-gray-700 font-medium">
+            <label for="name" class="block text-slate-700 font-medium">
               お名前 <span class="text-red-500">*</span>
             </label>
             <input type="text" id="name" v-model="formData.name" required
-                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
+                   class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
                    placeholder="山田 太郎">
           </div>
           
           <div class="space-y-2">
-            <label for="email" class="block text-gray-700 font-medium">
+            <label for="email" class="block text-slate-700 font-medium">
               メールアドレス <span class="text-red-500">*</span>
             </label>
             <input type="email" id="email" v-model="formData.email" required
-                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
+                   class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
                    placeholder="example@email.com">
           </div>
           
           <div class="space-y-2">
-            <label for="company" class="block text-gray-700 font-medium">
+            <label for="company" class="block text-slate-700 font-medium">
               会社名・団体名
             </label>
             <input type="text" id="company" v-model="formData.company"
-                   class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
+                   class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200"
                    placeholder="株式会社〇〇">
           </div>
           
           <div class="space-y-2">
-            <label for="message" class="block text-gray-700 font-medium">
+            <label for="message" class="block text-slate-700 font-medium">
               お問い合わせ内容 <span class="text-red-500">*</span>
             </label>
             <textarea id="message" v-model="formData.message" required rows="6"
-                      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200 resize-none"
+                      class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200 resize-none"
                       placeholder="お問い合わせ内容をご記入ください"></textarea>
           </div>
           
           <div class="text-center pt-4">
             <button type="submit" 
-                    class="inline-flex items-center justify-center bg-amber-600 text-white px-12 py-4 rounded-full hover:bg-amber-700 transition-all duration-300 text-lg font-medium shadow-sm hover:shadow-md"
+                    class="inline-flex items-center justify-center bg-amber-600 text-white px-12 py-4 rounded-full hover:bg-amber-700 transition-all duration-300 text-lg font-medium shadow-sm hover:shadow-lg border-r-4 border-b-4 border-amber-400 hover:border-amber-500 hover:-translate-y-1 transform"
                     :disabled="isSubmitting">
               <i class="fas" :class="isSubmitting ? 'fa-spinner fa-spin' : 'fa-paper-plane'"></i>
               <span class="ml-3">{{ isSubmitting ? '送信中...' : '送信する' }}</span>
@@ -58,26 +58,25 @@ export default {
         <div v-else class="mt-6">
           <!-- 成功メッセージ -->
           <div v-if="submitStatus === 'success'" 
-               class="p-6 rounded-2xl text-center transition-all duration-300 bg-gradient-to-br from-teal-50 to-teal-100/50 border border-teal-200">
+               class="bg-white rounded-2xl p-8 shadow-md text-center">
             <div class="flex flex-col items-center justify-center">
               <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                 <i class="fas fa-check-circle text-3xl text-teal-600"></i>
               </div>
               <h3 class="text-xl font-bold text-teal-800 mb-2">送信が完了しました</h3>
               <p class="text-teal-700 mb-4 max-w-md mx-auto">内容を確認次第、ご連絡させていただきます。</p>
-              <div class="w-full max-w-xs h-1 bg-gradient-to-r from-teal-200 to-teal-300 rounded-full mt-4"></div>
             </div>
           </div>
 
           <!-- 失敗メッセージ -->
           <div v-else 
-               class="p-6 rounded-2xl text-center transition-all duration-300 bg-gradient-to-br from-rose-50 to-rose-100/50 border border-rose-200">
+               class="bg-white rounded-2xl p-8 shadow-md text-center">
             <div class="flex flex-col items-center justify-center">
               <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-4">
                 <i class="fas fa-exclamation-circle text-3xl text-rose-600"></i>
               </div>
               <h3 class="text-xl font-bold text-rose-800 mb-2">送信に失敗しました</h3>
-              <p class="text-rose-700 mb-2 max-w-md mx-auto">以下のメールアドレスまで直接ご連絡ください：</p>
+              <p class="text-rose-700 mb-4 max-w-md mx-auto">以下のメールアドレスまで直接ご連絡ください：</p>
               <div class="flex flex-col items-center gap-4">
                 <a :href="getMailtoLink()"
                    class="text-rose-600 hover:text-rose-700 font-mono bg-rose-50 px-4 py-2 rounded-lg border border-rose-200 transition-colors duration-200">
@@ -89,7 +88,6 @@ export default {
                   <span>問い合わせ内容をコピー</span>
                 </button>
               </div>
-              <div class="w-full max-w-xs h-1 bg-gradient-to-r from-rose-200 to-rose-300 rounded-full mt-4"></div>
             </div>
           </div>
         </div>
