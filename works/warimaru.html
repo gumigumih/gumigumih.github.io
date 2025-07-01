@@ -23,7 +23,7 @@
 
   <!-- メインコンテンツ -->
   <main class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
       <!-- パンくずリスト -->
       <nav class="mb-8">
         <ol class="flex items-center space-x-2 text-sm text-slate-500">
@@ -34,23 +34,29 @@
           <li class="text-slate-800">わりまる</li>
         </ol>
       </nav>
+    </div>
 
-      <!-- プロジェクトヘッダー -->
-      <div class="bg-white rounded-2xl p-8 mb-8">
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex items-center gap-4 mb-4">
-              <h1 class="text-4xl font-bold text-slate-800 font-raleway">わりまる</h1>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-600 text-white">
-                個人制作
-              </span>
+    <!-- プロジェクトヘッダー -->
+    <div class="max-w-7xl mx-auto mb-8">
+      <div class="bg-white rounded-2xl overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video">
+            <img src="../assets/images/warimaru/ogp.png" alt="わりまるのスクリーンショット" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-8 flex flex-col justify-center">
+            <div class="mb-4">
+              <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">わりまる</h1>
+              <div class="text-slate-500 text-sm">
+                #Webアプリ開発 #企画・実装
+              </div>
             </div>
             <p class="text-xl text-slate-600 mb-6">
               飲み会や旅行の支払いを簡単に計算できるWebアプリ
             </p>
             <div class="flex flex-wrap gap-4">
               <a href="https://warimaru.meggumi.com/" target="_blank" rel="noopener noreferrer" 
-                 class="inline-flex items-center px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors">
+                 class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
                 <i class="fas fa-external-link-alt mr-2"></i>
                 アプリを使う
               </a>
@@ -61,13 +67,11 @@
               </a>
             </div>
           </div>
-          <div class="flex-shrink-0">
-            <img src="../assets/images/warimaru/ogp.png" alt="わりまるのスクリーンショット" 
-                 class="w-full lg:w-80 rounded-lg shadow-lg">
-          </div>
         </div>
       </div>
+    </div>
 
+    <div class="max-w-5xl mx-auto px-4">
       <!-- 概要セクション -->
       <section class="bg-white rounded-2xl p-8 mb-8">
         <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
@@ -82,9 +86,9 @@
           </p>
           
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <div class="bg-amber-50 p-4 rounded-lg">
+            <div class="bg-blue-50 p-4 rounded-lg">
               <h3 class="font-bold text-slate-800 mb-2">主な機能</h3>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• 参加者の追加・削除</li>
                 <li>• 支払い項目の登録</li>
                 <li>• 自動割り勘計算</li>
@@ -92,9 +96,9 @@
                 <li>• レシート風プリント機能</li>
               </ul>
             </div>
-            <div class="bg-amber-50 p-4 rounded-lg">
+            <div class="bg-blue-50 p-4 rounded-lg">
               <h3 class="font-bold text-slate-800 mb-2">技術スタック</h3>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• React</li>
                 <li>• TypeScript</li>
                 <li>• Tailwind CSS</li>
@@ -122,7 +126,7 @@
           </div>
           <div class="text-center p-4 bg-slate-50 rounded-lg">
             <i class="fas fa-code text-3xl text-green-500 mb-3"></i>
-            <h3 class="font-bold text-slate-800 mb-2">フロントエンド開発</h3>
+            <h3 class="font-sm text-slate-800 mb-2">フロントエンド開発</h3>
             <p class="text-sm text-slate-600">React実装<br>レスポンシブ対応</p>
           </div>
           <div class="text-center p-4 bg-slate-50 rounded-lg">
@@ -131,9 +135,9 @@
             <p class="text-sm text-slate-600">GitHub Pagesでの公開<br>パフォーマンス最適化</p>
           </div>
         </div>
-        <div class="mt-6 p-4 bg-amber-50 rounded-lg">
+        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
           <p class="text-slate-700 text-center">
-            <strong>個人制作プロジェクト</strong>として、企画から運用まで全工程を一人で担当しました。
+            <strong>企画・実装プロジェクト</strong>として、企画から運用まで全工程を一人で担当しました。
           </p>
         </div>
       </section>
@@ -187,9 +191,9 @@
           <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
           <div class="flex flex-wrap gap-4">
             <a href="https://warimaru.meggumi.com/" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center px-4 py-2 bg-amber-500 text-white rounded-lg hover:bg-amber-600 transition-colors">
+               class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
               <i class="fas fa-external-link-alt mr-2"></i>
-              わりまるを使う
+              アプリを使う
             </a>
             <a href="https://note.com/gumigumih/n/n8736a45fcd1e" target="_blank" rel="noopener noreferrer" 
                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors">

@@ -41,7 +41,6 @@ export default defineComponent({
       <div class="flex items-center gap-2 mb-4">
         <h3 class="text-xl font-bold text-slate-800 font-raleway">{{ article.name }}</h3>
       </div>
-      <p class="text-slate-600 line-clamp-2">{{ article.body }}</p>
       <div class="flex flex-wrap gap-2 mt-4">
         <span v-for="tag in article.hashtags" 
               :key="tag.hashtag.name" 

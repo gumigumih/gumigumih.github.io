@@ -23,7 +23,7 @@
 
   <!-- メインコンテンツ -->
   <main class="pt-24 pb-16">
-    <div class="max-w-4xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-4">
       <!-- パンくずリスト -->
       <nav class="mb-8">
         <ol class="flex items-center space-x-2 text-sm text-slate-500">
@@ -34,35 +34,39 @@
           <li class="text-slate-800">DHU ビジョンブック</li>
         </ol>
       </nav>
+    </div>
 
-      <!-- プロジェクトヘッダー -->
-      <div class="bg-white rounded-2xl p-8 mb-8">
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
-          <div class="flex-1">
-            <div class="flex items-center gap-4 mb-4">
-              <h1 class="text-4xl font-bold text-slate-800 font-raleway">DHU ビジョンブック</h1>
-              <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-600 text-white">
-                実装担当
-              </span>
+    <!-- プロジェクトヘッダー -->
+    <div class="max-w-7xl mx-auto mb-8">
+      <div class="bg-white rounded-2xl overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video">
+            <img src="../assets/images/dhu-visionbook-ogp.png" alt="DHU ビジョンブックのOGP画像" 
+                 class="w-full h-full object-cover">
+          </div>
+          <div class="flex-1 p-8 flex flex-col justify-center">
+            <div class="mb-4">
+              <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">DHU ビジョンブック</h1>
+              <div class="text-slate-500 text-sm">
+                #Webサイト制作 #実装担当
+              </div>
             </div>
             <p class="text-xl text-slate-600 mb-6">
               デジタルハリウッド大学の2030年に向けた中長期構想サイト
             </p>
             <div class="flex flex-wrap gap-4">
               <a href="https://www.dhw.ac.jp/visionbook/" target="_blank" rel="noopener noreferrer" 
-                 class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                 class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
                 <i class="fas fa-external-link-alt mr-2"></i>
                 サイトを見る
               </a>
             </div>
           </div>
-          <div class="flex-shrink-0">
-            <img src="../assets/images/dhu-visionbook-ogp.png" alt="DHU ビジョンブックのOGP画像" 
-                 class="w-full lg:w-80 rounded-lg shadow-lg">
-          </div>
         </div>
       </div>
+    </div>
 
+    <div class="max-w-5xl mx-auto px-4">
       <!-- 概要セクション -->
       <section class="bg-white rounded-2xl p-8 mb-8">
         <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
@@ -79,7 +83,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <div class="bg-blue-50 p-4 rounded-lg">
               <h3 class="font-bold text-slate-800 mb-2">サイトの特徴</h3>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• 大学のビジョンを視覚化</li>
                 <li>• モダンで印象的なデザイン</li>
                 <li>• レスポンシブ対応</li>
@@ -89,7 +93,7 @@
             </div>
             <div class="bg-blue-50 p-4 rounded-lg">
               <h3 class="font-bold text-slate-800 mb-2">主要コンテンツ</h3>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• ミッション・ビジョン</li>
                 <li>• 3つのビジョン詳細</li>
                 <li>• 未来への取り組み</li>
@@ -182,7 +186,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="bg-blue-50 p-4 rounded-lg">
               <h4 class="font-bold text-slate-800 mb-2">アクセシビリティ対応</h4>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• WCAG 2.1準拠</li>
                 <li>• キーボードナビゲーション</li>
                 <li>• スクリーンリーダー対応</li>
@@ -191,7 +195,7 @@
             </div>
             <div class="bg-green-50 p-4 rounded-lg">
               <h4 class="font-bold text-slate-800 mb-2">SEO対策</h4>
-              <ul class="text-sm text-slate-600 space-y-1">
+              <ul class="text-base text-slate-600 space-y-1">
                 <li>• セマンティックHTML</li>
                 <li>• 構造化データ</li>
                 <li>• メタタグ最適化</li>
@@ -206,9 +210,9 @@
           <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
           <div class="flex flex-wrap gap-4">
             <a href="https://www.dhw.ac.jp/visionbook/" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-              <i class="fas fa-external-link-alt mr-2"></i>
-              DHU ビジョンブック
+            class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
+            <i class="fas fa-external-link-alt mr-2"></i>
+              サイトを見る
             </a>
             <a href="https://www.dhw.ac.jp/" target="_blank" rel="noopener noreferrer" 
                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors">

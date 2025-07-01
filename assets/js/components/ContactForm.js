@@ -1,6 +1,6 @@
 export default {
   template: `
-    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12">
+    <div class="max-w-5xl mx-auto bg-white rounded-2xl p-8 md:p-12">
       <p class="text-slate-600 text-lg mb-8 text-center">
         お問い合わせは以下のフォームからお願いいたします。<br>
         内容を確認次第、ご連絡させていただきます。
