@@ -23,11 +23,11 @@ export default {
             <a :href="baseUrl + '/#contact'" class="text-slate-600 hover:text-amber-500 transition-colors">CONTACT</a>
           </nav>
           <button class="md:hidden" @click="toggleMobileMenu">
-            <i class="fas fa-bars text-slate-600"></i>
+            <i :class="isMobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'" class="text-slate-600 transition-transform duration-300"></i>
           </button>
         </div>
         <!-- モバイルメニュー -->
-        <div v-if="isMobileMenuOpen" class="md:hidden py-4 border-t border-slate-200 mt-4">
+        <div v-if="isMobileMenuOpen" class="md:hidden py-4 border-t border-slate-200 relative z-60">
           <nav class="flex flex-col space-y-4">
             <a :href="baseUrl + '/#top'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">HOME</a>
             <a :href="baseUrl + '/#services'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">SERVICES</a>
@@ -40,6 +40,12 @@ export default {
         </div>
       </div>
     </header>
+    
+    <!-- モバイルメニュー背景オーバーレイ（装飾付き） -->
+    <div v-if="isMobileMenuOpen" 
+         class="fixed inset-0 backdrop-blur-sm z-40 md:hidden"
+         @click="closeMobileMenu">
+    </div>
   `,
   data() {
     return {
@@ -49,9 +55,24 @@ export default {
   methods: {
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen
+      this.updateBodyScroll()
     },
     closeMobileMenu() {
       this.isMobileMenuOpen = false
+      this.updateBodyScroll()
+    },
+    updateBodyScroll() {
+      if (this.isMobileMenuOpen) {
+        // モバイルメニューが開いているときはスクロールを無効にする
+        document.body.style.overflow = 'hidden'
+      } else {
+        // モバイルメニューが閉じているときはスクロールを有効にする
+        document.body.style.overflow = ''
+      }
     }
+  },
+  beforeUnmount() {
+    // コンポーネントが破棄されるときにスクロールを復元
+    document.body.style.overflow = ''
   }
 } 
