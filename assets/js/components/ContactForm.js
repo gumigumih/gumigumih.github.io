@@ -1,6 +1,6 @@
 export default {
   template: `
-    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12 shadow-sm">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl p-8 md:p-12">
       <p class="text-slate-600 text-lg mb-8 text-center">
         お問い合わせは以下のフォームからお願いいたします。<br>
         内容を確認次第、ご連絡させていただきます。
@@ -46,7 +46,7 @@ export default {
           
           <div class="text-center pt-4">
             <button type="submit" 
-                    class="inline-flex items-center justify-center bg-amber-600 text-white px-12 py-4 rounded-full hover:bg-amber-700 transition-all duration-300 text-lg font-medium shadow-sm hover:shadow-lg border-r-4 border-b-4 border-amber-400 hover:border-amber-500 hover:-translate-y-1 transform"
+                    class="inline-flex items-center justify-center bg-slate-600 text-white px-12 py-4 rounded-full hover:bg-slate-700 transition-all duration-300 text-lg font-medium shadow-lg hover:shadow-lg border-r-4 border-b-4 border-slate-400 hover:border-slate-500 hover:-translate-y-1 transform"
                     :disabled="isSubmitting">
               <i class="fas" :class="isSubmitting ? 'fa-spinner fa-spin' : 'fa-paper-plane'"></i>
               <span class="ml-3">{{ isSubmitting ? '送信中...' : '送信する' }}</span>
@@ -58,7 +58,7 @@ export default {
         <div v-else class="mt-6">
           <!-- 成功メッセージ -->
           <div v-if="submitStatus === 'success'" 
-               class="bg-white rounded-2xl p-8 shadow-md text-center">
+               class="bg-white rounded-2xl p-8 text-center">
             <div class="flex flex-col items-center justify-center">
               <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
                 <i class="fas fa-check-circle text-3xl text-teal-600"></i>
@@ -70,7 +70,7 @@ export default {
 
           <!-- 失敗メッセージ -->
           <div v-else 
-               class="bg-white rounded-2xl p-8 shadow-md text-center">
+               class="bg-white rounded-2xl p-8 shadow-lg text-center">
             <div class="flex flex-col items-center justify-center">
               <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-4">
                 <i class="fas fa-exclamation-circle text-3xl text-rose-600"></i>
