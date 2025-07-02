@@ -19,6 +19,7 @@ export default {
             <a :href="baseUrl + '/#team'" class="text-slate-600 hover:text-amber-500 transition-colors">TEAM</a>
             <a :href="baseUrl + '/#about'" class="text-slate-600 hover:text-amber-500 transition-colors">ABOUT</a>
             <a :href="baseUrl + '/#works'" class="text-slate-600 hover:text-amber-500 transition-colors">WORKS</a>
+            <a :href="baseUrl + '/#media'" class="text-slate-600 hover:text-amber-500 transition-colors">MEDIA</a>
             <a :href="baseUrl + '/#faq'" class="text-slate-600 hover:text-amber-500 transition-colors">FAQ</a>
             <a :href="baseUrl + '/#contact'" class="text-slate-600 hover:text-amber-500 transition-colors">CONTACT</a>
           </nav>
@@ -34,6 +35,7 @@ export default {
             <a :href="baseUrl + '/#team'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">TEAM</a>
             <a :href="baseUrl + '/#about'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">ABOUT</a>
             <a :href="baseUrl + '/#works'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">WORKS</a>
+            <a :href="baseUrl + '/#media'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">MEDIA</a>
             <a :href="baseUrl + '/#faq'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">FAQ</a>
             <a :href="baseUrl + '/#contact'" class="text-slate-600 hover:text-amber-500 transition-colors" @click="closeMobileMenu">CONTACT</a>
           </nav>
