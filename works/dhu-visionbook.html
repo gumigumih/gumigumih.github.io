@@ -1,238 +1,319 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DHU ビジョンブック - 作品詳細 | meg+gumi</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script type="module" src="../assets/js/app.js"></script>
-  <link rel="icon" href="../favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
-  <meta property="og:title" content="DHU ビジョンブック - 作品詳細 | meg+gumi" />
-  <meta property="og:description" content="デジタルハリウッド大学の2030年に向けた中長期構想サイトの実装担当" />
-  <meta name="description" content="デジタルハリウッド大学の2030年に向けた中長期構想サイトの実装担当" />
-</head>
-<body class="bg-[url(../assets/images/bg-gray.png)] font-sans" id="app">
-  <!-- ヘッダー -->
-  <site-header base-url=".."></site-header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DHU ビジョンブック - 作品詳細 | meg+gumi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="../assets/js/app.js"></script>
+    <link rel="icon" href="../favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <meta
+      property="og:title"
+      content="DHU ビジョンブック - 作品詳細 | meg+gumi"
+    />
+    <meta
+      property="og:description"
+      content="デジタルハリウッド大学「DHUビジョンブック」公式サイトのフロントエンド実装事例。大学のビジョンを伝えるモダンなデザインと高いパフォーマンスを実現しました。"
+    />
+    <meta
+      property="og:image"
+      content="https://meggumi.com/assets/images/works/dhu-visionbook-ogp.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="description"
+      content="デジタルハリウッド大学「DHUビジョンブック」公式サイトのフロントエンド実装事例。大学のビジョンを伝えるモダンなデザインと高いパフォーマンスを実現しました。"
+    />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TTF0HVQRJ3');
+    </script>
+  </head>
+  <body class="bg-[url(../assets/images/bg-gray.png)] font-sans" id="app">
+    <!-- ヘッダー -->
+    <site-header base-url=".."></site-header>
 
-  <!-- メインコンテンツ -->
-  <main class="pt-24 pb-16">
-    <div class="max-w-7xl mx-auto px-4">
-      <!-- パンくずリスト -->
-      <nav class="mb-8">
-        <ol class="flex items-center space-x-2 text-sm text-slate-500">
-          <li><a href="../" class="hover:text-amber-500">ホーム</a></li>
-          <li><i class="fas fa-chevron-right"></i></li>
-          <li><a href="../#works" class="hover:text-amber-500">WORKS</a></li>
-          <li><i class="fas fa-chevron-right"></i></li>
-          <li class="text-slate-800">DHU ビジョンブック</li>
-        </ol>
-      </nav>
-    </div>
+    <!-- メインコンテンツ -->
+    <main class="pt-24 pb-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- パンくずリスト -->
+        <nav class="mb-8">
+          <ol class="flex items-center space-x-2 text-sm text-slate-500">
+            <li><a href="../" class="hover:text-amber-500">ホーム</a></li>
+            <li><i class="fas fa-chevron-right"></i></li>
+            <li><a href="../#works" class="hover:text-amber-500">WORKS</a></li>
+            <li><i class="fas fa-chevron-right"></i></li>
+            <li class="text-slate-800">DHU ビジョンブック</li>
+          </ol>
+        </nav>
+      </div>
 
-    <!-- プロジェクトヘッダー -->
-    <div class="max-w-7xl mx-auto mb-8 px-4">
-      <div class="bg-white rounded-2xl overflow-hidden">
-        <div class="flex flex-col lg:flex-row">
-          <div class="w-full lg:w-96 aspect-video">
-            <img src="../assets/images/dhu-visionbook-ogp.png" alt="DHU ビジョンブックのOGP画像" 
-                 class="w-full h-full object-cover">
-          </div>
-          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-            <div class="mb-4">
-              <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">DHU ビジョンブック</h1>
-              <div class="text-slate-500 text-sm">
-                #Webサイト制作 #実装担当
+      <!-- プロジェクトヘッダー -->
+      <div class="max-w-7xl mx-auto mb-8 px-4">
+        <div class="bg-white rounded-2xl overflow-hidden">
+          <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-96 aspect-video">
+              <img
+                src="../assets/images/works/dhu-visionbook-ogp.png"
+                alt="DHU ビジョンブックのOGP画像"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+              <div class="mb-4">
+                <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">
+                  DHU ビジョンブック
+                </h1>
+                <div class="text-slate-500 text-sm">
+                  #Webサイト制作 #実装担当
+                </div>
+              </div>
+              <p class="text-xl text-slate-600 mb-6">
+                デジタルハリウッド大学の2030年に向けた中長期構想サイト
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a
+                  href="https://www.dhw.ac.jp/visionbook/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                >
+                  <i class="fas fa-external-link-alt mr-2"></i>
+                  サイトを見る
+                </a>
               </div>
             </div>
-            <p class="text-xl text-slate-600 mb-6">
-              デジタルハリウッド大学の2030年に向けた中長期構想サイト
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-5xl mx-auto px-4">
+        <!-- 概要セクション -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">
+            概要
+          </h2>
+          <div class="prose prose-lg max-w-none">
+            <p class="text-slate-600 leading-relaxed mb-4">
+              「DHU 2030
+              ProtoDesign」は、デジタルハリウッド大学が2030年に向けて策定した中長期構想を紹介するWebサイトです。
+              未来の生活と文化のデザインを促進するという大学のビジョンを、視覚的に分かりやすく表現することが求められました。
             </p>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              このプロジェクトでは、デザイナーとの協力のもと、フロントエンド実装を担当。
+              大学の革新的なビジョンを体現する、モダンで印象的なWebサイトを実現しました。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+                <h3 class="font-bold text-slate-800 mb-2">サイトの特徴</h3>
+                <ul class="text-base text-slate-600 space-y-1">
+                  <li>• 大学のビジョンを視覚化</li>
+                  <li>• モダンで印象的なデザイン</li>
+                  <li>• レスポンシブ対応</li>
+                  <li>• スムーズなアニメーション</li>
+                  <li>• 高いパフォーマンス</li>
+                </ul>
+              </div>
+              <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+                <h3 class="font-bold text-slate-800 mb-2">主要コンテンツ</h3>
+                <ul class="text-base text-slate-600 space-y-1">
+                  <li>• ミッション・ビジョン</li>
+                  <li>• 3つのビジョン詳細</li>
+                  <li>• 未来への取り組み</li>
+                  <li>• 学長メッセージ</li>
+                  <li>• プロトデザイン概念</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 担当セクション -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">
+            担当
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+              <i class="fas fa-code text-3xl text-blue-500 mb-3"></i>
+              <h3 class="font-bold text-slate-800 mb-2">フロントエンド実装</h3>
+              <p class="text-sm text-slate-600">
+                HTML/CSS/JavaScript<br />レスポンシブコーディング
+              </p>
+            </div>
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+              <i class="fas fa-mobile-alt text-3xl text-green-500 mb-3"></i>
+              <h3 class="font-bold text-slate-800 mb-2">レスポンシブ対応</h3>
+              <p class="text-sm text-slate-600">
+                モバイル最適化<br />クロスブラウザ対応
+              </p>
+            </div>
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+              <i
+                class="fas fa-tachometer-alt text-3xl text-purple-500 mb-3"
+              ></i>
+              <h3 class="font-bold text-slate-800 mb-2">
+                パフォーマンス最適化
+              </h3>
+              <p class="text-sm text-slate-600">
+                読み込み速度向上<br />SEO対策
+              </p>
+            </div>
+          </div>
+          <div class="mt-6 p-3 md:p-4 bg-blue-50 rounded-lg">
+            <p class="text-slate-700 text-center">
+              <strong>フロントエンド実装担当</strong
+              >として、デザイナーの意図を忠実に再現し、ユーザビリティを重視した実装を行いました。
+            </p>
+          </div>
+        </section>
+
+        <!-- 詳細セクション -->
+        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">
+            詳細
+          </h2>
+
+          <!-- プロジェクト背景 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">
+              プロジェクト背景
+            </h3>
+            <p class="text-slate-600 leading-relaxed mb-4">
+              デジタルハリウッド大学が2030年に向けた新たな構想を発表するにあたり、
+              その革新的なビジョンを効果的に伝えるWebサイトが必要でした。
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+              「ProtoDesign」という概念を中心に、大学の未来への取り組みを
+              視覚的に魅力的で分かりやすく表現することが求められました。
+            </p>
+          </div>
+
+          <!-- 実装上の工夫 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">実装上の工夫</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  モダンなビジュアル表現
+                </h4>
+                <p class="text-slate-600">
+                  CSS Grid、Flexboxを活用したレイアウト設計で、
+                  デザイナーの意図する革新的なビジュアルを忠実に再現。
+                  大学のブランドイメージにふさわしい洗練された表現を実現しました。
+                </p>
+              </div>
+              <div class="border-l-4 border-green-500 pl-3 md:pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  レスポンシブデザイン
+                </h4>
+                <p class="text-slate-600">
+                  大学サイトという性質上、様々なデバイスからのアクセスを想定。
+                  スマートフォン、タブレット、デスクトップすべてで
+                  最適な表示・操作性を実現しました。
+                </p>
+              </div>
+              <div class="border-l-4 border-purple-500 pl-3 md:pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  パフォーマンス重視
+                </h4>
+                <p class="text-slate-600">
+                  大学の公式サイトとして、高いパフォーマンスが要求されました。
+                  画像最適化、CSS/JavaScript圧縮により、
+                  高速な読み込みを実現しています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 技術的チャレンジ -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">
+              技術的チャレンジ
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  アクセシビリティ対応
+                </h4>
+                <ul class="text-base text-slate-600 space-y-1">
+                  <li>• WCAG 2.1準拠</li>
+                  <li>• キーボードナビゲーション</li>
+                  <li>• スクリーンリーダー対応</li>
+                  <li>• カラーコントラスト配慮</li>
+                </ul>
+              </div>
+              <div class="bg-green-50 p-3 md:p-4 rounded-lg">
+                <h4 class="font-bold text-slate-800 mb-2">SEO対策</h4>
+                <ul class="text-base text-slate-600 space-y-1">
+                  <li>• セマンティックHTML</li>
+                  <li>• 構造化データ</li>
+                  <li>• メタタグ最適化</li>
+                  <li>• ページ表示速度向上</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 関連リンク -->
+          <div class="border-t pt-6">
+            <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
             <div class="flex flex-wrap gap-4">
-              <a href="https://www.dhw.ac.jp/visionbook/" target="_blank" rel="noopener noreferrer" 
-                 class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
+              <a
+                href="https://www.dhw.ac.jp/visionbook/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+              >
                 <i class="fas fa-external-link-alt mr-2"></i>
                 サイトを見る
               </a>
+              <a
+                href="https://www.dhw.ac.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <i class="fas fa-university mr-2"></i>
+                デジタルハリウッド大学
+              </a>
             </div>
           </div>
+        </section>
+
+        <!-- 戻るボタン -->
+        <div class="text-center">
+          <a
+            href="../#works"
+            class="inline-flex items-center px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+          >
+            <i class="fas fa-arrow-left mr-2"></i>
+            実績一覧に戻る
+          </a>
         </div>
       </div>
-    </div>
+    </main>
 
-    <div class="max-w-5xl mx-auto px-4">
-      <!-- 概要セクション -->
-      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
-        <div class="prose prose-lg max-w-none">
-          <p class="text-slate-600 leading-relaxed mb-4">
-            「DHU 2030 ProtoDesign」は、デジタルハリウッド大学が2030年に向けて策定した中長期構想を紹介するWebサイトです。
-            未来の生活と文化のデザインを促進するという大学のビジョンを、視覚的に分かりやすく表現することが求められました。
-          </p>
-          <p class="text-slate-600 leading-relaxed mb-4">
-            このプロジェクトでは、デザイナーとの協力のもと、フロントエンド実装を担当。
-            大学の革新的なビジョンを体現する、モダンで印象的なWebサイトを実現しました。
-          </p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
-              <h3 class="font-bold text-slate-800 mb-2">サイトの特徴</h3>
-              <ul class="text-base text-slate-600 space-y-1">
-                <li>• 大学のビジョンを視覚化</li>
-                <li>• モダンで印象的なデザイン</li>
-                <li>• レスポンシブ対応</li>
-                <li>• スムーズなアニメーション</li>
-                <li>• 高いパフォーマンス</li>
-              </ul>
-            </div>
-            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
-              <h3 class="font-bold text-slate-800 mb-2">主要コンテンツ</h3>
-              <ul class="text-base text-slate-600 space-y-1">
-                <li>• ミッション・ビジョン</li>
-                <li>• 3つのビジョン詳細</li>
-                <li>• 未来への取り組み</li>
-                <li>• 学長メッセージ</li>
-                <li>• プロトデザイン概念</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 担当セクション -->
-      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">担当</h2>
-                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-            <i class="fas fa-code text-3xl text-blue-500 mb-3"></i>
-            <h3 class="font-bold text-slate-800 mb-2">フロントエンド実装</h3>
-            <p class="text-sm text-slate-600">HTML/CSS/JavaScript<br>レスポンシブコーディング</p>
-          </div>
-          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-            <i class="fas fa-mobile-alt text-3xl text-green-500 mb-3"></i>
-            <h3 class="font-bold text-slate-800 mb-2">レスポンシブ対応</h3>
-            <p class="text-sm text-slate-600">モバイル最適化<br>クロスブラウザ対応</p>
-          </div>
-          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-            <i class="fas fa-tachometer-alt text-3xl text-purple-500 mb-3"></i>
-            <h3 class="font-bold text-slate-800 mb-2">パフォーマンス最適化</h3>
-            <p class="text-sm text-slate-600">読み込み速度向上<br>SEO対策</p>
-          </div>
-        </div>
-        <div class="mt-6 p-3 md:p-4 bg-blue-50 rounded-lg">
-          <p class="text-slate-700 text-center">
-            <strong>フロントエンド実装担当</strong>として、デザイナーの意図を忠実に再現し、ユーザビリティを重視した実装を行いました。
-          </p>
-        </div>
-      </section>
-
-      <!-- 詳細セクション -->
-      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
-        
-        <!-- プロジェクト背景 -->
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">プロジェクト背景</h3>
-          <p class="text-slate-600 leading-relaxed mb-4">
-            デジタルハリウッド大学が2030年に向けた新たな構想を発表するにあたり、
-            その革新的なビジョンを効果的に伝えるWebサイトが必要でした。
-          </p>
-          <p class="text-slate-600 leading-relaxed">
-            「ProtoDesign」という概念を中心に、大学の未来への取り組みを
-            視覚的に魅力的で分かりやすく表現することが求められました。
-          </p>
-        </div>
-
-        <!-- 実装上の工夫 -->
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">実装上の工夫</h3>
-          <div class="space-y-4">
-            <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
-              <h4 class="font-bold text-slate-800 mb-2">モダンなビジュアル表現</h4>
-              <p class="text-slate-600">
-                CSS Grid、Flexboxを活用したレイアウト設計で、
-                デザイナーの意図する革新的なビジュアルを忠実に再現。
-                大学のブランドイメージにふさわしい洗練された表現を実現しました。
-              </p>
-            </div>
-            <div class="border-l-4 border-green-500 pl-3 md:pl-4">
-              <h4 class="font-bold text-slate-800 mb-2">レスポンシブデザイン</h4>
-              <p class="text-slate-600">
-                大学サイトという性質上、様々なデバイスからのアクセスを想定。
-                スマートフォン、タブレット、デスクトップすべてで
-                最適な表示・操作性を実現しました。
-              </p>
-            </div>
-            <div class="border-l-4 border-purple-500 pl-3 md:pl-4">
-              <h4 class="font-bold text-slate-800 mb-2">パフォーマンス重視</h4>
-              <p class="text-slate-600">
-                大学の公式サイトとして、高いパフォーマンスが要求されました。
-                画像最適化、CSS/JavaScript圧縮により、
-                高速な読み込みを実現しています。
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 技術的チャレンジ -->
-        <div class="mb-8">
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">技術的チャレンジ</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
-              <h4 class="font-bold text-slate-800 mb-2">アクセシビリティ対応</h4>
-              <ul class="text-base text-slate-600 space-y-1">
-                <li>• WCAG 2.1準拠</li>
-                <li>• キーボードナビゲーション</li>
-                <li>• スクリーンリーダー対応</li>
-                <li>• カラーコントラスト配慮</li>
-              </ul>
-            </div>
-            <div class="bg-green-50 p-3 md:p-4 rounded-lg">
-              <h4 class="font-bold text-slate-800 mb-2">SEO対策</h4>
-              <ul class="text-base text-slate-600 space-y-1">
-                <li>• セマンティックHTML</li>
-                <li>• 構造化データ</li>
-                <li>• メタタグ最適化</li>
-                <li>• ページ表示速度向上</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- 関連リンク -->
-        <div class="border-t pt-6">
-          <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
-          <div class="flex flex-wrap gap-4">
-            <a href="https://www.dhw.ac.jp/visionbook/" target="_blank" rel="noopener noreferrer" 
-            class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors">
-            <i class="fas fa-external-link-alt mr-2"></i>
-              サイトを見る
-            </a>
-            <a href="https://www.dhw.ac.jp/" target="_blank" rel="noopener noreferrer" 
-               class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors">
-              <i class="fas fa-university mr-2"></i>
-              デジタルハリウッド大学
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- 戻るボタン -->
-      <div class="text-center">
-        <a href="../#works" class="inline-flex items-center px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors">
-          <i class="fas fa-arrow-left mr-2"></i>
-          実績一覧に戻る
-        </a>
-      </div>
-    </div>
-  </main>
-
-  <site-footer></site-footer>
-</body>
-</html> 
+    <site-footer></site-footer>
+  </body>
+</html>
