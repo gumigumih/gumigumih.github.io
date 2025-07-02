@@ -34,7 +34,7 @@ export default defineComponent({
     <a :href="getArticleUrl()" 
        target="_blank" 
        rel="noopener noreferrer" 
-       class="bg-white rounded-2xl p-8 shadow-lg border-r-4 border-b-4 border-slate-400 hover:shadow-lg hover:-translate-y-1 hover:border-slate-500 transform transition-all duration-200">
+       class="bg-white rounded-2xl p-8 shadow-lg border-r-4 border-b-4 border-slate-400 hover:shadow-xl hover:border-slate-500 transform transition-all duration-200">
       <div class="aspect-[16/9] mb-6 overflow-hidden rounded-lg">
         <img :src="article.localImagePath || article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
       </div>
