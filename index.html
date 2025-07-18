@@ -9,9 +9,11 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script type="module" src="./assets/js/app.js"></script>
   <link rel="icon" href="/favicon.ico" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="./assets/js/app.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -20,9 +22,17 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <meta property="og:title" content="ぐみ | Webアプリ開発" />
   <meta property="og:description" content="使いやすく、見た目もかわいいWebアプリの開発を承ります。PdMとしての経験を活かした、ユーザー目線の開発を心がけています。" />
-  <meta property="og:image" content="https://meggumi.com/ogp.jpg" />
+  <meta property="og:image" content="https://meggumi.com/assets/images/ogp.png" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="description" content="使いやすく、見た目もかわいいWebアプリの開発を承ります。PdMとしての経験を活かした、ユーザー目線の開発を心がけています。" />
+  <meta name="description" content="デジタルソリューションのビジネスパートナー「meg+gumi」。Web制作・ディレクション、Unityシステム開発、Webアプリ開発、業務システム移行支援まで、経験豊富なPdMが最適な提案と高品質な開発を提供します。" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TTF0HVQRJ3');
+  </script>
 </head>
 
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 font-sans" id="app">
@@ -55,14 +65,14 @@
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 flex flex-col items-center animate-bounce">
       <div class="w-8 h-12 border-2 border-slate-400 rounded-full flex justify-center relative">
         <div class="w-1 h-3 bg-slate-400 rounded-full absolute top-2 animate-bounce"></div>
+        </div>
+        <span class="text-sm tracking-wider font-raleway mt-4">SCROLL</span>
       </div>
-      <span class="text-sm tracking-wider font-raleway mt-4">SCROLL</span>
     </div>
-  </div>
 
-  <!-- SERVICESセクション -->
+    <!-- SERVICESセクション -->
   <div class="py-24 bg-[url(./assets/images/bg-white.png)]" id="services">
-    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-16 relative">
         <div class="text-6xl md:text-8xl font-bold tracking-wider text-slate-200 absolute inset-0 flex items-center justify-center"
           style="font-family: 'Montserrat', sans-serif;">SERVICES</div>
@@ -72,16 +82,16 @@
       <div class="space-y-12">
         <!-- Web制作・ディレクション -->
         <div class="bg-white rounded-2xl p-6 md:p-10">
-          <div class="flex items-center mb-6">
+            <div class="flex items-center mb-6">
             <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mr-4">
-              <i class="fas fa-laptop-code text-2xl text-amber-600"></i>
-            </div>
+                <i class="fas fa-laptop-code text-2xl text-amber-600"></i>
+              </div>
             <h3 class="text-2xl font-bold text-slate-800" style="font-family: 'M PLUS Rounded 1c', sans-serif;">
               Webサイト制作
-            </h3>
-          </div>
+              </h3>
+            </div>
           <p class="text-slate-600 leading-relaxed text-lg mb-6">
-            コーポレートサイトやランディングページの制作を承ります。
+              コーポレートサイトやランディングページの制作を承ります。
             企画から完成まで私が責任を持って進行管理し、
             プロジェクトに応じて自身で実装、または
             最適なデザイナー・エンジニアとチームを組んで対応します。
@@ -165,7 +175,7 @@
             </div>
             <h3 class="text-2xl font-bold text-slate-800" style="font-family: 'M PLUS Rounded 1c', sans-serif;">
               Unity・3Dシステム開発
-            </h3>
+              </h3>
           </div>
           <p class="text-slate-600 leading-relaxed text-lg mb-6">
             Live2DやVTuberシステム、インタラクティブコンテンツなど、
@@ -253,7 +263,7 @@
             </div>
             <h3 class="text-2xl font-bold text-slate-800" style="font-family: 'M PLUS Rounded 1c', sans-serif;">
               Webアプリ開発
-            </h3>
+              </h3>
           </div>
           <p class="text-slate-600 leading-relaxed text-lg mb-6">
             使いやすく、見た目も美しいWebアプリケーションの開発を承ります。
@@ -340,9 +350,9 @@
               <i class="fas fa-exchange-alt text-2xl text-orange-600"></i>
             </div>
             <h3 class="text-2xl font-bold text-slate-800" style="font-family: 'M PLUS Rounded 1c', sans-serif;">
-              業務システム移行支援
-            </h3>
-          </div>
+                業務システム移行支援
+              </h3>
+            </div>
           <p class="text-slate-600 leading-relaxed text-lg mb-6">
             Google Apps Script（GAS）やExcelマクロから、
             より拡張性の高いWebシステムへの移行をサポートします。
@@ -480,13 +490,13 @@
           お客様の窓口は私一人なので、複数の業者との<br class="hidden md:block">
           煩わしいやりとりは不要です。安心してお任せください。
         </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ABOUTセクション -->
+    <!-- ABOUTセクション -->
   <div class="py-24 bg-[url(./assets/images/bg-white.png)]" id="about">
-    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-16 relative">
         <div class="text-6xl md:text-8xl font-bold tracking-wider text-slate-200 absolute inset-0 flex items-center justify-center"
           style="font-family: 'Montserrat', sans-serif;">ABOUT</div>
@@ -495,15 +505,15 @@
       </div>
       <div
         class="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-12 bg-white rounded-2xl p-6 md:p-10">
-        <div class="flex-shrink-0">
+            <div class="flex-shrink-0">
           <img src="./assets/images/profile.jpg" alt="ぐみのアイコン"
             class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white" />
-        </div>
-        <div class="flex-1 text-center md:text-left">
+            </div>
+            <div class="flex-1 text-center md:text-left">
           <h3 class="text-2xl md:text-3xl font-bold text-slate-800 mb-6 md:mb-8"
             style="font-family: 'M PLUS Rounded 1c', sans-serif;">
-            ぐみ
-          </h3>
+                ぐみ
+              </h3>
           <p class="text-slate-600 leading-relaxed mb-6 md:mb-8 text-base md:text-lg">
             プロダクトマネージャー（PdM）として5年、<br class="hidden md:block" />
             Web開発ディレクターとして3年の経験を活かし、<br class="hidden md:block" />
@@ -514,43 +524,43 @@
             プロジェクトに携わってきた経験を活かしています。<br class="hidden md:block" /><br class="hidden md:block" />
 
             noteではPMやディレクターとしての日々の気づきを、<br class="hidden md:block" />
-            ZennやQiitaでは技術的な知見を発信しています。
-          </p>
+                ZennやQiitaでは技術的な知見を発信しています。
+              </p>
 
           <div class="flex justify-center md:justify-start space-x-6 md:space-x-10">
             <a href="https://me.meggumi.com" target="_blank" rel="noopener noreferrer"
               class="text-slate-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2 md:space-x-3">
-              <i class="fas fa-link text-2xl md:text-3xl"></i>
-              <span class="text-base md:text-lg">個人の経歴はこちら</span>
-            </a>
-          </div>
+                  <i class="fas fa-link text-2xl md:text-3xl"></i>
+                  <span class="text-base md:text-lg">個人の経歴はこちら</span>
+                </a>
+              </div>
           <div class="flex justify-center md:justify-start space-x-6 md:space-x-10 mt-8">
             <a href="https://note.com/gumigumih" target="_blank" rel="noopener noreferrer"
               class="text-slate-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
-              <i class="fas fa-pen-fancy text-xl"></i>
-              <span>note</span>
-            </a>
+                  <i class="fas fa-pen-fancy text-xl"></i>
+                  <span>note</span>
+                </a>
             <a href="https://zenn.dev/gumigumih" target="_blank" rel="noopener noreferrer"
               class="text-slate-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
-              <i class="fas fa-book text-xl"></i>
-              <span>Zenn</span>
-            </a>
+                  <i class="fas fa-book text-xl"></i>
+                  <span>Zenn</span>
+                </a>
             <a href="https://qiita.com/gumigumih" target="_blank" rel="noopener noreferrer"
               class="text-slate-600 hover:text-amber-500 transition-colors duration-200 flex items-center space-x-2">
-              <i class="fas fa-code text-xl"></i>
-              <span>Qiita</span>
-            </a>
+                  <i class="fas fa-code text-xl"></i>
+                  <span>Qiita</span>
+                </a>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
-
     </div>
-  </div>
-  </div>
 
-  <!-- WORKSセクション -->
+    <!-- WORKSセクション -->
   <div class="py-24 bg-[url(./assets/images/bg-gray.png)]" id="works">
-    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-16 relative">
         <div class="text-6xl md:text-8xl font-bold tracking-wider text-white absolute inset-0 flex items-center justify-center"
           style="font-family: 'Montserrat', sans-serif;">WORKS</div>
@@ -587,25 +597,25 @@
         <div
           class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-slate-400 hover:shadow-lg hover:-translate-y-1 hover:border-slate-500 transform transition-all duration-200 overflow-hidden">
           <a href="./works/warimaru.html" class="block">
-            <div class="w-full overflow-hidden">
-              <img src="./assets/images/warimaru/ogp.png" alt="わりまるのサムネイル"
+              <div class="w-full overflow-hidden">
+                              <img src="./assets/images/works/warimaru-ogp.png" alt="わりまるのサムネイル"
                 class="w-full aspect-[1200/630] object-contain" />
-            </div>
+              </div>
             <div class="p-6 md:p-8">
               <div class="mb-4">
                 <h2 class="text-2xl text-slate-800 font-bold mb-3"
                   style="font-family: 'M PLUS Rounded 1c', sans-serif;">
-                  わりまる
-                </h2>
+                    わりまる
+                  </h2>
                 <div class="text-slate-500 text-sm">
                   #Webアプリ開発 #企画・実装
                 </div>
               </div>
               <p class="text-slate-600 text-lg">
-                飲み会や旅行の支払いを簡単に計算できるWebアプリ
-              </p>
-            </div>
-          </a>
+                  飲み会や旅行の支払いを簡単に計算できるWebアプリ
+                </p>
+              </div>
+            </a>
         </div>
 
         <!-- DHU ビジョンブック -->
@@ -613,7 +623,7 @@
           class="bg-white rounded-2xl shadow-lg border-r-4 border-b-4 border-slate-400 hover:shadow-lg hover:-translate-y-1 hover:border-slate-500 transform transition-all duration-200 overflow-hidden">
           <a href="./works/dhu-visionbook.html" class="block">
             <div class="w-full overflow-hidden">
-              <img src="./assets/images/dhu-visionbook-ogp.png" alt="DHU 2030 ProtoDesign OGP"
+                              <img src="./assets/images/works/dhu-visionbook-ogp.png" alt="DHU 2030 ProtoDesign OGP"
                 class="w-full aspect-[1200/630] object-cover" />
             </div>
             <div class="p-6 md:p-8">
@@ -633,13 +643,13 @@
           </a>
         </div>
 
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- MEDIAセクション -->
+    <!-- MEDIAセクション -->
   <div class="py-24 bg-[url(./assets/images/bg-white.png)]" id="media">
-    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-10 relative">
         <div class="text-6xl md:text-8xl font-bold tracking-wider text-slate-200 absolute inset-0 flex items-center justify-center"
           style="font-family: 'Montserrat', sans-serif;">MEDIA</div>
@@ -647,15 +657,15 @@
           style="font-family: 'M PLUS Rounded 1c', sans-serif;">記事・メディア</h2>
       </div>
       <p class="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-10">
-        noteでPMやディレクターとしての日々の気づきを発信しています。
-      </p>
-      <article-list></article-list>
+          noteでPMやディレクターとしての日々の気づきを発信しています。
+        </p>
+        <article-list></article-list>
+      </div>
     </div>
-  </div>
 
   <!-- FAQセクション -->
   <div class="py-24 bg-[url(./assets/images/bg-gray.png)]" id="faq">
-    <div class="max-w-7xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
       <div class="text-center mb-16 relative">
         <div class="text-6xl md:text-8xl font-bold tracking-wider text-white absolute inset-0 flex items-center justify-center"
           style="font-family: 'Montserrat', sans-serif;">FAQ</div>
@@ -876,10 +886,10 @@
           style="font-family: 'M PLUS Rounded 1c', sans-serif;">お問い合わせ</h2>
       </div>
       <contact-form></contact-form>
+      </div>
     </div>
-  </div>
 
-  <site-footer></site-footer>
-</body>
+    <site-footer></site-footer>
+  </body>
 
 </html>

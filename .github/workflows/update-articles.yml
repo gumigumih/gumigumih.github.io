@@ -22,12 +22,12 @@ jobs:
       - name: Install dependencies
         run: npm install axios
 
-      - name: Commit package-lock.json if changed
+      - name: Commit package files if changed
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add package-lock.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Update package-lock.json [skip ci]" && git push)
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update package files [skip ci]" && git push)
 
       - name: Update articles
         run: node scripts/update-articles.js
@@ -36,5 +36,5 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add articles.json package-lock.json
+          git add .
           git diff --quiet && git diff --staged --quiet || (git commit -m "Update articles and dependencies [skip ci]" && git push)
