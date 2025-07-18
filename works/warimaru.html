@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>わりまる - 作品詳細 | meg+gumi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="../assets/js/app.js"></script>
-    <link rel="icon" href="../favicon.ico" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>わりまる - 作品詳細 | meg+gumi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script type="module" src="../assets/js/app.js"></script>
+  <link rel="icon" href="../favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <meta property="og:title" content="わりまる - 作品詳細 | meg+gumi" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta property="og:title" content="わりまる - 作品詳細 | meg+gumi" />
     <meta
       property="og:description"
       content="飲み会や旅行の割り勘計算を簡単にできるWebアプリ「わりまる」の企画・設計・開発の詳細。シンプルで直感的な操作性と、スマホ対応のレスポンシブデザインが特長です。"
@@ -44,259 +44,271 @@
       gtag('js', new Date());
       gtag('config', 'G-TTF0HVQRJ3');
     </script>
-  </head>
-  <body class="bg-[url(../assets/images/bg-gray.png)] font-sans" id="app">
-    <!-- ヘッダー -->
-    <site-header base-url=".."></site-header>
+</head>
+<body class="bg-[url(../assets/images/bg-gray.png)] font-sans" id="app">
+  <!-- ヘッダー -->
+  <site-header base-url=".."></site-header>
 
-    <!-- メインコンテンツ -->
-    <main class="pt-24 pb-16">
-      <div class="max-w-7xl mx-auto px-4">
-        <!-- パンくずリスト -->
-        <nav class="mb-8">
-          <ol class="flex items-center space-x-2 text-sm text-slate-500">
-            <li><a href="../" class="hover:text-amber-500">ホーム</a></li>
-            <li><i class="fas fa-chevron-right"></i></li>
-            <li><a href="../#works" class="hover:text-amber-500">WORKS</a></li>
-            <li><i class="fas fa-chevron-right"></i></li>
-            <li class="text-slate-800">わりまる</li>
-          </ol>
-        </nav>
-      </div>
+  <!-- メインコンテンツ -->
+  <main class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- パンくずリスト -->
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-slate-500">
+          <li><a href="../" class="hover:text-amber-500">ホーム</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li><a href="../#works" class="hover:text-amber-500">WORKS</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="text-slate-800">わりまる</li>
+        </ol>
+      </nav>
+    </div>
 
-      <!-- プロジェクトヘッダー -->
-      <div class="max-w-7xl mx-auto mb-8 px-4">
-        <div class="bg-white rounded-2xl overflow-hidden">
-          <div class="flex flex-col lg:flex-row">
-            <div class="w-full lg:w-96 aspect-video">
+    <!-- プロジェクトヘッダー -->
+    <div class="max-w-7xl mx-auto mb-8 px-4">
+      <div class="bg-white rounded-2xl overflow-hidden">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video">
               <img
-                src="../assets/images/works/warimaru-ogp.png"
+                src="../assets/images/warimaru/ogp.png"
                 alt="わりまるのスクリーンショット"
                 class="w-full h-full object-cover"
               />
-            </div>
-            <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
-              <div class="mb-4">
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+            <div class="mb-4">
                 <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">
                   わりまる
                 </h1>
-                <div class="text-slate-500 text-sm">
-                  #Webアプリ開発 #企画・実装
-                </div>
+              <div class="text-slate-500 text-sm">
+                #Webアプリ開発 #企画・実装
               </div>
-              <p class="text-xl text-slate-600 mb-6">
-                飲み会や旅行の支払いを簡単に計算できるWebアプリ
-              </p>
-              <div class="flex flex-wrap gap-4">
+            </div>
+            <p class="text-xl text-slate-600 mb-6">
+              飲み会や旅行の支払いを簡単に計算できるWebアプリ
+            </p>
+            <div class="flex flex-wrap gap-4">
                 <a
                   href="https://warimaru.meggumi.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
                 >
-                  <i class="fas fa-external-link-alt mr-2"></i>
-                  アプリを使う
-                </a>
+                <i class="fas fa-external-link-alt mr-2"></i>
+                アプリを使う
+              </a>
                 <a
                   href="https://note.com/gumigumih/n/n8736a45fcd1e"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
                 >
-                  <i class="fas fa-book-open mr-2"></i>
-                  紹介記事
-                </a>
-              </div>
+                <i class="fas fa-book-open mr-2"></i>
+                紹介記事
+              </a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="max-w-5xl mx-auto px-4">
-        <!-- 概要セクション -->
-        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
-          <div class="prose prose-lg max-w-none">
-            <p class="text-slate-600 leading-relaxed mb-4">
+    <div class="max-w-5xl mx-auto px-4">
+      <!-- 概要セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 leading-relaxed mb-4">
               例えば「ガソリン代はこの人が払った」「食材はまるまるさんが買ってきてくれた」みたいな、みんなで集まる時の“ちょっと複雑な割り勘”もサクッと計算できるアプリです！
-            </p>
-            <p class="text-slate-600 leading-relaxed mb-4">
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-4">
               直感的な操作で誰でもすぐ使えるシンプル設計。スマホからもサクサク使えて、幹事さんもラクラク！
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
-                <h3 class="font-bold text-slate-800 mb-2">主な機能</h3>
-                <ul class="text-base text-slate-600 space-y-1">
-                  <li>• 参加者の追加・削除</li>
-                  <li>• 支払い項目の登録</li>
-                  <li>• 自動割り勘計算</li>
-                  <li>• 精算結果の表示</li>
-                  <li>• レシート風プリント機能</li>
-                </ul>
-              </div>
-              <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
-                <h3 class="font-bold text-slate-800 mb-2">技術スタック</h3>
-                <ul class="text-base text-slate-600 space-y-1">
-                  <li>• React</li>
-                  <li>• TypeScript</li>
-                  <li>• Tailwind CSS</li>
-                  <li>• Vite</li>
-                  <li>• GitHub Pages (デプロイ)</li>
-                </ul>
-              </div>
+          </p>
+          <!-- スクリーンショットギャラリー -->
+          <div class="flex flex-wrap gap-6 justify-center items-start my-8">
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
+              <img src="../assets/images/warimaru/input-screen.png" alt="入力画面スクリーンショット" loading="lazy" class="rounded-xl" />
+            </div>
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
+              <img src="../assets/images/warimaru/result-screen.png" alt="結果画面スクリーンショット" loading="lazy" class="rounded-xl" />
+            </div>
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
+              <img src="../assets/images/warimaru/result-share-image.png" alt="シェア用画像スクリーンショット" loading="lazy" class="rounded-xl" />
             </div>
           </div>
-        </section>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+              <h3 class="font-bold text-slate-800 mb-2">主な機能</h3>
+              <ul class="text-base text-slate-600 space-y-1">
+                <li>• 参加者の追加・削除</li>
+                <li>• 支払い項目の登録</li>
+                <li>• 自動割り勘計算</li>
+                <li>• 精算結果の表示</li>
+                <li>• レシート風プリント機能</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+              <h3 class="font-bold text-slate-800 mb-2">技術スタック</h3>
+              <ul class="text-base text-slate-600 space-y-1">
+                <li>• React</li>
+                <li>• TypeScript</li>
+                <li>• Tailwind CSS</li>
+                <li>• Vite</li>
+                <li>• GitHub Pages (デプロイ)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <!-- 担当セクション -->
-        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">担当</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-              <i class="fas fa-lightbulb text-3xl text-amber-500 mb-3"></i>
-              <h3 class="font-bold text-slate-800 mb-2">企画・設計</h3>
+      <!-- 担当セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">担当</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-lightbulb text-3xl text-amber-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">企画・設計</h3>
               <p class="text-sm text-slate-600">
                 ユーザー体験の設計<br />機能要件の策定
               </p>
-            </div>
-            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-              <i class="fas fa-palette text-3xl text-blue-500 mb-3"></i>
-              <h3 class="font-bold text-slate-800 mb-2">UI/UXデザイン</h3>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-palette text-3xl text-blue-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">UI/UXデザイン</h3>
               <p class="text-sm text-slate-600">
                 ワイヤーフレーム作成<br />ビジュアルデザイン
               </p>
-            </div>
-            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-              <i class="fas fa-code text-3xl text-green-500 mb-3"></i>
-              <h3 class="font-sm text-slate-800 mb-2">フロントエンド開発</h3>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-code text-3xl text-green-500 mb-3"></i>
+            <h3 class="font-sm text-slate-800 mb-2">フロントエンド開発</h3>
               <p class="text-sm text-slate-600">
                 React実装<br />レスポンシブ対応
               </p>
-            </div>
-            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
-              <i class="fas fa-rocket text-3xl text-purple-500 mb-3"></i>
-              <h3 class="font-bold text-slate-800 mb-2">デプロイ・運用</h3>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-rocket text-3xl text-purple-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">デプロイ・運用</h3>
               <p class="text-sm text-slate-600">
                 GitHub Pagesでの公開<br />パフォーマンス最適化
               </p>
-            </div>
           </div>
-          <div class="mt-6 p-3 md:p-4 bg-blue-50 rounded-lg">
-            <p class="text-slate-700 text-center">
+        </div>
+        <div class="mt-6 p-3 md:p-4 bg-blue-50 rounded-lg">
+          <p class="text-slate-700 text-center">
               <strong>企画・実装プロジェクト</strong
               >として、企画から運用まで全工程を一人で担当しました。
-            </p>
-          </div>
-        </section>
+          </p>
+        </div>
+      </section>
 
-        <!-- 詳細セクション -->
-        <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
-          <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
+      <!-- 詳細セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
+        
+        <!-- 開発背景 -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">開発背景</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            友人との飲み会や旅行で、毎回割り勘計算に時間がかかることに課題を感じていました。
+            既存のアプリは機能が複雑すぎたり、使いづらかったりして、結局電卓で計算することが多い状況でした。
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            「誰でも直感的に使える、シンプルな割り勘アプリ」をコンセプトに開発をスタートしました。
+          </p>
+        </div>
 
-          <!-- 開発背景 -->
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-4">開発背景</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">
-              友人との飲み会や旅行で、毎回割り勘計算に時間がかかることに課題を感じていました。
-              既存のアプリは機能が複雑すぎたり、使いづらかったりして、結局電卓で計算することが多い状況でした。
-            </p>
-            <p class="text-slate-600 leading-relaxed">
-              「誰でも直感的に使える、シンプルな割り勘アプリ」をコンセプトに開発をスタートしました。
-            </p>
-          </div>
-
-          <!-- 技術的な工夫 -->
-          <div class="mb-8">
-            <h3 class="text-2xl font-bold text-slate-800 mb-4">技術的な工夫</h3>
-            <div class="space-y-4">
-              <div class="border-l-4 border-amber-500 pl-3 md:pl-4">
-                <h4 class="font-bold text-slate-800 mb-2">React Hooks</h4>
-                <p class="text-slate-600">
+        <!-- 技術的な工夫 -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">技術的な工夫</h3>
+          <div class="space-y-4">
+            <div class="border-l-4 border-amber-500 pl-3 md:pl-4">
+              <h4 class="font-bold text-slate-800 mb-2">React Hooks</h4>
+              <p class="text-slate-600">
                   React
                   HooksのuseStateとuseEffectを効果的に活用することで、ロジックの再利用性と保守性を向上。
-                  コンポーネントベースの状態管理で、スムーズなユーザー体験を実現しました。
-                </p>
-              </div>
-              <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
+                コンポーネントベースの状態管理で、スムーズなユーザー体験を実現しました。
+              </p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-3 md:pl-4">
                 <h4 class="font-bold text-slate-800 mb-2">
                   レスポンシブデザイン
                 </h4>
-                <p class="text-slate-600">
+              <p class="text-slate-600">
                   Tailwind
                   CSSを活用し、スマートフォンファーストのレスポンシブデザインを実装。
-                  特にタッチ操作での使いやすさを重視しています。
-                </p>
-              </div>
-              <div class="border-l-4 border-green-500 pl-3 md:pl-4">
+                特にタッチ操作での使いやすさを重視しています。
+              </p>
+            </div>
+            <div class="border-l-4 border-green-500 pl-3 md:pl-4">
                 <h4 class="font-bold text-slate-800 mb-2">
                   パフォーマンス最適化
                 </h4>
-                <p class="text-slate-600">
+              <p class="text-slate-600">
                   Viteによる高速な開発環境とビルド最適化。GitHub
                   Pagesでの安定した配信により、
-                  どこからでも快適にアクセスできます。
-                </p>
-              </div>
+                どこからでも快適にアクセスできます。
+              </p>
             </div>
           </div>
+        </div>
 
-          <!-- 関連リンク -->
-          <div class="border-t pt-6">
-            <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
-            <div class="flex flex-wrap gap-4">
+        <!-- 関連リンク -->
+        <div class="border-t pt-6">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
+          <div class="flex flex-wrap gap-4">
               <a
                 href="https://warimaru.meggumi.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
               >
-                <i class="fas fa-external-link-alt mr-2"></i>
-                アプリを使う
-              </a>
+              <i class="fas fa-external-link-alt mr-2"></i>
+              アプリを使う
+            </a>
               <a
                 href="https://note.com/gumigumih/n/n8736a45fcd1e"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                <i class="fas fa-book-open mr-2"></i>
-                紹介記事 (note)
-              </a>
+              <i class="fas fa-book-open mr-2"></i>
+              紹介記事 (note)
+            </a>
               <a
                 href="https://zenn.dev/gumigumih/articles/20250602_warikan-app"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                <i class="fas fa-lightbulb mr-2"></i>
-                設計思想 (Zenn)
-              </a>
+              <i class="fas fa-lightbulb mr-2"></i>
+              設計思想 (Zenn)
+            </a>
               <a
                 href="https://qiita.com/gumigumih/items/0f201d72decb957a6586"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
               >
-                <i class="fas fa-code mr-2"></i>
-                技術Tips (Qiita)
-              </a>
-            </div>
+              <i class="fas fa-code mr-2"></i>
+              技術Tips (Qiita)
+            </a>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <!-- 戻るボタン -->
-        <div class="text-center">
+      <!-- 戻るボタン -->
+      <div class="text-center">
           <a
             href="../#works"
             class="inline-flex items-center px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
           >
-            <i class="fas fa-arrow-left mr-2"></i>
-            実績一覧に戻る
-          </a>
-        </div>
+          <i class="fas fa-arrow-left mr-2"></i>
+          実績一覧に戻る
+        </a>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <site-footer></site-footer>
-  </body>
-</html>
+  <site-footer></site-footer>
+</body>
+</html> 
