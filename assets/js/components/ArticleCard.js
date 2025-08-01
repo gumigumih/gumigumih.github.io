@@ -35,7 +35,7 @@ export default defineComponent({
        target="_blank" 
        rel="noopener noreferrer" 
        class="bg-white rounded-2xl p-8 shadow-lg border-r-4 border-b-4 border-slate-400 hover:shadow-xl hover:border-slate-500 transform transition-all duration-200">
-      <div class="aspect-[16/9] mb-6 overflow-hidden rounded-lg">
+      <div class="aspect-[1200/630] mb-6 overflow-hidden rounded-lg">
         <img :src="article.localImagePath || article.eyecatch" :alt="article.name" class="w-full h-full object-cover" />
       </div>
       <div class="flex items-center gap-2 mb-4">
