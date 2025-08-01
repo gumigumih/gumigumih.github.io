@@ -115,7 +115,7 @@ export default defineComponent({
     }
   },
   template: `
-    <div class="overflow-hidden relative">
+    <div class="relative">
       <div class="swiper-container">
         <div class="swiper-wrapper">
           <div v-for="article in articles" 

@@ -200,7 +200,8 @@ body {
 
 /* Swiper.js カスタマイズ */
 .swiper-container {
-  padding-bottom: 3rem !important;
+  padding: 1rem !important;
+  padding-bottom: 6rem !important;
   overflow: hidden !important;
   position: relative !important;
 }
@@ -208,23 +209,24 @@ body {
 /* ナビゲーションボタンのリセット */
 .swiper-button-next,
 .swiper-button-prev {
+  position: absolute !important;
   top: auto !important;
-  bottom: 20px !important;
+  bottom: 24px !important;
   transform: none !important;
-  /* 必要ならmargin-bottomやtranslateYで微調整 */
 }
 
 .swiper-button-next {
-  right: 16px !important;
+  right: 2rem !important;
 }
 
 .swiper-button-prev {
-  left: 16px !important;
+  left: 2rem !important;
 }
 
 .swiper-slide {
   height: auto !important;
   display: flex !important;
+  padding: 0.5rem !important;
 }
 
 .swiper-button-next,
@@ -232,7 +234,7 @@ body {
   width: 48px !important;
   height: 48px !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
-  border: 1px solid rgba(245, 158, 11, 0.2) !important;
+  border: 3px solid rgba(245, 158, 11, 0.3) !important;
   border-radius: 50% !important;
   transition: all 0.3s ease !important;
   backdrop-filter: blur(10px) !important;
@@ -247,6 +249,7 @@ body {
 .swiper-button-prev:hover {
   background-color: white !important;
   border-color: #f59e0b !important;
+  border-width: 3px !important;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -278,9 +281,11 @@ body {
 }
 
 .swiper-pagination {
-  position: relative !important;
-  margin-top: 2rem !important;
-  bottom: 0 !important;
+  position: absolute !important;
+  bottom: 40px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  margin-top: 0 !important;
 }
 
 .swiper-pagination-bullet {
