@@ -130,7 +130,7 @@ export default defineComponent({
         <div class="swiper-button-prev"></div>
         
         <!-- ページネーション -->
-        <div class="swiper-pagination !bottom-0"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   `
