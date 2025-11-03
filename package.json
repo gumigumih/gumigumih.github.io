@@ -15,7 +15,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "predev": "node scripts/update-articles.js",
     "dev": "astro dev",
+    "prebuild": "node scripts/update-articles.js",
     "build": "astro build",
     "preview": "astro preview",
     "test": "echo \"Error: no test specified\" && exit 1",
