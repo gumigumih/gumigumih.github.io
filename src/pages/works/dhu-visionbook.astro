@@ -1,58 +1,23 @@
+---
+import '../../styles/tailwind.css'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+---
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DHU ビジョンブック - 作品詳細 | meg+gumi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="../assets/js/app.js"></script>
-    <link rel="icon" href="../favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../assets/css/style.css" />
-    <meta
-      property="og:title"
-      content="DHU ビジョンブック - 作品詳細 | meg+gumi"
-    />
-    <meta
-      property="og:description"
-      content="デジタルハリウッド大学「DHUビジョンブック」公式サイトのフロントエンド実装事例。大学のビジョンを伝えるモダンなデザインと高いパフォーマンスを実現しました。"
-    />
-    <meta
-      property="og:image"
-      content="https://meggumi.com/assets/images/dhu-visionbook/ogp.png"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="description"
-      content="デジタルハリウッド大学「DHUビジョンブック」公式サイトのフロントエンド実装事例。大学のビジョンを伝えるモダンなデザインと高いパフォーマンスを実現しました。"
-    />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-TTF0HVQRJ3');
-    </script>
-  </head>
-  <body class="bg-[url(../assets/images/bg-gray.png)] font-sans" id="app">
-    <!-- ヘッダー -->
-    <site-header base-url=".."></site-header>
-
-    <!-- メインコンテンツ -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body class="bg-[url(/assets/images/bg-gray.png)] font-sans">
+  <SiteHeader />
     <main class="pt-24 pb-16">
       <div class="max-w-7xl mx-auto px-4">
         <!-- パンくずリスト -->
@@ -73,7 +38,7 @@
           <div class="flex flex-col lg:flex-row">
             <div class="w-full lg:w-96 aspect-video">
               <img
-                src="../assets/images/dhu-visionbook/ogp.png"
+                src="/assets/images/dhu-visionbook/ogp.png"
                 alt="DHU ビジョンブックのOGP画像"
                 class="w-full h-full object-cover"
               />
@@ -130,16 +95,16 @@
             <!-- ページキャプチャギャラリー -->
             <div class="flex flex-wrap gap-6 justify-center items-start my-8">
               <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
-                <img src="../assets/images/dhu-visionbook/toppage.png" alt="トップページキャプチャ" loading="lazy" class="rounded-xl" />
+                <img src="/assets/images/dhu-visionbook/toppage.png" alt="トップページキャプチャ" loading="lazy" class="rounded-xl" />
               </div>
               <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
-                <img src="../assets/images/dhu-visionbook/vision01.png" alt="VISION 01キャプチャ" loading="lazy" class="rounded-xl" />
+                <img src="/assets/images/dhu-visionbook/vision01.png" alt="VISION 01キャプチャ" loading="lazy" class="rounded-xl" />
               </div>
               <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
-                <img src="../assets/images/dhu-visionbook/vision02.png" alt="VISION 02キャプチャ" loading="lazy" class="rounded-xl" />
+                <img src="/assets/images/dhu-visionbook/vision02.png" alt="VISION 02キャプチャ" loading="lazy" class="rounded-xl" />
               </div>
               <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl shadow-lg">
-                <img src="../assets/images/dhu-visionbook/vision03.png" alt="VISION 03キャプチャ" loading="lazy" class="rounded-xl" />
+                <img src="/assets/images/dhu-visionbook/vision03.png" alt="VISION 03キャプチャ" loading="lazy" class="rounded-xl" />
               </div>
             </div>
           </div>
@@ -310,7 +275,6 @@
         </div>
       </div>
     </main>
-
-    <site-footer></site-footer>
-  </body>
+  <SiteFooter />
+</body>
 </html>

@@ -1,0 +1,16 @@
+---
+import 'swiper/css/bundle'
+import articleListSrc from '../scripts/articleList.ts?url'
+---
+<div class="relative" id="article-list-root">
+  <div class="swiper swiper-container">
+    <div class="swiper-wrapper" id="articles-wrapper">
+      <!-- slides will be injected -->
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script type="module" src={articleListSrc}></script>
