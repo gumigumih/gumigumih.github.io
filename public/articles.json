@@ -2,13 +2,208 @@
   "data": {
     "contents": [
       {
+        "id": 126867535,
+        "name": "【実体験】知らない分野のディレクションを行う3つのコツ",
+        "key": "n19ae2c3330a9",
+        "type": "note",
+        "publishAt": "2025-09-21T11:43:29+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/216834115/rectangle_large_type_2_b1afe9df843a71b2b7913e0da2f7ff54.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "assets/images/articles/note_126867535_1762136321759.jpg",
+        "body": "はじめにこんにちは、ぐみです。\n\n私はこれまで、プロダクトマネージャー、Webエンジニア、UI/UXデザイナー、広報、カスタマーサポート、法務など、ほんとにいろんな役割をやってきました。それに、ディレクターとして制作チームを率いて、これだけ幅広い分野のプロジェクトを管理・監修してきたんですよ（実際に自分で作ったものもたくさんあります！）：\n\nWebサイト制作：コーポレートサイト、LP、ECサイト等\n\nアプリケーション開発：WEBアプリケーション、Unityアプリケーション\n\n",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#キャリア"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#仕事術"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#スキルアップ"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プロジェクトマネジメント"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#PM"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ディレクター"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ディレクション"
+            }
+          }
+        ]
+      },
+      {
+        "id": 125488845,
+        "name": "【npm公開まで8時間】思い立ったらすぐ動く：React電卓入力フォームを作った話",
+        "key": "n5096c1bce553",
+        "type": "note",
+        "publishAt": "2025-09-10T10:57:03+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/214344291/rectangle_large_type_2_7f167fb360be28af4e1ec87409ed8431.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "assets/images/articles/note_125488845_1762136321947.jpg",
+        "body": "こんにちは、個人開発者として活動している ぐみ です。\n\n先日、@gumigumih/react-calculator-input-formという、React用の電卓付き入力フォームプラグインをnpmに公開しました！\n\n今回は、「思い立ったらすぐ動く」を合言葉に、アイデアから実装、公開まで8時間で完了させた開発プロセスと、その中で得た学びについて書いてみますね。\n\n実は、私は過去に「やり始めるのに時間がかかる」「完璧を求めて結局放置してしまう」という経験が多くありました。今回",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#感想"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#個人開発"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プラグイン"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#react"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#TypeScript"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#npm"
+            }
+          }
+        ]
+      },
+      {
+        "id": 123890760,
+        "name": "自社プロダクト立ち上げ。プロダクトデリバリーの全体像の学びと反省　【プロダクト開発ジェネラリストの軌跡 第6回】",
+        "key": "na44002a60554",
+        "type": "note",
+        "publishAt": "2025-09-02T19:21:36+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/211472493/rectangle_large_type_2_5c6cc2d1a634f82a08af207b59a2bda8.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "assets/images/articles/note_123890760_1762136321987.jpg",
+        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。もう読んだことあるよって人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、大型補助金案件でのプロジェクトマネジメント経験と、品質・コスト・納期の現実についてお話ししました。\n今回は、これまでの経験を活かして自社プロダクトを立ち上げた話を、ゆるっと振り返ってみます。\n\nクライアントワークとは全く違う世界で、プロダクト開発の全体像やPMFの重要性をグッと実感する、かなり大きな学",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#プロダクト開発"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#mvp"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ジェネラリスト"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プロダクトマーケットフィット"
+            }
+          }
+        ]
+      },
+      {
+        "id": 123841465,
+        "name": "補助金大型案件でプロジェクトマネジメントを身につける。品質・コスト・納期の現実　【プロダクト開発ジェネラリストの軌跡 第5回】",
+        "key": "n39f50df5a4f8",
+        "type": "note",
+        "publishAt": "2025-08-29T18:50:48+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/211471374/rectangle_large_type_2_49f596971695408bd631ae927b61abed.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "assets/images/articles/note_123841465_1762136322013.jpg",
+        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、複数職種を並行して担当した時期の経験と、視点切り替えの価値についてお話ししました。\n今回は、5年間にわたって毎年新しい補助金を申請し、文化庁・観光庁の補助金を活用した大型プロジェクトを継続的に運営した経験について振り返ってみたいと思います。\n\nこのプロジェクトで、プロジェクトマネジメン",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#補助金"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プロジェクトマネジメント"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プロダクト開発"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ジェネラリスト"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#進行管理"
+            }
+          }
+        ]
+      },
+      {
+        "id": 123024798,
+        "name": "エンジニア、デザイナー、ディレクターを並行で。複数職種の経験から得た視点切り替えの価値　【プロダクト開発ジェネラリストの軌跡 第4回】",
+        "key": "na61ef68f1b51",
+        "type": "note",
+        "publishAt": "2025-08-21T16:41:53+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/209936444/rectangle_large_type_2_45018d5102f96def7d997bae21647726.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "assets/images/articles/note_123024798_1762136322040.jpg",
+        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、WEBアプリケーション開発を通じて学んだ緊急対応力やスピード開発の成功体験についてお話ししました。\n今回は、SNSキャンペーン制作、AR系プロジェクト、VTuberの現場でのディレクションなど、複数分野を並行してやってた時期の話です。この時期に学んだジェネラリストとしての真価について、",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#働き方"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#スキル"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#プロダクト開発"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ジェネラリスト"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#視点切り替え"
+            }
+          }
+        ]
+      },
+      {
         "id": 120930228,
         "name": "緊急対応からヒットアプリまで。WEBアプリ開発で学んだスピードと改善の大切さ　【プロダクト開発ジェネラリストの軌跡 第3回】",
         "key": "n9554d19370cf",
         "type": "note",
         "publishAt": "2025-08-01T12:57:53+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/205702950/rectangle_large_type_2_145f0db3d3be1670742117c47ec23af8.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_120930228_1754620422572.jpg",
+        "localImagePath": "assets/images/articles/note_120930228_1762136322069.jpg",
         "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、VTuberの現場で技術スタッフとして働いた経験や、未経験の業務に挑戦したエピソードについてお話ししました。\n今回は、WEBアプリケーション開発にも関わるようになった経験について、具体的なプロジェクトを通じて学んだことを振り返ってみたいと思います。\n\nWEBアプリケーション開発への挑戦",
         "hashtags": [
           {
@@ -34,196 +229,6 @@
           {
             "hashtag": {
               "name": "#ヒットアプリ"
-            }
-          }
-        ]
-      },
-      {
-        "id": 119996785,
-        "name": "VTuber番組の技術設営バイトから正社員へ。ロケ弁が楽しみだった濃密な現場の日々　【プロダクト開発ジェネラリストの軌跡 第2回】",
-        "key": "n1627cabe2be6",
-        "type": "note",
-        "publishAt": "2025-07-23T10:56:29+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/205702904/rectangle_large_type_2_3e0a82f4d175d50dcec8c07387e88b8f.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_119996785_1754620422961.jpg",
-        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は私がWEBエンジニアとしてキャリアをスタートした経緯と、VR/ARの世界との出会いまでをお話ししました。\n\n今回は、VTuberのTV番組での技術設営スタッフとしての経験と、\nそこから正社員としてのキャリアをスタートするまでの道のりを詳しく振り返ってみたいと思います。\n\nVTuber番組",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#Vtuber"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#映像制作"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロダクト開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ジェネラリスト"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#現場経験"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#技術裏方"
-            }
-          }
-        ]
-      },
-      {
-        "id": 116597229,
-        "name": "「お仕事くださーい」のうちわでアピールした大学生時代。WEB制作会社での3年間　【プロダクト開発ジェネラリストの軌跡 第1回】",
-        "key": "n0469e879904a",
-        "type": "note",
-        "publishAt": "2025-06-21T14:09:32+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/205702827/rectangle_large_type_2_b85927e4a6d7ee232ab1a62565b169b2.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_116597229_1754620423180.jpg",
-        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\n\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回の第0回プロローグでは、私が「プロダクト開発のジェネラリスト」らしいということをAIに言われたという話でした！\n\n今回は私がWEBエンジニアとしてキャリアをスタートした経緯と、\nAR/VRの世界との出会いまでを詳しく振り返ってみたいと思います。\n\n中学〜大学：WEBとの出会いと学習PCメ",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#キャリア"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#web制作"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#学生時代"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロダクト開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ジェネラリスト"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#バイト経験"
-            }
-          }
-        ]
-      },
-      {
-        "id": 115425186,
-        "name": "退職を機に振り返る。気づいたら何でも屋になっていたエンジニアの軌跡　【プロダクト開発ジェネラリストの軌跡 第0回】",
-        "key": "nce988ef9dfd9",
-        "type": "note",
-        "publishAt": "2025-06-21T14:06:07+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/205702687/rectangle_large_type_2_202d61ba1e7a8765047e26ba035d0f18.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_115425186_1754620423377.jpg",
-        "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\nえ？プロダクト開発ジェネラリストって何かって？\n\n私も良くわかりません。\n今までやってきた経験と分野をAIに食べさせたら「プロダクト開発のジェネラリスト」って言われたんですもん。\n文句があればChatGPTにお願いします。\n\n今回はどんな記事なの？\n\n私は今まで自社プロダクトの（実質）プロダクトマネージャーや受託開発の",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#キャリア"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#エンジニア"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#退職"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#振り返り"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロダクト開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ジェネラリスト"
-            }
-          }
-        ]
-      },
-      {
-        "id": 114744267,
-        "name": "【無料】割り勘計算 WEB サイト「わりまる」で、みんなで楽しむ行事の支払いをスマートに！",
-        "key": "n8736a45fcd1e",
-        "type": "note",
-        "publishAt": "2025-06-02T20:03:09+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/193733017/rectangle_large_type_2_d341971b4b47c73852ee96910a71f7fc.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_114744267_1754620423575.jpg",
-        "body": "こんにちは、ぐみと申します。花見やタコパなど、持ち寄りパーティーをよく主催する中で、支払い計算の煩わしさを感じていました。特に、複数人が支払った場合の精算計算が面倒で、楽しい会話の途中で計算に時間を取られてしまうことが多かったんです。\n\n今回は、そんな経験から生まれた割り勘計算 WEB サイト「わりまる」をご紹介します。\n\n「わりまる」という名前には、2 つの意味が込められています。 「わり」は「割り勘」から、「まる」は「支払いが丸く収まる」という願いから名付けました。 みん",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#プロダクト"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#個人開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#便利ツール"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#Webアプリ"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#UI・UX"
-            }
-          }
-        ]
-      },
-      {
-        "id": 114206550,
-        "name": "【保存版】プロジェクト進行に必要な資料の作り方ガイド：ディレクター初心者向け完全マニュアル（7/1更新）",
-        "key": "n1b7bde552e30",
-        "type": "note",
-        "publishAt": "2025-05-28T14:37:51+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/192646045/rectangle_large_type_2_4a1aec0b466cac7a96d0f94ea19f8952.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "assets/images/articles/note_114206550_1754620423773.jpg",
-        "body": "こんにちは、ディレクターとしてプロジェクトを進行している ぐみ です。\n\n私がマネジメントを始めた頃、こんな疑問で頭がいっぱいでした。\n\n特に初めてのプロジェクトでは、必要な資料の種類がわからず、ネットで調べては「こういうのが必要なのかな？」と手探りで片っ端から作ってみていました。 また、クライアントから「この資料はいつ提出できるの？」と聞かれて初めて、必要な資料の存在を知ることもありました。\n\nこの記事では、私がマネジメント初心者の頃に知りたかった「プロジェクト進行に必要な",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#プロジェクト"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロジェクトマネジメント"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#資料"
             }
           }
         ]
