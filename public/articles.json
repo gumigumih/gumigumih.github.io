@@ -8,7 +8,7 @@
         "type": "note",
         "publishAt": "2025-11-15T11:37:12+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/228556958/rectangle_large_type_2_1b41f7507602c80d1aaef4ec985c2645.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_133767208_1763691223736.jpg",
+        "localImagePath": "/assets/images/articles/note_133767208_1763777042866.jpg",
         "body": "忙しいのに、なぜかアイデアだけは生まれる——AIを仕事で使い始めてから、私はそんな不思議な感覚に何度も出会っています。\n\n作業量は減ったのに、判断の回数はむしろ増える。\n\nそれでもAIが処理している数十秒だけは、思考が整うゴールドタイムなんだと気づきました。今日は、その感覚を言葉にしてみます。\n\n忙しさの中で訪れる静かな時間AIはコードも文章も一瞬で用意してくれるのに、その出力を選び、設計を決めるのはいつも私の役目です。\n\nどの案を採用するか、これでいいのか——考えることは減",
         "hashtags": [
           {
@@ -35,7 +35,7 @@
         "type": "note",
         "publishAt": "2025-11-06T11:03:16+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/227397470/rectangle_large_type_2_b229462ab8bb78d29ce0c71b30d612e4.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_133117012_1763691223836.jpg",
+        "localImagePath": "/assets/images/articles/note_133117012_1763777042917.jpg",
         "body": "こんにちは、テクニカルPMのぐみです。\n\nこのnoteは、専任ではないエンジニアが生成AIを頼りに実装を進めていたプロジェクトに、リリース前の品質立て直し担当として入ったときのヒアリングメモをベースにしています。現場固有の事情をそぎ落とし、どのプロジェクトでも使える観点だけを残しました。\n\nそんな違和感を覚えたとき、私は体制を4つのレイヤーに分けて棚卸しします。この記事では、そのチェックポイントと整え方のヒントをまとめました。\n\n4レイヤーで体制を棚卸しする開発体制を俯瞰する",
         "hashtags": [
           {
@@ -62,7 +62,7 @@
         "type": "note",
         "publishAt": "2025-09-21T11:43:29+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/216834115/rectangle_large_type_2_b1afe9df843a71b2b7913e0da2f7ff54.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_126867535_1763691223850.jpg",
+        "localImagePath": "/assets/images/articles/note_126867535_1763777042924.jpg",
         "body": "はじめにこんにちは、ぐみです。\n\n私はこれまで、プロダクトマネージャー、Webエンジニア、UI/UXデザイナー、広報、カスタマーサポート、法務など、ほんとにいろんな役割をやってきました。それに、ディレクターとして制作チームを率いて、これだけ幅広い分野のプロジェクトを管理・監修してきたんですよ（実際に自分で作ったものもたくさんあります！）：\n\nWebサイト制作：コーポレートサイト、LP、ECサイト等\n\nアプリケーション開発：WEBアプリケーション、Unityアプリケーション\n\n",
         "hashtags": [
           {
@@ -109,7 +109,7 @@
         "type": "note",
         "publishAt": "2025-09-10T10:57:03+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/214344291/rectangle_large_type_2_7f167fb360be28af4e1ec87409ed8431.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_125488845_1763691223864.jpg",
+        "localImagePath": "/assets/images/articles/note_125488845_1763777042931.jpg",
         "body": "こんにちは、個人開発者として活動している ぐみ です。\n\n先日、@gumigumih/react-calculator-input-formという、React用の電卓付き入力フォームプラグインをnpmに公開しました！\n\n今回は、「思い立ったらすぐ動く」を合言葉に、アイデアから実装、公開まで8時間で完了させた開発プロセスと、その中で得た学びについて書いてみますね。\n\n実は、私は過去に「やり始めるのに時間がかかる」「完璧を求めて結局放置してしまう」という経験が多くありました。今回",
         "hashtags": [
           {
@@ -151,7 +151,7 @@
         "type": "note",
         "publishAt": "2025-09-02T19:21:36+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/227396154/rectangle_large_type_2_6b6dda38b5568f3054faf9ab1c475f1d.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_123890760_1763691223879.jpg",
+        "localImagePath": "/assets/images/articles/note_123890760_1763777042940.jpg",
         "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。もう読んだことあるよって人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、大型補助金案件でのプロジェクトマネジメント経験と、品質・コスト・納期の現実についてお話ししました。\n今回は、これまでの経験を活かして自社プロダクトを立ち上げた話を、ゆるっと振り返ってみます。\n\nクライアントワークとは全く違う世界で、プロダクト開発の全体像やPMFの重要性をグッと実感する、かなり大きな学",
         "hashtags": [
           {
@@ -183,7 +183,7 @@
         "type": "note",
         "publishAt": "2025-08-29T18:50:48+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/227282909/rectangle_large_type_2_d04b95017961341a28b2fa4367b349f1.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_123841465_1763691223898.jpg",
+        "localImagePath": "/assets/images/articles/note_123841465_1763777042947.jpg",
         "body": "はじめにあなたは誰ですか？\n\n初めましての人は初めまして。すでに私の記事を見ていただいたことがある人はこんにちは。\nプロダクト開発ジェネラリストのぐみです。\n\n今回はどんな記事なの？\n\n前回は、複数職種を並行して担当した時期の経験と、視点切り替えの価値についてお話ししました。\n今回は、5年間にわたって毎年新しい補助金を申請し、文化庁・観光庁の補助金を活用した大型プロジェクトを継続的に運営した経験について振り返ってみたいと思います。\n\nこのプロジェクトで、プロジェクトマネジメン",
         "hashtags": [
           {
