@@ -8,32 +8,60 @@ const { baseUrl = '' } = Astro.props as Props
   <div class="max-w-7xl mx-auto px-4">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
-        <a href={`${baseUrl}/`} class="text-xl font-bold text-slate-800 font-raleway">meg+gumi</a>
+        <a href={`${baseUrl}/`} class="flex items-center h-10 p-2">
+          <img src="/assets/images/logo_black.svg" alt="meg+gumi" class="h-full w-auto" loading="lazy" decoding="async" />
+        </a>
       </div>
       <nav class="hidden md:flex space-x-8">
-        <a href={`${baseUrl}/#top`} class="text-slate-600 hover:text-amber-500 transition-colors">HOME</a>
-        <a href={`${baseUrl}/#services`} class="text-slate-600 hover:text-amber-500 transition-colors">SERVICES</a>
-        <a href={`${baseUrl}/#team`} class="text-slate-600 hover:text-amber-500 transition-colors">TEAM</a>
-        <a href={`${baseUrl}/#about`} class="text-slate-600 hover:text-amber-500 transition-colors">ABOUT</a>
-        <a href={`${baseUrl}/#works`} class="text-slate-600 hover:text-amber-500 transition-colors">WORKS</a>
-        <a href={`${baseUrl}/#media`} class="text-slate-600 hover:text-amber-500 transition-colors">MEDIA</a>
-        <a href={`${baseUrl}/#faq`} class="text-slate-600 hover:text-amber-500 transition-colors">FAQ</a>
-        <a href={`${baseUrl}/#contact`} class="text-slate-600 hover:text-amber-500 transition-colors">CONTACT</a>
+        <a href={`${baseUrl}/#top`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          HOME
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#intro`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          INTRO
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#experience`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          EXPERIENCE
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#philosophy`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          PHILOSOPHY
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#stance`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          STANCE
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#logs`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          LOGS
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
+        <a href={`${baseUrl}/#contact`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          CONTACT
+          <span
+            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+        </a>
       </nav>
       <button class="md:hidden" id="mobile-menu-toggle">
-        <i class="fas fa-bars text-slate-600 transition-transform duration-300" id="mobile-menu-icon"></i>
+        <i class="fas fa-bars text-slate-500 transition-transform duration-300" id="mobile-menu-icon"></i>
       </button>
     </div>
     <div class="hidden md:hidden py-4 border-t border-slate-200 relative z-60" id="mobile-menu">
       <nav class="flex flex-col space-y-4">
-        <a href={`${baseUrl}/#top`} class="text-slate-600 hover:text-amber-500 transition-colors">HOME</a>
-        <a href={`${baseUrl}/#services`} class="text-slate-600 hover:text-amber-500 transition-colors">SERVICES</a>
-        <a href={`${baseUrl}/#team`} class="text-slate-600 hover:text-amber-500 transition-colors">TEAM</a>
-        <a href={`${baseUrl}/#about`} class="text-slate-600 hover:text-amber-500 transition-colors">ABOUT</a>
-        <a href={`${baseUrl}/#works`} class="text-slate-600 hover:text-amber-500 transition-colors">WORKS</a>
-        <a href={`${baseUrl}/#media`} class="text-slate-600 hover:text-amber-500 transition-colors">MEDIA</a>
-        <a href={`${baseUrl}/#faq`} class="text-slate-600 hover:text-amber-500 transition-colors">FAQ</a>
-        <a href={`${baseUrl}/#contact`} class="text-slate-600 hover:text-amber-500 transition-colors">CONTACT</a>
+        <a href={`${baseUrl}/#top`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">HOME</a>
+        <a href={`${baseUrl}/#intro`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">INTRO</a>
+        <a href={`${baseUrl}/#experience`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">EXPERIENCE</a>
+        <a href={`${baseUrl}/#philosophy`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">PHILOSOPHY</a>
+        <a href={`${baseUrl}/#stance`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">STANCE</a>
+        <a href={`${baseUrl}/#logs`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">LOGS</a>
+        <a href={`${baseUrl}/#contact`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">CONTACT</a>
       </nav>
     </div>
   </div>
@@ -51,12 +79,12 @@ const { baseUrl = '' } = Astro.props as Props
     if (open) {
       menu.classList.remove('hidden')
       overlay.classList.remove('hidden')
-      icon.className = 'fas fa-times text-slate-600 transition-transform duration-300'
+      icon.className = 'fas fa-times text-slate-500 transition-transform duration-300'
       document.body.style.overflow = 'hidden'
     } else {
       menu.classList.add('hidden')
       overlay.classList.add('hidden')
-      icon.className = 'fas fa-bars text-slate-600 transition-transform duration-300'
+      icon.className = 'fas fa-bars text-slate-500 transition-transform duration-300'
       document.body.style.overflow = ''
     }
   }
@@ -64,4 +92,3 @@ const { baseUrl = '' } = Astro.props as Props
   overlay?.addEventListener('click', () => setOpen(false))
   menu?.querySelectorAll('a')?.forEach(a => a.addEventListener('click', () => setOpen(false)))
 </script>
-

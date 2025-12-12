@@ -1,0 +1,20 @@
+---
+import ArticleList from './ArticleList.astro'
+---
+
+<section class="relative z-10 py-20 px-4 md:px-8 bg-white" id="logs">
+  <div class="max-w-5xl mx-auto space-y-4">
+    <div class="flex items-center gap-3">
+      <span class="h-0.5 w-10 bg-amber-500"></span>
+      <span class="uppercase tracking-[0.25em] text-xs text-slate-500">logs</span>
+    </div>
+    <h2 class="text-2xl md:text-3xl font-black leading-tight">記事・活動ログ</h2>
+
+    <div class="max-w-4xl mx-auto py-10">
+      <p class="text-base md:text-lg text-slate-600 max-w-3xl">
+        書き残したメモや活動ログ。考えていることや試したことの記録です。
+      </p>
+    </div>
+    <ArticleList />
+  </div>
+</section>

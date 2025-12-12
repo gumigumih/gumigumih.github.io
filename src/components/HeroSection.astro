@@ -1,0 +1,30 @@
+---
+import WaveAnimation from './WaveAnimation.astro'
+---
+
+<section class="min-h-screen flex items-center justify-center px-4 relative overflow-hidden" id="top">
+  <div class="absolute inset-0"></div>
+  <WaveAnimation />
+  <div class="text-center relative z-10">
+    <h1 class="text-7xl font-bold mb-6 font-raleway tracking-wide bg-clip-text text-transparent">
+      <img src="/assets/images/logo_black.svg" alt="meg+gumi" />
+    </h1>
+    <p class="text-2xl text-slate-600 tracking-wide relative inline-block group">
+      エンタメ界隈のテクニカルPM
+      <span class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+    </p>
+    <div class="flex justify-center items-center mt-10">
+      <a href="#contact"
+        class="inline-flex items-center gap-2 rounded-full border-2 border-slate-400 hover:border-slate-500 text-slate-500 px-4 py-2 text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition">
+        CONTACT
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-400 flex flex-col items-center">
+    <div class="w-8 h-12 border-2 border-slate-400 rounded-full flex justify-center relative animate-bounce">
+      <div class="w-1 h-3 bg-slate-400 rounded-full absolute top-2 animate-bounce"></div>
+    </div>
+    <span class="text-sm tracking-wider font-raleway mt-4">SCROLL</span>
+  </div>
+</section>

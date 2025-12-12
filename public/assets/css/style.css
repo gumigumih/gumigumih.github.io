@@ -200,7 +200,7 @@ body {
 
 /* Swiper.js カスタマイズ */
 .swiper-container {
-  padding: 1rem !important;
+  /* padding: 1rem !important; */
   padding-bottom: 6rem !important;
   overflow: hidden !important;
   position: relative !important;
@@ -215,14 +215,6 @@ body {
   transform: none !important;
 }
 
-.swiper-button-next {
-  right: 2rem !important;
-}
-
-.swiper-button-prev {
-  left: 2rem !important;
-}
-
 .swiper-slide {
   height: auto !important;
   display: flex !important;
@@ -233,31 +225,18 @@ body {
 .swiper-button-prev {
   width: 48px !important;
   height: 48px !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border: 3px solid rgba(245, 158, 11, 0.3) !important;
-  border-radius: 50% !important;
   transition: all 0.3s ease !important;
-  backdrop-filter: blur(10px) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   z-index: 10 !important;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: white !important;
-  border-color: #f59e0b !important;
-  border-width: 3px !important;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-}
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 18px !important;
   font-weight: bold !important;
-  color: #f59e0b !important;
+  color: rgb(100 116 139) !important;
   font-family: "Font Awesome 6 Free" !important;
 }
 
@@ -267,17 +246,6 @@ body {
 
 .swiper-button-prev::after {
   content: "\f053" !important;
-}
-
-.swiper-button-disabled {
-  opacity: 0.3 !important;
-  cursor: not-allowed !important;
-}
-
-.swiper-button-disabled:hover {
-  transform: none !important;
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-color: rgba(245, 158, 11, 0.2) !important;
 }
 
 .swiper-pagination {
@@ -298,11 +266,11 @@ body {
 }
 
 .swiper-pagination-bullet-active {
-  background: #f59e0b !important;
+  background: rgb(100 116 139) !important;
 }
 
 .swiper-pagination-bullet:hover {
-  background: #f59e0b !important;
+  background: rgb(100 116 139) !important;
 }
 
 /* レスポンシブ対応 */
