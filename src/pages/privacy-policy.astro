@@ -10,16 +10,21 @@ import SiteFooter from '../components/SiteFooter.astro'
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>プライバシーポリシー | meg+gumi</title>
   <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-[url(/assets/images/bg-gray.png)] font-sans">
+<body class="bg-[url(/assets/images/bg-white.png)] font-sans">
   <SiteHeader />
-  <main class="pt-24 pb-16">
+  <main class="pt-32 pb-16">
     <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-4xl font-bold text-center text-slate-800 mb-16 font-raleway tracking-wide section-title">プライバシーポリシー</h1>
+      <div class="text-center mb-16 relative">
+        <div class="text-6xl md:text-8xl font-bold tracking-wider text-slate-200 absolute inset-0 flex items-center justify-center"
+          style="font-family: 'Montserrat', sans-serif;">PRIVACY POLICY</div>
+        <h1 class="text-4xl font-bold text-slate-800 relative z-10"
+          style="font-family: 'M PLUS Rounded 1c', sans-serif;">プライバシーポリシー</h1>
+      </div>
+
       <div class="bg-white rounded-2xl p-10 mb-8">
         <h2 class="text-2xl font-bold text-slate-800 mb-6 font-raleway">1. 個人情報の収集について</h2>
         <p class="text-slate-600 leading-relaxed text-lg mb-8">当サイトでは、Google AdSenseなどの第三者配信の広告サービスを利用しています。これらの第三者配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報を使用することがあります。</p>
@@ -42,3 +47,22 @@ import SiteFooter from '../components/SiteFooter.astro'
   <SiteFooter />
 </body>
 </html>
+
+<style>
+  .section-title {
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #f59e0b;
+    border-radius: 2px;
+  }
+</style>

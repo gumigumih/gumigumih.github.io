@@ -1,48 +1,47 @@
-# このリポジトリのエージェントガイド
+# こ�EリポジトリのエージェントガイチE
 
-スコープ: リポジトリのルート。サブディレクトリに、より具体的な AGENTS.md が存在する場合を除き、すべてのファイルに適用します。
+スコーチE リポジトリのルート。サブディレクトリに、より�E体的な AGENTS.md が存在する場合を除き、すべてのファイルに適用します、E
 
-## プロジェクト概要
-- 静的サイトは Astro + Tailwind CSS に移行済み。
-- Vue（CDN）は削除済み。必要に応じて Astro コンポーネントと軽量なクライアントスクリプトを優先。
-- Swiper は CDN ではなく npm（バンドル）で使用。
+## プロジェクト概要E
+- 静的サイト�E Astro + Tailwind CSS に移行済み、E
+- Vue�E�EDN�E��E削除済み。忁E��に応じて Astro コンポ�Eネントと軽量なクライアントスクリプトを優先、E
+- Swiper は CDN ではなぁEnpm�E�バンドル�E�で使用、E
 
-## 規約
-- 変更は最小限・目的集中で、既存のコードスタイルと一貫性を保つ。
-- ESM インポートを優先。Astro ファイルからクライアントコードを外部の `<script type="module" src={...}>` として読み込む場合、`?url` でモジュール URL を解決する。
-- 実行時パスは絶対パス `/assets/...` を優先し、フェッチ時は `import.meta.env.BASE_URL` を尊重する（例: `articles.json`）。
-- ページは `src/pages`、共有 UI は `src/components` に配置。
-- 明示的な要望がない限り Vue を再導入しない。
+## 規紁E
+- 変更は最小限・目皁E��中で、既存�Eコードスタイルと一貫性を保つ、E
+- ESM インポ�Eトを優先、Estro ファイルからクライアントコードを外部の `<script type="module" src={...}>` として読み込む場合、`?url` でモジュール URL を解決する、E
+- 実行時パスは絶対パス `/assets/...` を優先し、フェチE��時�E `import.meta.env.BASE_URL` を尊重する�E�侁E `articles.json`�E�、E
+- ペ�Eジは `src/pages`、�E朁EUI は `src/components` に配置、E
+- 明示皁E��要望がなぁE��めEVue を�E導�EしなぁE��E
 
 ## スタイリング
-- Tailwind は `@astrojs/tailwind` により統合。
-- グローバル Tailwind エントリ: `src/styles/tailwind.css`。
-- リファクタリングの要望がない限り、既存のカスタム CSS は `public/assets/css/style.css` に保持。
+- Tailwind は `@astrojs/tailwind` により統合、E
+- グローバル Tailwind エントリ: `src/styles/tailwind.css`、E
+- �x�[�X�ƂȂ鋤�ʃX�^�C���� `src/styles/tailwind.css` �� `@layer base` �ŊǗ����A�y�[�W�ŗL�̃J�X�^���X�^�C���͊e `.astro` ���� `<style>` �ŃX�R�[�v����B
 
 ## クライアントスクリプト
-- クライアントモジュールは `src/scripts/` 配下に置き、外部 `<script>` ソースとして使用する場合は `.astro` から `?url` でインポートする。
-- 例: `import articleListSrc from '../scripts/articleList.ts?url'` の後、`<script type="module" src={articleListSrc}></script>`。
-- Swiper のようなライブラリ: Astro コンポーネント内で `import 'swiper/css/bundle'`、クライアントモジュール内で `import Swiper from 'swiper/bundle'`。
+- クライアントモジュールは `src/scripts/` 配下に置き、外部 `<script>` ソースとして使用する場合�E `.astro` から `?url` でインポ�Eトする、E
+- 侁E `import articleListSrc from '../scripts/articleList.ts?url'` の後、`<script type="module" src={articleListSrc}></script>`、E
+- Swiper のようなライブラリ: Astro コンポ�Eネント�Eで `import 'swiper/css/bundle'`、クライアントモジュール冁E�� `import Swiper from 'swiper/bundle'`、E
 
-## データとアセット
-- 静的アセット（画像、CSS、JSON、CNAME、サイトマップ）は `public/` 配下に配置。
-- 記事データ: `public/articles.json`。クライアントでフェッチする場合は `BASE_URL` を用いて URL を組み立てる。
+## チE�EタとアセチE��
+- 静的アセチE���E�画像、CSS、JSON、CNAME、サイト�EチE�E�E��E `public/` 配下に配置、E
+- 記事データ: `public/articles.json`。クライアントでフェチE��する場合�E `BASE_URL` を用ぁE�� URL を絁E��立てる、E
 
-## リンクとルーティング
-- 新規ページは拡張子なしのルート（例: `/works/warimaru`）を使用し、`.html` は使用しない。
-- これに合わせて内部リンクを更新する。
+## リンクとルーチE��ング
+- 新規�Eージは拡張子なし�Eルート（侁E `/works/warimaru`�E�を使用し、`.html` は使用しなぁE��E
+- これに合わせて冁E��リンクを更新する、E
 
-## コミットメッセージ
-- 説明的かつスコープ付きにする（例: `feat(astro): ...`, `fix(works): ...`）。
-- チャットでコミットメッセージを求められた場合は、コピー/ペーストしやすいよう三重バッククォートのコードブロックで返答する。
+## コミットメチE��ージ
+- 説明的かつスコープ付きにする�E�侁E `feat(astro): ...`, `fix(works): ...`�E�、E- コミットメチE��ージは日本語で記述し、本斁E��は変更冁E��めE��景を簡潔にまとめる、E- チャチE��でコミットメチE��ージを求められた場合�E、コピ�E/ペ�EストしめE��ぁE��ぁE��重バッククォート�EコードブロチE��で返答する、E
 
-## 実行とビルド
+## 実行とビルチE
 - 開発: `npm run dev`
-- ビルド: `npm run build`（出力先 `dist/`）
+- ビルチE `npm run build`�E��E力�E `dist/`�E�E
 - プレビュー: `npm run preview`
 
 ## Do / Don’t
-- Do: クライアントフレームワークより Astro コンポーネントを優先し、DOM を操作するスクリプトは最小限に保つ。
-- Do: アセットパスを `/assets/...` に正規化し、フェッチ時は `BASE_URL` を確認する。
-- Don’t: ヘッダー/フッターを重複させない。`SiteHeader` と `SiteFooter` を再利用する。
-- Don’t: 明示的な要望がない限り、新しいグローバル CDN を追加しない。
+- Do: クライアントフレームワークより Astro コンポ�Eネントを優先し、DOM を操作するスクリプトは最小限に保つ、E
+- Do: アセチE��パスめE`/assets/...` に正規化し、フェチE��時�E `BASE_URL` を確認する、E
+- Don’t: ヘッダー/フッターを重褁E��せなぁE��`SiteHeader` と `SiteFooter` を�E利用する、E
+- Don’t: 明示皁E��要望がなぁE��り、新しいグローバル CDN を追加しなぁE��E
