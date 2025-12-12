@@ -3,9 +3,18 @@ const year = new Date().getFullYear()
 ---
 <footer class="py-10 text-center bg-white/90 border-t border-slate-200 text-slate-500">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="mb-6">
-      <a href="/privacy-policy" class="text-slate-500 hover:text-amber-500 mx-4 transition-colors text-sm">プライバシーポリシー</a>
-      <a href="/terms" class="text-slate-500 hover:text-amber-500 mx-4 transition-colors text-sm">利用規約</a>
+    <div class="mb-6 space-x-4">
+      <a href="/privacy-policy" class="text-sm text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+        プライバシーポリシー
+        <span
+          class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+      </a>
+
+      <a href="/terms" class="text-sm text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+        利用規約
+        <span
+          class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+      </a>
     </div>
     <p class="text-sm">© {year} meg+gumi</p>
   </div>

@@ -7,8 +7,8 @@ import articleListSrc from '../scripts/articleList.ts?url'
     <div class="swiper-wrapper" id="articles-wrapper">
       <!-- slides will be injected -->
     </div>
-    <div class="swiper-button-next border-2 border-slate-400 hover:shadow-md hover:border-slate-500"></div>
-    <div class="swiper-button-prev border-2 border-slate-400 hover:shadow-md hover:border-slate-500"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
   </div>
 </div>
@@ -17,7 +17,6 @@ import articleListSrc from '../scripts/articleList.ts?url'
 
 <style>
   :global(.swiper-container) {
-    padding: 1rem !important;
     padding-bottom: 6rem !important;
     overflow: hidden !important;
     position: relative !important;
@@ -31,24 +30,16 @@ import articleListSrc from '../scripts/articleList.ts?url'
     transform: none !important;
     width: 48px !important;
     height: 48px !important;
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border: 3px solid rgba(245, 158, 11, 0.3) !important;
-    border-radius: 50% !important;
-    transition: all 0.3s ease !important;
-    backdrop-filter: blur(10px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     z-index: 10 !important;
+    color: rgb(148 163 184) !important;
   }
 
-  :global(.swiper-button-next) {
-    right: 2rem !important;
-  }
-
-  :global(.swiper-button-prev) {
-    left: 2rem !important;
+  :global(.swiper-button-next:hover),
+  :global(.swiper-button-prev:hover) {
+    color: rgb(100 116 139) !important;
   }
 
   :global(.swiper-slide) {
@@ -57,19 +48,10 @@ import articleListSrc from '../scripts/articleList.ts?url'
     padding: 0.5rem !important;
   }
 
-  :global(.swiper-button-next:hover),
-  :global(.swiper-button-prev:hover) {
-    background-color: #fff !important;
-    border-color: #f59e0b !important;
-    border-width: 3px !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2) !important;
-  }
-
   :global(.swiper-button-next::after),
   :global(.swiper-button-prev::after) {
     font-size: 18px !important;
     font-weight: bold !important;
-    color: #f59e0b !important;
     font-family: "Font Awesome 6 Free" !important;
   }
 
@@ -79,17 +61,6 @@ import articleListSrc from '../scripts/articleList.ts?url'
 
   :global(.swiper-button-prev::after) {
     content: "\f053" !important;
-  }
-
-  :global(.swiper-button-disabled) {
-    opacity: 0.3 !important;
-    cursor: not-allowed !important;
-  }
-
-  :global(.swiper-button-disabled:hover) {
-    transform: none !important;
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border-color: rgba(245, 158, 11, 0.2) !important;
   }
 
   :global(.swiper-pagination) {
@@ -103,7 +74,7 @@ import articleListSrc from '../scripts/articleList.ts?url'
   :global(.swiper-pagination-bullet) {
     width: 12px !important;
     height: 12px !important;
-    background: #cbd5e1 !important;
+    background: rgb(148 163 184) !important;
     opacity: 1 !important;
     transition: all 0.3s ease !important;
     margin: 0 4px !important;
@@ -111,7 +82,7 @@ import articleListSrc from '../scripts/articleList.ts?url'
 
   :global(.swiper-pagination-bullet-active),
   :global(.swiper-pagination-bullet:hover) {
-    background: #f59e0b !important;
+    background: rgb(100 116 139) !important;
   }
 
   @media (max-width: 768px) {
