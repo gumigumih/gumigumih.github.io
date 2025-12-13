@@ -3,7 +3,19 @@ import 'swiper/css/bundle'
 import articlesData from '../../public/articles.json' assert { type: 'json' }
 
 const articles = (articlesData as any)?.data?.contents ?? []
-const formatDate = (s: string) => new Date(s).toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' })
+const formatDate = (s: string) => {
+  const d = new Date(s)
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate() + 1).padStart(2, '0')
+  return `${yyyy}.${mm}.${dd}`
+}
+const typeMeta: Record<string, { label: string; pillClass: string }> = {
+  note: { label: 'Note', pillClass: 'bg-amber-300 text-slate-900' },
+  qiita: { label: 'Qiita', pillClass: 'bg-emerald-300 text-slate-900' },
+  zenn: { label: 'Zenn', pillClass: 'bg-blue-200 text-slate-900' },
+  default: { label: 'Article', pillClass: 'bg-slate-200 text-slate-900' },
+}
 const getArticleUrl = (a: any) => {
   switch (a.type) {
     case 'note': return `https://note.com/gumigumih/n/${a.key}`
@@ -19,25 +31,48 @@ const getArticleUrl = (a: any) => {
       {articles.map((a: any) => {
         const img = a.localImagePath || a.eyecatch
         const tags = (a.hashtags || []) as any[]
+        const meta = typeMeta[a.type] ?? typeMeta.default
         return (
           <div class="swiper-slide">
-            <a href={getArticleUrl(a)} target="_blank" rel="noopener noreferrer" class="bg-white border-2 border-slate-400 hover:-translate-y-0.5 hover:shadow-lg hover:border-slate-500 transform transition-all duration-200 block">
-              <div class="aspect-[1200/630] overflow-hidden">
-                <img src={img} alt={a.name} class="w-full h-full object-cover" loading="lazy" decoding="async" />
-              </div>
-              <div class="p-4 space-y-4">
-                <div class="flex items-center gap-2">
-                  <h3 class="text-lg font-bold text-slate-800 font-raleway line-clamp-2" title={a.name}>{a.name}</h3>
-                </div>
-                <div class="flex gap-2 px-1">
-                  <span class="fa-solid fa-tag text-slate-400 text-xs" aria-hidden="true"></span>
-                  <span class="text-xs text-slate-500 line-clamp-1" title={tags.map((t) => t.hashtag?.name)}>
-                    {tags.map((t) => t.hashtag?.name+" ")}
+            <a
+              href={getArticleUrl(a)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group relative block h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-amber-200"
+            >
+              <div class="relative aspect-[1200/630] overflow-hidden">
+                <img src={img} alt={a.name} class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                <div class="absolute top-3 left-3 right-3 flex flex-wrap gap-2 drop-shadow justify-end text-right">
+                  {/* <span class={`px-3 py-1 text-xs font-semibold rounded-full backdrop-blur ${meta.pillClass}`}>{meta.label}</span> */}
+                  <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/70 text-slate-800 border border-white">
+                    {formatDate(a.publishAt)}
                   </span>
                 </div>
-                <div class="flex gap-2 px-1">
-                  <span class="fa-regular fa-calendar text-slate-400" aria-hidden="true"></span>
-                  <p class="text-slate-500 text-xs">{formatDate(a.publishAt)}</p>
+              </div>
+
+              <div class="p-5 md:p-6 space-y-3">
+                <div class="flex items-center gap-2 text-amber-500 text-xs uppercase tracking-[0.2em]">
+                  <span class="flex items-center gap-1">
+                    <span class="h-0.5 w-5 bg-amber-400 block"></span>
+                    {meta.label}
+                  </span>
+                </div>
+                <div class="space-y-2">
+                  <h3 class="text-xl font-bold leading-tight font-raleway line-clamp-2 text-slate-900" title={a.name}>{a.name}</h3>
+                  <p class="text-sm text-slate-600 line-clamp-2">{a.description ?? ''}</p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {tags.slice(0, 4).map((t) => (
+                    <span class="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-slate-100 border border-slate-200 text-slate-700" title={t.hashtag?.name}>
+                      <i class="fa-solid fa-tag text-[10px] opacity-60" aria-hidden="true"></i>
+                      {t.hashtag?.name}
+                    </span>
+                  ))}
+                </div>
+                <div class="flex items-center gap-2 text-amber-500 font-semibold text-sm pt-2">
+                  <span>記事を読む</span>
+                  <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
                 </div>
               </div>
             </a>
