@@ -22,7 +22,7 @@ const getArticleUrl = (a: any) => {
         const tags = (a.hashtags || []) as any[]
         return (
           <div class="swiper-slide">
-            <a href={getArticleUrl(a)} target="_blank" rel="noopener noreferrer" class="bg-white border-2 border-slate-400 hover:shadow-md hover:border-slate-500 transform transition-all duration-200 block">
+            <a href={getArticleUrl(a)} target="_blank" rel="noopener noreferrer" class="bg-white border-2 border-slate-400 hover:-translate-y-0.5 hover:shadow-lg hover:border-slate-500 transform transition-all duration-200 block">
               <div class="aspect-[1200/630] overflow-hidden">
                 <img src={img} alt={a.name} class="w-full h-full object-cover" loading="lazy" decoding="async" />
               </div>
@@ -67,8 +67,8 @@ const getArticleUrl = (a: any) => {
     top: auto !important;
     bottom: 24px !important;
     transform: none !important;
-    width: 48px !important;
-    height: 48px !important;
+    /* width: 48px !important;
+    height: 48px !important; */
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
