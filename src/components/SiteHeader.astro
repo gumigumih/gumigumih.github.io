@@ -3,6 +3,17 @@ export interface Props {
   baseUrl?: string
 }
 const { baseUrl = '' } = Astro.props as Props
+
+const navLinks = [
+  { label: 'HOME', href: '#top' },
+  { label: 'INTRO', href: '#intro' },
+  { label: 'EXPERIENCE', href: '#experience' },
+  { label: 'PHILOSOPHY', href: '#philosophy' },
+  { label: 'STANCE', href: '#stance' },
+  { label: 'WORKS', href: '#works' },
+  { label: 'ARTICLES', href: '#articles' },
+  { label: 'CONTACT', href: '#contact' },
+]
 ---
 <header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200" data-component="site-header">
   <div class="max-w-7xl mx-auto px-4">
@@ -13,41 +24,13 @@ const { baseUrl = '' } = Astro.props as Props
         </a>
       </div>
       <nav class="hidden md:flex space-x-8">
-        <a href={`${baseUrl}/#top`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          HOME
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#intro`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          INTRO
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#experience`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          EXPERIENCE
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#philosophy`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          PHILOSOPHY
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#stance`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          STANCE
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#articles`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          ARTICLES
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
-        <a href={`${baseUrl}/#contact`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-          CONTACT
-          <span
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-        </a>
+        {navLinks.map((nav) => (
+          <a href={`${baseUrl}/${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+            {nav.label}
+            <span
+              class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
+          </a>
+        ))}
       </nav>
       <button class="md:hidden" id="mobile-menu-toggle">
         <i class="fas fa-bars text-slate-500 transition-transform duration-300" id="mobile-menu-icon"></i>
@@ -55,13 +38,11 @@ const { baseUrl = '' } = Astro.props as Props
     </div>
     <div class="hidden md:hidden py-4 border-t border-slate-200 relative z-60" id="mobile-menu">
       <nav class="flex flex-col space-y-4">
-        <a href={`${baseUrl}/#top`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">HOME</a>
-        <a href={`${baseUrl}/#intro`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">INTRO</a>
-        <a href={`${baseUrl}/#experience`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">EXPERIENCE</a>
-        <a href={`${baseUrl}/#philosophy`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">PHILOSOPHY</a>
-        <a href={`${baseUrl}/#stance`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">STANCE</a>
-        <a href={`${baseUrl}/#articles`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">ARTICLES</a>
-        <a href={`${baseUrl}/#contact`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">CONTACT</a>
+        {navLinks.map((nav) => (
+          <a href={`${baseUrl}/${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+            {nav.label}
+          </a>
+        ))}
       </nav>
     </div>
   </div>
