@@ -2,7 +2,6 @@
 import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
 import articlesData from '../../public/articles.json' assert { type: 'json' }
-import articlesSliderSrc from '../scripts/articlesSlider.ts?url'
 
 const articles = (articlesData as any)?.data?.contents ?? []
 const formatDate = (s: string) => {
@@ -113,7 +112,8 @@ const getArticleUrl = (a: any) => {
       </button>
     </div>
   </div>
-  <script type="module" src={articlesSliderSrc}></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script src="/assets/js/articlesSlider.js" is:inline></script>
   <style>
     :global(.articles-bullet) {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;

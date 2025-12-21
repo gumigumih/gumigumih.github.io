@@ -1,7 +1,8 @@
 ---
 import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
-import worksSliderSrc from '../scripts/worksSlider.ts?url'
+
+const worksSliderSrc = '/assets/js/worksSlider.js'
 
 const works = [
   {
@@ -94,7 +95,8 @@ const formatPeriod = (s: string) => {
       </button>
     </div>
   </div>
-  <script type="module" src={worksSliderSrc}></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script src="/assets/js/worksSlider.js" is:inline></script>
   <style>
     :global(.works-bullet) {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-white/30 mx-1 transition hover:bg-white/60;

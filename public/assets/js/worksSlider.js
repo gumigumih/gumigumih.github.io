@@ -1,6 +1,7 @@
-import Swiper from 'swiper/bundle'
-
 const initWorksSlider = () => {
+  const SwiperGlobal = window.Swiper
+  if (!SwiperGlobal) return
+
   const el = document.getElementById('works-slider')
   if (!el) return
 
@@ -9,7 +10,7 @@ const initWorksSlider = () => {
   const prevEl = document.getElementById('works-prev')
 
   // eslint-disable-next-line no-new
-  new Swiper(el, {
+  new SwiperGlobal(el, {
     slidesPerView: 1,
     spaceBetween: 16,
     breakpoints: {
@@ -20,7 +21,7 @@ const initWorksSlider = () => {
     },
     pagination: pagination
       ? {
-          el: pagination as HTMLElement,
+          el: pagination,
           clickable: true,
           bulletClass: 'works-bullet',
           bulletActiveClass: 'is-active',
