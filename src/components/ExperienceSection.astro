@@ -1,4 +1,6 @@
 ---
+import SectionFrame from './SectionFrame.astro'
+
 const colorClasses = [
   'bg-orange-400',
   'bg-yellow-400',
@@ -8,70 +10,69 @@ const colorClasses = [
   'bg-pink-400',
 ];
 ---
-<section id="experience" class="relative z-10 py-20 px-4 md:px-8 bg-slate-950 text-white overflow-x-hidden">
-  <div class="max-w-5xl mx-auto space-y-4">
-    <div class="flex items-center gap-3">
-      <span class="h-0.5 w-10 bg-amber-400"></span>
-      <span class="uppercase tracking-[0.25em] text-xs text-slate-300">experience</span>
-    </div>
-    <h2 class="text-2xl md:text-3xl font-black leading-tight">経験領域</h2>
-    <p class="text-base md:text-lg text-white max-w-4xl">
-      役割や分野に閉じず、必要なところに入りながら、成立する形をつくってきました。
-    </p>
 
-    <div class="max-w-4xl mx-auto py-10 space-y-6">
-      {[
-        {
-          title: 'Website Development',
-          heading: 'WEBサイト制作',
-          description: '目的と前提を言語化し、判断点を整理しながら進行と品質を成立させる。',
-        },
-        {
-          title: 'UI/UX Design',
-          heading: 'UI/UXデザイン',
-          description: '体験の筋道を描き、プロトタイプで合意形成。運用を見据えて統制。',
-        },
-        {
-          title: 'Server-Side Engineering',
-          heading: 'サーバーサイドエンジニアリング',
-          description: '運用前提でAPI/バックエンドを設計・実装。安定性と安全性を担保。',
-        },
-        {
-          title: 'Web AR/VR',
-          heading: 'WEBAR/VR',
-          description: 'デバイスと環境条件から成立ラインを定め、体験と演出を設計。',
-        },
-        {
-          title: '3D Avatar Direction',
-          heading: '3Dアバターディレクション',
-          description: '表現と実装の要件を整理し、運用で破綻しないラインを定める。',
-        },
-        {
-          title: 'Streaming Direction',
-          heading: 'VTuber配信ディレクション',
-          description: '準備から本番、その後の運用までを見据えて一気通貫で設計。',
-        },
-      ].map((experience, index) => {
-        const isLeft = index % 2 === 0;
-        const colorClass = colorClasses[index % colorClasses.length];
-        return (
-          <div class="grid grid-cols-1 md:grid-cols-10 gap-4 md:gap-6">
-            <div
-              class={`md:col-span-6 text-4xl lg:text-5xl text-slate-900 ${colorClass} flex justify-start ${
-                isLeft
-                  ? 'md:justify-end md:-ml-[100vw]'
-                  : 'md:justify-start md:-mr-[100vw] md:order-1'
-              } items-end px-4 md:px-10`}
-            >
-              <p class="-mb-2">{experience.title}</p>
-            </div>
-            <div class="md:col-span-4 md:py-4">
-              <h3 class="text-xl text-slate-200">{experience.heading}</h3>
-              <p class="text-sm text-slate-500">{experience.description}</p>
-            </div>
+<SectionFrame
+  id="experience"
+  eyebrow="experience"
+  title="経験領域"
+  bgClass="bg-slate-950 text-white overflow-x-hidden"
+  eyebrowClass="text-slate-300"
+  titleClass="text-white"
+  leadClass="text-white"
+  lead="役割や分野に閉じず、必要なところに入りながら、成立する形をつくってきました。"
+>
+  <div class="max-w-4xl mx-auto space-y-6">
+    {[
+      {
+        title: 'Website Development',
+        heading: 'WEBサイト制作',
+        description: '目的と前提を言語化し、判断点を整理しながら進行と品質を成立させる。',
+      },
+      {
+        title: 'UI/UX Design',
+        heading: 'UI/UXデザイン',
+        description: '体験の筋道を描き、プロトタイプで合意形成。運用を見据えて統制。',
+      },
+      {
+        title: 'Server-Side Engineering',
+        heading: 'サーバーサイドエンジニアリング',
+        description: '運用前提でAPI/バックエンドを設計・実装。安定性と安全性を担保。',
+      },
+      {
+        title: 'Web AR/VR',
+        heading: 'WEBAR/VR',
+        description: 'デバイスと環境条件から成立ラインを定め、体験と演出を設計。',
+      },
+      {
+        title: '3D Avatar Direction',
+        heading: '3Dアバターディレクション',
+        description: '表現と実装の要件を整理し、運用で破綻しないラインを定める。',
+      },
+      {
+        title: 'Streaming Direction',
+        heading: 'VTuber配信ディレクション',
+        description: '準備から本番、その後の運用までを見据えて一気通貫で設計。',
+      },
+    ].map((experience, index) => {
+      const isLeft = index % 2 === 0;
+      const colorClass = colorClasses[index % colorClasses.length];
+      return (
+        <div class="grid grid-cols-1 md:grid-cols-10 gap-4 md:gap-6">
+          <div
+            class={`md:col-span-6 text-4xl lg:text-5xl text-slate-900 ${colorClass} flex justify-start ${
+              isLeft
+                ? 'md:justify-end md:-ml-[100vw]'
+                : 'md:justify-start md:-mr-[100vw] md:order-1'
+            } items-end px-4 md:px-10`}
+          >
+            <p class="-mb-2">{experience.title}</p>
           </div>
-        );
-      })}
-    </div>
+          <div class="md:col-span-4 md:py-4">
+            <h3 class="text-xl text-slate-200">{experience.heading}</h3>
+            <p class="text-sm text-slate-500">{experience.description}</p>
+          </div>
+        </div>
+      );
+    })}
   </div>
-</section>
+</SectionFrame>
