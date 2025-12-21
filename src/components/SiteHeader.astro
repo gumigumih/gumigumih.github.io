@@ -15,15 +15,16 @@ const navLinks = [
   { label: 'CONTACT', href: '#contact' },
 ]
 ---
-<header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200" data-component="site-header">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="flex items-center justify-between h-16">
+<header class="fixed inset-x-0 top-0 w-full z-50 border-b border-slate-200 overflow-hidden" data-component="site-header">
+  <div class="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="flex items-center justify-between px-4 h-16">
       <div class="flex items-center">
         <a href={`${baseUrl}/`} class="flex items-center h-10 p-2 -mb-1">
           <img src="/assets/images/logo_black.svg" alt="meg+gumi" class="h-full w-auto" loading="lazy" decoding="async" />
         </a>
       </div>
-      <nav class="hidden md:flex space-x-8">
+      <nav class="hidden lg:flex space-x-8">
         {navLinks.map((nav) => (
           <a href={`${baseUrl}/${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
             {nav.label}
@@ -32,44 +33,41 @@ const navLinks = [
           </a>
         ))}
       </nav>
-      <button class="md:hidden" id="mobile-menu-toggle">
+      <button class="lg:hidden" id="mobile-menu-toggle">
         <i class="fas fa-bars text-slate-500 transition-transform duration-300" id="mobile-menu-icon"></i>
       </button>
     </div>
-    <div class="hidden md:hidden py-4 border-t border-slate-200 relative z-60" id="mobile-menu">
-      <nav class="flex flex-col space-y-4">
+    <div class="hidden lg:hidden border-t border-slate-200 relative z-60 px-4 py-3" id="mobile-menu">
+      <nav class="flex flex-col divide-y divide-slate-200">
         {navLinks.map((nav) => (
-          <a href={`${baseUrl}/${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          <a
+            href={`${baseUrl}/${nav.href}`}
+            class="block px-6 py-4 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors relative group">
             {nav.label}
           </a>
         ))}
       </nav>
     </div>
   </div>
-  <div class="hidden fixed inset-0 backdrop-blur-sm z-40 md:hidden" id="mobile-menu-overlay"></div>
 </header>
 
 <script>
   const toggle = document.getElementById('mobile-menu-toggle')
   const icon = document.getElementById('mobile-menu-icon')
   const menu = document.getElementById('mobile-menu')
-  const overlay = document.getElementById('mobile-menu-overlay')
   let open = false
   const setOpen = (val) => {
     open = val
     if (open) {
       menu.classList.remove('hidden')
-      overlay.classList.remove('hidden')
       icon.className = 'fas fa-times text-slate-500 transition-transform duration-300'
       document.body.style.overflow = 'hidden'
     } else {
       menu.classList.add('hidden')
-      overlay.classList.add('hidden')
       icon.className = 'fas fa-bars text-slate-500 transition-transform duration-300'
       document.body.style.overflow = ''
     }
   }
   toggle?.addEventListener('click', () => setOpen(!open))
-  overlay?.addEventListener('click', () => setOpen(false))
   menu?.querySelectorAll('a')?.forEach(a => a.addEventListener('click', () => setOpen(false)))
 </script>
