@@ -1,6 +1,31 @@
 ---
-import ArticleList from './ArticleList.astro'
+import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
+import articlesData from '../../public/articles.json' assert { type: 'json' }
+import articlesSliderSrc from '../scripts/articlesSlider.ts?url'
+
+const articles = (articlesData as any)?.data?.contents ?? []
+const formatDate = (s: string) => {
+  const d = new Date(s)
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate() + 1).padStart(2, '0')
+  return `${yyyy}.${mm}.${dd}`
+}
+const typeMeta: Record<string, { label: string; pillClass: string }> = {
+  note: { label: 'Note', pillClass: 'bg-amber-300 text-slate-900' },
+  qiita: { label: 'Qiita', pillClass: 'bg-emerald-300 text-slate-900' },
+  zenn: { label: 'Zenn', pillClass: 'bg-blue-200 text-slate-900' },
+  default: { label: 'Article', pillClass: 'bg-slate-200 text-slate-900' },
+}
+const getArticleUrl = (a: any) => {
+  switch (a.type) {
+    case 'note': return `https://note.com/gumigumih/n/${a.key}`
+    case 'qiita': return `https://qiita.com/gumigumih/items/${a.key}`
+    case 'zenn': return `https://zenn.dev/gumigumih/articles/${a.key}`
+    default: return `https://note.com/gumigumih/n/${a.key}`
+  }
+}
 ---
 
 <SectionFrame
@@ -13,7 +38,92 @@ import SectionFrame from './SectionFrame.astro'
   leadClass="text-slate-600"
   lead="書き残したメモや活動ログ。考えていることや試したことの記録です。"
 >
-  <div class="space-y-10">
-    <ArticleList />
+  <div class="relative" id="article-list-root">
+    <div id="articles-slider" class="swiper">
+      <div class="swiper-wrapper">
+        {articles.map((a: any) => {
+          const img = a.localImagePath || a.eyecatch
+          const tags = (a.hashtags || []) as any[]
+          const meta = typeMeta[a.type] ?? typeMeta.default
+          return (
+            <div class="swiper-slide h-auto">
+              <a
+                href={getArticleUrl(a)}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative block h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-amber-200"
+              >
+                <div class="relative aspect-[1200/630] overflow-hidden">
+                  <img src={img} alt={a.name} class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                  <div class="absolute top-3 left-3 right-3 flex flex-wrap gap-2 drop-shadow justify-end text-right">
+                    <span class="px-3 py-1 text-xs font-semibold rounded-full bg-white/70 text-slate-800 border border-white">
+                      {formatDate(a.publishAt)}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-5 md:p-6 space-y-3">
+                  <div class="flex items-center gap-2 text-amber-500 text-xs uppercase tracking-[0.2em]">
+                    <span class="flex items-center gap-1">
+                      <span class="h-0.5 w-5 bg-amber-400 block"></span>
+                      {meta.label}
+                    </span>
+                  </div>
+                  <div class="space-y-2">
+                    <h3 class="text-xl font-bold leading-tight font-raleway line-clamp-2 text-slate-900" title={a.name}>{a.name}</h3>
+                    <p class="text-sm text-slate-600 line-clamp-2">{a.description ?? ''}</p>
+                  </div>
+                  <div class="flex flex-wrap gap-2 pt-1">
+                    {tags.slice(0, 4).map((t) => (
+                      <span class="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-slate-100 border border-slate-200 text-slate-700" title={t.hashtag?.name}>
+                        <i class="fa-solid fa-tag text-[10px] opacity-60" aria-hidden="true"></i>
+                        {t.hashtag?.name}
+                      </span>
+                    ))}
+                  </div>
+                  <div class="flex items-center gap-2 text-amber-500 font-semibold text-sm pt-2">
+                    <span>記事を読む</span>
+                    <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          )
+        })}
+      </div>
+    </div>
+    <div class="grid grid-cols-[auto,1fr,auto] items-center gap-3 mt-4">
+      <button
+        id="articles-prev"
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="前の記事へ"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div id="articles-pagination" class="flex justify-center items-center w-full"></div>
+      <button
+        id="articles-next"
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="次の記事へ"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
   </div>
+  <script type="module" src={articlesSliderSrc}></script>
+  <style>
+    :global(.articles-bullet) {
+      @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
+    }
+    :global(.articles-bullet.is-active) {
+      @apply bg-amber-400 w-3 h-3;
+    }
+    :global(#articles-prev.swiper-button-disabled),
+    :global(#articles-next.swiper-button-disabled) {
+      @apply opacity-40 cursor-not-allowed hover:bg-slate-100;
+    }
+  </style>
 </SectionFrame>

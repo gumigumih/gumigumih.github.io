@@ -1,0 +1,43 @@
+import Swiper from 'swiper/bundle'
+
+const initWorksSlider = () => {
+  const el = document.getElementById('works-slider')
+  if (!el) return
+
+  const pagination = document.getElementById('works-pagination')
+  const nextEl = document.getElementById('works-next')
+  const prevEl = document.getElementById('works-prev')
+
+  // eslint-disable-next-line no-new
+  new Swiper(el, {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+    },
+    pagination: pagination
+      ? {
+          el: pagination as HTMLElement,
+          clickable: true,
+          bulletClass: 'works-bullet',
+          bulletActiveClass: 'is-active',
+        }
+      : undefined,
+    navigation:
+      nextEl && prevEl
+        ? {
+            nextEl,
+            prevEl,
+          }
+        : undefined,
+  })
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initWorksSlider)
+} else {
+  initWorksSlider()
+}
