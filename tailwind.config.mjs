@@ -5,8 +5,11 @@ export default {
     './public/**/*.html'
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['Raleway', 'M PLUS 1p', 'sans-serif']
+      }
+    }
   },
   plugins: []
 }
-
