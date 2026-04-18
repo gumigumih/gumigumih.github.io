@@ -1,7 +1,6 @@
 ---
 import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
-import genreSliderSrc from '../scripts/genreSliders.ts?url'
 
 const selectedProjects = [
   {
@@ -44,8 +43,8 @@ const selectedProjects = [
   leadClass="text-slate-600"
   lead="つくってきたものを、並べて見られるようにしています。"
 >
-  <div class="relative" data-genre-slider-root>
-    <div class="swiper overflow-visible slider-edge-mask" data-genre-slider>
+  <div class="relative">
+    <div id="works-slider" class="swiper overflow-visible slider-edge-mask">
       <div class="swiper-wrapper">
         {selectedProjects.map((item) => (
           <div class="swiper-slide h-auto">
@@ -93,36 +92,37 @@ const selectedProjects = [
         type="button"
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
         aria-label="前のProjectへ"
-        data-genre-prev
+        id="works-prev"
       >
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <div class="flex justify-center items-center w-full" data-genre-pagination></div>
+      <div class="flex justify-center items-center w-full" id="works-pagination"></div>
       <button
         type="button"
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
         aria-label="次のProjectへ"
-        data-genre-next
+        id="works-next"
       >
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>
   </div>
-  <script type="module" src={genreSliderSrc}></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script src="/assets/js/worksSlider.js" is:inline></script>
   <style>
     :global(.slider-edge-mask) {
       --slider-edge-mask-width: 32px;
       -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
       mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
     }
-    :global(.genre-bullet) {
+    :global(.works-bullet) {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
     }
-    :global(.genre-bullet.is-active) {
+    :global(.works-bullet.is-active) {
       @apply bg-slate-500 w-3 h-3;
     }
-    :global([data-genre-prev].swiper-button-disabled),
-    :global([data-genre-next].swiper-button-disabled) {
+    :global(#works-prev.swiper-button-disabled),
+    :global(#works-next.swiper-button-disabled) {
       @apply opacity-40 cursor-not-allowed hover:bg-slate-100;
     }
   </style>
