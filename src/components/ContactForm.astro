@@ -15,7 +15,7 @@
         <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="example@email.com">
       </div>
       <div class="space-y-2">
-        <label for="company" class="block text-slate-700 font-medium">SNS名・所属</label>
+        <label for="company" class="block text-slate-700 font-medium">会社名・所属</label>
         <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="任意">
       </div>
       <div class="space-y-2">
@@ -96,14 +96,14 @@
   const buildMailto = (data) => {
     const subject = encodeURIComponent('メッセージ')
     const body = encodeURIComponent(
-      `お名前：${data.name}\nメールアドレス：${data.email}\nSNS名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}`
+      `お名前：${data.name}\nメールアドレス：${data.email}\n会社名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}`
     )
     return `mailto:${config.contact.email}?subject=${subject}&body=${body}`
   }
 
   copyButton?.addEventListener('click', () => {
     const data = Object.fromEntries(new FormData(form).entries())
-    const content = `お名前：${data.name}\nメールアドレス：${data.email}\nSNS名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}\n\n※上記の内容を以下のメールアドレスに送信してください：\n${config.contact.email}`
+    const content = `お名前：${data.name}\nメールアドレス：${data.email}\n会社名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}\n\n※上記の内容を以下のメールアドレスに送信してください：\n${config.contact.email}`
     navigator.clipboard.writeText(content).then(() => alert('メッセージをコピーしました')).catch(console.error)
   })
 
