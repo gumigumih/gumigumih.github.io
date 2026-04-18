@@ -13,16 +13,25 @@ const initGenreSliders = () => {
 
     // eslint-disable-next-line no-new
     new Swiper(sliderEl, {
-      slidesPerView: 1.05,
+      slidesOffsetBefore: 32,
+      slidesPerView: 1.08,
       spaceBetween: 16,
+      snapToSlideEdge: true,
+      slidesOffsetAfter: 32,
       breakpoints: {
         768: {
-          slidesPerView: 1.6,
+          slidesOffsetBefore: 32,
+          slidesPerView: 1.7,
           spaceBetween: 20,
+          snapToSlideEdge: true,
+          slidesOffsetAfter: 32,
         },
         1024: {
-          slidesPerView: 2,
+          slidesOffsetBefore: 32,
+          slidesPerView: 2.35,
           spaceBetween: 24,
+          snapToSlideEdge: true,
+          slidesOffsetAfter: 32,
         },
       },
       pagination: pagination

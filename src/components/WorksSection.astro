@@ -12,17 +12,15 @@ const selectedProjects = [
     href: '/works/warimaru',
     period: '2025.06',
     external: false,
-    linkLabel: '詳細',
   },
   {
     title: 'React電卓入力フォーム',
     role: 'npm Package',
     description: '思いついてから8時間で公開した、React用の電卓付き入力フォームです。',
-    image: '/assets/images/articles/note_125488845_1766284143676.jpg',
+    image: '/assets/images/articles/note_125488845_1776397303577.jpg',
     href: '/works/react-calculator-input-form',
     period: '2025.09',
     external: false,
-    linkLabel: '詳細',
   },
   {
     title: 'このポートフォリオ',
@@ -32,7 +30,6 @@ const selectedProjects = [
     href: '#top',
     period: '2026.04',
     external: false,
-    linkLabel: 'サイト',
   },
 ]
 ---
@@ -48,7 +45,7 @@ const selectedProjects = [
   lead="つくってきたものを、並べて見られるようにしています。"
 >
   <div class="relative" data-genre-slider-root>
-    <div class="swiper" data-genre-slider>
+    <div class="swiper overflow-visible slider-edge-mask" data-genre-slider>
       <div class="swiper-wrapper">
         {selectedProjects.map((item) => (
           <div class="swiper-slide h-auto">
@@ -66,9 +63,6 @@ const selectedProjects = [
                   decoding="async"
                   class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
                 />
-                <div class="absolute right-3 top-3 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-slate-600 ring-1 ring-slate-200 backdrop-blur">
-                  {item.linkLabel}
-                </div>
               </div>
               <div class="p-5 md:p-6 flex-1 h-full flex flex-col gap-3 text-slate-900">
                 <div class="flex items-center justify-between text-xs text-slate-500">
@@ -94,7 +88,6 @@ const selectedProjects = [
         ))}
       </div>
     </div>
-
     <div class="grid grid-cols-[auto,1fr,auto] items-center gap-3 mt-4">
       <button
         type="button"
@@ -117,6 +110,11 @@ const selectedProjects = [
   </div>
   <script type="module" src={genreSliderSrc}></script>
   <style>
+    :global(.slider-edge-mask) {
+      --slider-edge-mask-width: 32px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
+    }
     :global(.genre-bullet) {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
     }

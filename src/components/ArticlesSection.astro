@@ -38,7 +38,7 @@ const getArticleUrl = (a: any) => {
   lead="考えたことや試したことを、記事として残したものです。"
 >
   <div class="relative" id="article-list-root">
-    <div id="articles-slider" class="swiper">
+    <div id="articles-slider" class="swiper overflow-visible slider-edge-mask">
       <div class="swiper-wrapper">
         {articles.map((a: any) => {
           const img = a.localImagePath || a.eyecatch
@@ -113,6 +113,11 @@ const getArticleUrl = (a: any) => {
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
   <script src="/assets/js/articlesSlider.js" is:inline></script>
   <style>
+    :global(.slider-edge-mask) {
+      --slider-edge-mask-width: 32px;
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
+      mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);
+    }
     :global(.articles-bullet) {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
     }

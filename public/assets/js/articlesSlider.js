@@ -11,16 +11,25 @@ const initArticlesSlider = () => {
 
   // eslint-disable-next-line no-new
   new SwiperGlobal(el, {
-    slidesPerView: 1,
+    slidesOffsetBefore: 32,
+    slidesPerView: 1.08,
     spaceBetween: 16,
+    snapToSlideEdge: true,
+    slidesOffsetAfter: 32,
     breakpoints: {
       768: {
-        slidesPerView: 2,
+        slidesOffsetBefore: 32,
+        slidesPerView: 2.1,
         spaceBetween: 24,
+        snapToSlideEdge: true,
+        slidesOffsetAfter: 32,
       },
       1024: {
-        slidesPerView: 3,
+        slidesOffsetBefore: 32,
+        slidesPerView: 3.25,
         spaceBetween: 24,
+        snapToSlideEdge: true,
+        slidesOffsetAfter: 32,
       },
     },
     pagination: pagination
