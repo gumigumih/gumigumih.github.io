@@ -12,57 +12,69 @@ import SiteFooter from '../components/SiteFooter.astro'
   <link rel="icon" href="/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-<body class="bg-[url(/assets/images/bg-white.png)] font-sans">
+<body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100">
   <SiteHeader />
-  <main class="pt-32 pb-16">
-    <div class="max-w-5xl mx-auto px-4">
-      <div class="text-center mb-16 relative">
-        <div class="text-6xl md:text-8xl font-bold tracking-wider text-slate-200 absolute inset-0 flex items-center justify-center"
-          style="font-family: 'Montserrat', sans-serif;">PRIVACY POLICY</div>
-        <h1 class="text-4xl font-bold text-slate-800 relative z-10"
-          style="font-family: 'M PLUS Rounded 1c', sans-serif;">プライバシーポリシー</h1>
+  <main class="pt-24">
+    <section class="relative z-10 py-20 px-4 md:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex items-center gap-3">
+          <span class="h-0.5 w-10 bg-slate-400"></span>
+          <span class="uppercase tracking-[0.25em] text-xs text-slate-500">privacy policy</span>
+        </div>
+        <h1 class="text-2xl md:text-3xl font-black leading-tight mt-4 text-slate-900">プライバシーポリシー</h1>
+        <div class="mt-8 md:mt-10">
+          <p class="text-base md:text-lg max-w-4xl text-slate-600">
+            当サイトにおける個人情報の取り扱いについてまとめています。
+          </p>
+        </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-10 mb-8">
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 font-raleway">1. 個人情報の収集について</h2>
-        <p class="text-slate-600 leading-relaxed text-lg mb-8">当サイトでは、Google AdSenseなどの第三者配信の広告サービスを利用しています。これらの第三者配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報を使用することがあります。</p>
+      <div class="mt-8 md:mt-10 mx-auto max-w-5xl">
+        <div class="rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50 px-5 py-8 md:px-8 md:py-10">
+          <div class="space-y-10 text-slate-600 leading-relaxed">
+            <section class="space-y-4">
+              <h2 class="text-xl md:text-2xl font-black text-slate-900">1. 個人情報の収集について</h2>
+              <p>
+                当サイトでは、Google AdSenseなどの第三者配信の広告サービスを利用しています。これらの第三者配信事業者は、
+                ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報を
+                使用することがあります。
+              </p>
+            </section>
 
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 font-raleway">2. アクセス解析ツールについて</h2>
-        <p class="text-slate-600 leading-relaxed text-lg mb-8">当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。このGoogleアナリティクスはデータの収集のためにCookieを使用しています。このデータは匿名で収集されており、個人を特定するものではありません。</p>
+            <section class="space-y-4">
+              <h2 class="text-xl md:text-2xl font-black text-slate-900">2. アクセス解析ツールについて</h2>
+              <p>
+                当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。
+                このGoogleアナリティクスはデータの収集のためにCookieを使用しています。
+                このデータは匿名で収集されており、個人を特定するものではありません。
+              </p>
+            </section>
 
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 font-raleway">3. 広告の配信について</h2>
-        <p class="text-slate-600 leading-relaxed text-lg mb-8">当サイトは第三者配信の広告サービス「Google AdSense」を利用しています。広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報を使用することがあります。</p>
+            <section class="space-y-4">
+              <h2 class="text-xl md:text-2xl font-black text-slate-900">3. 広告の配信について</h2>
+              <p>
+                当サイトは第三者配信の広告サービス「Google AdSense」を利用しています。
+                広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、
+                当サイトや他サイトへのアクセスに関する情報を使用することがあります。
+              </p>
+            </section>
 
-        <h2 class="text-2xl font-bold text-slate-800 mb-6 font-raleway">4. プライバシーポリシーの変更について</h2>
-        <p class="text-slate-600 leading-relaxed text-lg">当サイトは、必要に応じて、このプライバシーポリシーの内容を変更することがあります。その場合、変更内容を本ページにてお知らせいたします。</p>
+            <section class="space-y-4">
+              <h2 class="text-xl md:text-2xl font-black text-slate-900">4. プライバシーポリシーの変更について</h2>
+              <p>
+                当サイトは、必要に応じて、このプライバシーポリシーの内容を変更することがあります。
+                その場合、変更内容を本ページにてお知らせいたします。
+              </p>
+            </section>
+          </div>
+
+        </div>
       </div>
-
-      <div class="text-center">
-        <a href="/" class="inline-block bg-amber-500 text-white px-10 py-5 rounded-lg hover:bg-amber-600 transition-colors text-xl font-medium">トップページに戻る</a>
-      </div>
-    </div>
+    </section>
   </main>
   <SiteFooter />
 </body>
 </html>
-
-<style>
-  .section-title {
-    position: relative;
-    display: inline-block;
-  }
-
-  .section-title::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 3px;
-    background: #f59e0b;
-    border-radius: 2px;
-  }
-</style>

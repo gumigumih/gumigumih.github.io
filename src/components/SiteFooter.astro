@@ -1,8 +1,70 @@
 ---
 const year = new Date().getFullYear()
+
+const socialLinks = [
+  {
+    href: 'https://twitter.com/gumigumih',
+    label: 'X',
+    icon: 'fa-brands fa-x-twitter',
+    description: 'つぶやき',
+  },
+  {
+    href: 'https://www.instagram.com/gumigumih',
+    label: 'Instagram',
+    icon: 'fa-brands fa-instagram',
+    description: '写真',
+  },
+  {
+    href: 'https://github.com/gumigumih',
+    label: 'GitHub',
+    icon: 'fa-brands fa-github',
+    description: 'コード',
+  },
+  {
+    href: 'https://note.com/gumigumih',
+    label: 'note',
+    icon: 'fa-solid fa-note-sticky',
+    description: '文章',
+  },
+  {
+    href: 'https://zenn.dev/gumigumih',
+    label: 'Zenn',
+    icon: 'fa-solid fa-file-lines',
+    description: '技術記事',
+  },
+  {
+    href: 'https://qiita.com/gumigumih',
+    label: 'Qiita',
+    icon: 'fa-solid fa-code',
+    description: '実装メモ',
+  },
+]
 ---
 <footer class="py-10 text-center bg-white/90 border-t border-slate-200 text-slate-500">
   <div class="max-w-7xl mx-auto px-4">
+    <div class="mb-8">
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-400">links</p>
+      <div class="mt-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-left">
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group rounded-2xl bg-slate-50/90 ring-1 ring-slate-200 px-4 py-3 text-slate-700 hover:text-slate-900 hover:ring-slate-300 hover:bg-white transition shadow-sm shadow-slate-200/50"
+          >
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-white ring-1 ring-slate-200 flex items-center justify-center text-slate-600 group-hover:text-slate-900 transition">
+                <i class={link.icon} aria-hidden="true"></i>
+              </div>
+              <div class="min-w-0">
+                <p class="text-[11px] uppercase tracking-[0.22em] text-slate-400">{link.description}</p>
+                <p class="mt-1 text-sm font-semibold text-slate-800">{link.label}</p>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
     <div class="mb-6 space-x-4">
       <a href="/privacy-policy" class="text-sm text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
         プライバシーポリシー
