@@ -1,25 +1,26 @@
 <div class="max-w-4xl mx-auto py-10">
-  <p class="text-slate-600 text-lg mb-8 text-center">
-    お問い合わせは以下のフォームからお願いいたします。<br>
-    内容を確認次第、ご連絡させていただきます。
-  </p>
-  <div class="max-w-2xl mx-auto">
+  <div class="rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50 px-5 py-8 md:px-8 md:py-10">
+    <p class="text-slate-600 text-lg mb-8 text-center">
+      ひとこと送ってもらえたらうれしいです。<br>
+      趣味の話でも、活動の感想でも大丈夫です。
+    </p>
+    <div class="max-w-2xl mx-auto">
     <form id="contact-form" class="space-y-6">
       <div class="space-y-2">
         <label for="name" class="block text-slate-700 font-medium">お名前 <span class="text-red-500">*</span></label>
-        <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200" placeholder="山田 太郎">
+        <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="山田 太郎">
       </div>
       <div class="space-y-2">
         <label for="email" class="block text-slate-700 font-medium">メールアドレス <span class="text-red-500">*</span></label>
-        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200" placeholder="example@email.com">
+        <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="example@email.com">
       </div>
       <div class="space-y-2">
-        <label for="company" class="block text-slate-700 font-medium">会社名・団体名</label>
-        <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200" placeholder="株式会社〇〇">
+        <label for="company" class="block text-slate-700 font-medium">SNS名・所属</label>
+        <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="任意">
       </div>
       <div class="space-y-2">
-        <label for="message" class="block text-slate-700 font-medium">お問い合わせ内容 <span class="text-red-500">*</span></label>
-        <textarea id="message" name="message" required rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 transition-colors duration-200 resize-none" placeholder="お問い合わせ内容をご記入ください"></textarea>
+        <label for="message" class="block text-slate-700 font-medium">メッセージ <span class="text-red-500">*</span></label>
+        <textarea id="message" name="message" required rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200 resize-none" placeholder="メッセージをご記入ください"></textarea>
       </div>
       <div class="text-center pt-4">
         <button type="submit" id="submit-button" class="inline-flex items-center gap-2 rounded-full border-2 border-slate-400 hover:border-slate-500 text-slate-400 hover:text-slate-500 px-4 py-2 text-base font-normal hover:-translate-y-0.5 hover:shadow-lg transition">
@@ -32,11 +33,11 @@
     <div id="submit-success" class="mt-6 hidden">
       <div class="bg-white rounded-2xl p-8 text-center">
         <div class="flex flex-col items-center justify-center">
-          <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-check-circle text-3xl text-teal-600"></i>
+          <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-check-circle text-3xl text-slate-600"></i>
           </div>
-          <h3 class="text-xl font-bold text-teal-800 mb-2">送信が完了しました</h3>
-          <p class="text-teal-700 mb-4 max-w-md mx-auto">内容を確認次第、ご連絡させていただきます。</p>
+          <h3 class="text-xl font-bold text-slate-800 mb-2">送信が完了しました</h3>
+          <p class="text-slate-600 mb-4 max-w-md mx-auto">送ってくれてありがとうございます。</p>
         </div>
       </div>
     </div>
@@ -44,16 +45,16 @@
     <div id="submit-error" class="mt-6 hidden">
       <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
         <div class="flex flex-col items-center justify-center">
-          <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mb-4">
-            <i class="fas fa-exclamation-circle text-3xl text-rose-600"></i>
+          <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
+            <i class="fas fa-exclamation-circle text-3xl text-slate-600"></i>
           </div>
-          <h3 class="text-xl font-bold text-rose-800 mb-2">送信に失敗しました</h3>
-          <p class="text-rose-700 mb-4 max-w-md mx-auto">以下のメールアドレスまで直接ご連絡ください：</p>
+          <h3 class="text-xl font-bold text-slate-800 mb-2">送信に失敗しました</h3>
+          <p class="text-slate-600 mb-4 max-w-md mx-auto">以下のメールアドレスまで直接どうぞ：</p>
           <div class="flex flex-col items-center gap-4">
-            <a id="mailto-link" href="mailto:contact@meggumi.com" class="text-rose-600 hover:text-rose-700 font-mono bg-rose-50 px-4 py-2 rounded-lg border border-rose-200 transition-colors duration-200">contact@meggumi.com</a>
-            <button id="copy-button" class="text-rose-600 hover:text-rose-700 font-mono bg-rose-50 px-4 py-2 rounded-lg border border-rose-200 transition-colors duration-200 flex items-center gap-2">
+            <a id="mailto-link" href="mailto:contact@meggumi.com" class="text-slate-600 hover:text-slate-700 font-mono bg-slate-50 px-4 py-2 rounded-lg border border-slate-200 transition-colors duration-200">contact@meggumi.com</a>
+            <button id="copy-button" class="text-slate-600 hover:text-slate-700 font-mono bg-slate-50 px-4 py-2 rounded-lg border border-slate-200 transition-colors duration-200 flex items-center gap-2">
               <i class="fas fa-copy"></i>
-              <span>問い合わせ内容をコピー</span>
+              <span>メッセージをコピー</span>
             </button>
           </div>
         </div>
@@ -93,17 +94,17 @@
   }
 
   const buildMailto = (data) => {
-    const subject = encodeURIComponent('お問い合わせ')
+    const subject = encodeURIComponent('メッセージ')
     const body = encodeURIComponent(
-      `お名前：${data.name}\nメールアドレス：${data.email}\n会社名・団体名：${data.company || ''}\n\nお問い合わせ内容：\n${data.message}`
+      `お名前：${data.name}\nメールアドレス：${data.email}\nSNS名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}`
     )
     return `mailto:${config.contact.email}?subject=${subject}&body=${body}`
   }
 
   copyButton?.addEventListener('click', () => {
     const data = Object.fromEntries(new FormData(form).entries())
-    const content = `お名前：${data.name}\nメールアドレス：${data.email}\n会社名・団体名：${data.company || ''}\n\nお問い合わせ内容：\n${data.message}\n\n※上記の内容を以下のメールアドレスに送信してください：\n${config.contact.email}`
-    navigator.clipboard.writeText(content).then(() => alert('問い合わせ内容をコピーしました')).catch(console.error)
+    const content = `お名前：${data.name}\nメールアドレス：${data.email}\nSNS名・所属：${data.company || ''}\n\nメッセージ：\n${data.message}\n\n※上記の内容を以下のメールアドレスに送信してください：\n${config.contact.email}`
+    navigator.clipboard.writeText(content).then(() => alert('メッセージをコピーしました')).catch(console.error)
   })
 
   form?.addEventListener('submit', async (e) => {
@@ -133,4 +134,3 @@
     }
   })
 </script>
-

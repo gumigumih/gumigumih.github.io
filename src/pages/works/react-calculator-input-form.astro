@@ -1,0 +1,198 @@
+---
+import '../../styles/tailwind.css'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React電卓入力フォーム | meg+gumi</title>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet" />
+  <meta property="og:title" content="React電卓入力フォーム | meg+gumi" />
+  <meta property="og:description" content="思いついてから8時間で公開した、React用の電卓付き入力フォームです。" />
+  <meta property="og:image" content="https://meggumi.com/assets/images/articles/note_125488845_1766284143676.jpg" />
+  <meta name="description" content="思いついてから8時間で公開した、React用の電卓付き入力フォームの詳細ページです。" />
+</head>
+<body class="bg-slate-100 font-sans">
+  <AnimatedBackground />
+  <SiteHeader />
+
+  <main class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-slate-500">
+          <li><a href="../" class="hover:text-slate-700">ホーム</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li><a href="../#works" class="hover:text-slate-700">PROJECT</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="text-slate-800">React電卓入力フォーム</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-8 px-4">
+      <div class="bg-white rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-md shadow-slate-200/50">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video bg-slate-100">
+            <img
+              src="/assets/images/articles/note_125488845_1766284143676.jpg"
+              alt="React電卓入力フォームのサムネイル"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+            <div class="mb-4">
+              <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">
+                React電卓入力フォーム
+              </h1>
+              <div class="flex items-center justify-between gap-4 mb-2">
+                <div class="text-slate-500 text-sm">
+                  #個人開発 #npm #React #TypeScript
+                </div>
+                <time datetime="2025-09" class="text-sm text-slate-400">
+                  公開日: 2025.09
+                </time>
+              </div>
+            </div>
+            <p class="text-xl text-slate-600 mb-6">
+              思いついてから8時間で公開した、React用の電卓付き入力フォーム
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="https://www.npmjs.com/package/@gumigumih/react-calculator-input-form"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <i class="fas fa-box mr-2"></i>
+                npmを見る
+              </a>
+              <a
+                href="https://note.com/gumigumih/n/n5096c1bce553"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <i class="fas fa-book-open mr-2"></i>
+                制作記事
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4">
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 leading-relaxed mb-4">
+            React 向けの電卓付き入力フォームを、思いついてから公開まで約8時間でまとめた個人開発です。
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            いつもなら少し長く持ち越してしまうアイデアを、できるだけ早く形にして外へ出すことを意識して進めました。
+            その過程で、実装の速さだけでなく、公開までの進め方も含めて学びが多かったプロジェクトです。
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            同じテーマを note にまとめていて、そちらでは開発の流れや気づきをもう少し詳しく書いています。
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">制作内容</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-lightbulb text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">企画・設計</h3>
+            <p class="text-sm text-slate-600">
+              アイデア整理<br />構成の決定
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-palette text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">UI調整</h3>
+            <p class="text-sm text-slate-600">
+              入力しやすさの調整<br />画面の見え方の確認
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-code text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">実装</h3>
+            <p class="text-sm text-slate-600">
+              React実装<br />TypeScript対応
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-rocket text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">公開</h3>
+            <p class="text-sm text-slate-600">
+              npm への公開<br />note への記録
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
+        <div class="space-y-6 text-slate-600 leading-relaxed">
+          <div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">開発のきっかけ</h3>
+            <p>
+              何かを入力する場面で、単純なフォームだけでは少し足りないと感じることがありました。
+              その感覚をきっかけに、電卓と入力フォームを組み合わせたら使いやすいのではと思い、すぐに形にしました。
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">工夫したこと</h3>
+            <p>
+              単機能のように見えて、実際には入力の流れや表示の切り替えに気を配る必要がありました。
+              そのため、操作の迷いを減らすことと、見た目をすっきり保つことを意識しています。
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">公開までの流れ</h3>
+            <p>
+              思いついた段階で止めずに、ひとまず動く状態まで持っていき、そのまま公開まで進めました。
+              小さく早く出してみることで、次に何を直すべきかも見えやすくなりました。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">リンク</h2>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="https://www.npmjs.com/package/@gumigumih/react-calculator-input-form"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+          >
+            <i class="fas fa-box mr-2"></i>
+            npmページ
+          </a>
+          <a
+            href="https://note.com/gumigumih/n/n5096c1bce553"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+          >
+            <i class="fas fa-book-open mr-2"></i>
+            制作記事
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>

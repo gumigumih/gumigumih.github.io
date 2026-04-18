@@ -8,13 +8,13 @@ const formatDate = (s: string) => {
   const d = new Date(s)
   const yyyy = d.getFullYear()
   const mm = String(d.getMonth() + 1).padStart(2, '0')
-  const dd = String(d.getDate() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
   return `${yyyy}.${mm}.${dd}`
 }
 const typeMeta: Record<string, { label: string; pillClass: string }> = {
-  note: { label: 'Note', pillClass: 'bg-amber-300 text-slate-900' },
-  qiita: { label: 'Qiita', pillClass: 'bg-emerald-300 text-slate-900' },
-  zenn: { label: 'Zenn', pillClass: 'bg-blue-200 text-slate-900' },
+  note: { label: 'Note', pillClass: 'bg-slate-200 text-slate-900' },
+  qiita: { label: 'Qiita', pillClass: 'bg-slate-200 text-slate-900' },
+  zenn: { label: 'Zenn', pillClass: 'bg-slate-200 text-slate-900' },
   default: { label: 'Article', pillClass: 'bg-slate-200 text-slate-900' },
 }
 const getArticleUrl = (a: any) => {
@@ -30,12 +30,12 @@ const getArticleUrl = (a: any) => {
 <SectionFrame
   id="articles"
   eyebrow="articles"
-  title="記事・活動ログ"
-  bgClass="bg-white"
+  title="記事"
+  bgClass="bg-transparent"
   eyebrowClass="text-slate-500"
   titleClass="text-slate-900"
   leadClass="text-slate-600"
-  lead="書き残したメモや活動ログ。考えていることや試したことの記録です。"
+  lead="考えたことや試したことを、記事として残したものです。"
 >
   <div class="relative" id="article-list-root">
     <div id="articles-slider" class="swiper">
@@ -50,7 +50,7 @@ const getArticleUrl = (a: any) => {
                 href={getArticleUrl(a)}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="group relative flex flex-col h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-amber-200"
+                class="group relative flex flex-col h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-slate-300"
               >
                 <div class="relative aspect-[1200/630] overflow-hidden shrink-0">
                   <img src={img} alt={a.name} class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
@@ -58,9 +58,9 @@ const getArticleUrl = (a: any) => {
                 </div>
 
                 <div class="p-5 md:p-6 min-h-[240px] md:min-h-[260px] flex-1 flex flex-col gap-3">
-                  <div class="flex items-center justify-between text-xs text-amber-500">
+                  <div class="flex items-center justify-between text-xs text-slate-500">
                     <span class="flex items-center gap-2 uppercase tracking-[0.2em]">
-                      <span class="h-0.5 w-5 bg-amber-300 block"></span>
+                      <span class="h-0.5 w-5 bg-slate-400 block"></span>
                       {meta.label}
                     </span>
                     <span class="text-[11px] text-slate-500 tracking-normal font-semibold">{formatDate(a.publishAt)}</span>
@@ -79,8 +79,8 @@ const getArticleUrl = (a: any) => {
                       ))}
                     </div>
                   </div>
-                  <div class="flex items-center gap-2 text-amber-500 font-semibold text-sm pt-2 mt-auto">
-                    <span>記事を読む</span>
+                  <div class="flex items-center gap-2 text-slate-600 font-semibold text-sm pt-2 mt-auto">
+                    <span>開く</span>
                     <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
                   </div>
                 </div>
@@ -95,7 +95,7 @@ const getArticleUrl = (a: any) => {
         id="articles-prev"
         type="button"
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
-        aria-label="前の記事へ"
+        aria-label="前のメモへ"
       >
         <i class="fa-solid fa-chevron-left"></i>
       </button>
@@ -104,7 +104,7 @@ const getArticleUrl = (a: any) => {
         id="articles-next"
         type="button"
         class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
-        aria-label="次の記事へ"
+        aria-label="次のメモへ"
       >
         <i class="fa-solid fa-chevron-right"></i>
       </button>
@@ -117,7 +117,7 @@ const getArticleUrl = (a: any) => {
       @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
     }
     :global(.articles-bullet.is-active) {
-      @apply bg-amber-400 w-3 h-3;
+      @apply bg-slate-500 w-3 h-3;
     }
     :global(#articles-prev.swiper-button-disabled),
     :global(#articles-next.swiper-button-disabled) {

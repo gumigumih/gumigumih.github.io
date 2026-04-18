@@ -1,21 +1,79 @@
 ---
+import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
+import sectionSlidersSrc from '../scripts/sectionSliders.ts?url'
+
+const items = [
+  {
+    title: 'ドキュメント',
+    description: '使って終わりではなく、あとから育てられるように残すのが気になっています。',
+  },
+  {
+    title: 'AI',
+    description: '待ち時間や下書きに AI を使って、思考の余白をつくることが増えました。',
+  },
+  {
+    title: 'React / TypeScript',
+    description: '小さく試してすぐ出す。個人開発のテンポを作る道具としてよく触っています。',
+  },
+]
 ---
 
 <SectionFrame
   id="stance"
-  eyebrow="stance"
-  title="エンタメ文脈でのスタンス"
+  eyebrow="now"
+  title="今の関心"
   bgClass="bg-slate-100"
   eyebrowClass="text-slate-600"
   titleClass="text-slate-900"
   leadClass="text-slate-700"
+  lead="最近、特に気になっていることを短くまとめています。"
 >
-  <div slot="lead" class="flex justify-center">
-    <p class="text-base md:text-lg text-slate-700 max-w-4xl">
-      熱量と安定性を両立。<br><br>
-      現場速度に合わせ、最小構成で走り出し、必要なときに拡張します。<br>
-      演出の熱と配信の安定を両立させるため、<br>意思決定の根拠とリスクをセットで共有します。
-    </p>
+  <div class="relative" data-section-slider-root data-medium-slides-per-view="1.1" data-large-slides-per-view="1.4">
+    <div class="swiper" data-section-slider>
+      <div class="swiper-wrapper">
+        {items.map((item, index) => (
+          <div class="swiper-slide h-auto">
+            <section class="rounded-3xl p-6 md:p-8 h-full ring-1 ring-slate-200 shadow-sm bg-white">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-500">0{index + 1}</p>
+              <h3 class="mt-3 text-2xl md:text-3xl font-black leading-tight text-slate-900">{item.title}</h3>
+              <p class="mt-5 text-base text-slate-600 leading-relaxed">{item.description}</p>
+            </section>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="grid grid-cols-[auto,1fr,auto] items-center gap-3 mt-4">
+      <button
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 text-white hover:bg-slate-700 transition"
+        aria-label="前の関心へ"
+        data-section-prev
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="flex justify-center items-center w-full" data-section-pagination></div>
+      <button
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-900 text-white hover:bg-slate-700 transition"
+        aria-label="次の関心へ"
+        data-section-next
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
   </div>
+  <script type="module" src={sectionSlidersSrc}></script>
+  <style>
+    :global(.section-bullet) {
+      @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
+    }
+    :global(.section-bullet.is-active) {
+      @apply bg-amber-400 w-3 h-3;
+    }
+    :global([data-section-prev].swiper-button-disabled),
+    :global([data-section-next].swiper-button-disabled) {
+      @apply opacity-40 cursor-not-allowed hover:bg-slate-900;
+    }
+  </style>
 </SectionFrame>

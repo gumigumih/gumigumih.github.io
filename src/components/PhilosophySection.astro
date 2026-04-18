@@ -1,39 +1,79 @@
 ---
+import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
+import sectionSlidersSrc from '../scripts/sectionSliders.ts?url'
+
+const items = [
+  {
+    title: '小さく始める',
+    description: '最初から大きく作り込まず、まず触れる状態を優先します。',
+  },
+  {
+    title: '後で読める',
+    description: '自分以外が見ても追えるように、説明と整理を残します。',
+  },
+  {
+    title: '迷わせない',
+    description: '見た目は派手すぎなくても、操作はまっすぐにしたいです。',
+  },
+]
 ---
 
 <SectionFrame
   id="philosophy"
-  eyebrow="philosophy"
-  title="仕事の考え方"
+  eyebrow="how"
+  title="ものづくりの癖"
   bgClass="bg-white"
   eyebrowClass="text-slate-500"
   titleClass="text-slate-900"
+  leadClass="text-slate-600"
+  lead="作るときに、つい大事にしてしまうことを3つに分けています。"
 >
-  <div class="max-w-4xl mx-auto space-y-6">
-    <div class="grid grid-cols-1 md:grid-cols-10 space-x-2 space-y-4 items-center">
-      <div class="md:col-span-4">
-        <h3 class="text-3xl mb-2 bg-slate-200 inline">チームの現状を把握する</h3>
-      </div>
-      <div class="md:col-span-6">
-        <p class="text-base text-slate-600">プロジェクト単体ではなく、まずチームの状態や前提を把握します。現状分析を行い、どこに無理や曖昧さがあるのかを整理したうえで進めます。</p>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-10 space-x-2 space-y-4 items-center">
-      <div class="md:col-span-4">
-        <h3 class="text-3xl mb-2 bg-slate-200 inline">再現性を重視する</h3>
-      </div>
-      <div class="md:col-span-6">
-        <p class="text-base text-slate-600">属人化を避けるため、ドキュメント化を重視しています。一度作って終わりではなく、更新され続ける「生きたドキュメント」を大切にします。</p>
+  <div class="relative" data-section-slider-root data-medium-slides-per-view="1.1" data-large-slides-per-view="1.4">
+    <div class="swiper" data-section-slider>
+      <div class="swiper-wrapper">
+        {items.map((item, index) => (
+          <div class="swiper-slide h-auto">
+            <section class="rounded-3xl p-6 md:p-8 h-full ring-1 ring-slate-200 shadow-sm bg-white">
+              <p class="text-xs uppercase tracking-[0.3em] text-slate-500">0{index + 1}</p>
+              <h3 class="mt-3 text-2xl md:text-3xl font-black leading-tight text-slate-900">{item.title}</h3>
+              <p class="mt-5 text-base text-slate-600 leading-relaxed">{item.description}</p>
+            </section>
+          </div>
+        ))}
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-10 space-x-2 space-y-4 items-center">
-      <div class="md:col-span-4">
-        <h3 class="text-3xl mb-2 bg-slate-200 inline">最後まで責任を持つ</h3>
-      </div>
-      <div class="md:col-span-6">
-        <p class="text-base text-slate-600">要件整理〜設計〜実装〜品質管理〜運用まで、必要なところには自ら入り、最後まで責任を持って進めます。</p>
-      </div>
+    <div class="grid grid-cols-[auto,1fr,auto] items-center gap-3 mt-4">
+      <button
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="前の癖へ"
+        data-section-prev
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <div class="flex justify-center items-center w-full" data-section-pagination></div>
+      <button
+        type="button"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="次の癖へ"
+        data-section-next
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </div>
+  <script type="module" src={sectionSlidersSrc}></script>
+  <style>
+    :global(.section-bullet) {
+      @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
+    }
+    :global(.section-bullet.is-active) {
+      @apply bg-amber-400 w-3 h-3;
+    }
+    :global([data-section-prev].swiper-button-disabled),
+    :global([data-section-next].swiper-button-disabled) {
+      @apply opacity-40 cursor-not-allowed hover:bg-slate-100;
+    }
+  </style>
 </SectionFrame>

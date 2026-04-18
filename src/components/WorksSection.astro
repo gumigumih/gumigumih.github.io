@@ -1,75 +1,91 @@
 ---
 import 'swiper/css/bundle'
 import SectionFrame from './SectionFrame.astro'
+import genreSliderSrc from '../scripts/genreSliders.ts?url'
 
-const worksSliderSrc = '/assets/js/worksSlider.js'
-
-const works = [
+const selectedProjects = [
   {
     title: 'わりまる / わけたべ',
-    role: 'Webアプリ開発 / 企画・実装',
-    description: '飲み会や旅行の割り勘を計算する「わりまる」と、料理ごとの食べた分割り勘をこなす「わけたべ」を同一ドメインで提供。直感的な操作とシェアしやすい結果画面で幹事の負担を軽減。',
+    role: 'Side Project',
+    description: '飲み会や旅行の割り勘を軽くするために作った、暮らし寄りのWebアプリです。',
     image: '/assets/images/warimaru/ogp.png',
     href: '/works/warimaru',
     period: '2025.06',
+    external: false,
+    linkLabel: '詳細',
   },
   {
-    title: 'DHU ビジョンブック',
-    role: 'Webサイト制作 / 実装担当',
-    description: 'デジタルハリウッド大学の2030年に向けた中長期構想サイト。ビジョンを印象的に伝えるモダンなフロントエンドを担当。',
-    image: '/assets/images/dhu-visionbook/ogp.png',
-    href: '/works/dhu-visionbook',
-    period: '2024.03',
+    title: 'React電卓入力フォーム',
+    role: 'npm Package',
+    description: '思いついてから8時間で公開した、React用の電卓付き入力フォームです。',
+    image: '/assets/images/articles/note_125488845_1766284143676.jpg',
+    href: '/works/react-calculator-input-form',
+    period: '2025.09',
+    external: false,
+    linkLabel: '詳細',
   },
-];
-const formatPeriod = (s: string) => {
-  const [y, m] = s.split('.')
-  const mm = String(m || '').padStart(2, '0')
-  return `${y}.${mm}`
-}
+  {
+    title: 'このポートフォリオ',
+    role: 'Personal Site',
+    description: '個人の制作物や活動を、外から見やすくまとめたポートフォリオです。',
+    image: '/assets/images/profile.jpg',
+    href: '#top',
+    period: '2026.04',
+    external: false,
+    linkLabel: 'サイト',
+  },
+]
 ---
 
 <SectionFrame
   id="works"
-  eyebrow="works"
-  title="実績"
-  bgClass="bg-slate-900 text-white"
-  eyebrowClass="text-slate-300"
-  titleClass="text-white"
-  leadClass="text-slate-200"
-  lead="お仕事で携わった実績の一部を紹介します。"
+  eyebrow="project"
+  title="つくったもの"
+  bgClass="bg-transparent"
+  eyebrowClass="text-slate-500"
+  titleClass="text-slate-900"
+  leadClass="text-slate-600"
+  lead="つくってきたものを、並べて見られるようにしています。"
 >
-  <div class="relative">
-    <div id="works-slider" class="swiper">
+  <div class="relative" data-genre-slider-root>
+    <div class="swiper" data-genre-slider>
       <div class="swiper-wrapper">
-        {works.map((work) => (
+        {selectedProjects.map((item) => (
           <div class="swiper-slide h-auto">
             <a
-              href={work.href}
-              class="group flex flex-col h-full bg-white/5 rounded-2xl overflow-hidden ring-1 ring-white/10 hover:ring-amber-300/60 transition transform hover:-translate-y-1 shadow-lg shadow-black/30 hover:shadow-2xl"
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noopener noreferrer' : undefined}
+              class="group flex flex-col h-full bg-white rounded-2xl overflow-hidden ring-1 ring-slate-200 hover:ring-slate-300 transition transform hover:-translate-y-1 shadow-md shadow-slate-200/50 hover:shadow-lg"
             >
-              <div class="relative aspect-[16/9] overflow-hidden bg-slate-800">
+              <div class="relative aspect-[16/9] overflow-hidden bg-slate-100">
                 <img
-                  src={work.image}
-                  alt={`${work.title} のサムネイル`}
+                  src={item.image}
+                  alt={`${item.title} のサムネイル`}
                   loading="lazy"
+                  decoding="async"
                   class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
                 />
+                <div class="absolute right-3 top-3 inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold tracking-[0.18em] text-slate-600 ring-1 ring-slate-200 backdrop-blur">
+                  {item.linkLabel}
+                </div>
               </div>
-              <div class="p-5 md:p-6 flex-1 h-full flex flex-col gap-3">
-                <div class="flex items-center justify-between text-xs text-amber-200">
+              <div class="p-5 md:p-6 flex-1 h-full flex flex-col gap-3 text-slate-900">
+                <div class="flex items-center justify-between text-xs text-slate-500">
                   <span class="flex items-center gap-2 uppercase tracking-[0.2em]">
-                    <span class="h-0.5 w-5 bg-amber-300 block"></span>
-                    {work.role}
+                    <span class="h-0.5 w-5 bg-slate-400 block"></span>
+                    {item.role}
                   </span>
-                  <span class="text-[11px] text-slate-100 tracking-normal font-semibold">{formatPeriod(work.period)}</span>
+                  <span class="text-[11px] text-slate-500 tracking-normal font-semibold">
+                    {item.period}
+                  </span>
                 </div>
                 <div class="space-y-2 flex-1">
-                  <h3 class="text-xl font-bold text-white">{work.title}</h3>
-                  <p class="text-sm text-slate-200 leading-relaxed">{work.description}</p>
+                  <h4 class="text-xl font-bold leading-tight">{item.title}</h4>
+                  <p class="text-sm text-slate-600 leading-relaxed">{item.description}</p>
                 </div>
-                <div class="flex items-center gap-2 text-amber-200 font-semibold text-sm mt-auto pt-2">
-                  <span>詳細を見る</span>
+                <div class="flex items-center gap-2 text-slate-600 font-semibold text-sm mt-auto pt-2">
+                  <span>{item.external ? '読む' : '詳細を見る'}</span>
                   <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
                 </div>
               </div>
@@ -78,38 +94,38 @@ const formatPeriod = (s: string) => {
         ))}
       </div>
     </div>
+
     <div class="grid grid-cols-[auto,1fr,auto] items-center gap-3 mt-4">
       <button
-        id="works-prev"
         type="button"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition"
-        aria-label="前の実績へ"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="前のProjectへ"
+        data-genre-prev
       >
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <div id="works-pagination" class="flex justify-center items-center w-full"></div>
+      <div class="flex justify-center items-center w-full" data-genre-pagination></div>
       <button
-        id="works-next"
         type="button"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition"
-        aria-label="次の実績へ"
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+        aria-label="次のProjectへ"
+        data-genre-next
       >
         <i class="fa-solid fa-chevron-right"></i>
       </button>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
-  <script src="/assets/js/worksSlider.js" is:inline></script>
+  <script type="module" src={genreSliderSrc}></script>
   <style>
-    :global(.works-bullet) {
-      @apply inline-block w-2.5 h-2.5 rounded-full bg-white/30 mx-1 transition hover:bg-white/60;
+    :global(.genre-bullet) {
+      @apply inline-block w-2.5 h-2.5 rounded-full bg-slate-300 mx-1 transition hover:bg-slate-400;
     }
-    :global(.works-bullet.is-active) {
-      @apply bg-amber-300 w-3 h-3;
+    :global(.genre-bullet.is-active) {
+      @apply bg-slate-500 w-3 h-3;
     }
-    :global(#works-prev.swiper-button-disabled),
-    :global(#works-next.swiper-button-disabled) {
-      @apply opacity-40 cursor-not-allowed hover:bg-white/10;
+    :global([data-genre-prev].swiper-button-disabled),
+    :global([data-genre-next].swiper-button-disabled) {
+      @apply opacity-40 cursor-not-allowed hover:bg-slate-100;
     }
   </style>
 </SectionFrame>

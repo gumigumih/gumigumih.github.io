@@ -1,78 +1,70 @@
 ---
 import SectionFrame from './SectionFrame.astro'
 
-const colorClasses = [
-  'bg-orange-400',
-  'bg-yellow-400',
-  'bg-green-400',
-  'bg-blue-400',
-  'bg-violet-400',
-  'bg-pink-400',
-];
+const interests = [
+  {
+    title: 'BUILD',
+    heading: '個人開発',
+    description: '思いついたものを小さく作って、使いながら育てるのが好きです。',
+    rotation: '-rotate-2',
+  },
+  {
+    title: 'WRITE',
+    heading: '文章を書く',
+    description: '考えたことを note やメモに残して、あとから見返せる形にします。',
+    rotation: 'rotate-1',
+  },
+  {
+    title: 'TRY',
+    heading: 'AIを試す',
+    description: '創作を進めるために、下書きや整理で AI を試しています。',
+    rotation: '-rotate-1',
+  },
+  {
+    title: 'DRAW',
+    heading: 'お絵描き',
+    description: '気が向いたときにラフを描いて、線や色の雰囲気を試します。',
+    rotation: 'rotate-2',
+  },
+  {
+    title: 'WALK',
+    heading: '写真散歩',
+    description: '歩きながら、視点の切り取りが面白い瞬間を探しています。',
+    rotation: '-rotate-1',
+  },
+  {
+    title: 'FOOD',
+    heading: 'ラーメン巡り',
+    description: 'おいしい一杯を探して、ラーメンや中華のお店を少しずつ開拓しています。',
+    rotation: 'rotate-1',
+  },
+]
 ---
 
 <SectionFrame
   id="experience"
-  eyebrow="experience"
-  title="経験領域"
-  bgClass="bg-slate-950 text-white overflow-x-hidden"
-  eyebrowClass="text-slate-300"
-  titleClass="text-white"
-  leadClass="text-white"
-  lead="役割や分野に閉じず、必要なところに入りながら、成立する形をつくってきました。"
+  eyebrow="likes"
+  title="好きなこと"
+  bgClass="bg-transparent overflow-x-hidden"
+  eyebrowClass="text-slate-500 [&+span]:bg-slate-400"
+  titleClass="text-slate-900"
+  leadClass="text-slate-600"
+  lead="日常的に触っているテーマを、カードで並べています。"
 >
-  <div class="max-w-4xl mx-auto space-y-6">
-    {[
-      {
-        title: 'Website Development',
-        heading: 'WEBサイト制作',
-        description: '目的と前提を言語化し、判断点を整理しながら進行と品質を成立させる。',
-      },
-      {
-        title: 'UI/UX Design',
-        heading: 'UI/UXデザイン',
-        description: '体験の筋道を描き、プロトタイプで合意形成。運用を見据えて統制。',
-      },
-      {
-        title: 'Server-Side Engineering',
-        heading: 'サーバーサイドエンジニアリング',
-        description: '運用前提でAPI/バックエンドを設計・実装。安定性と安全性を担保。',
-      },
-      {
-        title: 'Web AR/VR',
-        heading: 'WEBAR/VR',
-        description: 'デバイスと環境条件から成立ラインを定め、体験と演出を設計。',
-      },
-      {
-        title: '3D Avatar Direction',
-        heading: '3Dアバターディレクション',
-        description: '表現と実装の要件を整理し、運用で破綻しないラインを定める。',
-      },
-      {
-        title: 'Streaming Direction',
-        heading: 'VTuber配信ディレクション',
-        description: '準備から本番、その後の運用までを見据えて一気通貫で設計。',
-      },
-    ].map((experience, index) => {
-      const isLeft = index % 2 === 0;
-      const colorClass = colorClasses[index % colorClasses.length];
-      return (
-        <div class="grid grid-cols-1 md:grid-cols-10 gap-4 md:gap-6">
-          <div
-            class={`md:col-span-6 text-4xl lg:text-5xl text-slate-900 ${colorClass} flex justify-start ${
-              isLeft
-                ? 'md:justify-end md:-ml-[100vw]'
-                : 'md:justify-start md:-mr-[100vw] md:order-1'
-            } items-end px-4 md:px-10`}
-          >
-            <p class="-mb-2">{experience.title}</p>
-          </div>
-          <div class="md:col-span-4 md:py-4">
-            <h3 class="text-xl text-slate-200">{experience.heading}</h3>
-            <p class="text-sm text-slate-400">{experience.description}</p>
-          </div>
+  <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    {interests.map((interest) => (
+      <article
+        class={`group relative rounded-[2rem] bg-white text-slate-900 p-5 md:p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/50 transition duration-300 hover:-translate-y-1 hover:rotate-0 ${interest.rotation}`}
+      >
+        <div>
+          <p class="text-xs uppercase tracking-[0.3em] text-slate-400">{interest.title}</p>
+          <h3 class="mt-3 text-xl md:text-2xl font-black leading-tight text-slate-900">{interest.heading}</h3>
         </div>
-      );
-    })}
+
+        <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed">
+          {interest.description}
+        </p>
+      </article>
+    ))}
   </div>
 </SectionFrame>

@@ -1,0 +1,180 @@
+---
+const shapeCount = 24
+---
+
+<div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true" data-animated-background>
+  {Array.from({ length: shapeCount }).map((_, index) => (
+    <div
+      class="bg-shape absolute left-1/2 top-1/2 will-change-transform"
+      data-bg-shape
+      data-index={index}
+    >
+      <span class="shape-kind shape-plus" data-kind="plus" aria-hidden="true">
+        <span class="plus-bar plus-bar-horizontal"></span>
+        <span class="plus-bar plus-bar-vertical"></span>
+      </span>
+    </div>
+  ))}
+</div>
+
+<script>
+  const bg = document.querySelector('[data-animated-background]')
+  const shapes = Array.from(bg?.querySelectorAll('[data-bg-shape]') ?? [])
+  const appRoot = document.getElementById('app')
+
+  const kinds = ['plus']
+  const palettes = [
+    { base: '#ec4899', soft: 'rgba(236, 72, 153, 0.18)' },
+    { base: '#facc15', soft: 'rgba(250, 204, 21, 0.18)' },
+    { base: '#38bdf8', soft: 'rgba(56, 189, 248, 0.18)' },
+  ]
+
+  const rand = (min, max) => Math.random() * (max - min) + min
+  const shuffle = (items) => {
+    const copied = [...items]
+    for (let i = copied.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1))
+      ;[copied[i], copied[j]] = [copied[j], copied[i]]
+    }
+    return copied
+  }
+
+  const palettePool = shuffle(
+    Array.from({ length: Math.ceil(shapes.length / palettes.length) }, () => palettes)
+      .flat()
+      .slice(0, shapes.length),
+  )
+
+  const placedPoints = []
+  const minDistance = 18
+
+  const getPoint = () => {
+    for (let attempt = 0; attempt < 24; attempt += 1) {
+      const x = rand(0, 100)
+      const y = rand(0, 100)
+      const isFarEnough = placedPoints.every((point) => {
+        const dx = point.x - x
+        const dy = point.y - y
+        return Math.sqrt((dx * dx) + (dy * dy)) >= minDistance
+      })
+
+      if (isFarEnough) {
+        placedPoints.push({ x, y })
+        return { x, y }
+      }
+    }
+
+    const fallback = { x: rand(0, 100), y: rand(0, 100) }
+    placedPoints.push(fallback)
+    return fallback
+  }
+
+  shapes.forEach((shape) => {
+    const kind = kinds[Math.floor(Math.random() * kinds.length)]
+    const palette = palettePool.shift() ?? palettes[0]
+    const size = rand(56, 94)
+    const { x, y } = getPoint()
+    const drift = rand(18, 42)
+    const rotate = rand(-28, 28)
+    const duration = rand(16, 28)
+    const delay = rand(-24, 0)
+    const opacity = rand(0.18, 0.38)
+
+    shape.dataset.kind = kind
+    shape.style.left = `${x}%`
+    shape.style.top = `${y}%`
+    shape.style.width = `${size}px`
+    shape.style.height = `${size}px`
+    shape.style.setProperty('--shape-color', palette.base)
+    shape.style.setProperty('--shape-soft', palette.soft)
+    shape.style.setProperty('--shape-opacity', `${opacity}`)
+    shape.style.setProperty('--shape-rotate', `${rotate}deg`)
+    shape.style.setProperty('--float-distance', `${drift}px`)
+    shape.style.setProperty('--float-duration', `${duration}s`)
+    shape.style.setProperty('--float-delay', `${delay}s`)
+  })
+
+  const updateScrollDrift = () => {
+    if (!appRoot) return
+
+    const scrollTop = window.scrollY || window.pageYOffset || 0
+    const docHeight = Math.max(
+      document.documentElement.scrollHeight,
+      document.body.scrollHeight,
+      document.documentElement.offsetHeight,
+      document.body.offsetHeight,
+    )
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0
+    const maxScroll = Math.max(docHeight - viewportHeight, 1)
+    const progress = Math.min(scrollTop / maxScroll, 1)
+
+    bg?.style.setProperty('--scroll-progress', `${progress}`)
+    bg?.style.setProperty('--scroll-offset', `${progress * 340}px`)
+  }
+
+  const onScroll = () => {
+    window.requestAnimationFrame(updateScrollDrift)
+  }
+
+  updateScrollDrift()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', updateScrollDrift)
+</script>
+
+<style>
+  .bg-shape {
+    transform: translate(-50%, calc(-50% + var(--scroll-offset, 0px))) rotate(var(--shape-rotate, 0deg));
+    opacity: var(--shape-opacity, 0.2);
+    animation: bg-float var(--float-duration, 22s) ease-in-out var(--float-delay, 0s) infinite alternate;
+    color: var(--shape-color, #38bdf8);
+  }
+
+  .shape-kind {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg-shape[data-kind="plus"] .shape-plus {
+    display: block;
+  }
+
+  .shape-plus {
+    position: relative;
+  }
+
+  .plus-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 999px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 10px var(--shape-soft, rgba(56, 189, 248, 0.18));
+  }
+
+  .plus-bar-horizontal {
+    width: 100%;
+    height: 10%;
+  }
+
+  .plus-bar-vertical {
+    width: 10%;
+    height: 100%;
+  }
+
+  @keyframes bg-float {
+    from {
+      transform: translate(-50%, calc(-50% + var(--scroll-offset, 0px))) rotate(var(--shape-rotate, 0deg)) translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate(-50%, calc(-50% + var(--scroll-offset, 0px))) rotate(calc(var(--shape-rotate, 0deg) + 16deg)) translate3d(var(--float-distance, 20px), calc(var(--float-distance, 20px) * -0.8), 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-shape {
+      animation: none;
+    }
+  }
+</style>
