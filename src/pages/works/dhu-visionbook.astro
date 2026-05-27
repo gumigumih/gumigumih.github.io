@@ -1,5 +1,6 @@
 ---
 import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
 import SiteHeader from '../../components/SiteHeader.astro'
 import SiteFooter from '../../components/SiteFooter.astro'
 import AnimatedBackground from '../../components/AnimatedBackground.astro'
@@ -7,14 +8,12 @@ import AnimatedBackground from '../../components/AnimatedBackground.astro'
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title></title>
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet" />
+  <SiteHead
+    title="DHU ビジョンブック | meg+gumi"
+    description="DHU ビジョンブック制作で担当した設計や実装、表現の工夫を紹介します。"
+    image="https://meggumi.com/assets/images/dhu-visionbook/ogp.png"
+    canonicalPath="/works/dhu-visionbook"
+  />
 </head>
 <body class="bg-slate-100 font-sans">
   <AnimatedBackground />

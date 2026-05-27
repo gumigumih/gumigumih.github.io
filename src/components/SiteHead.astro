@@ -1,0 +1,48 @@
+---
+export interface Props {
+  title?: string
+  description?: string
+  image?: string
+  canonicalPath?: string
+}
+
+const {
+  title = 'meg+gumi | 趣味と活動のポートフォリオ',
+  description = 'つくる・書く・試すを軸にした、趣味と活動のミックス型の個人ポートフォリオです。',
+  image = 'https://meggumi.com/assets/images/ogp.png',
+  canonicalPath = '/',
+} = Astro.props as Props
+
+const siteUrl = 'https://meggumi.com'
+const canonicalUrl = new URL(canonicalPath, siteUrl).toString()
+const publisherId = 'ca-pub-6314014806862092'
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="icon" href="/favicon.ico" />
+<link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin />
+<link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin />
+<script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${publisherId}`} crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&family=Zen+Maru+Gothic:wght@700;900&display=swap"
+  rel="stylesheet"
+/>
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TTF0HVQRJ3');
+</script>

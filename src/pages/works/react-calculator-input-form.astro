@@ -1,5 +1,6 @@
 ---
 import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
 import SiteHeader from '../../components/SiteHeader.astro'
 import SiteFooter from '../../components/SiteFooter.astro'
 import AnimatedBackground from '../../components/AnimatedBackground.astro'
@@ -7,18 +8,12 @@ import AnimatedBackground from '../../components/AnimatedBackground.astro'
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>React電卓入力フォーム | meg+gumi</title>
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&display=swap" rel="stylesheet" />
-  <meta property="og:title" content="React電卓入力フォーム | meg+gumi" />
-  <meta property="og:description" content="思いついてから8時間で公開した、React用の電卓付き入力フォームです。" />
-  <meta property="og:image" content="https://meggumi.com/assets/images/articles/note_125488845_1776397303577.jpg" />
-  <meta name="description" content="思いついてから8時間で公開した、React用の電卓付き入力フォームの詳細ページです。" />
+  <SiteHead
+    title="React電卓入力フォーム | meg+gumi"
+    description="思いついてから8時間で公開した、React用の電卓付き入力フォームの詳細ページです。"
+    image="https://meggumi.com/assets/images/articles/note_125488845_1777365106573.jpg"
+    canonicalPath="/works/react-calculator-input-form"
+  />
 </head>
 <body class="bg-slate-100 font-sans">
   <AnimatedBackground />
@@ -42,7 +37,7 @@ import AnimatedBackground from '../../components/AnimatedBackground.astro'
         <div class="flex flex-col lg:flex-row">
           <div class="w-full lg:w-96 aspect-video bg-slate-100">
             <img
-              src="/assets/images/articles/note_125488845_1776397303577.jpg"
+              src="/assets/images/articles/note_125488845_1777365106573.jpg"
               alt="React電卓入力フォームのサムネイル"
               class="w-full h-full object-cover"
             />

@@ -5,11 +5,12 @@ export interface Props {
 const { baseUrl = '' } = Astro.props as Props
 
 const navLinks = [
-  { label: 'HOME', href: '#top' },
-  { label: 'LIKES', href: '#experience' },
-  { label: 'PROJECTS', href: '#works' },
-  { label: 'ARTICLES', href: '#articles' },
-  { label: 'CONTACT', href: '#contact' },
+  { label: 'HOME', href: '/' },
+  { label: 'ABOUT', href: '/about' },
+  { label: 'LIKES', href: '/#experience' },
+  { label: 'PROJECTS', href: '/#works' },
+  { label: 'ARTICLES', href: '/#articles' },
+  { label: 'CONTACT', href: '/#contact' },
 ]
 ---
 <header class="fixed inset-x-0 top-0 w-full z-50 border-b border-slate-200 overflow-hidden" data-component="site-header">
@@ -23,7 +24,7 @@ const navLinks = [
       </div>
       <nav class="hidden lg:flex space-x-8">
         {navLinks.map((nav) => (
-          <a href={`${baseUrl}/${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
+          <a href={`${baseUrl}${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
             {nav.label}
             <span
               class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
@@ -38,7 +39,7 @@ const navLinks = [
       <nav class="flex flex-col divide-y divide-slate-200">
         {navLinks.map((nav) => (
           <a
-            href={`${baseUrl}/${nav.href}`}
+            href={`${baseUrl}${nav.href}`}
             class="block px-6 py-4 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors relative group">
             {nav.label}
           </a>

@@ -1,5 +1,6 @@
 ---
 import '../styles/tailwind.css'
+import SiteHead from '../components/SiteHead.astro'
 import AnimatedBackground from '../components/AnimatedBackground.astro'
 import SiteHeader from '../components/SiteHeader.astro'
 import HeroSection from '../components/HeroSection.astro'
@@ -13,36 +14,12 @@ import SiteFooter from '../components/SiteFooter.astro'
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>meg+gumi | 趣味と活動のポートフォリオ</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6314014806862092"
-    crossorigin="anonymous"></script>
-  
-  
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=M+PLUS+1p:wght@400;500;700&family=Zen+Maru+Gothic:wght@700;900&display=swap"
-    rel="stylesheet" />
+  <SiteHead
+    title="meg+gumi | 趣味と活動のポートフォリオ"
+    description="つくる・書く・試すを軸にした、趣味と活動のミックス型の個人ポートフォリオです。"
+    canonicalPath="/"
+  />
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <meta property="og:title" content="meg+gumi | 趣味と活動のポートフォリオ" />
-  <meta property="og:description" content="つくる・書く・試すを軸にした、個人の趣味と活動のポートフォリオです。" />
-  <meta property="og:image" content="https://meggumi.com/assets/images/ogp.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="description" content="つくる・書く・試すを軸にした、趣味と活動のミックス型の個人ポートフォリオです。" />
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TTF0HVQRJ3');
-  </script>
 </head>
 
 <body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100" id="app">

@@ -20,7 +20,6 @@ const shapeCount = 24
 <script>
   const bg = document.querySelector('[data-animated-background]')
   const shapes = Array.from(bg?.querySelectorAll('[data-bg-shape]') ?? [])
-  const appRoot = document.getElementById('app')
 
   const kinds = ['plus']
   const palettes = [
@@ -95,8 +94,6 @@ const shapeCount = 24
   })
 
   const updateScrollDrift = () => {
-    if (!appRoot) return
-
     const scrollTop = window.scrollY || window.pageYOffset || 0
     const docHeight = Math.max(
       document.documentElement.scrollHeight,

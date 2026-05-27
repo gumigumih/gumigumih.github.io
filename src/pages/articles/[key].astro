@@ -1,0 +1,130 @@
+---
+import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
+import articlesData from '../../../public/articles.json' assert { type: 'json' }
+
+export function getStaticPaths() {
+  const articles = (articlesData as any)?.data?.contents ?? []
+  return articles.map((article: any) => ({
+    params: { key: article.key },
+    props: { article },
+  }))
+}
+
+const { article } = Astro.props as { article: any }
+const img = article.localImagePath || article.eyecatch || '/assets/images/ogp.png'
+const tags = (article.hashtags || []) as any[]
+const toc = (article.toc || []) as Array<{ level: number; text: string }>
+const paragraphs = String(article.body || article.description || '')
+  .split(/\n+/)
+  .map((text) => text.trim())
+  .filter(Boolean)
+
+const formatDate = (s: string) => {
+  const d = new Date(s)
+  const yyyy = d.getFullYear()
+  const mm = String(d.getMonth() + 1).padStart(2, '0')
+  const dd = String(d.getDate()).padStart(2, '0')
+  return `${yyyy}.${mm}.${dd}`
+}
+
+const getExternalUrl = (a: any) => {
+  switch (a.type) {
+    case 'qiita': return `https://qiita.com/gumigumih/items/${a.key}`
+    case 'zenn': return `https://zenn.dev/gumigumih/articles/${a.key}`
+    case 'note':
+    default: return `https://note.com/gumigumih/n/${a.key}`
+  }
+}
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title={`${article.name} | meg+gumi`}
+    description={article.description || `${article.name} の概要と本文抜粋です。`}
+    image={`https://meggumi.com${img}`}
+    canonicalPath={`/articles/${article.key}`}
+  />
+</head>
+<body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100">
+  <AnimatedBackground />
+  <SiteHeader />
+  <main class="pt-24">
+    <article class="relative z-10 py-16 px-4 md:px-8">
+      <div class="mx-auto max-w-4xl">
+        <nav class="mb-8 text-sm text-slate-500">
+          <a href="/#articles" class="hover:text-slate-700">記事一覧</a>
+          <span class="mx-2">/</span>
+          <span class="text-slate-700">{article.name}</span>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <span class="h-0.5 w-10 bg-slate-400"></span>
+          <span class="uppercase tracking-[0.25em] text-xs text-slate-500">{article.type || 'article'}</span>
+        </div>
+        <h1 class="mt-4 text-3xl md:text-5xl font-black leading-tight text-slate-900">{article.name}</h1>
+        <div class="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-500">
+          <time datetime={article.publishAt}>{formatDate(article.publishAt)}</time>
+          {tags.slice(0, 6).map((t) => (
+            <span class="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs text-slate-600">
+              <i class="fa-solid fa-tag text-[10px] opacity-60" aria-hidden="true"></i>
+              {t.hashtag?.name}
+            </span>
+          ))}
+        </div>
+
+        <div class="mt-8 overflow-hidden rounded-2xl bg-white ring-1 ring-slate-200 shadow-md shadow-slate-200/50">
+          <img src={img} alt={article.name} class="w-full aspect-[1200/630] object-cover" loading="eager" decoding="async" />
+        </div>
+
+        <div class="mt-10 rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50 px-5 py-8 md:px-8 md:py-10">
+          {toc.length > 0 && (
+            <section class="mb-8 rounded-2xl bg-slate-50/90 ring-1 ring-slate-200 px-5 py-5 md:px-6">
+              <p class="text-xs uppercase tracking-[0.24em] text-slate-500">table of contents</p>
+              <h2 class="mt-2 text-lg md:text-xl font-black text-slate-900">元記事の目次</h2>
+              <p class="mt-2 text-sm text-slate-500">
+                このページでは概要を掲載しています。全文はnoteで読めます。
+              </p>
+              <ol class="mt-4 space-y-2 text-sm md:text-base text-slate-700">
+                {toc.map((heading) => (
+                  <li class={heading.level === 3 ? 'pl-5 text-slate-500' : 'font-semibold text-slate-800'}>
+                    <span class="mr-2 text-slate-400">/</span>
+                    {heading.text}
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+          <div class="relative max-h-[30rem] overflow-hidden">
+            <div class="space-y-5 text-base md:text-lg leading-relaxed text-slate-700">
+              {paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-white/0 via-white/80 to-white"></div>
+          </div>
+          <div class="mt-6 border-t border-slate-200 pt-6">
+            <p class="mb-4 text-sm text-slate-500">
+              ここでは概要を掲載しています。続きは元の記事で読めます。
+            </p>
+            <a
+              href={getExternalUrl(article)}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-5 py-3 text-sm font-semibold hover:-translate-y-0.5 hover:shadow-lg transition"
+            >
+              元の記事を読む
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <SiteFooter />
+</body>
+</html>

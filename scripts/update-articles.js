@@ -17,6 +17,7 @@ const ARTICLES_JSON_PATH = path.join('public', 'articles.json');
  * @property {string | null} localImagePath ローカルに保存したアイキャッチのパス
  * @property {string} body 記事本文（冒頭抜粋）
  * @property {Array<{hashtag: {name: string}}>} hashtags ハッシュタグ配列
+ * @property {Array<{level: number, text: string}>} toc 記事本文内の見出し一覧
  */
 
 /**
@@ -42,6 +43,45 @@ async function downloadImage(imageUrl, filename) {
 }
 
 /**
+ * HTML文字列から見出しテキストを抽出する。
+ * @param {string} html note記事本文HTML
+ * @returns {Array<{level: number, text: string}>} h2/h3の見出し一覧
+ */
+function extractTocFromHtml(html) {
+  const decodeEntities = (value) => value
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ');
+
+  return [...String(html || '').matchAll(/<h([23])\b[^>]*>([\s\S]*?)<\/h\1>/gi)]
+    .map((match) => ({
+      level: Number(match[1]),
+      text: decodeEntities(match[2].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()),
+    }))
+    .filter((heading) => heading.text);
+}
+
+/**
+ * note.com の公開APIから記事詳細を取得する。
+ * @param {string} key 記事キー
+ * @returns {Promise<{toc: Array<{level: number, text: string}>}>} 取得した詳細情報
+ */
+async function fetchNoteArticleDetail(key) {
+  try {
+    const response = await axios.get(`https://note.com/api/v3/notes/${key}`);
+    return {
+      toc: extractTocFromHtml(response.data?.data?.body || ''),
+    };
+  } catch (error) {
+    console.error(`Failed to fetch Note detail: ${key}`, error.message);
+    return { toc: [] };
+  }
+}
+
+/**
  * note.com の公開APIから最新の記事一覧を取得する。
  * @returns {Promise<NoteArticle[]>} 取得した記事リスト
  */
@@ -51,6 +91,7 @@ async function fetchNoteArticles() {
 
     const articles = [];
     for (const article of response.data.data.contents) {
+      const detail = await fetchNoteArticleDetail(article.key);
       let localImagePath = null;
       if (article.eyecatch) {
         const filename = `note_${article.id}_${Date.now()}.jpg`;
@@ -67,6 +108,7 @@ async function fetchNoteArticles() {
         localImagePath,
         body: article.body,
         hashtags: article.hashtags,
+        toc: detail.toc,
       });
     }
 
@@ -139,4 +181,5 @@ if (require.main === module) {
 module.exports = {
   updateArticles,
   fetchNoteArticles,
+  extractTocFromHtml,
 };
