@@ -107,9 +107,11 @@ const selectedProjects = [
       </button>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" is:inline></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" is:inline></script>
   <script src="/assets/js/worksSlider.js" is:inline></script>
   <style>
+    @reference "../styles/tailwind.css";
+
     :global(.slider-edge-mask) {
       --slider-edge-mask-width: 32px;
       -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--slider-edge-mask-width), #000 calc(100% - var(--slider-edge-mask-width)), transparent 100%);

@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Raleway", "M PLUS 1p", sans-serif;
+}
 
 @layer base {
   html {

@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 
 // Minimal Astro config for static site
 export default defineConfig({
   outDir: 'dist',
-  integrations: [tailwind()],
   vite: {
+    plugins: [tailwindcss()],
     server: {
       watch: {
         usePolling: true
