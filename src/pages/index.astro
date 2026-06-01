@@ -10,6 +10,7 @@ import WorksSection from '../components/WorksSection.astro'
 import ArticlesSection from '../components/ArticlesSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import SiteFooter from '../components/SiteFooter.astro'
+import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
 ---
 <!DOCTYPE html>
 <html lang="ja">
@@ -35,6 +36,81 @@ import SiteFooter from '../components/SiteFooter.astro'
     <ContactSection />
     <SiteFooter />
   </div>
+  <script type="module" src={revealOnScrollSrc}></script>
 </body>
 
 </html>
+
+<style is:global>
+  .reveal-ready [data-reveal],
+  .reveal-ready [data-reveal-item] {
+    opacity: 0;
+    transform:
+      translate3d(var(--reveal-x, 0), var(--reveal-y, 28px), 0)
+      rotate(var(--reveal-rotate, 0deg))
+      scale(var(--reveal-scale, 1));
+    filter: blur(12px);
+    transition:
+      opacity 780ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
+  }
+
+  .reveal-ready [data-reveal="eyebrow"] {
+    --reveal-x: -14px;
+    --reveal-y: 0;
+  }
+
+  .reveal-ready [data-reveal="title"] {
+    --reveal-y: 34px;
+    --reveal-scale: 0.97;
+  }
+
+  .reveal-ready [data-reveal="lead"] {
+    --reveal-y: 20px;
+  }
+
+  .reveal-ready [data-reveal-item] {
+    --reveal-y: 38px;
+    --reveal-scale: 0.975;
+    --reveal-rotate: -1.2deg;
+  }
+
+  .reveal-ready [data-reveal-item]:nth-child(even) {
+    --reveal-rotate: 1.2deg;
+  }
+
+  .reveal-ready .is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+
+  .reveal-ready [data-reveal="eyebrow"] > span:first-child {
+    transform-origin: left center;
+    transform: scaleX(0.15);
+    transition: transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-delay, 0ms) + 120ms);
+  }
+
+  .reveal-ready [data-reveal="eyebrow"].is-revealed > span:first-child {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-ready [data-reveal],
+    .reveal-ready [data-reveal-item] {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: none;
+    }
+
+    .reveal-ready [data-reveal="eyebrow"] > span:first-child {
+      transform: none;
+      transition: none;
+    }
+  }
+</style>

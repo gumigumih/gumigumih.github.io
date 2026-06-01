@@ -30,18 +30,18 @@ const hasBodySlot = Astro.slots.has('default')
 const showLead = hasLeadSlot || !!lead
 ---
 
-<section id={id} class={`relative z-10 py-20 px-4 md:px-8 ${bgClass}`}>
+<section id={id} class={`relative z-10 py-20 px-4 md:px-8 ${bgClass}`} data-reveal-section>
   <div class={`mx-auto ${headerWidthClass}`}>
     {eyebrow && (
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-3" data-reveal="eyebrow">
         <span class="h-0.5 w-10 bg-slate-400"></span>
         <span class={`uppercase tracking-[0.25em] text-xs ${eyebrowClass}`}>{eyebrow}</span>
       </div>
     )}
-    <h2 class={`text-2xl md:text-3xl font-black leading-tight mt-4 ${titleClass}`}>{title}</h2>
+    <h2 class={`text-2xl md:text-3xl font-black leading-tight mt-4 ${titleClass}`} data-reveal="title">{title}</h2>
 
     {showLead && (
-      <div class="mt-8 md:mt-10">
+      <div class="mt-8 md:mt-10" data-reveal="lead">
         {hasLeadSlot ? (
           <slot name="lead" />
         ) : (
@@ -52,7 +52,7 @@ const showLead = hasLeadSlot || !!lead
   </div>
 
     {hasBodySlot && (
-      <div class={`mt-8 md:mt-10 mx-auto ${bodyWidthClass}`}>
+      <div class={`mt-8 md:mt-10 mx-auto ${bodyWidthClass}`} data-reveal-group>
         <slot />
       </div>
     )}
