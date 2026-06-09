@@ -4,8 +4,8 @@ import SectionFrame from './SectionFrame.astro'
 const tools = [
   {
     title: 'わりまる / わけたべ',
-    label: '割り勘ツール',
-    description: '旅行や食事の支払いを、参加者や食べたものに合わせて整理できるWebツールです。',
+    label: '実用アプリ',
+    description: '旅行や食事の支払いを、参加者や食べたものに合わせて整理できるWebアプリです。',
     image: '/assets/images/warimaru/ogp.png',
     href: '/warimaru/',
     detailHref: '/works/warimaru',
@@ -15,13 +15,13 @@ const tools = [
 
 <SectionFrame
   id="tools"
-  eyebrow="tools"
-  title="運営ツール"
+  eyebrow="app"
+  title="使えるアプリ"
   bgClass="bg-white/70"
   eyebrowClass="text-slate-500"
   titleClass="text-slate-900"
   leadClass="text-slate-600"
-  lead="サイト内で使えるWebツールをまとめています。"
+  lead="サイトの中心に置いている、実際に触れるWebアプリです。"
   bodyWidthClass="max-w-6xl"
 >
   <div class="grid grid-cols-1 gap-5 md:gap-6">
@@ -50,7 +50,7 @@ const tools = [
               href={tool.href}
               class="inline-flex items-center gap-2 rounded-lg bg-slate-700 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
             >
-              <span>ツールを開く</span>
+              <span>アプリを開く</span>
               <i class="fa-solid fa-arrow-right-long"></i>
             </a>
             <a

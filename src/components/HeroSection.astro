@@ -1,72 +1,41 @@
 ---
 ---
 
-<section class="min-h-screen flex items-center px-4 relative overflow-hidden" id="top" data-reveal-section>
-  <div class="relative z-10 w-full max-w-6xl mx-auto pt-24 pb-20">
-    <div class="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(260px,0.72fr)] lg:grid-cols-[1.15fr_0.85fr] items-center">
-      <div>
-        <p class="text-sm md:text-base uppercase tracking-[0.35em] text-slate-500" data-reveal="eyebrow">
-          personal portfolio
-        </p>
-        <h1 class="mt-5 text-6xl md:text-[5.5rem] font-black tracking-tight text-slate-900" data-reveal="title">
-          <span class="inline-block -translate-x-2 md:-translate-x-4" style="font-family: 'Zen Maru Gothic', 'M PLUS 1p', sans-serif;">
-            ぐみ
-          </span>
-        </h1>
-        <p class="mt-6 text-xl md:text-2xl leading-relaxed text-slate-700 max-w-2xl" data-reveal="lead">
-          つくる・書く・試す。<br />
-          趣味と活動をゆるくまとめた、個人のポートフォリオです。
-        </p>
-        <p class="mt-5 text-sm md:text-base leading-relaxed text-slate-500 max-w-xl" data-reveal>
-          個人開発、文章、UIの微調整、気になったことの実験。
-          そんな断片を、そのまま置いています。
-        </p>
-
-        <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal>
-          <a
-            href="#works"
-            class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:shadow-lg transition">
-            PROJECT
-            <span aria-hidden="true">→</span>
-          </a>
-          <a
-            href="#articles"
-            class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 text-slate-700 px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-lg transition backdrop-blur">
-            ARTICLES
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="w-full max-w-md justify-self-end rounded-[2rem] border border-slate-200 bg-white/75 p-5 md:p-6 shadow-xl backdrop-blur-sm" data-reveal-item>
-        <div class="rounded-[1.5rem] overflow-hidden bg-slate-100 ring-1 ring-slate-200">
-          <img
-            src="/assets/images/profile.jpg"
-            alt="meg+gumiのプロフィール写真"
-            class="w-full aspect-[4/5] object-cover"
-            loading="eager"
-            decoding="async"
-          />
-        </div>
-        <div class="mt-5 grid gap-3 sm:grid-cols-2">
-          <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4">
-            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">likes</p>
-            <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-              個人開発 / 文章 / 小さな実験
-            </p>
-          </div>
-          <div class="rounded-2xl bg-slate-50 ring-1 ring-slate-200 p-4">
-            <p class="text-xs uppercase tracking-[0.25em] text-slate-400">mood</p>
-            <p class="mt-2 text-sm text-slate-700 leading-relaxed">
-              思いついたら、まず小さく形にする
-            </p>
-          </div>
-        </div>
+<section class="min-h-[72svh] flex items-center px-4 relative overflow-hidden" id="top" data-reveal-section>
+  <div class="relative z-10 w-full max-w-6xl mx-auto pt-20 pb-16 md:pt-24 md:pb-18">
+    <div class="max-w-3xl">
+      <p class="text-sm md:text-base uppercase tracking-[0.35em] text-slate-500" data-reveal="eyebrow">
+        web app showcase
+      </p>
+      <h1
+        class="mt-5 text-5xl md:text-[5.25rem] font-black tracking-tight text-slate-900 leading-[0.95] font-['Zen_Maru_Gothic','M_PLUS_1p',sans-serif]"
+        data-reveal="title"
+      >
+        Webアプリを<br />
+        まとめています
+      </h1>
+      <p class="mt-6 text-lg md:text-2xl leading-relaxed text-slate-700 max-w-2xl" data-reveal="lead">
+        使えるものを、まず使える形で。<br />
+        そんなWebアプリを中心に並べています。
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal>
+        <a
+          href="/warimaru/"
+          class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:shadow-lg transition">
+          アプリを使う
+          <span aria-hidden="true">→</span>
+        </a>
+        <a
+          href="/works/warimaru"
+          class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 text-slate-700 px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-lg transition backdrop-blur">
+          制作背景を見る
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </div>
   </div>
 
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-500 scroll-prompt" aria-hidden="true">
+  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-500 scroll-prompt" aria-hidden="true">
     <svg
       class="scroll-prompt-svg"
       width="56"

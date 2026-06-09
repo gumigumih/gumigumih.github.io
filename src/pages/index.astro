@@ -4,7 +4,7 @@ import SiteHead from '../components/SiteHead.astro'
 import AnimatedBackground from '../components/AnimatedBackground.astro'
 import SiteHeader from '../components/SiteHeader.astro'
 import HeroSection from '../components/HeroSection.astro'
-import ExperienceSection from '../components/ExperienceSection.astro'
+import IntroSection from '../components/IntroSection.astro'
 import ToolsSection from '../components/ToolsSection.astro'
 import WorksSection from '../components/WorksSection.astro'
 import ArticlesSection from '../components/ArticlesSection.astro'
@@ -17,8 +17,8 @@ import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
 
 <head>
   <SiteHead
-    title="meg+gumi | 趣味と活動のポートフォリオ"
-    description="つくる・書く・試すを軸にした、趣味と活動のミックス型の個人ポートフォリオです。"
+    title="meg+gumi | Webアプリを中心にしたポートフォリオ"
+    description="実際に使えるWebアプリを中心に、制作物や活動をまとめた個人サイトです。"
     canonicalPath="/"
   />
   <link rel="stylesheet" href="/assets/css/style.css" />
@@ -29,9 +29,9 @@ import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
   <div class="relative z-10">
     <SiteHeader />
     <HeroSection />
-    <ExperienceSection />
     <ToolsSection />
     <WorksSection />
+    <IntroSection />
     <ArticlesSection />
     <ContactSection />
     <SiteFooter />
