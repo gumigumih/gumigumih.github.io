@@ -32,77 +32,89 @@ const getArticleUrl = (a: any) => {
   leadClass="text-slate-600"
   lead="考えたことや試したことを、記事として残したものです。"
 >
-  <div class="relative" id="article-list-root">
-    <div id="articles-slider" class="swiper overflow-visible slider-edge-mask">
-      <div class="swiper-wrapper">
-        {articles.map((a: any) => {
-          const img = a.localImagePath || a.eyecatch
-          const tags = (a.hashtags || []) as any[]
-          const meta = typeMeta[a.type] ?? typeMeta.default
-          return (
-            <div class="swiper-slide h-auto">
-              <a
-                href={getArticleUrl(a)}
-                class="group relative flex flex-col h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-slate-300"
-              >
-                <div class="relative aspect-[1200/630] overflow-hidden shrink-0">
-                  <img src={img} alt={a.name} class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
-                </div>
+  {articles.length > 0 ? (
+    <div class="relative" id="article-list-root">
+      <div id="articles-slider" class="swiper overflow-visible slider-edge-mask">
+        <div class="swiper-wrapper">
+          {articles.map((a: any) => {
+            const img = a.localImagePath || a.eyecatch
+            const tags = (a.hashtags || []) as any[]
+            const meta = typeMeta[a.type] ?? typeMeta.default
+            return (
+              <div class="swiper-slide h-auto">
+                <a
+                  href={getArticleUrl(a)}
+                  class="group relative flex flex-col h-full overflow-hidden rounded-2xl bg-white text-slate-900 ring-1 ring-slate-200 shadow-md transition transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:ring-slate-300"
+                >
+                  <div class="relative aspect-[1200/630] overflow-hidden shrink-0">
+                    <img src={img} alt={a.name} class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+                  </div>
 
-                <div class="p-5 md:p-6 min-h-[240px] md:min-h-[260px] flex-1 flex flex-col gap-3">
-                  <div class="flex items-center justify-between text-xs text-slate-500">
-                    <span class="flex items-center gap-2 uppercase tracking-[0.2em]">
-                      <span class="h-0.5 w-5 bg-slate-400 block"></span>
-                      {meta.label}
-                    </span>
-                    <span class="text-[11px] text-slate-500 tracking-normal font-semibold">{formatDate(a.publishAt)}</span>
-                  </div>
-                  <div class="space-y-3 flex-1">
-                    <div class="space-y-2">
-                      <h3 class="text-xl font-bold leading-tight font-raleway line-clamp-2 text-slate-900" title={a.name}>{a.name}</h3>
-                      <p class="text-sm text-slate-600 line-clamp-2">{a.description ?? ''}</p>
+                  <div class="p-5 md:p-6 min-h-[240px] md:min-h-[260px] flex-1 flex flex-col gap-3">
+                    <div class="flex items-center justify-between text-xs text-slate-500">
+                      <span class="flex items-center gap-2 uppercase tracking-[0.2em]">
+                        <span class="h-0.5 w-5 bg-slate-400 block"></span>
+                        {meta.label}
+                      </span>
+                      <span class="text-[11px] text-slate-500 tracking-normal font-semibold">{formatDate(a.publishAt)}</span>
                     </div>
-                    <div class="flex flex-wrap gap-2 pt-1">
-                      {tags.slice(0, 4).map((t) => (
-                        <span class="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-slate-100 border border-slate-200 text-slate-700" title={t.hashtag?.name}>
-                          <i class="fa-solid fa-tag text-[10px] opacity-60" aria-hidden="true"></i>
-                          {t.hashtag?.name}
-                        </span>
-                      ))}
+                    <div class="space-y-3 flex-1">
+                      <div class="space-y-2">
+                        <h3 class="text-xl font-bold leading-tight font-raleway line-clamp-2 text-slate-900" title={a.name}>{a.name}</h3>
+                        <p class="text-sm text-slate-600 line-clamp-2">{a.description ?? ''}</p>
+                      </div>
+                      <div class="flex flex-wrap gap-2 pt-1">
+                        {tags.slice(0, 4).map((t) => (
+                          <span class="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-slate-100 border border-slate-200 text-slate-700" title={t.hashtag?.name}>
+                            <i class="fa-solid fa-tag text-[10px] opacity-60" aria-hidden="true"></i>
+                            {t.hashtag?.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-600 font-semibold text-sm pt-2 mt-auto">
+                      <span>開く</span>
+                      <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2 text-slate-600 font-semibold text-sm pt-2 mt-auto">
-                    <span>開く</span>
-                    <i class="fa-solid fa-arrow-right-long transition-transform duration-200 group-hover:translate-x-1"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-          )
-        })}
+                </a>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <div class="grid grid-cols-[auto_1fr_auto] items-center gap-3 mt-4">
+        <button
+          id="articles-prev"
+          type="button"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+          aria-label="前のメモへ"
+        >
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div id="articles-pagination" class="flex justify-center items-center w-full"></div>
+        <button
+          id="articles-next"
+          type="button"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
+          aria-label="次のメモへ"
+        >
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
-    <div class="grid grid-cols-[auto_1fr_auto] items-center gap-3 mt-4">
-      <button
-        id="articles-prev"
-        type="button"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
-        aria-label="前のメモへ"
-      >
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <div id="articles-pagination" class="flex justify-center items-center w-full"></div>
-      <button
-        id="articles-next"
-        type="button"
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition"
-        aria-label="次のメモへ"
-      >
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+  ) : (
+    <div class="rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50 px-5 py-8 md:px-8 md:py-10">
+      <div class="space-y-4 text-slate-600 leading-relaxed">
+        <p>記事一覧は準備中です。</p>
+        <p>
+          現在は自作アプリとプロフィールを中心にまとめています。
+          記事が増えたら、ここにまとめていく予定です。
+        </p>
+      </div>
     </div>
-  </div>
+  )}
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" is:inline></script>
   <script src="/assets/js/articlesSlider.js" is:inline></script>
   <style>

@@ -1,0 +1,40 @@
+---
+import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
+import ArticlesSection from '../../components/ArticlesSection.astro'
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title="記事一覧 | meg+gumi"
+    description="meg+gumi の記事一覧ページです。"
+    canonicalPath="/articles"
+    robots="noindex, nofollow"
+  />
+</head>
+<body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100">
+  <AnimatedBackground />
+  <SiteHeader />
+  <main class="pt-24">
+    <section class="relative z-10 py-20 px-4 md:px-8">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex items-center gap-3">
+          <span class="h-0.5 w-10 bg-slate-400"></span>
+          <span class="uppercase tracking-[0.25em] text-xs text-slate-500">articles</span>
+        </div>
+        <h1 class="mt-4 text-2xl md:text-3xl font-black leading-tight text-slate-900">記事一覧</h1>
+        <p class="mt-6 max-w-4xl text-base md:text-lg text-slate-600 leading-relaxed">
+          記事や制作メモをまとめるためのページです。いまは自作アプリと自己紹介を中心に置いています。
+        </p>
+      </div>
+    </section>
+
+    <ArticlesSection />
+  </main>
+  <SiteFooter />
+</body>
+</html>

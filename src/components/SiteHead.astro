@@ -4,6 +4,7 @@ export interface Props {
   description?: string
   image?: string
   canonicalPath?: string
+  robots?: string
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description = 'つくる・書く・試すを軸にした、趣味と活動のミックス型の個人ポートフォリオです。',
   image = 'https://meggumi.com/assets/images/ogp.png',
   canonicalPath = '/',
+  robots,
 } = Astro.props as Props
 
 const siteUrl = 'https://meggumi.com'
@@ -39,6 +41,7 @@ const publisherId = 'ca-pub-6314014806862092'
 <meta property="og:url" content={canonicalUrl} />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
+{robots && <meta name="robots" content={robots} />}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTF0HVQRJ3"></script>
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
