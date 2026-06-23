@@ -3,6 +3,13 @@ import SectionFrame from './SectionFrame.astro'
 
 const tools = [
   {
+    title: 'EXIF Copy Tool',
+    label: '写真ツール',
+    description: '写真のEXIF情報を、右クリックからすばやくコピーできるWindows向けツールです。',
+    image: '/assets/images/exif-copy-tool/ogp.png',
+    href: '/exif-copy-tool/',
+  },
+  {
     title: 'わりまる / わけたべ',
     label: '実用アプリ',
     description: '旅行や食事の支払いを、参加者や食べたものに合わせて整理できるWebアプリです。',
@@ -21,7 +28,7 @@ const tools = [
   eyebrowClass="text-slate-500"
   titleClass="text-slate-900"
   leadClass="text-slate-600"
-  lead="サイトの中心に置いている、実際に触れるWebアプリです。"
+  lead="Webアプリやデスクトップ向けツールなど、実際に触れて使えるアプリをまとめています。"
   bodyWidthClass="max-w-6xl"
 >
   <div class="grid grid-cols-1 gap-5 md:gap-6">
@@ -53,13 +60,15 @@ const tools = [
               <span>アプリを開く</span>
               <i class="fa-solid fa-arrow-right-long"></i>
             </a>
-            <a
-              href={tool.detailHref}
-              class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
-            >
-              <span>制作背景を見る</span>
-              <i class="fa-solid fa-book-open"></i>
-            </a>
+            {tool.detailHref && (
+              <a
+                href={tool.detailHref}
+                class="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-50"
+              >
+                <span>制作背景を見る</span>
+                <i class="fa-solid fa-book-open"></i>
+              </a>
+            )}
           </div>
         </div>
       </article>

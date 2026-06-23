@@ -1,0 +1,239 @@
+---
+import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title="EXIF Copy Tool | meg+gumi"
+    description="写真のEXIF情報を、右クリックからすばやくコピーできるWindows向けツール、EXIF Copy Tool の制作ページです。"
+    image="https://meggumi.com/assets/images/exif-copy-tool/ogp.png"
+    canonicalPath="/works/exif-copy-tool"
+  />
+</head>
+<body class="bg-slate-100 font-sans">
+  <AnimatedBackground />
+  <SiteHeader />
+
+  <main class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-slate-500">
+          <li><a href="../" class="hover:text-slate-700">ホーム</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li><a href="../#works" class="hover:text-slate-700">PROJECT</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="text-slate-800">EXIF Copy Tool</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="max-w-7xl mx-auto mb-8 px-4">
+      <div class="bg-white rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-md shadow-slate-200/50">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video bg-slate-100">
+            <img
+              src="/assets/images/exif-copy-tool/ogp.png"
+              alt="EXIF Copy Tool の操作イメージ"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+            <div class="mb-4">
+              <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">
+                EXIF Copy Tool
+              </h1>
+              <div class="flex items-center justify-between gap-4 mb-2">
+                <div class="text-slate-500 text-sm">
+                  #個人開発 #Windowsツール #Python #PyInstaller
+                </div>
+                <time datetime="2026-06" class="text-sm text-slate-400">
+                  公開日: 2026.06
+                </time>
+              </div>
+            </div>
+            <p class="text-xl text-slate-600 mb-6">
+              写真のEXIF情報を、右クリックからすばやくコピーできるWindows向けツール
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="/exif-copy-tool/"
+                class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+              >
+                <i class="fas fa-up-right-from-square mr-2"></i>
+                配布ページを見る
+              </a>
+              <a
+                href="https://github.com/gumigumih/exif-copy-tool/releases/latest/download/ExifCopyToolSetup.exe"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <i class="fas fa-download mr-2"></i>
+                インストーラーをダウンロード
+              </a>
+              <a
+                href="https://github.com/gumigumih/exif-copy-tool"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+                <i class="fab fa-github mr-2"></i>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4">
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 leading-relaxed mb-4">
+            写真をSNSやDiscordに投稿するときに、撮影情報を共有するのが面倒だったことから作ったWindows向けツールです。
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            普段カメラで撮った写真を共有する際、カメラ名、レンズ名、焦点距離、F値、シャッタースピード、ISOなどを毎回EXIFビューアーで確認して手入力していました。
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            写真を右クリックして好きなフォーマットを選ぶだけで、必要な撮影情報をクリップボードへコピーできます。SNS向け、Discord向け、ブログ向け、撮影記録向けなど、用途に合わせて出力形式を変えられるようにしています。
+          </p>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">制作内容</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-lightbulb text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">企画・設計</h3>
+            <p class="text-sm text-slate-600">
+              利用シーンの整理<br />出力体験の設計
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-object-group text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">UI設計</h3>
+            <p class="text-sm text-slate-600">
+              フォーマット編集画面<br />右クリック導線の調整
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-code text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">実装</h3>
+            <p class="text-sm text-slate-600">
+              Python実装<br />EXIF読み取りと整形処理
+            </p>
+          </div>
+          <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg">
+            <i class="fas fa-box-open text-3xl text-slate-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">配布</h3>
+            <p class="text-sm text-slate-600">
+              PyInstallerでexe化<br />GitHub Releasesで配布
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 shadow-lg shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
+        <div class="space-y-8 text-slate-600 leading-relaxed">
+          <div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">作ったきっかけ</h3>
+            <p class="mb-4">
+              このツールを作ったきっかけは、写真をSNSやDiscordに投稿するときに撮影情報を共有するのが面倒だったことです。
+            </p>
+            <p class="mb-4">
+              普段カメラで撮った写真を共有する際、カメラ名、レンズ名、焦点距離、F値、シャッタースピード、ISOなどを毎回EXIFビューアーで確認して手入力していました。
+            </p>
+            <p>
+              写真コミュニティごとに欲しい情報が違うため、SNS向け、Discord向け、ブログ向け、撮影記録向けで書式を変えたいことも多く、右クリックだけでEXIF情報をコピーできて、さらに自分の好きなフォーマットで出力できるツールがあったら便利だと思って作り始めました。
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-slate-800 mb-3">工夫したこと</h3>
+            <div class="space-y-4">
+              <div class="border-l-4 border-slate-300 pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">右クリック導線に寄せた設計</h4>
+                <p>
+                  常駐アプリではなく、写真を共有したくなった瞬間に最短で使えることを優先しました。インストール後は右クリックからフォーマットを選ぶだけで完結します。
+                </p>
+              </div>
+              <div class="border-l-4 border-slate-300 pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">用途ごとのフォーマット切り替え</h4>
+                <p>
+                  共有先によって必要な情報が違うので、定型文を複数持てるようにして、SNS向け、Discord向け、ブログ向け、撮影記録向けを切り替えられるようにしました。
+                </p>
+              </div>
+              <div class="border-l-4 border-slate-300 pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">Windows配布まで含めて整備</h4>
+                <p>
+                  Pythonスクリプトで終わらせず、PyInstallerでexe化し、インストーラー経由で導入できる形まで整えています。配布サイトとGitHub Releasesも用意して、使い始めやすさを揃えました。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <div class="bg-slate-50 rounded-xl p-4 ring-1 ring-slate-200/70">
+              <h3 class="text-xl font-bold text-slate-800 mb-3">主な機能</h3>
+              <ul class="text-sm leading-relaxed space-y-2">
+                <li>• 右クリックからEXIF情報をコピー</li>
+                <li>• 出力フォーマットの追加と編集</li>
+                <li>• カメラ名やレンズ名の定型整形</li>
+                <li>• JPEG / PNG / TIFF / HEIC / RAW系の想定対応</li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-4 ring-1 ring-slate-200/70">
+              <h3 class="text-xl font-bold text-slate-800 mb-3">技術スタック</h3>
+              <ul class="text-sm leading-relaxed space-y-2">
+                <li>• Python</li>
+                <li>• exifread</li>
+                <li>• Pillow</li>
+                <li>• PyInstaller</li>
+                <li>• Tailwind CSS (配布ページ)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white rounded-2xl p-6 md:p-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">リンク</h2>
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="/exif-copy-tool/"
+            class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+          >
+            <i class="fas fa-up-right-from-square mr-2"></i>
+            配布ページ
+          </a>
+          <a
+            href="https://github.com/gumigumih/exif-copy-tool/releases/latest"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+          >
+            <i class="fas fa-download mr-2"></i>
+            リリース
+          </a>
+          <a
+            href="https://github.com/gumigumih/exif-copy-tool"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+          >
+            <i class="fab fa-github mr-2"></i>
+            GitHub リポジトリ
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <SiteFooter />
+</body>
+</html>
