@@ -28,7 +28,7 @@
     "update-articles": "node scripts/update-articles.js"
   },
   "dependencies": {
-    "axios": "^1.18.0",
+    "axios": "^1.18.1",
     "swiper": "^12.1.4"
   },
   "devDependencies": {
