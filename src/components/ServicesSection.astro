@@ -1,0 +1,69 @@
+---
+import SectionFrame from './SectionFrame.astro'
+
+const services = [
+  {
+    number: '01',
+    title: 'フロントエンド実装',
+    description: 'デザインデータをもとにしたページ制作、レスポンシブ対応、UIやフォームの実装を行います。',
+    examples: ['LP・Webサイト', '既存ページの改修', 'UI・インタラクション'],
+  },
+  {
+    number: '02',
+    title: 'バックエンド開発',
+    description: '小規模なAPI、外部サービス連携、既存Webサービスの機能追加や不具合修正に対応します。',
+    examples: ['API・データ連携', 'フォーム・通知処理', '既存機能の改修'],
+  },
+  {
+    number: '03',
+    title: 'Web制作・開発支援',
+    description: '要件の整理から設計、実装、公開まで、プロジェクトに不足している範囲を補います。',
+    examples: ['技術要件の整理', 'フロント・バック横断', '公開・運用設計'],
+  },
+]
+---
+
+<SectionFrame
+  id="services"
+  eyebrow="services"
+  title="必要な範囲を、切り出して相談できます"
+  bgClass="bg-white/70"
+  eyebrowClass="text-slate-500"
+  titleClass="text-slate-900"
+  leadClass="text-slate-600"
+  lead="制作・広告チームの一時的なリソース不足から、小規模なWeb制作まで。担当範囲を明確にして進めます。"
+>
+  <div class="grid gap-5 lg:grid-cols-3">
+    {services.map((service) => (
+      <article class="flex h-full flex-col rounded-[2rem] bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-7" data-reveal-item>
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">service</span>
+          <span class="text-3xl font-black text-slate-200">{service.number}</span>
+        </div>
+        <h3 class="mt-6 text-xl font-black text-slate-900 md:text-2xl">{service.title}</h3>
+        <p class="mt-4 flex-1 text-sm leading-relaxed text-slate-600 md:text-base">{service.description}</p>
+        <ul class="mt-6 space-y-2 border-t border-slate-100 pt-5">
+          {service.examples.map((example) => (
+            <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+              {example}
+            </li>
+          ))}
+        </ul>
+      </article>
+    ))}
+  </div>
+
+  <div class="mt-6 grid gap-4 md:grid-cols-2">
+    <div class="rounded-2xl bg-blue-950 p-6 text-white ring-1 ring-blue-900 md:p-7" data-reveal-item>
+      <p class="text-xs uppercase tracking-[0.25em] text-blue-300">for production teams</p>
+      <h3 class="mt-3 text-xl font-black">制作会社・広告代理店の方へ</h3>
+      <p class="mt-3 text-sm leading-relaxed text-blue-100">繁忙期や担当者不足の際に、LP、キャンペーンサイト、機能単位のスポット開発として参加します。</p>
+    </div>
+    <div class="rounded-2xl bg-pink-950 p-6 text-white ring-1 ring-pink-900 md:p-7" data-reveal-item>
+      <p class="text-xs uppercase tracking-[0.25em] text-pink-300">for small businesses</p>
+      <h3 class="mt-3 text-xl font-black">個人事業主の方へ</h3>
+      <p class="mt-3 text-sm leading-relaxed text-pink-100">小規模サイトやLP、既存サイトの改善など、目的と予算に合わせて範囲を整理します。</p>
+    </div>
+  </div>
+</SectionFrame>
