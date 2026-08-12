@@ -1,55 +1,37 @@
 ---
 import SectionFrame from './SectionFrame.astro'
 
-const interests = [
+const strengths = [
   {
-    title: 'BUILD',
-    heading: '個人開発',
-    description: '思いついたものを小さく作って、使いながら育てるのが好きです。',
+    title: 'STRUCTURE',
+    heading: '曖昧な要件を整理する',
+    description: '目的と前提を確認し、実装に必要な判断点と優先順位を整理してから進めます。',
     rotation: '-rotate-2',
   },
   {
-    title: 'WRITE',
-    heading: '文章を書く',
-    description: '考えたことを note やメモに残して、あとから見返せる形にします。',
+    title: 'BRIDGE',
+    heading: '制作と開発をつなぐ',
+    description: 'デザインの意図、フロントの挙動、バックエンドの制約を横断して考えます。',
     rotation: 'rotate-1',
   },
   {
-    title: 'TRY',
-    heading: 'AIを試す',
-    description: '創作を進めるために、下書きや整理で AI を試しています。',
+    title: 'DELIVER',
+    heading: '公開後まで見据える',
+    description: '作って終わりにせず、運用や更新のしやすさを含めて実装します。',
     rotation: '-rotate-1',
-  },
-  {
-    title: 'DRAW',
-    heading: 'お絵描き',
-    description: '気が向いたときにラフを描いて、線や色の雰囲気を試します。',
-    rotation: 'rotate-2',
-  },
-  {
-    title: 'WALK',
-    heading: '写真散歩',
-    description: '歩きながら、視点の切り取りが面白い瞬間を探しています。',
-    rotation: '-rotate-1',
-  },
-  {
-    title: 'FOOD',
-    heading: 'ラーメン巡り',
-    description: 'おいしい一杯を探して、ラーメンや中華のお店を少しずつ開拓しています。',
-    rotation: 'rotate-1',
   },
 ]
 ---
 
 <SectionFrame
   id="profile"
-  eyebrow="profile"
-  title="自己紹介"
+  eyebrow="about"
+  title="実装だけでなく、整理から伴走します"
   bgClass="bg-transparent"
   eyebrowClass="text-slate-600"
   titleClass="text-slate-900"
   leadClass="text-slate-700"
-  lead="ぐみについて、少しだけ紹介します。"
+  lead="Web開発とプロジェクト推進、両方の視点を持っていることが強みです。"
 >
   <div class="grid grid-cols-[128px_minmax(0,1fr)] gap-4 md:gap-6 items-center">
     <div class="w-[128px] rounded-3xl overflow-hidden bg-slate-100 ring-1 ring-slate-200 shadow-sm">
@@ -64,17 +46,17 @@ const interests = [
 
     <div class="rounded-3xl bg-white text-slate-800 px-5 py-5 md:px-7 md:py-6 ring-1 ring-slate-200">
       <h3 class="text-xl md:text-3xl font-black leading-tight max-w-2xl text-slate-900">
-        ぐみです。個人開発と文章を中心に、少しずつ手を動かしています。
+        ぐみです。フロントエンドとバックエンドを横断して、Web制作・開発に取り組んでいます。
       </h3>
       <p class="mt-4 text-sm md:text-base text-slate-600 leading-relaxed max-w-xl">
-        まずは動くものを作って、使ってみて、必要なら直す。
-        その過程や考えたことは、あとから見返せる形で残すようにしています。
+        PM・ディレクションの経験を活かし、要件の整理から設計、実装、品質確認、運用までを見渡して進めます。
+        実装だけを切り出したご相談にも、まだ仕様が固まりきっていない段階のご相談にも対応できます。
       </p>
     </div>
   </div>
 
   <div class="mt-5 md:mt-6 flex flex-wrap items-center gap-3 text-sm">
-    <span class="text-slate-500">文章やメモは、記事一覧にもまとめています。</span>
+    <span class="text-slate-500">考え方や試したことは、記事一覧にもまとめています。</span>
     <a
       href="/articles"
       class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
@@ -86,11 +68,11 @@ const interests = [
 
   <div class="mt-6 md:mt-8 flex items-center gap-3">
     <span class="h-0.5 w-10 bg-slate-400"></span>
-    <span class="text-xs uppercase tracking-[0.25em] text-slate-500">好きなこと</span>
+    <span class="text-xs uppercase tracking-[0.25em] text-slate-500">仕事で大切にしていること</span>
   </div>
 
   <div class="mt-6 md:mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-    {interests.map((interest) => (
+    {strengths.map((interest) => (
       <article
         class={`group relative rounded-[2rem] bg-white text-slate-900 p-5 md:p-6 ring-1 ring-slate-200 transition duration-300 hover:-translate-y-1 hover:rotate-0 ${interest.rotation}`}
       >
