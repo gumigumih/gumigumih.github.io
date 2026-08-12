@@ -1,0 +1,165 @@
+---
+import SiteHead from './SiteHead.astro'
+import SiteHeader from './SiteHeader.astro'
+import SiteFooter from './SiteFooter.astro'
+import AnimatedBackground from './AnimatedBackground.astro'
+import WorkInquiryCta from './WorkInquiryCta.astro'
+
+interface LinkItem {
+  label: string
+  href: string
+  icon: string
+  primary?: boolean
+  external?: boolean
+}
+
+interface ImplementationItem {
+  title: string
+  description: string
+}
+
+export interface Props {
+  title: string
+  metaTitle: string
+  description: string
+  image: string
+  imageAlt: string
+  canonicalPath: string
+  tags: string
+  date: string
+  subtitle: string
+  overview: string[]
+  challenge: string
+  scope: string[]
+  implementation: ImplementationItem[]
+  outcome: string[]
+  links: LinkItem[]
+  inquiryLead: string
+}
+
+const props = Astro.props as Props
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title={props.metaTitle}
+    description={props.description}
+    image={`https://meggumi.com${props.image}`}
+    canonicalPath={props.canonicalPath}
+  />
+</head>
+<body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100">
+  <AnimatedBackground />
+  <SiteHeader />
+  <main class="relative z-10 pb-16 pt-24">
+    <div class="mx-auto max-w-6xl px-4">
+      <nav class="mb-8" aria-label="パンくずリスト">
+        <ol class="flex items-center gap-2 text-sm text-slate-500">
+          <li><a href="/" class="hover:text-slate-700">ホーム</a></li>
+          <li aria-hidden="true"><i class="fas fa-chevron-right"></i></li>
+          <li><a href="/#works" class="hover:text-slate-700">実績</a></li>
+          <li aria-hidden="true"><i class="fas fa-chevron-right"></i></li>
+          <li class="text-slate-800">{props.title}</li>
+        </ol>
+      </nav>
+
+      <header class="overflow-hidden rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50">
+        <div class="grid lg:grid-cols-[minmax(320px,0.9fr)_minmax(0,1.1fr)]">
+          <div class="aspect-[16/9] bg-slate-100 lg:aspect-auto">
+            <img src={props.image} alt={props.imageAlt} class="h-full w-full object-cover" />
+          </div>
+          <div class="flex flex-col justify-center p-6 md:p-8 lg:p-10">
+            <p class="text-xs uppercase tracking-[0.24em] text-slate-500">case study</p>
+            <h1 class="mt-3 text-3xl font-black leading-tight text-slate-900 md:text-4xl">{props.title}</h1>
+            <div class="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
+              <span>{props.tags}</span>
+              <time datetime={props.date}>{props.date.replace('-', '.')}</time>
+            </div>
+            <p class="mt-6 text-lg leading-relaxed text-slate-600 md:text-xl">{props.subtitle}</p>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <div class="mx-auto mt-8 max-w-5xl space-y-6 px-4">
+      <section class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-8">
+        <p class="text-xs uppercase tracking-[0.24em] text-blue-600">01 / overview</p>
+        <h2 class="mt-3 text-2xl font-black text-slate-900 md:text-3xl">概要</h2>
+        <div class="mt-5 space-y-4 leading-relaxed text-slate-600">
+          {props.overview.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+
+      <section class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-8">
+        <p class="text-xs uppercase tracking-[0.24em] text-pink-600">02 / challenge</p>
+        <h2 class="mt-3 text-2xl font-black text-slate-900 md:text-3xl">課題</h2>
+        <p class="mt-5 leading-relaxed text-slate-600">{props.challenge}</p>
+      </section>
+
+      <section class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-8">
+        <p class="text-xs uppercase tracking-[0.24em] text-cyan-600">03 / scope</p>
+        <h2 class="mt-3 text-2xl font-black text-slate-900 md:text-3xl">担当範囲</h2>
+        <ul class="mt-5 grid gap-3 md:grid-cols-2">
+          {props.scope.map((item) => (
+            <li class="flex items-start gap-3 rounded-xl bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-700 ring-1 ring-slate-200/70 md:text-base">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-500"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-8">
+        <p class="text-xs uppercase tracking-[0.24em] text-violet-600">04 / implementation</p>
+        <h2 class="mt-3 text-2xl font-black text-slate-900 md:text-3xl">実装・工夫</h2>
+        <div class="mt-5 grid gap-4 md:grid-cols-3">
+          {props.implementation.map((item) => (
+            <article class="rounded-xl bg-slate-50 p-5 ring-1 ring-slate-200/70">
+              <h3 class="font-black text-slate-900">{item.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="rounded-2xl bg-white p-6 ring-1 ring-slate-200 shadow-md shadow-slate-200/40 md:p-8">
+        <p class="text-xs uppercase tracking-[0.24em] text-amber-600">05 / outcome</p>
+        <h2 class="mt-3 text-2xl font-black text-slate-900 md:text-3xl">成果</h2>
+        <div class="mt-5 space-y-4 leading-relaxed text-slate-600">
+          {props.outcome.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
+          {props.links.map((link) => (
+            <a
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              class:list={[
+                'inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors',
+                link.primary
+                  ? 'bg-slate-800 text-white hover:bg-slate-900'
+                  : 'border border-slate-300 text-slate-700 hover:bg-slate-50',
+              ]}
+            >
+              <i class={link.icon} aria-hidden="true"></i>
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <WorkInquiryCta lead={props.inquiryLead} />
+
+      <div class="text-center">
+        <a href="/#works" class="inline-flex items-center rounded-lg bg-slate-100 px-6 py-3 text-slate-700 transition-colors hover:bg-slate-200">
+          <i class="fas fa-arrow-left mr-2"></i>
+          実績一覧に戻る
+        </a>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</body>
+</html>
