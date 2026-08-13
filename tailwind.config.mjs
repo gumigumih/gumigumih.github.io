@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Raleway', 'M PLUS 1p', 'sans-serif']
+        sans: ['M PLUS 1p', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif']
       }
     }
   },
