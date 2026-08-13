@@ -1,43 +1,317 @@
 ---
 import '../../styles/tailwind.css'
-import WorkCaseStudyPage from '../../components/WorkCaseStudyPage.astro'
+import SiteHead from '../../components/SiteHead.astro'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
 ---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title="わりまる | meg+gumi"
+    description="割合計算を直感的に扱える個人開発プロジェクト、わりまるの制作背景と機能を紹介します。"
+    image="https://meggumi.com/assets/images/warimaru/ogp.png"
+    canonicalPath="/works/warimaru"
+  />
+</head>
+<body class="bg-slate-100 font-sans">
+  <AnimatedBackground />
+  <SiteHeader />
+  <main class="pt-24 pb-16">
+    <div class="max-w-7xl mx-auto px-4">
+      <!-- パンくずリスト -->
+      <nav class="mb-8">
+        <ol class="flex items-center space-x-2 text-sm text-slate-500">
+          <li><a href="../" class="hover:text-amber-500">ホーム</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li><a href="../#works" class="hover:text-amber-500">PROJECT</a></li>
+          <li><i class="fas fa-chevron-right"></i></li>
+          <li class="text-slate-800">わりまる</li>
+        </ol>
+      </nav>
+    </div>
 
-<WorkCaseStudyPage
-  title="わりまる / わけたべ"
-  metaTitle="わりまる / わけたべ | meg+gumi"
-  description="複雑な割り勘をスマートフォンで整理できるWebアプリの課題、担当範囲、実装、成果を紹介します。"
-  image="/assets/images/warimaru/ogp.png"
-  imageAlt="わりまる / わけたべの画面"
-  canonicalPath="/works/warimaru"
-  tags="#Webアプリ開発 #企画・設計・実装"
-  date="2025-06"
-  subtitle="支払った人や食べた内容が異なる、複雑な割り勘を整理するWebアプリ"
-  overview={[
-    '旅行や飲み会で発生する、参加者ごとに異なる支払いを整理するために開発したWebアプリです。',
-    '支払額を分ける「わりまる」と、食べた内容に応じて分ける「わけたべ」を、同じURLで切り替えて利用できます。',
-  ]}
-  challenge="一般的な均等割りでは、誰が何を支払ったか、誰がどれを食べたかまで反映できません。電卓による手作業を減らし、スマートフォン上で迷わず精算できる流れが必要でした。"
-  scope={[
-    '利用場面と必要機能の整理',
-    '情報設計とUIデザイン',
-    'Reactによるフロントエンド実装',
-    'レスポンシブ対応と公開後の改善',
-  ]}
-  implementation={[
-    { title: '入力の単純化', description: '参加者と支払い項目を順に入力できる構成にし、計算前の迷いを減らしました。' },
-    { title: '用途の切り替え', description: '2種類の割り勘を同じURLにまとめ、利用場面に応じて機能を選べるようにしました。' },
-    { title: 'モバイル優先', description: 'タッチ操作と小さな画面を前提に、入力欄や結果表示をレスポンシブに調整しました。' },
-  ]}
-  outcome={[
-    '実際に操作できるWebアプリとして公開し、継続して機能と表示を改善できる状態にしました。',
-    '設計や実装の過程はnote・Zenn・Qiitaにも記録し、判断の背景を確認できるようにしています。',
-  ]}
-  links={[
-    { label: 'アプリを使う', href: '/warimaru/', icon: 'fas fa-external-link-alt', primary: true },
-    { label: 'note', href: 'https://note.com/gumigumih/n/n8736a45fcd1e', icon: 'fas fa-book-open', external: true },
-    { label: 'Zenn', href: 'https://zenn.dev/gumigumih/articles/20250602_warikan-app', icon: 'fas fa-lightbulb', external: true },
-    { label: 'Qiita', href: 'https://qiita.com/gumigumih/items/0f201d72decb957a6586', icon: 'fas fa-code', external: true },
-  ]}
-  inquiryLead="企画からフロントエンド実装、公開までを横断する小規模Web開発をご相談いただけます。"
-/>
+    <!-- プロジェクトヘッダー -->
+    <div class="max-w-7xl mx-auto mb-8 px-4">
+      <div class="bg-white rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-md shadow-slate-200/50">
+        <div class="flex flex-col lg:flex-row">
+          <div class="w-full lg:w-96 aspect-video">
+              <img
+                src="/assets/images/warimaru/ogp.png"
+                alt="わりまるのスクリーンショット"
+                class="w-full h-full object-cover"
+              />
+          </div>
+          <div class="flex-1 p-6 md:p-8 flex flex-col justify-center">
+            <div class="mb-4">
+                <h1 class="text-4xl font-bold text-slate-800 font-raleway mb-3">
+                  わりまる
+                </h1>
+              <div class="flex items-center justify-between mb-2">
+                <div class="text-slate-500 text-sm">
+                  #Webアプリ開発 #企画・実装
+                </div>
+                <time datetime="2025-06" class="text-sm text-slate-400">
+                  公開日: 2025.06
+                </time>
+              </div>
+            </div>
+            <p class="text-xl text-slate-600 mb-6">
+              飲み会や旅行の支払いを簡単に計算できるWebアプリ
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a
+                  href="/warimaru/"
+                  class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                >
+                <i class="fas fa-external-link-alt mr-2"></i>
+                アプリを使う
+              </a>
+                <a
+                  href="https://note.com/gumigumih/n/n8736a45fcd1e"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                >
+                <i class="fas fa-book-open mr-2"></i>
+                紹介記事
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-4">
+      <!-- 概要セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">概要</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-slate-600 leading-relaxed mb-4">
+              例えば「ガソリン代はこの人が払った」「食材はまるまるさんが買ってきてくれた」みたいな、みんなで集まる時の“ちょっと複雑な割り勘”もサクッと計算できるアプリです！
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-4">
+              直感的な操作で誰でもすぐ使えるシンプル設計。スマホからもサクサク使えて、幹事さんもラクラク！
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-4">
+              現在は同じURL <strong>meggumi.com/warimaru/</strong> 内で、「わりまる」（支払い割り勘）と「わけたべ」（食べた分だけ割り勘）の2つのツールを切り替えて使える構成にまとめています。
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="p-4 md:p-5 bg-slate-50 rounded-xl ring-1 ring-slate-200/70">
+              <h3 class="text-lg font-bold text-slate-800 mb-2">こんなときに便利</h3>
+              <ul class="text-sm leading-relaxed text-slate-600 space-y-2">
+                <li>• 旅行や飲み会で、誰が何を払ったかを整理したいとき</li>
+                <li>• 食べた人ごとに費用を分けて、あとで精算したいとき</li>
+                <li>• 電卓だけでは手間がかかる割り勘を、すばやく済ませたいとき</li>
+              </ul>
+            </div>
+            <div class="p-4 md:p-5 bg-slate-50 rounded-xl ring-1 ring-slate-200/70">
+              <h3 class="text-lg font-bold text-slate-800 mb-2">使い方</h3>
+              <ul class="text-sm leading-relaxed text-slate-600 space-y-2">
+                <li>• まず参加者や支払い項目を入力する</li>
+                <li>• わりまる / わけたべ を使い分ける</li>
+                <li>• 計算結果を確認して、そのまま精算に使う</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            <div class="p-4 md:p-5 bg-slate-50 rounded-xl ring-1 ring-slate-200/70">
+              <h3 class="text-lg font-bold text-slate-800 mb-2">わりまる</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                ガソリン代・立替など複数人で払った費用をまとめて精算する割り勘ツール。参加者と支払い項目を登録するだけで自動計算します。
+              </p>
+            </div>
+            <div class="p-4 md:p-5 bg-slate-50 rounded-xl ring-1 ring-slate-200/70">
+              <h3 class="text-lg font-bold text-slate-800 mb-2">わけたべ</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                食事の「食べた分だけ割り勘」に特化。料理ごとに食べた人を指定でき、一緒に食べたメニューも柔軟に分けられます。
+              </p>
+            </div>
+          </div>
+          <!-- スクリーンショットギャラリー -->
+          <div class="flex flex-wrap gap-6 justify-center items-start my-8">
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+              <img src="/assets/images/warimaru/input-screen.png" alt="入力画面スクリーンショット" loading="lazy" class="rounded-xl" />
+            </div>
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+              <img src="/assets/images/warimaru/result-screen.png" alt="結果画面スクリーンショット" loading="lazy" class="rounded-xl" />
+            </div>
+            <div class="screenshot-img-wrapper max-w-xs w-full h-auto rounded-xl ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+              <img src="/assets/images/warimaru/result-share-image.png" alt="シェア用画像スクリーンショット" loading="lazy" class="rounded-xl" />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+              <h3 class="font-bold text-slate-800 mb-2">主な機能</h3>
+              <ul class="text-base text-slate-600 space-y-1">
+                <li>• 参加者の追加・削除</li>
+                <li>• 支払い項目の登録</li>
+                <li>• 自動割り勘計算</li>
+                <li>• 精算結果の表示</li>
+                <li>• レシート風プリント機能</li>
+              </ul>
+            </div>
+            <div class="bg-blue-50 p-3 md:p-4 rounded-lg">
+              <h3 class="font-bold text-slate-800 mb-2">技術スタック</h3>
+              <ul class="text-base text-slate-600 space-y-1">
+                <li>• React</li>
+                <li>• TypeScript</li>
+                <li>• Tailwind CSS</li>
+                <li>• Vite</li>
+                <li>• GitHub Pages (デプロイ)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 担当セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">担当</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg ring-1 ring-slate-200/70">
+            <i class="fas fa-lightbulb text-3xl text-amber-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">企画・設計</h3>
+              <p class="text-sm text-slate-600">
+                ユーザー体験の設計<br />機能要件の策定
+              </p>
+          </div>
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg ring-1 ring-slate-200/70">
+            <i class="fas fa-palette text-3xl text-blue-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">UI/UXデザイン</h3>
+              <p class="text-sm text-slate-600">
+                ワイヤーフレーム作成<br />ビジュアルデザイン
+              </p>
+          </div>
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg ring-1 ring-slate-200/70">
+            <i class="fas fa-code text-3xl text-green-500 mb-3"></i>
+            <h3 class="font-sm text-slate-800 mb-2">フロントエンド開発</h3>
+              <p class="text-sm text-slate-600">
+                React実装<br />レスポンシブ対応
+              </p>
+          </div>
+            <div class="text-center p-3 md:p-4 bg-slate-50 rounded-lg ring-1 ring-slate-200/70">
+            <i class="fas fa-rocket text-3xl text-purple-500 mb-3"></i>
+            <h3 class="font-bold text-slate-800 mb-2">デプロイ・運用</h3>
+              <p class="text-sm text-slate-600">
+                GitHub Pagesでの公開<br />パフォーマンス最適化
+              </p>
+          </div>
+        </div>
+        <div class="mt-6 p-3 md:p-4 bg-blue-50 rounded-lg">
+          <p class="text-slate-700 text-center">
+              <strong>企画・実装プロジェクト</strong
+              >として、企画から運用まで全工程を一人で担当しました。
+          </p>
+        </div>
+      </section>
+
+      <!-- 詳細セクション -->
+      <section class="bg-white rounded-2xl p-6 md:p-8 mb-8 ring-1 ring-slate-200 shadow-md shadow-slate-200/40">
+        <h2 class="text-3xl font-bold text-slate-800 mb-6 font-raleway">詳細</h2>
+        
+        <!-- 開発背景 -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">開発背景</h3>
+          <p class="text-slate-600 leading-relaxed mb-4">
+            友人との飲み会や旅行で、毎回割り勘計算に時間がかかることに課題を感じていました。
+            既存のアプリは機能が複雑すぎたり、使いづらかったりして、結局電卓で計算することが多い状況でした。
+          </p>
+          <p class="text-slate-600 leading-relaxed">
+            「誰でも直感的に使える、シンプルな割り勘アプリ」をコンセプトに開発をスタートしました。
+          </p>
+        </div>
+
+        <!-- 技術的な工夫 -->
+        <div class="mb-8">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">技術的な工夫</h3>
+          <div class="space-y-4">
+            <div class="border-l-4 border-slate-300 pl-3 md:pl-4">
+              <h4 class="font-bold text-slate-800 mb-2">React Hooks</h4>
+              <p class="text-slate-600">
+                  React
+                  HooksのuseStateとuseEffectを効果的に活用することで、ロジックの再利用性と保守性を向上。
+                コンポーネントベースの状態管理で、スムーズなユーザー体験を実現しました。
+              </p>
+            </div>
+            <div class="border-l-4 border-slate-300 pl-3 md:pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  レスポンシブデザイン
+                </h4>
+              <p class="text-slate-600">
+                  Tailwind
+                  CSSを活用し、スマートフォンファーストのレスポンシブデザインを実装。
+                特にタッチ操作での使いやすさを重視しています。
+              </p>
+            </div>
+            <div class="border-l-4 border-slate-300 pl-3 md:pl-4">
+                <h4 class="font-bold text-slate-800 mb-2">
+                  パフォーマンス最適化
+                </h4>
+              <p class="text-slate-600">
+                  Viteによる高速な開発環境とビルド最適化。GitHub
+                  Pagesでの安定した配信により、
+                どこからでも快適にアクセスできます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 関連リンク -->
+        <div class="border-t pt-6">
+          <h3 class="text-2xl font-bold text-slate-800 mb-4">関連リンク</h3>
+          <div class="flex flex-wrap gap-4">
+              <a
+                href="/warimaru/"
+                class="inline-flex items-center px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+              >
+              <i class="fas fa-external-link-alt mr-2"></i>
+              アプリを使う
+            </a>
+              <a
+                href="https://note.com/gumigumih/n/n8736a45fcd1e"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+              <i class="fas fa-book-open mr-2"></i>
+              紹介記事 (note)
+            </a>
+              <a
+                href="https://zenn.dev/gumigumih/articles/20250602_warikan-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+              <i class="fas fa-lightbulb mr-2"></i>
+              設計思想 (Zenn)
+            </a>
+              <a
+                href="https://qiita.com/gumigumih/items/0f201d72decb957a6586"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+              >
+              <i class="fas fa-code mr-2"></i>
+              技術Tips (Qiita)
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 戻るボタン -->
+      <div class="text-center">
+          <a
+            href="../#works"
+            class="inline-flex items-center px-6 py-3 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors"
+          >
+          <i class="fas fa-arrow-left mr-2"></i>
+          つくったもの一覧に戻る
+        </a>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</body>
+</html>

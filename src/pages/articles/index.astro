@@ -1,0 +1,27 @@
+---
+import '../../styles/tailwind.css'
+import SiteHead from '../../components/SiteHead.astro'
+import SiteHeader from '../../components/SiteHeader.astro'
+import SiteFooter from '../../components/SiteFooter.astro'
+import AnimatedBackground from '../../components/AnimatedBackground.astro'
+import ArticlesSection from '../../components/ArticlesSection.astro'
+---
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <SiteHead
+    title="記事一覧 | meg+gumi"
+    description="meg+gumi の記事一覧ページです。"
+    canonicalPath="/articles"
+    robots="noindex, nofollow"
+  />
+</head>
+<body class="relative isolate bg-gradient-to-br from-slate-50 to-slate-100">
+  <AnimatedBackground />
+  <SiteHeader />
+  <main class="pt-24">
+    <ArticlesSection />
+  </main>
+  <SiteFooter />
+</body>
+</html>
