@@ -49,6 +49,18 @@ clasp push
 clasp open
 ```
 
+## Turnstile連携
+
+1. Cloudflare Turnstileで `meggumi.com` 用のウィジェットを作成する
+2. Apps Scriptのプロジェクト設定「スクリプト プロパティ」に、`TURNSTILE_SECRET_KEY` とSecret keyを登録する
+3. Webアプリとしてデプロイし、アクセス権を「全員」にする
+4. Astroのビルド環境に次を設定する
+
+   - `PUBLIC_TURNSTILE_SITE_KEY`: TurnstileのSite key
+   - `PUBLIC_CONTACT_FORM_ENDPOINT`: GAS Webアプリの実行URL（`/exec`）
+
+未設定の場合は既存のGoogleフォーム直送を維持します。設定後はサイトを再ビルドしてください。
+
 ## 注意事項
 
 - フォームの項目順序が変更された場合は、`onFormSubmit`関数内のインデックスを適切に更新してください。

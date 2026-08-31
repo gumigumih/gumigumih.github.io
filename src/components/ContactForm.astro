@@ -1,10 +1,18 @@
+---
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAEig84ymPBH6AL6S'
+const contactFormEndpoint = import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT ?? 'https://script.google.com/macros/s/AKfycbxWPtcplJ5RvHLDvdm0_VQXceOL7O2CEpiYL0eJ3t_tDp8uMGZxm5Ae4yBN_dS0A0voE/exec'
+const turnstileEnabled = Boolean(turnstileSiteKey && contactFormEndpoint)
+---
+
+{turnstileEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
 <div class="max-w-4xl mx-auto py-10">
   <div class="rounded-[2rem] bg-white ring-1 ring-slate-200 shadow-lg shadow-slate-200/50 px-5 py-8 md:px-8 md:py-10">
     <p class="text-slate-600 text-lg mb-8 text-center" data-reveal-item>
       依頼内容、希望時期、現在決まっている範囲をお知らせください。仕様が固まっていない段階でも、まずはご相談いただけます。
     </p>
     <div class="max-w-2xl mx-auto">
-    <form id="contact-form" class="space-y-6">
+    <form id="contact-form" class="space-y-6" data-turnstile-enabled={turnstileEnabled} data-contact-form-endpoint={contactFormEndpoint}>
       <div class="space-y-2">
         <label for="name" class="block text-slate-700 font-medium">お名前 <span class="text-red-500">*</span></label>
         <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200" placeholder="山田 太郎">
@@ -21,6 +29,15 @@
         <label for="message" class="block text-slate-700 font-medium">メッセージ <span class="text-red-500">*</span></label>
         <textarea id="message" name="message" required rows="6" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-slate-500 focus:ring-2 focus:ring-slate-200 transition-colors duration-200 resize-none" placeholder="ご相談内容、希望時期、現在お困りのことなどをご記入ください"></textarea>
       </div>
+      <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+      {turnstileEnabled && (
+        <div class="flex justify-center" aria-label="スパム対策の確認">
+          <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-language="ja"></div>
+        </div>
+      )}
       <div class="text-center pt-4">
         <button type="submit" id="submit-button" class="inline-flex items-center gap-2 rounded-full border-2 border-slate-400 hover:border-slate-500 text-slate-400 hover:text-slate-500 px-4 py-2 text-base font-normal hover:-translate-y-0.5 hover:shadow-lg transition">
           <i class="fas fa-paper-plane" id="submit-icon"></i>
@@ -79,6 +96,7 @@
   const errorEl = document.getElementById('submit-error')
   const mailtoLink = document.getElementById('mailto-link')
   const copyButton = document.getElementById('copy-button')
+  const formStartedAt = Date.now()
 
   const setSubmitting = (submitting) => {
     if (submitting) {
@@ -106,18 +124,32 @@
     navigator.clipboard.writeText(content).then(() => alert('メッセージをコピーしました')).catch(console.error)
   })
 
-  form?.addEventListener('submit', async (e) => {
+    form?.addEventListener('submit', async (e) => {
     e.preventDefault()
+    const fd = new FormData(form)
+    // 人間には見えない入力欄を埋めるボットと、極端に高速な自動送信を除外する。
+    if (fd.get('website') || Date.now() - formStartedAt < 1500) {
+      form.reset()
+      return
+    }
     setSubmitting(true)
     try {
-      const fd = new FormData(form)
       const mapped = new FormData()
       mapped.append(config.form.entryIds.name, fd.get('name'))
       mapped.append(config.form.entryIds.email, fd.get('email'))
       mapped.append(config.form.entryIds.company, fd.get('company'))
       mapped.append(config.form.entryIds.message, fd.get('message'))
 
-      await fetch(config.form.googleFormUrl, { method: 'POST', body: mapped, mode: 'no-cors' })
+      const endpoint = form.dataset.contactFormEndpoint
+      if (form.dataset.turnstileEnabled === 'true') {
+        const token = fd.get('cf-turnstile-response')
+        if (!token) throw new Error('Turnstileの確認が完了していません')
+        mapped.append('cf-turnstile-response', token)
+        // GAS Webアプリはリダイレクトを伴うため、レスポンス本文は読まず送信完了だけ確認する。
+        await fetch(endpoint, { method: 'POST', body: mapped, mode: 'no-cors' })
+      } else {
+        await fetch(config.form.googleFormUrl, { method: 'POST', body: mapped, mode: 'no-cors' })
+      }
 
       form.classList.add('hidden')
       successEl.classList.remove('hidden')
