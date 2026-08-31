@@ -110,7 +110,8 @@ function isLikelyRandomText(value) {
 
   const uniqueRatio = new Set(compact).size / compact.length;
   const vowelRatio = (compact.match(/[aeiou]/g) || []).length / compact.length;
-  return uniqueRatio >= 0.72 || vowelRatio <= 0.12;
+  const hasMixedCaseAndDigits = /[a-z]/.test(candidate) && /[A-Z]/.test(candidate) && /\d/.test(candidate);
+  return uniqueRatio >= 0.72 || vowelRatio <= 0.12 || hasMixedCaseAndDigits;
 }
 
 // 管理者宛メール送信
