@@ -1,130 +1,22 @@
 ---
 ---
-
-<section class="min-h-[72svh] flex items-center px-4 relative overflow-hidden" id="top" data-reveal-section>
-  <div class="relative z-10 w-full max-w-6xl mx-auto pt-20 pb-16 md:pt-24 md:pb-18">
-    <div class="max-w-6xl">
-      <p class="text-sm md:text-base uppercase tracking-[0.35em] text-slate-500" data-reveal="eyebrow">
-        web development partner
-      </p>
-      <h1
-        class="mt-5 text-4xl sm:text-5xl lg:whitespace-nowrap lg:text-[clamp(3.25rem,4.5vw,4rem)] font-black tracking-tight text-slate-900 leading-[0.95] font-['Zen_Maru_Gothic','M_PLUS_1p',sans-serif]"
-        data-reveal="title"
-      >
-        必要なところに入り、Web開発を前へ。
-      </h1>
-      <p
-        class="mt-7 w-full font-['M_PLUS_1p',sans-serif] text-[1.05rem] font-normal leading-[1.9] tracking-[0.035em] text-slate-600 md:text-[1.35rem]"
-        data-reveal="lead"
-      >
-        制作会社・広告代理店・個人事業主のWeb制作や開発を、スポットで支援します。フロントエンド実装からAPI・バックエンド開発まで、必要な範囲を横断して対応します。
-      </p>
-      <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal>
-        <a
-          href="#contact"
-          class="inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:shadow-lg transition">
-          仕事を相談する
-          <span aria-hidden="true">→</span>
-        </a>
-        <a
-          href="#services"
-          class="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/70 text-slate-700 px-5 py-3 text-sm font-medium hover:-translate-y-0.5 hover:border-slate-400 hover:shadow-lg transition backdrop-blur">
-          対応できることを見る
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </div>
+<section id="top" class="hero">
+  <div class="hero-rail" aria-hidden="true"><span>WEB DEVELOPMENT</span><i></i><span>SCROLL</span><i></i></div>
+  <div class="hero-copy">
+    <p class="hero-eyebrow">WEB DEVELOPMENT PARTNER</p>
+    <h1><span>必要なところに入り、</span><br /><span>Web開発を前へ。</span></h1>
+    <p class="hero-description">制作会社・広告代理店・個人事業主のWeb制作や開発を、<br class="desktop-break" />スポットで支援します。フロントエンド実装からAPI・バックエンド開発まで、必要な範囲を横断して対応します。</p>
+    <div class="hero-actions"><a class="design-button primary" href="#contact">仕事を相談する <span aria-hidden="true">⟶</span></a><a class="design-button" href="#works">制作・開発実績を見る <span aria-hidden="true">⟶</span></a></div>
   </div>
-
-  <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center text-slate-500 scroll-prompt" aria-hidden="true">
-    <svg
-      class="scroll-prompt-svg"
-      width="56"
-      height="68"
-      viewBox="0 0 28 34"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        class="scroll-prompt-chev scroll-prompt-chev-one"
-        d="M7 9L14 16L21 9"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        class="scroll-prompt-chev scroll-prompt-chev-two"
-        d="M7 16L14 23L21 16"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        class="scroll-prompt-chev scroll-prompt-chev-three"
-        d="M7 23L14 30L21 23"
-        stroke="currentColor"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-  </div>
+  <div class="hero-art" aria-hidden="true"><img src="/assets/images/hero-grid.svg" width="238" height="404" alt="" fetchpriority="high" /></div>
+  <div class="hero-side" aria-hidden="true"><p>CODE<br />CONNECT<br />CREATE<br />TOGETHER</p><i class="short-line"></i><i class="long-line"></i><p class="hero-signature">WEB<br />DEVELOPMENT</p></div>
 </section>
-
 <style>
-  .scroll-prompt {
-    animation: scroll-prompt-fade 2.8s ease-in-out infinite;
-  }
-
-  @keyframes scroll-prompt-fade {
-    0%, 100% {
-      opacity: 0.75;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-
-  .scroll-prompt-svg {
-    overflow: visible;
-  }
-
-  .scroll-prompt-chev {
-    animation: scroll-prompt-chevron 2.8s ease-in-out infinite;
-  }
-
-  .scroll-prompt-chev-one {
-    color: rgba(148, 163, 184, 0.95);
-    animation-delay: 0s;
-  }
-
-  .scroll-prompt-chev-two {
-    color: rgba(59, 130, 246, 0.9);
-    animation-delay: 0.12s;
-  }
-
-  .scroll-prompt-chev-three {
-    color: rgba(236, 72, 153, 0.88);
-    animation-delay: 0.24s;
-  }
-
-  @keyframes scroll-prompt-chevron {
-    0%, 100% {
-      transform: translateY(0);
-      opacity: 0.7;
-    }
-    50% {
-      transform: translateY(5px);
-      opacity: 1;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .scroll-prompt,
-    .scroll-prompt-chev {
-      animation: none;
-    }
-  }
+.hero{display:grid;grid-template-columns:5.3% 52.7% 29.4% 12.6%;max-width:1440px;margin:auto;border-bottom:1px solid #bdc7d2;background:#fff;min-height: min(50vw,720px)}
+.hero-rail{border-right:1px solid #bdc7d2;display:flex;align-items:center;flex-direction:column;padding:32px 0;gap:28px}.hero-rail span{writing-mode:vertical-rl;font:600 10px Arial,sans-serif;letter-spacing:.1em}.hero-rail i{width:1px;background:#8c99ab;flex:1}.hero-rail i:last-child{flex:0 0 40px}
+.hero-copy{padding:clamp(48px,7vw,100px) 3.8%;min-width:0;align-self:center}.hero-eyebrow{font:600 clamp(10px,1.15vw,15px) Arial,sans-serif;letter-spacing:.07em}
+h1{margin:28px 0 24px;font-size:clamp(28px,4.3vw,60px);font-weight:800;letter-spacing:-.055em;line-height:1.4}.hero-description{font-size:clamp(12px,1.3vw,17px);line-height:1.9;margin-top:16px;color:#394452}.hero-actions{display:flex;gap:16px;margin-top:28px}.hero-actions a{flex:1;min-width:0;padding-inline:12px;font-size:clamp(11px,1.2vw,15px)}
+.hero-art{overflow:hidden;background:#f8fafb}.hero-art img{width:100%;height:100%;object-fit:fill}.hero-side{padding:32px 22%;display:flex;flex-direction:column;align-items:flex-start;font:600 clamp(9px,1.05vw,13px)/1.35 Arial,sans-serif;letter-spacing:.06em}.short-line{width:30px;height:1px;background:#8190a3;margin:14px 0 35px}.long-line{width:1px;flex:1;background:#8190a3;margin-left:30px;margin-bottom:45px}.hero-signature{font-size:10px}
+h1 span{display:inline;white-space:nowrap}
+@media(max-width:767px){.hero{grid-template-columns:24px 1fr 24px;min-height:0}.hero-rail{grid-row:1 / 3;padding:24px 0;gap:18px}.hero-rail span{font-size:8px}.hero-copy{padding:44px 18px 34px;grid-column:2}h1{font-size:clamp(22px,6.2vw,40px);line-height:1.5}.hero-description{font-size:13px}.desktop-break{display:none}.hero-actions{flex-direction:column;gap:10px;margin-top:24px}.hero-actions a{font-size:13px}.hero-art{grid-column:2;height:230px;border-top:1px solid #bdc7d2}.hero-art img{object-fit:cover;object-position:center 55%}.hero-side{display:none}}
 </style>
