@@ -1,71 +1,24 @@
 ---
-export interface Props {
-  baseUrl?: string
-}
+export interface Props { baseUrl?: string }
 const { baseUrl = '' } = Astro.props as Props
-
-const navLinks = [
-  { label: 'HOME', href: '/' },
-  { label: 'SERVICES', href: '/#services' },
-  { label: 'ABOUT', href: '/#profile' },
-  { label: 'WORKS', href: '/#works' },
-  { label: 'WORK STYLE', href: '/#work-style' },
-  { label: 'CONTACT', href: '/#contact' },
-]
+const navLinks = [['HOME','/'],['SERVICES','/#services'],['WORKS','/#works'],['ABOUT','/#profile'],['WORK STYLE','/#work-style'],['CONTACT','/#contact']]
 ---
-<header class="fixed inset-x-0 top-0 w-full z-50 border-b border-slate-200 overflow-hidden" data-component="site-header">
-  <div class="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none"></div>
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="flex items-center justify-between px-4 h-16">
-      <div class="flex items-center">
-        <a href={`${baseUrl}/`} class="flex items-center h-10 p-2 -mb-1">
-          <img src="/assets/images/logo_black.svg" alt="meg+gumi" class="h-full w-auto" loading="lazy" decoding="async" />
-        </a>
-      </div>
-      <nav class="hidden lg:flex space-x-8">
-        {navLinks.map((nav) => (
-          <a href={`${baseUrl}${nav.href}`} class="text-slate-500 hover:text-slate-700 transition-colors relative inline-block group">
-            {nav.label}
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-slate-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></span>
-          </a>
-        ))}
-      </nav>
-      <button class="lg:hidden" id="mobile-menu-toggle">
-        <i class="fas fa-bars text-slate-500 transition-transform duration-300" id="mobile-menu-icon"></i>
-      </button>
-    </div>
-    <div class="hidden lg:hidden border-t border-slate-200 relative z-60 px-4 py-3" id="mobile-menu">
-      <nav class="flex flex-col divide-y divide-slate-200">
-        {navLinks.map((nav) => (
-          <a
-            href={`${baseUrl}${nav.href}`}
-            class="block px-6 py-4 text-slate-500 hover:text-slate-700 hover:bg-slate-50 transition-colors relative group">
-            {nav.label}
-          </a>
-        ))}
-      </nav>
-    </div>
-  </div>
-</header>
-
+<header class="site-header" data-component="site-header"><div class="header-inner">
+<a href={`${baseUrl}/`} class="header-logo" aria-label="meg+gumi ホーム"><img src="/assets/images/logo_black.svg" width="145" height="31" alt="meg+gumi" /><span>WEB DEVELOPMENT<br />PARTNER</span></a>
+<nav class="desktop-nav" aria-label="メインナビゲーション">{navLinks.map(([label,href])=><a href={`${baseUrl}${href}`} aria-current={href==='/' && Astro.url.pathname==='/'?'page':undefined}>{label}</a>)}</nav>
+<button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">MENU <span aria-hidden="true">＋</span></button>
+</div><nav id="mobile-menu" aria-label="モバイルナビゲーション" hidden>{navLinks.map(([label,href])=><a href={`${baseUrl}${href}`}>{label}</a>)}</nav></header>
 <script>
-  const toggle = document.getElementById('mobile-menu-toggle')
-  const icon = document.getElementById('mobile-menu-icon')
-  const menu = document.getElementById('mobile-menu')
-  let open = false
-  const setOpen = (val) => {
-    open = val
-    if (open) {
-      menu.classList.remove('hidden')
-      icon.className = 'fas fa-times text-slate-500 transition-transform duration-300'
-      document.body.style.overflow = 'hidden'
-    } else {
-      menu.classList.add('hidden')
-      icon.className = 'fas fa-bars text-slate-500 transition-transform duration-300'
-      document.body.style.overflow = ''
-    }
-  }
-  toggle?.addEventListener('click', () => setOpen(!open))
-  menu?.querySelectorAll('a')?.forEach(a => a.addEventListener('click', () => setOpen(false)))
+const toggle=document.getElementById('mobile-menu-toggle')
+const menu=document.getElementById('mobile-menu')
+function closeMenu(){if(menu) menu.hidden=true;toggle?.setAttribute('aria-expanded','false');toggle?.setAttribute('aria-label','メニューを開く')}
+toggle?.addEventListener('click',()=>{if(!menu)return;menu.hidden=!menu.hidden;toggle.setAttribute('aria-expanded',String(!menu.hidden));toggle.setAttribute('aria-label',menu.hidden?'メニューを開く':'メニューを閉じる')})
+menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu))
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu&&!menu.hidden){closeMenu();toggle?.focus()}})
 </script>
+<style>
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #bdc7d2}.header-inner{max-width:1440px;margin:auto;min-height:76px;display:flex;align-items:stretch;padding-left:5.3%}.header-logo{display:flex;gap:18px;align-items:center;width:41.5%;border-right:1px solid #bdc7d2;padding:14px 22px}.header-logo img{width:160px;height:auto}.header-logo span{font:600 9px/1.4 Arial,sans-serif;color:#647183;letter-spacing:.04em}.desktop-nav{flex:1;display:flex;justify-content:space-evenly;align-items:center;padding:0 20px;gap:16px}.desktop-nav a{position:relative;font:700 11px Arial,sans-serif;letter-spacing:.05em;white-space:nowrap;padding:10px 0}.desktop-nav a[aria-current=page]:after{content:"";position:absolute;bottom:2px;left:0;right:0;height:3px;background:#e83f93}.desktop-nav a:hover{color:#c82978}#mobile-menu-toggle{display:none}#mobile-menu:not([hidden]){display:grid;grid-template-columns:1fr 1fr;padding:16px 24px;border-top:1px solid #bdc7d2;gap:0 24px}#mobile-menu a{padding:16px 0;border-bottom:1px solid #d5dce3;font:700 12px Arial,sans-serif}
+@media(max-width:1023px){.header-inner{min-height:64px;padding:0 24px}.header-logo{width:auto;border:0;padding:12px 0}.header-logo img{width:135px}.desktop-nav{display:none}#mobile-menu-toggle{display:flex;margin-left:auto;align-items:center;gap:12px;font:700 11px Arial,sans-serif}#mobile-menu-toggle span{color:#e83f93;font-size:22px}}
+@media(max-width:420px){.header-logo span{display:none}}
+@media(min-width:1440px){.header-inner{padding-left:76px}}
+</style>

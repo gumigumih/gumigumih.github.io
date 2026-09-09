@@ -1,29 +1,7 @@
 // フォーム送信時のトリガー
 function onFormSubmit(e) {
-  try {
-    // フォームの回答を取得
-    const formResponse = e.response;
-    const itemResponses = formResponse.getItemResponses();
-
-    // 回答内容を取得
-    const name = itemResponses[0].getResponse(); // お名前
-    const email = itemResponses[1].getResponse(); // メールアドレス
-    const company = itemResponses[2].getResponse(); // 会社名・団体名
-    const message = itemResponses[3].getResponse(); // お問い合わせ内容
-
-    if (isLikelySpamLegacy(name, email, company, message)) {
-      console.log(`スパム候補を通知対象外にしました: ${email}`);
-      return;
-    }
-
-    // 管理者宛メールの送信
-    sendAdminNotification(name, email, company, message);
-
-    // 自動返信メールの送信
-    sendAutoReply(name, email, company, message);
-  } catch (error) {
-    console.error("Error:", error);
-  }
+  // 通知はTurnstile検証済みのCode.gs#doPostだけで行う。
+  console.log("フォームトリガー経由の通知は無効化されています");
 }
 
 function isLikelySpamLegacy(name, email, company, message) {

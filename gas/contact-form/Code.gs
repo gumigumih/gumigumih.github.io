@@ -1,40 +1,7 @@
 // フォーム送信時のトリガー
 function onFormSubmit(e) {
-  try {
-    // フォームの回答を取得
-    const formResponse = e.response;
-    const itemResponses = formResponse.getItemResponses();
-
-    // 回答内容を取得
-    const name = itemResponses[0].getResponse(); // お名前
-    const email = itemResponses[1].getResponse(); // メールアドレス
-    const company = itemResponses[2].getResponse(); // 会社名・団体名
-    const message = itemResponses[3].getResponse(); // お問い合わせ内容
-
-    if (isLikelySpam(name, email, company, message)) {
-      Logger.log(`スパム候補を通知対象外にしました: ${email}`);
-      return;
-    }
-
-    Logger.log(`新しい問い合わせを受信: ${name} (${email})`);
-
-    // 管理者宛メールの送信
-    const adminResult = sendAdminNotification(name, email, company, message);
-    if (!adminResult.success) {
-      throw new Error(adminResult.error);
-    }
-
-    // 自動返信メールの送信
-    const autoReplyResult = sendAutoReply(name, email, company, message);
-    if (!autoReplyResult.success) {
-      throw new Error(autoReplyResult.error);
-    }
-
-    Logger.log("問い合わせ処理が正常に完了しました");
-  } catch (error) {
-    Logger.log(`エラーが発生しました: ${error.message}`);
-    throw error;
-  }
+  // Googleフォーム直送ではTurnstileを確認できないため、通知はdoPostだけで行う。
+  Logger.log("フォームトリガー経由の通知は無効化されています");
 }
 
 /**
@@ -58,16 +25,31 @@ function doPost(e) {
       return jsonResponse({ success: false, error: "スパム対策の確認に失敗しました" });
     }
 
+    const name = params.name || "";
+    const email = params.email || "";
+    const company = params.company || "";
+    const message = params.message || "";
+    if (isLikelySpam(name, email, company, message)) {
+      Logger.log(`スパム候補を通知・保存対象外にしました: ${email}`);
+      return jsonResponse({ success: true });
+    }
+
     const formPayload = {
-      "entry.180285880": params.name || "",
-      "entry.1686666147": params.email || "",
-      "entry.626095155": params.company || "",
-      "entry.668514380": params.message || ""
+      "entry.180285880": name,
+      "entry.1686666147": email,
+      "entry.626095155": company,
+      "entry.668514380": message
     };
-    UrlFetchApp.fetch(
+    const formResponse = UrlFetchApp.fetch(
       "https://docs.google.com/forms/d/e/1FAIpQLScRbLHC6JTR_1mkMqoLNoIzR1Y5pLZ_SrAo-cUReewnh5bQmw/formResponse",
       { method: "post", payload: formPayload, muteHttpExceptions: true }
     );
+    if (formResponse.getResponseCode() >= 400) throw new Error("Googleフォームへの保存に失敗しました");
+
+    const adminResult = sendAdminNotification(name, email, company, message);
+    if (!adminResult.success) throw new Error(adminResult.error);
+    const autoReplyResult = sendAutoReply(name, email, company, message);
+    if (!autoReplyResult.success) throw new Error(autoReplyResult.error);
     return jsonResponse({ success: true });
   } catch (error) {
     Logger.log(`中継エラー: ${error.message}`);

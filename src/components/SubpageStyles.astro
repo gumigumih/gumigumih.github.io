@@ -1,0 +1,43 @@
+<style is:global>
+  .subpage { background:#fff; color:#162235; }
+  .subpage main { padding-top:0; padding-bottom:64px; }
+  .subpage main > section, .subpage main > article { padding-top:48px; padding-bottom:0; }
+  .subpage main h1 { font-size:clamp(28px,3.8vw,52px); line-height:1.45; letter-spacing:-.045em; }
+  .subpage main h2 { font-size:clamp(21px,2.1vw,28px); line-height:1.5; letter-spacing:-.025em; }
+  .subpage main p { line-height:1.95; }
+  .subpage main a:focus-visible { outline:2px solid #c82e7c; outline-offset:5px; }
+  .subpage main a:hover { text-decoration:underline; text-underline-offset:5px; }
+  .subpage .page-label { font:800 clamp(30px,4vw,54px)/1.1 Arial,sans-serif; letter-spacing:-.035em; color:#162235; }
+  .subpage .page-intro { padding-bottom:40px; border-bottom:1px solid #bdc7d2; }
+  .subpage .document-content { border-left:1px solid #bdc7d2; padding:0 0 0 40px; margin-top:48px; }
+  .subpage .document-content section + section { border-top:1px solid #d0d7df; padding-top:32px; }
+  .subpage .document-content section { scroll-margin-top:100px; }
+  .subpage .breadcrumb { padding:28px 0; font-size:12px; color:#687486; }
+  .subpage .breadcrumb a { border-bottom:1px solid #c4ccd6; padding-bottom:3px; }
+  .subpage .case-hero { border-top:1px solid #bdc7d2; border-bottom:1px solid #bdc7d2; }
+  .subpage .case-hero img { object-fit:contain; }
+  .subpage .case-hero > div > div:first-child { background:#fff; border-right:1px solid #bdc7d2; }
+  .subpage .case-body { max-width:1152px; margin-top:0; }
+  .subpage .case-section { position:relative; margin:0; padding:38px 0 38px 30%; border-bottom:1px solid #bdc7d2; background:#fff; }
+  .subpage .case-section > p:first-child { position:absolute; left:0; top:40px; font:700 12px Arial,sans-serif; color:#c82e7c; }
+  .subpage .case-section > h2 { position:absolute; left:0; top:61px; margin:0; }
+  .subpage .case-section > div, .subpage .case-section > ul, .subpage .case-section > p:not(:first-child) { margin-top:0; }
+  .subpage .case-section article { border-left:1px solid #bdc7d2; background:#fff; }
+  .subpage .case-section li { background:#fff; border-bottom:1px solid #d0d7df; padding-left:0; }
+  .subpage .case-section .case-links { margin-top:28px; padding-top:24px; border-top:1px solid #bdc7d2; }
+  .subpage .article-copy { padding:36px 0; border-top:1px solid #bdc7d2; }
+  .subpage .article-cover { border-block:1px solid #bdc7d2; }
+  .subpage .article-cover img { object-fit:contain; }
+  .subpage .article-toc { background:#fff; border-left:2px solid #e83f93; }
+  .subpage .back-link { display:inline-block; margin-top:28px; padding:12px 0; border-bottom:1px solid #bdc7d2; font-size:13px; }
+  @media(max-width:767px) {
+    .subpage main { padding-bottom:40px; }
+    .subpage main > section, .subpage main > article { padding:28px 24px 0; }
+    .subpage .document-content { padding-left:20px; margin-top:30px; }
+    .subpage .case-section { padding:30px 0; }
+    .subpage .case-section > p:first-child, .subpage .case-section > h2 { position:static; }
+    .subpage .case-section > h2 { margin:8px 0 20px; }
+    .subpage .case-hero > div > div:first-child { border-right:0; border-bottom:1px solid #bdc7d2; }
+    .subpage .breadcrumb ol { flex-wrap:wrap; }
+  }
+</style>

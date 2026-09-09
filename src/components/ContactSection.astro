@@ -1,17 +1,12 @@
 ---
 import ContactForm from './ContactForm.astro'
-import SectionFrame from './SectionFrame.astro'
+import SectionHeading from './SectionHeading.astro'
 ---
-
-<SectionFrame
-  id="contact"
-  eyebrow="contact"
-  title="Web制作・開発のご相談"
-  bgClass="bg-transparent"
-  eyebrowClass="text-slate-500"
-  titleClass="text-slate-900"
-  leadClass="text-slate-600"
-  lead="制作会社・広告代理店のスポット開発や、個人事業のWeb制作についてご相談ください。"
->
-  <ContactForm />
-</SectionFrame>
+<section id="contact" class="design-section"><div class="section-inner contact-layout"><div>
+<SectionHeading number="05" title="CONTACT" description="Web制作・開発のご相談" />
+<div class="contact-copy"><p>お仕事のご相談・ご依頼は、<br />こちらのフォームからお送りください。</p><p>依頼内容、希望時期、決まっている範囲をお知らせください。仕様が未確定でも大丈夫です。</p></div>
+</div><ContactForm /></div></section>
+<style>
+.contact-layout{display:grid;grid-template-columns:38% 62%;gap:0}.contact-copy{max-width:340px;padding-right:28px;margin-top:48px;font-size:14px;line-height:2}.contact-copy p+p{margin-top:20px;color:#5b6675}
+@media(max-width:767px){.contact-layout{grid-template-columns:1fr;gap:30px}.contact-copy{margin-top:20px;max-width:none;padding-right:0}}
+</style>

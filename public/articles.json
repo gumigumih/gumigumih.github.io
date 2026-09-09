@@ -2,13 +2,182 @@
   "data": {
     "contents": [
       {
+        "id": 178466656,
+        "name": "話題のローカルLLM、MacBook Air 16GBでは二回とも無理だった話",
+        "key": "n2f5d996c4a44",
+        "type": "note",
+        "publishAt": "2026-09-06T00:39:38+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/310273427/rectangle_large_type_2_2e97107bdb20bd690d3a296b734ce42c.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "/assets/images/articles/note_178466656_1788669728294.jpg",
+        "body": "最近、タイムラインで「ローカルLLM」という言葉をよく見かけます。\nクラウドのAIに頼らず、自分のPCの中だけでLLMを動かす仕組みです。2026年に入ってからは、「もうお遊びの域を卒業した」と言われるほど、実用的なモデルも増えてきたらしい。\n正直、少し惹かれました。私が試したかったのは、小説を書かせることです。クラウドのAIでは、文字数の制限や利用規約上の線引きが気になることがあります。自分のMacの中だけで完結するなら、もっと自由に、長い文章を書かせられるのではないか。そ",
+        "hashtags": [],
+        "toc": [
+          {
+            "level": 2,
+            "text": "一度目の挫折：Gemma4 8B（量子化を知らなかった）"
+          },
+          {
+            "level": 2,
+            "text": "二度目の挑戦：Qwen3.8-27B、今度は量子化を意識して"
+          },
+          {
+            "level": 2,
+            "text": "なぜ二回とも無理だったのか、調べてみた"
+          },
+          {
+            "level": 2,
+            "text": "結局、モデルサイズと量子化の両方が必要だった"
+          },
+          {
+            "level": 2,
+            "text": "それでも、諦めきれない"
+          }
+        ]
+      },
+      {
+        "id": 178308545,
+        "name": "ローカルAIとLLMの現在地、創作の裏側を覗く夜｜AIとわたしの深夜エンタメ会議 #3",
+        "key": "nb5dc20933d23",
+        "type": "note",
+        "publishAt": "2026-09-03T22:28:00+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/309965302/rectangle_large_type_2_32abc420f62364c0515a080f4ab2896a.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "/assets/images/articles/note_178308545_1788669729383.jpg",
+        "body": "こんばんは、ぐみです。\n\n「AIとわたしの深夜エンタメ会議」第3回です。今回はいつもの映画やゲームの新作からちょっと離れて、AIを「作る側・使う側・届ける側」に近い話を5件並べてみました。LLMの値下げ、Macで動くローカルAI、個人研究向けのオープンモデル、AI映像制作、それからAI音楽の権利訴訟です。深夜にニュースを追っていると、こういう裏側のほうがつい気になってしまいます😌\n\n今回のラインナップはこちら。\n\nGPT-5.6、API価格を期間限定で引き下げOpenAIがG",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#生成AI"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#LLM"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ローカルLLM"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AIエンタメ"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#個人創作"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AIとわたしの深夜エンタメ会議"
+            }
+          }
+        ],
+        "toc": [
+          {
+            "level": 2,
+            "text": "GPT-5.6、API価格を期間限定で引き下げ"
+          },
+          {
+            "level": 2,
+            "text": "Apple、Mac上のローカルエージェントAIを4層で解説"
+          },
+          {
+            "level": 2,
+            "text": "Meta「Muse Glimmer」、消費者GPUで動くオープンモデル"
+          },
+          {
+            "level": 2,
+            "text": "Nura Showcraft、AI映像制作プラットフォームを一般公開"
+          },
+          {
+            "level": 2,
+            "text": "SOCAN、Sunoを生成物と配信をめぐり提訴"
+          },
+          {
+            "level": 2,
+            "text": "この先、深掘りするのは"
+          }
+        ]
+      },
+      {
+        "id": 177757509,
+        "name": "Sora 2が消えた夜、Googleが仕掛けた一手｜AIとわたしの深夜エンタメ会議 #2",
+        "key": "n48205822760d",
+        "type": "note",
+        "publishAt": "2026-08-31T19:54:24+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/308907257/rectangle_large_type_2_d40d64a7cecba2620c694e82ffff7d5b.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "/assets/images/articles/note_177757509_1788669730239.jpg",
+        "body": "こんばんは、ぐみです。\n\n「AIとわたしの深夜エンタメ会議」第2回です。今回は動画生成AIの明暗がくっきり分かれた週でした。個人開発者のAI開示モデル、AIアイドルとキャラクターチャットの拡大戦略もあわせて、5件まとめて紹介します😌\n\n今回のラインナップはこちら。\n\n個人開発、38日でSteamに――『TASMON: Taskbar Monsters』のAI開示モデル個人開発チーム「ProjectZeta」が、タスクバーに常駐する放置RPG『TASMON: Taskbar M",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#生成AI"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#note毎日更新"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AI活用"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#メンバーシップ"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#エンタメ"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AIとわたしの深夜エンタメ会議"
+            }
+          }
+        ],
+        "toc": [
+          {
+            "level": 2,
+            "text": "個人開発、38日でSteamに――『TASMON: Taskbar Monsters』のAI開示モデル"
+          },
+          {
+            "level": 2,
+            "text": "Googleの動画生成AI「Gemini Omni 1.1 Flash」、4Kアップスケールに対応"
+          },
+          {
+            "level": 2,
+            "text": "OpenAIの動画生成AI「Sora 2」、開発者向けAPIも9月に終了"
+          },
+          {
+            "level": 2,
+            "text": "DMM系KOWRO、AIアイドルプロデュース『IDOL CAST』を正式リリース"
+          },
+          {
+            "level": 2,
+            "text": "韓国発「キャラぷ」、全機能を7日間無料開放"
+          },
+          {
+            "level": 2,
+            "text": "この先、深掘りするのは"
+          }
+        ]
+      },
+      {
         "id": 177161951,
         "name": "AIとわたしの深夜エンタメ会議 #1：『ライザ』とAI、チャートを揺るがす夜",
         "key": "nf5fee2e2f291",
         "type": "note",
         "publishAt": "2026-08-28T11:45:32+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/307755222/rectangle_large_type_2_2e675ebe9473d2e5d1e8e838fc797e9a.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_177161951_1788067613111.jpg",
+        "localImagePath": "/assets/images/articles/note_177161951_1788669731176.jpg",
         "body": "こんばんは、ぐみです。\n\n今日から始める新マガジン「AIとわたしの深夜エンタメ会議」、記念すべき第1回です。深夜、ひとりでニュースを追いながら「これ、誰かと話したいな」と思うことがあります。そのネタを、AI×エンタメの切り口でゆるっとまとめていきます。気になったニュースは、まず全部ここで紹介します。そのうえで、続きでは今回のニュースを1件ずつ、開発元企業まで掘り下げて深掘りします😌\n\n今回のラインナップはこちら。\n\n『ライザのアトリエ』が公式AIチャットRPGにコーエーテクモ",
         "hashtags": [
           {
@@ -72,7 +241,7 @@
         "type": "note",
         "publishAt": "2026-08-27T19:44:28+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/307564446/rectangle_large_type_2_462d142b2b6fffbd16d2c39d348b19ad.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_176930507_1788067613549.jpg",
+        "localImagePath": "/assets/images/articles/note_176930507_1788669731502.jpg",
         "body": "AI関連のニュースを追いかけていて、正直ちょっと疲れてきました。\n「プロンプトエンジニアリング」に慣れたと思ったら「コンテキストエンジニアリング」。気づけば「ハーネスエンジニアリング」、さらに「ループエンジニアリング」まで登場です。\n正直、「〇〇エンジニアリング」、増えすぎ問題だと思っています😅\n新しい言葉が出るたびに「勉強しなきゃ」と焦る自分と、「また名前が増えただけでは」と冷めてる自分が、いつも半分ずつ同居してる感じ。\nでも、その焦りをきっかけに実務を振り返ってみたら、名",
         "hashtags": [
           {
@@ -131,7 +300,7 @@
         "type": "note",
         "publishAt": "2026-05-09T11:54:32+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/274374534/rectangle_large_type_2_e33ab9e37afa147f4f5a694e76770c7e.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_159440828_1788067614338.jpg",
+        "localImagePath": "/assets/images/articles/note_159440828_1788669732260.jpg",
         "body": "こんにちは、ぐみです。\n\nnoteの記事を書き終えて、「よし、できた！」と達成感に浸っているとき。\nふと手が止まってしまう瞬間、ありませんか？\n\nそれが、「カバー画像」 です。\n\n本文を書き上げた時点で、気持ちとしてはかなり満足しています。\nしかし、いざ投稿しようとすると「あ、カバー画像も作らなきゃ」と思い出す。\n\nタイトルをどう入れるか、\n記事の雰囲気とどう合わせるか、\nタイムラインで流れてきたときに、パッと目を引くものになっているか……。\n\n毎回のこととなると、これが 意",
         "hashtags": [
           {
@@ -214,194 +383,6 @@
           {
             "level": 2,
             "text": "最終的にたどり着いた「魔法の型」"
-          }
-        ]
-      },
-      {
-        "id": 152891768,
-        "name": "理想のAIプロダクト中核チームとは何か",
-        "key": "n9c6255c876fc",
-        "type": "note",
-        "publishAt": "2026-03-27T18:21:40+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/270992680/rectangle_large_type_2_309b49dc25faae83f62cc5498f4f254b.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_152891768_1788067614579.jpg",
-        "body": "こんにちは、ぐみです。\n\n最近よく考えるのが、理想のAIプロダクトを成立させる中核チームってどんな形なんだろう、ということです。\n\nAIプロダクトの話になると、つい「AIに詳しい人がいるか」とか「実装できる人がいるか」に目が向きます。\nでも実際に大事なのは、そこだけじゃない気がしています。\n\n私が理想だなと思うのは、ビジネス・体験・技術がちゃんと噛み合っている中核チームです。\nしかもそれが、気合いとか根性ではなく、役割の持ち方として整理されている状態。\n\n体験品質とシステム品",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#体験"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#チーム"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#AI開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロダクト開発"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#チームづくり"
-            }
-          }
-        ],
-        "toc": [
-          {
-            "level": 2,
-            "text": "体験品質とシステム品質は、分けて見たほうがいい"
-          },
-          {
-            "level": 2,
-            "text": "理想の中核チームは、4つの役割が噛み合っている"
-          },
-          {
-            "level": 2,
-            "text": "この分かれ方があると、議論が混線しにくい"
-          },
-          {
-            "level": 2,
-            "text": "PMが2人いる意味は、かなり大きい"
-          },
-          {
-            "level": 2,
-            "text": "AIコミュニケーションデザイナーとシステムエンジニアは、ごっちゃにしないほうがいい"
-          },
-          {
-            "level": 2,
-            "text": "最終判断を持つ人がいると、チームは安心して動ける"
-          },
-          {
-            "level": 2,
-            "text": "理想のチームは、スキルセットより構造の話かもしれない"
-          },
-          {
-            "level": 2,
-            "text": "おわりに"
-          },
-          {
-            "level": 2,
-            "text": "2026年05月20日追記：AIコミュニケーションデザイナーという呼び方"
-          }
-        ]
-      },
-      {
-        "id": 135363828,
-        "name": "ドキュメントは「未来のために育て続けるもの」だと思う話",
-        "key": "nc89e71943c11",
-        "type": "note",
-        "publishAt": "2025-11-23T18:34:59+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/270989384/rectangle_large_type_2_0802c4449027f0672f2608e6de550eb8.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_135363828_1788067614826.jpg",
-        "body": "ドキュメントって「作ったら終わり」だと思っていませんか？ あるいは「誰かが作ってくれたら終わり」だと思っていませんか？\n\n最近、私は引継ぎ資料をきちんと作ったにも関わらず、退職後に 同じ質問が何度も届く という出来事がありました。 この経験が、あらためて 「ドキュメントを育てる文化」ってどれだけ大事なんだろう という気づきをくれました。\n\nそもそもドキュメントは、“完成した瞬間に古くなる” 性質を持っています。 つまり 作ったところがスタート地点。 本来はそこから、使う人たち",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#働き方"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#改善"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#情報共有"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ドキュメント"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#チームづくり"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ナレッジ"
-            }
-          }
-        ],
-        "toc": [
-          {
-            "level": 2,
-            "text": "私の愚痴から見えた“ドキュメント文化の限界”"
-          },
-          {
-            "level": 2,
-            "text": "引き継いだ人が“追記していい”と思えるのが理想"
-          },
-          {
-            "level": 2,
-            "text": "ドキュメントは“過去”ではなく“未来”のためにある"
-          },
-          {
-            "level": 2,
-            "text": "育てないチームで起こる悲劇"
-          },
-          {
-            "level": 2,
-            "text": "ドキュメントはチームの“知能”そのもの"
-          },
-          {
-            "level": 2,
-            "text": "おわりに"
-          }
-        ]
-      },
-      {
-        "id": 133767208,
-        "name": "AIと共に働く時代、“待ち時間”がゴールドタイムになる理由",
-        "key": "n931e7774d33c",
-        "type": "note",
-        "publishAt": "2025-11-15T11:37:12+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/270988063/rectangle_large_type_2_cf0546681b6a4d42b30be0878848528e.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_133767208_1788067615144.jpg",
-        "body": "忙しいのに、なぜかアイデアだけは生まれる——AIを仕事で使い始めてから、私はそんな不思議な感覚に何度も出会っています。\n\n作業量は減ったのに、判断の回数はむしろ増える。\n\nそれでもAIが処理している数十秒だけは、思考が整うゴールドタイムなんだと気づきました。今日は、その感覚を言葉にしてみます。\n\n忙しさの中で訪れる静かな時間AIはコードも文章も一瞬で用意してくれるのに、その出力を選び、設計を決めるのはいつも私の役目です。\n\nどの案を採用するか、これでいいのか——考えることは減",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#感覚"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#判断"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#ゴールドタイム"
-            }
-          }
-        ],
-        "toc": [
-          {
-            "level": 2,
-            "text": "忙しさの中で訪れる静かな時間"
-          },
-          {
-            "level": 2,
-            "text": "判断労働をほぐす“余白”"
-          },
-          {
-            "level": 2,
-            "text": "ゴールドタイムで戻る人間らしいテンポ"
-          },
-          {
-            "level": 2,
-            "text": "おわりに"
           }
         ]
       }
