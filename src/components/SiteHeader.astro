@@ -1,7 +1,7 @@
 ---
 export interface Props { baseUrl?: string }
 const { baseUrl = '' } = Astro.props as Props
-const navLinks = [['HOME','/'],['SERVICES','/#services'],['ABOUT','/#profile'],['WORKS','/#works'],['WORK STYLE','/#work-style'],['CONTACT','/#contact']]
+const navLinks = [['HOME','/'],['SERVICES','/#services'],['WORKS','/#works'],['ABOUT','/#profile'],['WORK STYLE','/#work-style'],['CONTACT','/#contact']]
 ---
 <header class="site-header" data-component="site-header"><div class="header-inner">
 <a href={`${baseUrl}/`} class="header-logo" aria-label="meg+gumi ホーム"><img src="/assets/images/logo_black.svg" width="145" height="31" alt="meg+gumi" /><span>WEB DEVELOPMENT<br />PARTNER</span></a>
