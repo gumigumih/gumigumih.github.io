@@ -1,13 +1,15 @@
 ---
+import activeSectionNavSrc from '../scripts/activeSectionNav.ts?url'
 export interface Props { baseUrl?: string }
 const { baseUrl = '' } = Astro.props as Props
 const navLinks = [['HOME','/'],['SERVICES','/#services'],['WORKS','/#works'],['ABOUT','/#profile'],['WORK STYLE','/#work-style'],['CONTACT','/#contact']]
 ---
 <header class="site-header" data-component="site-header"><div class="header-inner">
 <a href={`${baseUrl}/`} class="header-logo" aria-label="meg+gumi ホーム"><img src="/assets/images/logo_black.svg" width="145" height="31" alt="meg+gumi" /><span>WEB DEVELOPMENT<br />PARTNER</span></a>
-<nav class="desktop-nav" aria-label="メインナビゲーション">{navLinks.map(([label,href])=><a href={`${baseUrl}${href}`} aria-current={href==='/' && Astro.url.pathname==='/'?'page':undefined}>{label}</a>)}</nav>
+<nav class="desktop-nav" aria-label="メインナビゲーション">{navLinks.map(([label,href])=><a data-section-nav href={`${baseUrl}${href}`} aria-current={href==='/' && Astro.url.pathname==='/'?'page':undefined}>{label}</a>)}</nav>
 <button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">MENU <span aria-hidden="true">＋</span></button>
-</div><nav id="mobile-menu" aria-label="モバイルナビゲーション" hidden>{navLinks.map(([label,href])=><a href={`${baseUrl}${href}`}>{label}</a>)}</nav></header>
+</div><nav id="mobile-menu" aria-label="モバイルナビゲーション" hidden>{navLinks.map(([label,href])=><a data-section-nav href={`${baseUrl}${href}`}>{label}</a>)}</nav></header>
+<script type="module" src={activeSectionNavSrc}></script>
 <script>
 const toggle=document.getElementById('mobile-menu-toggle')
 const menu=document.getElementById('mobile-menu')
@@ -17,7 +19,7 @@ menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMen
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu&&!menu.hidden){closeMenu();toggle?.focus()}})
 </script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #bdc7d2}.header-inner{max-width:1440px;margin:auto;min-height:76px;display:flex;align-items:stretch;padding-left:5.3%}.header-logo{display:flex;gap:18px;align-items:center;width:41.5%;border-right:1px solid #bdc7d2;padding:14px 22px}.header-logo img{width:160px;height:auto}.header-logo span{font:600 9px/1.4 Arial,sans-serif;color:#647183;letter-spacing:.04em}.desktop-nav{flex:1;display:flex;justify-content:space-evenly;align-items:center;padding:0 20px;gap:16px}.desktop-nav a{position:relative;font:700 11px Arial,sans-serif;letter-spacing:.05em;white-space:nowrap;padding:10px 0}.desktop-nav a[aria-current=page]:after{content:"";position:absolute;bottom:2px;left:0;right:0;height:3px;background:#e83f93}.desktop-nav a:hover{color:#c82978}#mobile-menu-toggle{display:none}#mobile-menu:not([hidden]){display:grid;grid-template-columns:1fr 1fr;padding:16px 24px;border-top:1px solid #bdc7d2;gap:0 24px}#mobile-menu a{padding:16px 0;border-bottom:1px solid #d5dce3;font:700 12px Arial,sans-serif}
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #bdc7d2}.header-inner{max-width:1440px;margin:auto;min-height:76px;display:flex;align-items:stretch;padding-left:5.3%}.header-logo{display:flex;gap:18px;align-items:center;width:41.5%;border-right:1px solid #bdc7d2;padding:14px 22px}.header-logo img{width:160px;height:auto}.header-logo span{font:600 9px/1.4 Arial,sans-serif;color:#647183;letter-spacing:.04em}.desktop-nav{flex:1;display:flex;justify-content:space-evenly;align-items:center;padding:0 20px;gap:16px}.desktop-nav a{position:relative;font:700 11px Arial,sans-serif;letter-spacing:.05em;white-space:nowrap;padding:10px 0}.desktop-nav a[aria-current=page]:after{content:"";position:absolute;bottom:2px;left:0;right:0;height:3px;background:#e83f93}.desktop-nav a:hover{color:#c82978}#mobile-menu-toggle{display:none}#mobile-menu:not([hidden]){display:grid;grid-template-columns:1fr 1fr;padding:16px 24px;border-top:1px solid #bdc7d2;gap:0 24px}#mobile-menu a{padding:16px 0;border-bottom:1px solid #d5dce3;font:700 12px Arial,sans-serif}#mobile-menu a[aria-current=page]{color:#c82978}
 @media(max-width:1023px){.header-inner{min-height:64px;padding:0 24px}.header-logo{width:auto;border:0;padding:12px 0}.header-logo img{width:135px}.desktop-nav{display:none}#mobile-menu-toggle{display:flex;margin-left:auto;align-items:center;gap:12px;font:700 11px Arial,sans-serif}#mobile-menu-toggle span{color:#e83f93;font-size:22px}}
 @media(max-width:420px){.header-logo span{display:none}}
 @media(min-width:1440px){.header-inner{padding-left:76px}}
