@@ -6,13 +6,12 @@ const services = [
 {title:'Web制作・開発支援',description:'要件整理から実装・公開まで。プロジェクトに必要な範囲で参加します。',type:'planning'}
 ]
 ---
-<section id="services" class="design-section"><div class="section-inner">
+<section id="services" class="design-section relative border-b border-[#bdc7d2] scroll-mt-[90px]"><div class="section-inner mx-auto max-w-[1440px] px-[3.7%] py-[46px] max-md:px-6 max-md:py-[34px] min-[1440px]:px-[54px]">
 <SectionHeading number="01" title="SERVICES" description="必要なスキルを、必要なタイミングで。"><p>フロントエンドからバックエンドまで。<br />Web制作・開発に関わる業務を柔軟にサポートします。</p></SectionHeading>
-<div class="service-grid" data-reveal-group>{services.map(service=><article><div class="service-visual"><img src={`/assets/images/service-${service.type}.jpg`} alt="" width="600" height="270" loading="lazy" /></div><h3>{service.title}</h3><p>{service.description}</p></article>)}</div>
-<p class="service-audience" data-reveal>制作会社・広告代理店のスポット開発から、個人事業のWeb制作まで対応します。</p>
+<div class="service-grid grid grid-cols-1 gap-7 md:grid-cols-3" data-reveal-group>{services.map(service=><article class="service-card relative min-w-0"><div class="service-visual relative aspect-[2.2] overflow-hidden bg-[#17212c] max-md:aspect-[2.6]"><img class="service-image h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(.2,.7,.2,1)]" src={`/assets/images/service-${service.type}.jpg`} alt="" width="600" height="270" loading="lazy" /></div><h3 class="service-title mb-2 mt-5 text-[clamp(17px,1.7vw,23px)] font-extrabold tracking-[-.04em] max-md:mt-[15px] max-md:text-xl">{service.title}</h3><p class="service-description text-sm leading-[1.9] text-[#536070]">{service.description}</p></article>)}</div>
+<p class="service-audience mt-6 text-xs text-[#667181]" data-reveal>制作会社・広告代理店のスポット開発から、個人事業のWeb制作まで対応します。</p>
 </div></section>
 <style>
-.service-visual img{filter:saturate(.18) contrast(1.08) brightness(.88);object-position:center 48%}
-.service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}.service-grid article{position:relative;min-width:0}.service-grid article+article:before{content:"";position:absolute;left:-14px;top:0;bottom:0;border-left:1px solid #bdc7d2}.service-visual{position:relative;aspect-ratio:2.2;overflow:hidden;background:#17212c}.service-visual img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}.service-grid article:hover .service-visual img{transform:scale(1.045)}.service-grid h3{font-weight:800;font-size:clamp(17px,1.7vw,23px);margin:20px 0 10px;letter-spacing:-.04em}.service-grid p{font-size:14px;line-height:1.9;color:#536070}.service-audience{font-size:12px;color:#667181;margin-top:24px}
-@media(max-width:767px){.service-grid{grid-template-columns:1fr;gap:28px}.service-grid article+article:before{display:none}.service-visual{aspect-ratio:2.6}.service-grid h3{margin-top:15px;font-size:20px}}
+.service-image{filter:saturate(.18) contrast(1.08) brightness(.88);object-position:center 48%}.service-card+.service-card:before{content:"";position:absolute;left:-14px;top:0;bottom:0;border-left:1px solid #bdc7d2}.service-card:hover .service-image{transform:scale(1.045)}
+@media(max-width:767px){.service-card+.service-card:before{display:none}}
 </style>

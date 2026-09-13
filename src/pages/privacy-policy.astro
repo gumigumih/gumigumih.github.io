@@ -14,13 +14,13 @@ import SubpageStyles from '../components/SubpageStyles.astro'
     canonicalPath="/privacy-policy"
   />
 </head>
-<body class="subpage">
+<body class="subpage bg-white font-sans text-[#162235]">
   <SubpageStyles />
   <SiteHeader />
-  <main class="pt-24">
-    <section class="relative z-10 py-20 px-4 md:px-8">
-      <div class="page-intro mx-auto max-w-6xl">
-        <h1 class="page-label">PRIVACY POLICY</h1>
+  <main class="page-main pb-16 pt-24 max-md:pb-10">
+    <section class="page-section relative z-10 px-4 py-20 md:px-8">
+      <div class="page-intro mx-auto max-w-6xl border-b border-[#bdc7d2] pb-10">
+        <h1 class="page-title font-raleway text-[clamp(30px,4vw,54px)] font-extrabold leading-[1.1] tracking-[-.035em] text-[#162235]">PRIVACY POLICY</h1>
         <div class="mt-8 md:mt-10">
           <p class="text-base md:text-lg max-w-4xl text-slate-600">
             当サイトにおける個人情報の取り扱いについてまとめています。
@@ -29,10 +29,10 @@ import SubpageStyles from '../components/SubpageStyles.astro'
       </div>
 
       <div class="mt-8 md:mt-10 mx-auto max-w-5xl">
-        <div class="document-content">
+        <div class="document-content mt-12 border-l border-[#bdc7d2] pl-10 max-md:mt-[30px] max-md:pl-5">
           <div class="space-y-10 text-slate-600 leading-relaxed">
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">1. 個人情報の収集について</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">1. 個人情報の収集について</h2>
               <p>
                 当サイトでは、Google AdSenseなどの第三者配信の広告サービスを利用しています。これらの第三者配信事業者は、
                 ユーザーの興味に応じた商品やサービスの広告を表示するため、当サイトや他サイトへのアクセスに関する情報を
@@ -40,8 +40,8 @@ import SubpageStyles from '../components/SubpageStyles.astro'
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">2. アクセス解析ツールについて</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">2. アクセス解析ツールについて</h2>
               <p>
                 当サイトでは、Googleによるアクセス解析ツール「Googleアナリティクス」を使用しています。
                 このGoogleアナリティクスはデータの収集のためにCookieを使用しています。
@@ -49,8 +49,8 @@ import SubpageStyles from '../components/SubpageStyles.astro'
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">3. 広告の配信について</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">3. 広告の配信について</h2>
               <p>
                 当サイトは第三者配信の広告サービス「Google AdSense」を利用しています。
                 広告配信事業者は、ユーザーの興味に応じた商品やサービスの広告を表示するため、
@@ -58,8 +58,8 @@ import SubpageStyles from '../components/SubpageStyles.astro'
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">4. プライバシーポリシーの変更について</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">4. プライバシーポリシーの変更について</h2>
               <p>
                 当サイトは、必要に応じて、このプライバシーポリシーの内容を変更することがあります。
                 その場合、変更内容を本ページにてお知らせいたします。
@@ -71,7 +71,7 @@ import SubpageStyles from '../components/SubpageStyles.astro'
       </div>
     </section>
   </main>
-  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="back-link" href="/">← ホームに戻る</a></div>
+  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="page-link back-link mt-7 inline-block border-b border-[#bdc7d2] py-3 text-[13px]" href="/">← ホームに戻る</a></div>
   <SiteFooter />
 </body>
 </html>

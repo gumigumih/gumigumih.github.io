@@ -1,23 +1,20 @@
 ---
 ---
-<section id="top" class="hero">
-  <div class="hero-rail" aria-hidden="true"><span>WEB DEVELOPMENT</span><i></i><span>SCROLL</span><i></i></div>
-  <div class="hero-copy">
-    <p class="hero-eyebrow">WEB DEVELOPMENT PARTNER</p>
-    <h1><span>必要なところに入り、</span><br /><span>Web開発を前へ。</span></h1>
-    <p class="hero-description">制作会社・広告代理店・個人事業主のWeb制作や開発を、<br class="desktop-break" />スポットで支援します。フロントエンド実装からAPI・バックエンド開発まで、必要な範囲を横断して対応します。</p>
-    <div class="hero-actions"><a class="design-button primary" href="#contact">仕事を相談する <span aria-hidden="true">⟶</span></a><a class="design-button" href="#works">制作・開発実績を見る <span aria-hidden="true">⟶</span></a></div>
+<section id="top" class="hero mx-auto grid max-w-[1440px] grid-cols-[5.3%_52.7%_29.4%_12.6%] border-b border-[#bdc7d2] bg-white [min-height:min(50vw,720px)]">
+  <div class="hero-rail flex flex-col items-center gap-7 border-r border-[#bdc7d2] px-0 py-8 max-md:row-span-2 max-md:gap-[18px] max-md:py-6" aria-hidden="true"><span class="hero-rail-label">WEB DEVELOPMENT</span><i class="hero-rail-line"></i><span class="hero-rail-label">SCROLL</span><i class="hero-rail-line"></i></div>
+  <div class="hero-copy min-w-0 self-center px-[3.8%] py-[clamp(48px,7vw,100px)]">
+    <p class="hero-eyebrow font-raleway text-[clamp(10px,1.15vw,15px)] font-semibold tracking-[.07em]">WEB DEVELOPMENT PARTNER</p>
+    <h1 class="hero-title mb-6 mt-7 text-[clamp(28px,4.3vw,60px)] font-extrabold leading-[1.4] tracking-[-.055em] max-md:text-[clamp(22px,6.2vw,40px)] max-md:leading-[1.5]"><span class="whitespace-nowrap">必要なところに入り、</span><br /><span class="whitespace-nowrap">Web開発を前へ。</span></h1>
+    <p class="hero-description mt-4 text-[clamp(12px,1.3vw,17px)] leading-[1.9] text-[#394452] max-md:text-[13px]">制作会社・広告代理店・個人事業主のWeb制作や開発を、<br class="desktop-break" />スポットで支援します。フロントエンド実装からAPI・バックエンド開発まで、必要な範囲を横断して対応します。</p>
+    <div class="hero-actions mt-7 flex gap-4 max-md:flex-col max-md:gap-2.5"><a class="design-button focus-ring primary inline-flex min-h-[54px] flex-1 items-center justify-center gap-[22px] border border-[#e83f93] bg-[#e83f93] px-3 text-[clamp(11px,1.2vw,15px)] font-bold transition hover:bg-[#cc2879] max-md:text-[13px]" href="#contact">仕事を相談する <span aria-hidden="true">⟶</span></a><a class="design-button focus-ring inline-flex min-h-[54px] flex-1 items-center justify-center gap-[22px] border border-[#687589] bg-white px-3 text-[clamp(11px,1.2vw,15px)] font-bold transition hover:bg-[#f3f5f7] max-md:text-[13px]" href="#works">制作・開発実績を見る <span aria-hidden="true">⟶</span></a></div>
   </div>
-  <div class="hero-art" aria-hidden="true"><img src="/assets/images/hero-grid.svg" width="238" height="404" alt="" fetchpriority="high" /></div>
+  <div class="hero-art overflow-hidden bg-[#f8fafb] max-md:col-start-2 max-md:h-[230px] max-md:border-t max-md:border-[#bdc7d2]" aria-hidden="true"><img class="hero-art-image max-md:object-cover max-md:object-[center_55%]" src="/assets/images/hero-grid.svg" width="238" height="404" alt="" fetchpriority="high" /></div>
   <div class="hero-side" aria-hidden="true"><p>CODE<br />CONNECT<br />CREATE<br />TOGETHER</p><i class="short-line"></i><i class="long-line"></i><p class="hero-signature">WEB<br />DEVELOPMENT</p></div>
 </section>
 <style>
-.hero{display:grid;grid-template-columns:5.3% 52.7% 29.4% 12.6%;max-width:1440px;margin:auto;border-bottom:1px solid #bdc7d2;background:#fff;min-height: min(50vw,720px);--hero-progress:0;--hero-shift:0px}
-.hero-rail{border-right:1px solid #bdc7d2;display:flex;align-items:center;flex-direction:column;padding:32px 0;gap:28px}.hero-rail span{writing-mode:vertical-rl;font:600 10px Arial,sans-serif;letter-spacing:.1em}.hero-rail i{width:1px;background:#8c99ab;flex:1}.hero-rail i:last-child{flex:0 0 40px}
-.hero-copy{padding:clamp(48px,7vw,100px) 3.8%;min-width:0;align-self:center}.hero-eyebrow{font:600 clamp(10px,1.15vw,15px) Arial,sans-serif;letter-spacing:.07em}
-h1{margin:28px 0 24px;font-size:clamp(28px,4.3vw,60px);font-weight:800;letter-spacing:-.055em;line-height:1.4}.hero-description{font-size:clamp(12px,1.3vw,17px);line-height:1.9;margin-top:16px;color:#394452}.hero-actions{display:flex;gap:16px;margin-top:28px}.hero-actions a{flex:1;min-width:0;padding-inline:12px;font-size:clamp(11px,1.2vw,15px)}
-.hero-art{overflow:hidden;background:#f8fafb}.hero-art img{width:100%;height:100%;object-fit:fill;transform:translateY(calc(var(--hero-shift) * -.55)) scale(calc(1 + var(--hero-progress) * .055));transition:transform .08s linear}.hero-side{padding:32px 22%;display:flex;flex-direction:column;align-items:flex-start;font:600 clamp(9px,1.05vw,13px)/1.35 Arial,sans-serif;letter-spacing:.06em}.short-line{width:30px;height:1px;background:#8190a3;margin:14px 0 35px}.long-line{width:1px;flex:1;background:#8190a3;margin-left:30px;margin-bottom:45px}.hero-signature{font-size:10px}
-h1 > span{display:inline;white-space:nowrap}
-@media(max-width:767px){.hero{grid-template-columns:24px 1fr 24px;min-height:0}.hero-rail{grid-row:1 / 3;padding:24px 0;gap:18px}.hero-rail span{font-size:8px}.hero-copy{padding:44px 18px 34px;grid-column:2}h1{font-size:clamp(22px,6.2vw,40px);line-height:1.5}.hero-description{font-size:13px}.desktop-break{display:none}.hero-actions{flex-direction:column;gap:10px;margin-top:24px}.hero-actions a{font-size:13px}.hero-art{grid-column:2;height:230px;border-top:1px solid #bdc7d2}.hero-art img{object-fit:cover;object-position:center 55%}.hero-side{display:none}}
-@media(prefers-reduced-motion:reduce){.hero-art img{transform:none;transition:none}}
+.hero{--hero-progress:0;--hero-shift:0px}
+.hero-rail-label{writing-mode:vertical-rl;font:600 10px Arial,sans-serif;letter-spacing:.1em}.hero-rail-line{width:1px;background:#8c99ab;flex:1}.hero-rail-line:last-child{flex:0 0 40px}
+.hero-art-image{width:100%;height:100%;object-fit:fill;transform:translateY(calc(var(--hero-shift) * -.55)) scale(calc(1 + var(--hero-progress) * .055));transition:transform .08s linear}.hero-side{padding:32px 22%;display:flex;flex-direction:column;align-items:flex-start;font:600 clamp(9px,1.05vw,13px)/1.35 Arial,sans-serif;letter-spacing:.06em}.short-line{width:30px;height:1px;background:#8190a3;margin:14px 0 35px}.long-line{width:1px;flex:1;background:#8190a3;margin-left:30px;margin-bottom:45px}.hero-signature{font-size:10px}
+@media(max-width:767px){.hero{grid-template-columns:24px 1fr 24px;min-height:0}.hero-side{display:none}}
+@media(prefers-reduced-motion:reduce){.hero-art-image{transform:none;transition:none}}
 </style>

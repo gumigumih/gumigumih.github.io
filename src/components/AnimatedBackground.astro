@@ -10,16 +10,16 @@ const shapeCount = 24
       data-index={index}
     >
       <span class="shape-kind shape-icon" data-kind="code" aria-hidden="true">
-        <i class="fa-solid fa-code"></i>
+        <i class="shape-icon-glyph fa-solid fa-code"></i>
       </span>
       <span class="shape-kind shape-icon" data-kind="pen" aria-hidden="true">
-        <i class="fa-solid fa-pen-nib"></i>
+        <i class="shape-icon-glyph fa-solid fa-pen-nib"></i>
       </span>
       <span class="shape-kind shape-icon" data-kind="lightbulb" aria-hidden="true">
-        <i class="fa-solid fa-lightbulb"></i>
+        <i class="shape-icon-glyph fa-solid fa-lightbulb"></i>
       </span>
       <span class="shape-kind shape-icon" data-kind="sparkles" aria-hidden="true">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <i class="shape-icon-glyph fa-solid fa-wand-magic-sparkles"></i>
       </span>
     </div>
   ))}
@@ -157,7 +157,7 @@ const shapeCount = 24
     box-shadow: 0 0 0 10px var(--shape-soft, rgba(56, 189, 248, 0.18));
   }
 
-  .shape-icon i {
+  .shape-icon-glyph {
     font-size: var(--icon-size, 28px);
     line-height: 1;
   }

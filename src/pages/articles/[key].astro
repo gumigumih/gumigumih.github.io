@@ -51,20 +51,20 @@ const getExternalUrl = (a: any) => {
     robots="noindex, nofollow"
   />
 </head>
-<body class="subpage">
+<body class="subpage bg-white font-sans text-[#162235]">
   <SubpageStyles />
   <SiteHeader />
-  <main class="pt-24">
-    <article class="relative z-10 py-16 px-4 md:px-8">
+  <main class="page-main pb-16 pt-24 max-md:pb-10">
+    <article class="article-page relative z-10 px-4 py-16 md:px-8">
       <div class="mx-auto max-w-4xl">
-        <nav class="breadcrumb" aria-label="パンくずリスト"><a href="/">HOME</a><span class="mx-2">/</span>
+        <nav class="breadcrumb flex flex-wrap items-center gap-2 py-7 text-xs text-[#687486]" aria-label="パンくずリスト"><a class="page-link breadcrumb-link border-b border-[#c4ccd6] pb-[3px]" href="/">HOME</a><span>/</span>
           <a
             href="https://note.com/gumigumih"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-slate-700"
+            class="page-link breadcrumb-link hover:text-slate-700"
           >note</a>
-          <span class="mx-2">/</span>
+          <span>/</span>
           <span class="text-slate-700">{article.name}</span>
         </nav>
 
@@ -72,7 +72,7 @@ const getExternalUrl = (a: any) => {
           <span class="h-0.5 w-10 bg-slate-400"></span>
           <span class="uppercase tracking-[0.25em] text-xs text-slate-500">{article.type || 'article'}</span>
         </div>
-        <h1 class="mt-4 text-3xl md:text-5xl font-black leading-tight text-slate-900">{article.name}</h1>
+        <h1 class="page-title mt-4 text-[clamp(28px,3.8vw,52px)] font-black leading-[1.45] tracking-[-.045em] text-slate-900">{article.name}</h1>
         <div class="mt-5 flex flex-wrap items-center gap-3 text-sm text-slate-500">
           <time datetime={article.publishAt}>{formatDate(article.publishAt)}</time>
           {tags.slice(0, 6).map((t) => (
@@ -83,15 +83,15 @@ const getExternalUrl = (a: any) => {
           ))}
         </div>
 
-        <div class="article-cover mt-8 overflow-hidden bg-white">
-          <img src={img} alt={article.name} class="w-full aspect-[1200/630] object-cover" loading="eager" decoding="async" />
+        <div class="article-cover mt-8 overflow-hidden border-y border-[#bdc7d2] bg-white">
+          <img class="article-cover-image aspect-[1200/630] w-full object-contain" src={img} alt={article.name} loading="eager" decoding="async" />
         </div>
 
-        <div class="article-copy mt-10">
+        <div class="article-copy mt-10 border-t border-[#bdc7d2] py-9">
           {toc.length > 0 && (
-            <section class="article-toc mb-8 px-5 py-5 md:px-6">
+            <section class="article-toc mb-8 border-l-2 border-pink-500 bg-white px-5 py-5 md:px-6">
               <p class="text-xs uppercase tracking-[0.24em] text-slate-500">table of contents</p>
-              <h2 class="mt-2 text-lg md:text-xl font-black text-slate-900">元記事の目次</h2>
+              <h2 class="page-section-title mt-2 text-lg font-black text-slate-900 md:text-xl">元記事の目次</h2>
               <p class="mt-2 text-sm text-slate-500">
                 このページでは概要を掲載しています。全文はnoteで読めます。
               </p>
@@ -118,10 +118,11 @@ const getExternalUrl = (a: any) => {
               ここでは概要を掲載しています。続きは元の記事で読めます。
             </p>
             <a
+              class="page-link"
               href={getExternalUrl(article)}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-pink-600 text-white px-5 py-3 text-sm font-semibold hover:-translate-y-0.5 hover:transition"
+              class="inline-flex items-center gap-2 bg-pink-600 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
             >
               元の記事を読む
               <i class="fa-solid fa-arrow-up-right-from-square text-xs" aria-hidden="true"></i>

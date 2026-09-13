@@ -4,11 +4,11 @@ export interface Props { baseUrl?: string }
 const { baseUrl = '' } = Astro.props as Props
 const navLinks = [['HOME','/'],['SERVICES','/#services'],['WORKS','/#works'],['ABOUT','/#profile'],['WORK STYLE','/#work-style'],['CONTACT','/#contact']]
 ---
-<header class="site-header" data-component="site-header"><div class="header-inner">
-<a href={`${baseUrl}/`} class="header-logo" aria-label="meg+gumi ホーム"><img src="/assets/images/logo_black.svg" width="145" height="31" alt="meg+gumi" /><span>WEB DEVELOPMENT<br />PARTNER</span></a>
-<nav class="desktop-nav" aria-label="メインナビゲーション">{navLinks.map(([label,href])=><a data-section-nav href={`${baseUrl}${href}`} aria-current={href==='/' && Astro.url.pathname==='/'?'page':undefined}>{label}</a>)}</nav>
-<button id="mobile-menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">MENU <span aria-hidden="true">＋</span></button>
-</div><nav id="mobile-menu" aria-label="モバイルナビゲーション" hidden>{navLinks.map(([label,href])=><a data-section-nav href={`${baseUrl}${href}`}>{label}</a>)}</nav></header>
+<header class="site-header sticky top-0 z-50 border-b border-[#bdc7d2] bg-white" data-component="site-header"><div class="header-inner mx-auto flex min-h-[76px] max-w-[1440px] items-stretch pl-[5.3%] max-md:min-h-16 max-md:px-6 max-md:pl-6 min-[1440px]:pl-[76px]">
+<a href={`${baseUrl}/`} class="header-logo flex w-[41.5%] items-center gap-[18px] border-r border-[#bdc7d2] px-[22px] py-[14px] max-md:w-auto max-md:border-0 max-md:px-0 max-md:py-3" aria-label="meg+gumi ホーム"><img class="header-logo-image w-40 max-md:w-[135px]" src="/assets/images/logo_black.svg" width="145" height="31" alt="meg+gumi" /><span class="header-logo-tagline font-raleway text-[9px] font-semibold leading-[1.4] tracking-[.04em] text-[#647183] max-[420px]:hidden">WEB DEVELOPMENT<br />PARTNER</span></a>
+<nav class="desktop-nav flex flex-1 items-center justify-evenly gap-4 px-5 max-md:hidden" aria-label="メインナビゲーション">{navLinks.map(([label,href])=><a class="desktop-nav-link focus-ring relative whitespace-nowrap py-2.5 font-raleway text-[11px] font-bold tracking-[.05em] hover:text-[#c82978]" data-section-nav href={`${baseUrl}${href}`} aria-current={href==='/' && Astro.url.pathname==='/'?'page':undefined}>{label}</a>)}</nav>
+<button id="mobile-menu-toggle" class="hidden items-center gap-3 font-raleway text-[11px] font-bold max-md:flex" aria-controls="mobile-menu" aria-expanded="false" aria-label="メニューを開く">MENU <span class="menu-mark text-[22px] text-[#e83f93]" aria-hidden="true">＋</span></button>
+</div><nav id="mobile-menu" class="mobile-menu grid grid-cols-2 gap-x-6 border-t border-[#bdc7d2] p-4" aria-label="モバイルナビゲーション" hidden>{navLinks.map(([label,href])=><a class="mobile-nav-link block border-b border-[#d5dce3] p-4 font-raleway text-xs font-bold hover:text-[#c82978] aria-[current=page]:text-[#c82978]" data-section-nav href={`${baseUrl}${href}`}>{label}</a>)}</nav></header>
 <script type="module" src={activeSectionNavSrc}></script>
 <script>
 const toggle=document.getElementById('mobile-menu-toggle')
@@ -19,8 +19,5 @@ menu?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMen
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&menu&&!menu.hidden){closeMenu();toggle?.focus()}})
 </script>
 <style>
-.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #bdc7d2}.header-inner{max-width:1440px;margin:auto;min-height:76px;display:flex;align-items:stretch;padding-left:5.3%}.header-logo{display:flex;gap:18px;align-items:center;width:41.5%;border-right:1px solid #bdc7d2;padding:14px 22px}.header-logo img{width:160px;height:auto}.header-logo span{font:600 9px/1.4 Arial,sans-serif;color:#647183;letter-spacing:.04em}.desktop-nav{flex:1;display:flex;justify-content:space-evenly;align-items:center;padding:0 20px;gap:16px}.desktop-nav a{position:relative;font:700 11px Arial,sans-serif;letter-spacing:.05em;white-space:nowrap;padding:10px 0}.desktop-nav a[aria-current=page]:after{content:"";position:absolute;bottom:2px;left:0;right:0;height:3px;background:#e83f93}.desktop-nav a:hover{color:#c82978}#mobile-menu-toggle{display:none}#mobile-menu:not([hidden]){display:grid;grid-template-columns:1fr 1fr;padding:16px 24px;border-top:1px solid #bdc7d2;gap:0 24px}#mobile-menu a{padding:16px 0;border-bottom:1px solid #d5dce3;font:700 12px Arial,sans-serif}#mobile-menu a[aria-current=page]{color:#c82978}
-@media(max-width:1023px){.header-inner{min-height:64px;padding:0 24px}.header-logo{width:auto;border:0;padding:12px 0}.header-logo img{width:135px}.desktop-nav{display:none}#mobile-menu-toggle{display:flex;margin-left:auto;align-items:center;gap:12px;font:700 11px Arial,sans-serif}#mobile-menu-toggle span{color:#e83f93;font-size:22px}}
-@media(max-width:420px){.header-logo span{display:none}}
-@media(min-width:1440px){.header-inner{padding-left:76px}}
+.desktop-nav-link[aria-current=page]:after{content:"";position:absolute;bottom:2px;left:0;right:0;height:3px;background:#e83f93}
 </style>

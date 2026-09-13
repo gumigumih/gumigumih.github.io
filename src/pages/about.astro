@@ -15,13 +15,13 @@ import WorkInquiryCta from '../components/WorkInquiryCta.astro'
     canonicalPath="/about"
   />
 </head>
-<body class="subpage">
+<body class="subpage bg-white font-sans text-[#162235]">
   <SubpageStyles />
   <SiteHeader />
-  <main class="pt-24">
-    <section class="relative z-10 py-20 px-4 md:px-8">
-      <div class="page-intro mx-auto max-w-6xl">
-        <h1 class="page-label">ABOUT ME</h1>
+  <main class="page-main pb-16 pt-24 max-md:pb-10">
+    <section class="page-section relative z-10 px-4 py-20 md:px-8">
+      <div class="page-intro mx-auto max-w-6xl border-b border-[#bdc7d2] pb-10">
+        <h1 class="page-title font-raleway text-[clamp(30px,4vw,54px)] font-extrabold leading-[1.1] tracking-[-.035em] text-[#162235]">ABOUT ME</h1>
         <p class="mt-8 text-base md:text-lg max-w-4xl text-slate-600 leading-relaxed">
           meg+gumi は、制作会社、広告代理店、個人事業主のWeb制作・開発をスポットで支援する、ぐみのポートフォリオです。
           フロントエンド実装からAPI・バックエンド開発まで、必要な範囲を横断して対応します。
@@ -29,26 +29,26 @@ import WorkInquiryCta from '../components/WorkInquiryCta.astro'
       </div>
 
       <div class="mt-8 md:mt-10 mx-auto max-w-5xl">
-        <div class="document-content">
+        <div class="document-content mt-12 border-l border-[#bdc7d2] pl-10 max-md:mt-[30px] max-md:pl-5">
           <div class="space-y-10 text-slate-600 leading-relaxed">
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">運営者</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">運営者</h2>
               <p>
                 ぐみ（gumigumih）が運営しています。Web開発とプロジェクト推進の経験を活かし、
                 要件整理、設計、実装、品質確認、運用までを見渡しながら仕事を進めています。
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">対応している領域</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">対応している領域</h2>
               <p>
                 デザインデータからのフロントエンド実装、小規模なAPIや外部サービス連携、既存サイト・サービスの改修、
                 Web制作に必要な技術要件の整理などに対応しています。
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">仕事で大切にしていること</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">仕事で大切にしていること</h2>
               <p>
                 依頼された実装だけを見るのではなく、その目的や公開後の運用までを確認します。
                 担当範囲と完了条件を明確にし、制作と開発の間にある曖昧さを整理しながら進めることを大切にしています。
@@ -60,7 +60,7 @@ import WorkInquiryCta from '../components/WorkInquiryCta.astro'
       </div>
     </section>
   </main>
-  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="back-link" href="/">← ホームに戻る</a></div>
+  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="page-link back-link mt-7 inline-block border-b border-[#bdc7d2] py-3 text-[13px]" href="/">← ホームに戻る</a></div>
   <SiteFooter />
 </body>
 </html>

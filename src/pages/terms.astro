@@ -14,13 +14,13 @@ import SubpageStyles from '../components/SubpageStyles.astro'
     canonicalPath="/terms"
   />
 </head>
-<body class="subpage">
+<body class="subpage bg-white font-sans text-[#162235]">
   <SubpageStyles />
   <SiteHeader />
-  <main class="pt-24">
-    <section class="relative z-10 py-20 px-4 md:px-8">
-      <div class="page-intro mx-auto max-w-6xl">
-        <h1 class="page-label">TERMS OF USE</h1>
+  <main class="page-main pb-16 pt-24 max-md:pb-10">
+    <section class="page-section relative z-10 px-4 py-20 md:px-8">
+      <div class="page-intro mx-auto max-w-6xl border-b border-[#bdc7d2] pb-10">
+        <h1 class="page-title font-raleway text-[clamp(30px,4vw,54px)] font-extrabold leading-[1.1] tracking-[-.035em] text-[#162235]">TERMS OF USE</h1>
         <div class="mt-8 md:mt-10">
           <p class="text-base md:text-lg max-w-4xl text-slate-600">
             当サイトを利用する際のルールとお願いをまとめています。
@@ -29,26 +29,26 @@ import SubpageStyles from '../components/SubpageStyles.astro'
       </div>
 
       <div class="mt-8 md:mt-10 mx-auto max-w-5xl">
-        <div class="document-content">
+        <div class="document-content mt-12 border-l border-[#bdc7d2] pl-10 max-md:mt-[30px] max-md:pl-5">
           <div class="space-y-10 text-slate-600 leading-relaxed">
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">1. はじめに</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">1. はじめに</h2>
               <p>
                 本規約は、meg+gumi（以下「当サイト」）の利用条件を定めるものです。
                 当サイトをご利用いただく際は、本規約に同意いただいたものとみなします。
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">2. サービスの利用</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">2. サービスの利用</h2>
               <p>
                 当サイトで公開しているWebアプリは、各アプリに個別の条件がある場合を除き、個人利用を想定して提供しています。
                 当サイトを通じてご相談いただくWeb制作・開発業務については、本規約ではなく、案件ごとに合意した契約・条件を適用します。
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">3. 禁止事項</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">3. 禁止事項</h2>
               <p>当サイトの利用にあたり、以下の行為を禁止します。</p>
               <ul class="list-disc list-inside space-y-2">
                 <li>法令や公序良俗に反する行為</li>
@@ -58,16 +58,16 @@ import SubpageStyles from '../components/SubpageStyles.astro'
               </ul>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">4. 免責事項</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">4. 免責事項</h2>
               <p>
                 当サイトは、サービスの提供を中断または終了する場合があります。
                 また、当サイトの利用により生じたいかなる損害についても、当サイトは責任を負いません。
               </p>
             </section>
 
-            <section class="space-y-4">
-              <h2 class="text-xl md:text-2xl font-black text-slate-900">5. 規約の変更</h2>
+            <section class="document-section scroll-mt-[100px] space-y-4 border-t border-[#d0d7df] pt-8 first:border-t-0 first:pt-0">
+              <h2 class="page-section-title text-xl font-black text-slate-900 md:text-2xl">5. 規約の変更</h2>
               <p>
                 当サイトは、必要に応じて本規約を変更することがあります。
                 変更後の規約は、当サイトに掲載した時点で効力を生じるものとします。
@@ -78,7 +78,7 @@ import SubpageStyles from '../components/SubpageStyles.astro'
       </div>
     </section>
   </main>
-  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="back-link" href="/">← ホームに戻る</a></div>
+  <div class="mx-auto max-w-5xl px-6 pb-10"><a class="page-link back-link mt-7 inline-block border-b border-[#bdc7d2] py-3 text-[13px]" href="/">← ホームに戻る</a></div>
   <SiteFooter />
 </body>
 </html>

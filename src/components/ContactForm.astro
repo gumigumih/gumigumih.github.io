@@ -7,36 +7,36 @@ const turnstileEnabled = Boolean(turnstileSiteKey && contactFormEndpoint)
 {turnstileEnabled && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
 <div class="w-full">
-  <div class="border-l border-slate-300 pl-6 md:pl-10">
+  <div class="border-l border-slate-300 pl-6 md:pl-10 max-md:border-l-0 max-md:pl-0">
     <div>
-    <form id="contact-form" class="space-y-6" data-turnstile-enabled={turnstileEnabled} data-contact-form-endpoint={contactFormEndpoint}>
-      <div class="space-y-2">
-        <label for="name" class="block text-sm font-bold text-slate-700">お名前 <span class="text-pink-500">*</span></label>
-        <input type="text" id="name" name="name" required class="w-full border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-pink-500" placeholder="山田 太郎">
+    <form id="contact-form" class="grid gap-[18px]" data-turnstile-enabled={turnstileEnabled} data-contact-form-endpoint={contactFormEndpoint}>
+      <div class="contact-field-row space-y-2">
+        <label for="name" class="contact-field-label block pt-3 text-xs font-bold text-slate-700 max-md:pt-0">お名前 <span class="text-pink-500">*</span></label>
+        <input type="text" id="name" name="name" required class="contact-field-input w-full border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none transition focus:border-pink-500" placeholder="山田 太郎">
       </div>
-      <div class="space-y-2">
-        <label for="email" class="block text-sm font-bold text-slate-700">メールアドレス <span class="text-pink-500">*</span></label>
-        <input type="email" id="email" name="email" required class="w-full border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-pink-500" placeholder="example@email.com">
+      <div class="contact-field-row space-y-2">
+        <label for="email" class="contact-field-label block pt-3 text-xs font-bold text-slate-700 max-md:pt-0">メールアドレス <span class="text-pink-500">*</span></label>
+        <input type="email" id="email" name="email" required class="contact-field-input w-full border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none transition focus:border-pink-500" placeholder="example@email.com">
       </div>
-      <div class="space-y-2">
-        <label for="company" class="block text-sm font-bold text-slate-700">会社名・所属</label>
-        <input type="text" id="company" name="company" class="w-full border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-pink-500" placeholder="任意">
+      <div class="contact-field-row space-y-2">
+        <label for="company" class="contact-field-label block pt-3 text-xs font-bold text-slate-700 max-md:pt-0">会社名・所属</label>
+        <input type="text" id="company" name="company" class="contact-field-input w-full border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none transition focus:border-pink-500" placeholder="任意">
       </div>
-      <div class="space-y-2">
-        <label for="message" class="block text-sm font-bold text-slate-700">メッセージ <span class="text-pink-500">*</span></label>
-        <textarea id="message" name="message" required rows="6" class="w-full resize-none border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-pink-500" placeholder="ご相談内容、希望時期、現在お困りのことなどをご記入ください"></textarea>
+      <div class="contact-field-row space-y-2">
+        <label for="message" class="contact-field-label block pt-3 text-xs font-bold text-slate-700 max-md:pt-0">メッセージ <span class="text-pink-500">*</span></label>
+        <textarea id="message" name="message" required rows="6" class="contact-field-input contact-field-textarea h-[120px] min-h-[120px] w-full resize-none border border-slate-300 bg-white px-3 py-2 text-[13px] outline-none transition focus:border-pink-500" placeholder="ご相談内容、希望時期、現在お困りのことなどをご記入ください"></textarea>
       </div>
       <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
-        <label for="website">Website</label>
+        <label class="contact-honeypot-label" for="website">Website</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
       </div>
       {turnstileEnabled && (
-        <div class="flex justify-center" aria-label="スパム対策の確認">
+        <div class="contact-turnstile-row ml-[163px] flex justify-center max-md:ml-0" aria-label="スパム対策の確認">
           <div class="cf-turnstile" data-sitekey={turnstileSiteKey} data-language="ja"></div>
         </div>
       )}
-      <div class="text-center pt-4">
-        <button type="submit" id="submit-button" class="inline-flex items-center gap-2 bg-pink-500 px-7 py-4 text-sm font-bold text-white transition hover:bg-pink-600">
+      <div class="contact-submit-row ml-[163px] p-0 text-center max-md:ml-0">
+        <button type="submit" id="submit-button" class="focus-ring inline-flex w-full items-center justify-center gap-2 bg-[#e83f93] px-7 py-4 text-sm font-bold text-white transition hover:bg-pink-600">
           <i class="fas fa-paper-plane" id="submit-icon"></i>
           <span class="ml-3" id="submit-text">送信する</span>
         </button>
