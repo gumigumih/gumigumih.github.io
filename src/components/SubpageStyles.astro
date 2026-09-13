@@ -1,3 +1,6 @@
+---
+import subpageMotionSrc from '../scripts/subpageMotion.ts?url'
+---
 <style is:global>
   .subpage { background:#fff; color:#162235; }
   .subpage main { padding-top:0; padding-bottom:64px; }
@@ -30,6 +33,15 @@
   .subpage .article-cover img { object-fit:contain; }
   .subpage .article-toc { background:#fff; border-left:2px solid #e83f93; }
   .subpage .back-link { display:inline-block; margin-top:28px; padding:12px 0; border-bottom:1px solid #bdc7d2; font-size:13px; }
+  .subpage-motion-ready [data-subpage-motion] { opacity:0; transform:translateY(24px); filter:blur(4px); transition:opacity .44s ease, transform .68s cubic-bezier(.2,.72,.18,1), filter .56s ease; transition-delay:var(--subpage-motion-delay,0ms); }
+  .subpage-motion-ready [data-subpage-motion].is-motion-visible { opacity:1; transform:translateY(0); filter:blur(0); }
+  .subpage .case-hero[data-motion-media], .subpage .article-cover[data-motion-media] { position:relative; }
+  .subpage-motion-ready .case-hero[data-motion-media]::after, .subpage-motion-ready .article-cover[data-motion-media]::after { content:""; position:absolute; inset:0; z-index:2; background:#e83f93; transform:scaleY(1); transform-origin:bottom; transition:transform .74s cubic-bezier(.7,0,.2,1); transition-delay:var(--subpage-motion-delay,0ms); pointer-events:none; }
+  .subpage-motion-ready .case-hero[data-motion-media].is-motion-visible::after, .subpage-motion-ready .article-cover[data-motion-media].is-motion-visible::after { transform:scaleY(0); }
+  .subpage .document-content section, .subpage .case-section { position:relative; }
+  .subpage-motion-ready .document-content section::after, .subpage-motion-ready .case-section::after { content:""; position:absolute; left:0; bottom:-1px; height:2px; width:52px; background:#e83f93; transform:scaleX(0); transform-origin:left; transition:transform .52s ease; transition-delay:calc(var(--subpage-motion-delay,0ms) + 100ms); }
+  .subpage-motion-ready .document-content section.is-motion-visible::after, .subpage-motion-ready .case-section.is-motion-visible::after { transform:scaleX(1); }
+  @media(prefers-reduced-motion:reduce) { .subpage-motion-ready [data-subpage-motion] { opacity:1; transform:none; filter:none; transition:none; } .subpage-motion-ready .case-hero[data-motion-media]::after, .subpage-motion-ready .article-cover[data-motion-media]::after { display:none; } }
   @media(max-width:767px) {
     .subpage main { padding-bottom:40px; }
     .subpage main > section, .subpage main > article { padding:28px 24px 0; }
@@ -41,3 +53,4 @@
     .subpage .breadcrumb ol { flex-wrap:wrap; }
   }
 </style>
+<script type="module" src={subpageMotionSrc}></script>
