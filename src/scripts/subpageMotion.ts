@@ -23,7 +23,7 @@ const initSubpageMotion = () => {
   targets.forEach((target, index) => {
     target.dataset.subpageMotion = ''
     target.style.setProperty('--subpage-motion-delay', `${(index % 4) * 70}ms`)
-    if (target.matches('.case-hero, .article-cover')) target.dataset.motionMedia = ''
+    if (target.matches('.article-cover')) target.dataset.motionMedia = ''
   })
 
   if (!targets.length || prefersReducedMotion || !('IntersectionObserver' in window)) return
