@@ -4,7 +4,7 @@ const items=[['01','進め方','機能・ページ・期間など、完了条件
 ---
 <section id="work-style" class="design-section"><div class="section-inner">
 <SectionHeading number="04" title="WORK STYLE" description="スムーズで気持ちのよい制作・開発のために。" />
-<div class="style-grid">{items.map(([number,title,description])=><article><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
+<div class="style-grid" data-reveal-group>{items.map(([number,title,description])=><article><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div>
 </div></section>
 <style>
 .style-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}.style-grid article{border-left:1px solid #95a2b2;padding-left:22px}.style-grid span{font:700 23px Arial,sans-serif}.style-grid h3{font-weight:800;font-size:20px;margin-top:10px}.style-grid p{color:#5b6675;font-size:13px;line-height:1.9;margin-top:12px}

@@ -10,13 +10,22 @@ import WorkStyleSection from '../components/WorkStyleSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import SiteFooter from '../components/SiteFooter.astro'
 import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
+import scrollMotionSrc from '../scripts/scrollMotion.ts?url'
 ---
 <!DOCTYPE html><html lang="ja"><head><SiteHead title="meg+gumi | スポット対応のWeb開発パートナー" description="制作会社、広告代理店、個人事業主に向けて、フロントエンド実装、バックエンド開発、既存サイトの改修をスポットで支援します。" canonicalPath="/" /></head>
-<body id="app" class:list={["homepage"]}><SiteHeader /><main><HeroSection /><ServicesSection /><WorksSection /><IntroSection /><WorkStyleSection /><ContactSection /></main><SiteFooter /><script type="module" src={revealOnScrollSrc}></script></body></html>
-<style is:global>.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:0;transform:translateY(18px);transition:opacity .42s ease,transform .52s ease}.reveal-ready .is-revealed{opacity:1;transform:translateY(0)}@media (prefers-reduced-motion:reduce){.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:1;transform:none;transition:none}}</style>
+<body id="app" class:list={["homepage"]}><SiteHeader /><main><HeroSection /><ServicesSection /><WorksSection /><IntroSection /><WorkStyleSection /><ContactSection /></main><SiteFooter /><script type="module" src={revealOnScrollSrc}></script><script type="module" src={scrollMotionSrc}></script></body></html>
+<style is:global>
+.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:0;transform:translateY(24px);filter:blur(4px);transition:opacity .46s ease,transform .7s cubic-bezier(.2,.72,.18,1),filter .58s ease;transition-delay:var(--reveal-delay,0ms)}
+.reveal-ready .is-revealed{opacity:1;transform:translateY(0);filter:blur(0)}
+.reveal-ready .service-grid article,.reveal-ready .work-card{transition-delay:var(--reveal-delay,0ms)}
+.reveal-ready .service-grid article .service-visual,.reveal-ready .work-card .work-image{position:relative}
+.reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{content:"";position:absolute;inset:0;background:#e83f93;transform-origin:bottom;transform:scaleY(1);transition:transform .7s cubic-bezier(.7,0,.2,1);transition-delay:var(--reveal-delay,0ms);pointer-events:none}
+.reveal-ready .service-grid article.is-revealed .service-visual::after,.reveal-ready .work-card.is-revealed .work-image::after{transform:scaleY(0)}
+@media (prefers-reduced-motion:reduce){.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:1;transform:none;filter:none;transition:none}.reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{display:none}}
+</style>
 <style is:global>
 .homepage{background:#fff;color:#111c29}
-.homepage .design-section{border-bottom:1px solid #bdc7d2;scroll-margin-top:90px}
+.homepage .design-section{position:relative;border-bottom:1px solid #bdc7d2;scroll-margin-top:90px}.homepage .design-section::before{content:"";position:absolute;top:-1px;left:0;width:min(19vw,260px);height:3px;background:#e83f93;transform:scaleX(var(--section-progress,0));transform-origin:left;pointer-events:none}
 .homepage .section-inner{max-width:1440px;margin:auto;padding:46px 3.7%}
 .homepage .design-button{display:inline-flex;align-items:center;justify-content:center;gap:22px;border:1px solid #687589;min-height:54px;font-size:14px;font-weight:700;transition:background .2s}
 .homepage .design-button.primary{background:#e83f93;border-color:#e83f93;color:#fff}
@@ -33,4 +42,5 @@ import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
 .homepage #contact-form .flex.justify-center{margin-left:163px}
 @media(min-width:1440px){.homepage .section-inner{padding-inline:54px}}
 @media(max-width:767px){.homepage .section-inner{padding:34px 24px}.homepage #contact>.section-inner>.w-full>div{border:0;padding:0}.homepage #contact-form>div.space-y-2{grid-template-columns:1fr;gap:5px}.homepage #contact-form .text-center,.homepage #contact-form .flex.justify-center{margin-left:0}.homepage #contact-form label{padding:0}}
+@media(prefers-reduced-motion:reduce){.homepage .design-section::before{transform:scaleX(1)}}
 </style>

@@ -8,7 +8,7 @@ const selectedProjects=[
 ---
 <section id="works" class="design-section"><div class="section-inner">
 <SectionHeading number="02" title="WORKS" description="これまでに制作・開発した主な実績です。" />
-<div class="works-grid">{selectedProjects.map(item=><a href={item.href} class="work-card"><div class="work-image"><img src={item.image} alt={item.title} loading="lazy" width="600" height="400" /></div><h3>{item.title}<span aria-hidden="true">⟶</span></h3><p>{item.role}</p></a>)}</div>
+<div class="works-grid" data-reveal-group>{selectedProjects.map(item=><a href={item.href} class="work-card" data-reveal-item><div class="work-image"><img src={item.image} alt={item.title} loading="lazy" width="600" height="400" /></div><h3>{item.title}<span aria-hidden="true">⟶</span></h3><p>{item.role}</p></a>)}</div>
 </div></section>
 <style>
 .works-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}.work-card{min-width:0}.work-image{aspect-ratio:1.02;background:#f2f4f6;overflow:hidden;display:flex;align-items:center}.work-image img{width:100%;height:100%;object-fit:contain;transition:transform .3s}.work-card:hover img{transform:scale(1.035)}.work-card h3{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:15px;font-weight:700;line-height:1.6;margin-top:13px}.work-card h3 span{font-size:24px;font-weight:400}.work-card p{font:11px Arial,sans-serif;color:#667181;margin-top:5px}
