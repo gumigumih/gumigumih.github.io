@@ -18,6 +18,14 @@ interface ImplementationItem {
   description: string
 }
 
+interface DetailImage {
+  src: string
+  alt: string
+  caption: string
+  width?: number
+  height?: number
+}
+
 export interface Props {
   title: string
   metaTitle: string
@@ -28,6 +36,7 @@ export interface Props {
   tags: string
   date: string
   subtitle: string
+  detailImages?: DetailImage[]
   overview: string[]
   challenge: string
   scope: string[]
@@ -84,6 +93,36 @@ const props = Astro.props as Props
     </div>
 
     <div class="case-body mx-auto max-w-[1152px] px-6">
+      {props.detailImages && props.detailImages.length > 0 && (
+        <section class="case-gallery border-b border-[#bdc7d2] py-10 md:py-14" aria-labelledby="case-gallery-title">
+          <div class="max-w-2xl">
+            <p class="font-raleway text-xs font-bold uppercase tracking-[0.24em] text-[#c82e7c]">visuals</p>
+            <h2 id="case-gallery-title" class="mt-3 text-2xl font-black tracking-[-.03em] text-slate-900 md:text-3xl">画面・ビジュアル</h2>
+            <p class="mt-4 text-sm leading-[1.9] text-slate-600">実際の画面や制作物の一部を紹介します。</p>
+          </div>
+          <div class="mt-8 grid gap-6 md:grid-cols-2">
+            {props.detailImages.map((detailImage) => (
+              <figure class="overflow-hidden border border-[#bdc7d2] bg-[#f2f4f6]">
+                <div class="flex justify-center overflow-hidden bg-white">
+                  <img
+                    src={detailImage.src}
+                    alt={detailImage.alt}
+                    class="h-auto w-full object-contain"
+                    width={detailImage.width}
+                    height={detailImage.height}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <figcaption class="border-t border-[#bdc7d2] px-4 py-3 text-xs font-semibold tracking-[0.04em] text-slate-700">
+                  {detailImage.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section class="case-section relative m-0 border-b border-[#bdc7d2] bg-white py-[38px] pl-[30%] max-md:py-[30px] max-md:pl-0">
         <p class="case-section-label absolute left-0 top-10 font-raleway text-xs font-bold uppercase tracking-[0.24em] text-[#c82e7c] max-md:static">01 / overview</p>
         <h2 class="page-section-title case-section-title absolute left-0 top-[61px] m-0 text-2xl font-black text-slate-900 md:text-3xl max-md:static max-md:mb-5 max-md:mt-2">概要</h2>
