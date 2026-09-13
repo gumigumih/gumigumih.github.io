@@ -3,7 +3,6 @@ const sectionSelector = '[data-reveal-section]'
 const itemSelector = [
   '[data-reveal-item]',
   'article',
-  '.swiper-slide',
   'form',
   '[id="contact-form"] > div',
 ].join(', ')
