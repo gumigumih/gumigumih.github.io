@@ -11,9 +11,10 @@ import ContactSection from '../components/ContactSection.astro'
 import SiteFooter from '../components/SiteFooter.astro'
 import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
 import scrollMotionSrc from '../scripts/scrollMotion.ts?url'
+import textMotionSrc from '../scripts/textMotion.ts?url'
 ---
 <!DOCTYPE html><html lang="ja"><head><SiteHead title="meg+gumi | スポット対応のWeb開発パートナー" description="制作会社、広告代理店、個人事業主に向けて、フロントエンド実装、バックエンド開発、既存サイトの改修をスポットで支援します。" canonicalPath="/" /></head>
-<body id="app" class:list={["homepage"]}><SiteHeader /><main><HeroSection /><ServicesSection /><WorksSection /><IntroSection /><WorkStyleSection /><ContactSection /></main><SiteFooter /><script type="module" src={revealOnScrollSrc}></script><script type="module" src={scrollMotionSrc}></script></body></html>
+<body id="app" class:list={["homepage"]}><SiteHeader /><main><HeroSection /><ServicesSection /><WorksSection /><IntroSection /><WorkStyleSection /><ContactSection /></main><SiteFooter /><script type="module" src={revealOnScrollSrc}></script><script type="module" src={scrollMotionSrc}></script><script type="module" src={textMotionSrc}></script></body></html>
 <style is:global>
 .reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:0;transform:translateY(24px);filter:blur(4px);transition:opacity .46s ease,transform .7s cubic-bezier(.2,.72,.18,1),filter .58s ease;transition-delay:var(--reveal-delay,0ms)}
 .reveal-ready .is-revealed{opacity:1;transform:translateY(0);filter:blur(0)}
@@ -21,6 +22,8 @@ import scrollMotionSrc from '../scripts/scrollMotion.ts?url'
 .reveal-ready .service-grid article .service-visual,.reveal-ready .work-card .work-image{position:relative}
 .reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{content:"";position:absolute;inset:0;background:#e83f93;transform-origin:bottom;transform:scaleY(1);transition:transform .7s cubic-bezier(.7,0,.2,1);transition-delay:var(--reveal-delay,0ms);pointer-events:none}
 .reveal-ready .service-grid article.is-revealed .service-visual::after,.reveal-ready .work-card.is-revealed .work-image::after{transform:scaleY(0)}
+.text-char{display:inline-block;opacity:0;transform:translateY(.58em) rotate(3deg);transition:opacity .28s ease,transform .52s cubic-bezier(.2,.72,.18,1);transition-delay:calc(var(--char-index) * 22ms)}
+.text-motion-ready .hero h1 .text-char,.text-motion-ready .is-revealed .text-char,.text-motion-ready .is-motion-visible .text-char{opacity:1;transform:translateY(0) rotate(0)}
 @media (prefers-reduced-motion:reduce){.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:1;transform:none;filter:none;transition:none}.reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{display:none}}
 </style>
 <style is:global>

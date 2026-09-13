@@ -1,5 +1,6 @@
 ---
 import subpageMotionSrc from '../scripts/subpageMotion.ts?url'
+import textMotionSrc from '../scripts/textMotion.ts?url'
 ---
 <style is:global>
   .subpage { background:#fff; color:#162235; }
@@ -33,6 +34,8 @@ import subpageMotionSrc from '../scripts/subpageMotion.ts?url'
   .subpage .article-cover img { object-fit:contain; }
   .subpage .article-toc { background:#fff; border-left:2px solid #e83f93; }
   .subpage .back-link { display:inline-block; margin-top:28px; padding:12px 0; border-bottom:1px solid #bdc7d2; font-size:13px; }
+  .text-char { display:inline-block; opacity:0; transform:translateY(.58em) rotate(3deg); transition:opacity .28s ease, transform .52s cubic-bezier(.2,.72,.18,1); transition-delay:calc(var(--char-index) * 22ms); }
+  .text-motion-ready .is-motion-visible .text-char { opacity:1; transform:translateY(0) rotate(0); }
   .subpage-motion-ready [data-subpage-motion] { opacity:0; transform:translateY(24px); filter:blur(4px); transition:opacity .44s ease, transform .68s cubic-bezier(.2,.72,.18,1), filter .56s ease; transition-delay:var(--subpage-motion-delay,0ms); }
   .subpage-motion-ready [data-subpage-motion].is-motion-visible { opacity:1; transform:translateY(0); filter:blur(0); }
   .subpage .case-hero[data-motion-media], .subpage .article-cover[data-motion-media] { position:relative; }
@@ -41,7 +44,7 @@ import subpageMotionSrc from '../scripts/subpageMotion.ts?url'
   .subpage .document-content section, .subpage .case-section { position:relative; }
   .subpage-motion-ready .document-content section::after, .subpage-motion-ready .case-section::after { content:""; position:absolute; left:0; bottom:-1px; height:2px; width:52px; background:#e83f93; transform:scaleX(0); transform-origin:left; transition:transform .52s ease; transition-delay:calc(var(--subpage-motion-delay,0ms) + 100ms); }
   .subpage-motion-ready .document-content section.is-motion-visible::after, .subpage-motion-ready .case-section.is-motion-visible::after { transform:scaleX(1); }
-  @media(prefers-reduced-motion:reduce) { .subpage-motion-ready [data-subpage-motion] { opacity:1; transform:none; filter:none; transition:none; } .subpage-motion-ready .case-hero[data-motion-media]::after, .subpage-motion-ready .article-cover[data-motion-media]::after { display:none; } }
+  @media(prefers-reduced-motion:reduce) { .subpage-motion-ready [data-subpage-motion] { opacity:1; transform:none; filter:none; transition:none; } .subpage-motion-ready .case-hero[data-motion-media]::after, .subpage-motion-ready .article-cover[data-motion-media]::after { display:none; } .text-char { opacity:1; transform:none; transition:none; } }
   @media(max-width:767px) {
     .subpage main { padding-bottom:40px; }
     .subpage main > section, .subpage main > article { padding:28px 24px 0; }
@@ -54,3 +57,4 @@ import subpageMotionSrc from '../scripts/subpageMotion.ts?url'
   }
 </style>
 <script type="module" src={subpageMotionSrc}></script>
+<script type="module" src={textMotionSrc}></script>
