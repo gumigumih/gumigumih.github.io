@@ -22,8 +22,7 @@ import textMotionSrc from '../scripts/textMotion.ts?url'
 .reveal-ready .service-grid article .service-visual,.reveal-ready .work-card .work-image{position:relative}
 .reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{content:"";position:absolute;inset:0;background:#e83f93;transform-origin:bottom;transform:scaleY(1);transition:transform .7s cubic-bezier(.7,0,.2,1);transition-delay:var(--reveal-delay,0ms);pointer-events:none}
 .reveal-ready .service-grid article.is-revealed .service-visual::after,.reveal-ready .work-card.is-revealed .work-image::after{transform:scaleY(0)}
-.text-char{display:inline-block;opacity:0;transform:translateY(.58em) rotate(3deg);transition:opacity .28s ease,transform .52s cubic-bezier(.2,.72,.18,1);transition-delay:calc(var(--char-index) * 22ms)}
-.text-motion-ready .hero h1 .text-char,.text-motion-ready .is-revealed .text-char,.text-motion-ready .is-motion-visible .text-char{opacity:1;transform:translateY(0) rotate(0)}
+.typewriter-char{display:inline-block;opacity:0;transform:translateY(.2em);transition:opacity .08s linear,transform .12s ease}.typewriter-char.is-typed{opacity:1;transform:translateY(0)}.hero h1.is-typing::after{content:"|";display:inline-block;margin-left:.08em;color:#e83f93;animation:typewriter-cursor .7s steps(1) infinite}.hero h1.is-typed-complete::after{animation:none;opacity:0;transition:opacity .2s ease}@keyframes typewriter-cursor{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.reveal-ready [data-reveal],.reveal-ready [data-reveal-item]{opacity:1;transform:none;filter:none;transition:none}.reveal-ready .service-grid article .service-visual::after,.reveal-ready .work-card .work-image::after{display:none}}
 </style>
 <style is:global>
