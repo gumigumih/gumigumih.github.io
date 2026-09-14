@@ -24,11 +24,9 @@
     "clasp:push": "cd gas/contact-form && clasp push",
     "clasp:pull": "cd gas/contact-form && clasp pull",
     "clasp:open": "cd gas/contact-form && clasp open",
-    "clasp:deploy": "cd gas/contact-form && clasp deploy",
-    "update-articles": "node scripts/update-articles.js"
+    "clasp:deploy": "cd gas/contact-form && clasp deploy"
   },
   "dependencies": {
-    "axios": "^1.20.0"
   },
   "devDependencies": {
     "@google/clasp": "^3.3.0",
