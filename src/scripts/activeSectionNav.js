@@ -5,12 +5,12 @@ const initActiveSectionNav = () => {
 
   const sections = sectionIds
     .map((id) => document.getElementById(id))
-    .filter((section): section is HTMLElement => section !== null)
-  const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-section-nav]'))
+    .filter((section) => section !== null)
+  const links = Array.from(document.querySelectorAll('[data-section-nav]'))
 
   if (!sections.length || !links.length) return
 
-  const setActive = (id: string) => {
+  const setActive = (id) => {
     links.forEach((link) => {
       const isActive = link.hash === `#${id}` || (id === 'top' && link.hash === '')
       if (isActive) {

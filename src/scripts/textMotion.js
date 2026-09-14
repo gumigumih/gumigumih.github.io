@@ -1,6 +1,6 @@
 const textSelectors = ['.homepage .hero h1', '.subpage main h1']
 
-const prepareTypewriter = (target: HTMLElement) => {
+const prepareTypewriter = (target) => {
   if (target.dataset.textMotionReady === 'true') return
 
   const label = target.textContent?.trim()
@@ -10,10 +10,10 @@ const prepareTypewriter = (target: HTMLElement) => {
   target.setAttribute('aria-label', label)
 
   const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT)
-  const nodes: Text[] = []
+  const nodes = []
   let node = walker.nextNode()
   while (node) {
-    nodes.push(node as Text)
+    nodes.push(node)
     node = walker.nextNode()
   }
 
@@ -42,11 +42,11 @@ const initTextMotion = () => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
   const targets = Array.from(new Set(
-    textSelectors.flatMap((selector) => Array.from(document.querySelectorAll<HTMLElement>(selector))),
+    textSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector))),
   ))
   targets.forEach((target) => {
     prepareTypewriter(target)
-    const characters = Array.from(target.querySelectorAll<HTMLElement>('.typewriter-char'))
+    const characters = Array.from(target.querySelectorAll('.typewriter-char'))
     target.classList.add('is-typing')
     characters.forEach((character, index) => {
       window.setTimeout(() => character.classList.add('is-typed'), 180 + index * 42)

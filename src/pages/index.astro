@@ -9,9 +9,9 @@ import WorksSection from '../components/WorksSection.astro'
 import WorkStyleSection from '../components/WorkStyleSection.astro'
 import ContactSection from '../components/ContactSection.astro'
 import SiteFooter from '../components/SiteFooter.astro'
-import revealOnScrollSrc from '../scripts/revealOnScroll.ts?url'
-import scrollMotionSrc from '../scripts/scrollMotion.ts?url'
-import textMotionSrc from '../scripts/textMotion.ts?url'
+import revealOnScrollSrc from '../scripts/revealOnScroll.js?url'
+import scrollMotionSrc from '../scripts/scrollMotion.js?url'
+import textMotionSrc from '../scripts/textMotion.js?url'
 ---
 <!DOCTYPE html><html lang="ja"><head><SiteHead title="meg+gumi | スポット対応のWeb開発パートナー" description="制作会社、広告代理店、個人事業主に向けて、フロントエンド実装、バックエンド開発、既存サイトの改修をスポットで支援します。" canonicalPath="/" /></head>
 <body id="app" class="homepage bg-white font-sans text-[#111c29]"><SiteHeader /><main><HeroSection /><ServicesSection /><WorksSection /><IntroSection /><WorkStyleSection /><ContactSection /></main><SiteFooter /><script type="module" src={revealOnScrollSrc}></script><script type="module" src={scrollMotionSrc}></script><script type="module" src={textMotionSrc}></script></body></html>

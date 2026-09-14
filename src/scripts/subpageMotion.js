@@ -12,12 +12,12 @@ const motionSelectors = [
 ]
 
 const initSubpageMotion = () => {
-  const page = document.querySelector<HTMLElement>('.subpage')
+  const page = document.querySelector('.subpage')
   if (!page) return
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   const targets = Array.from(new Set(
-    motionSelectors.flatMap((selector) => Array.from(page.querySelectorAll<HTMLElement>(selector))),
+    motionSelectors.flatMap((selector) => Array.from(page.querySelectorAll(selector))),
   ))
 
   targets.forEach((target, index) => {

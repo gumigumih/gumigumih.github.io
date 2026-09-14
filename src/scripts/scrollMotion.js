@@ -1,11 +1,11 @@
-const clamp = (value: number, min = 0, max = 1) => Math.min(Math.max(value, min), max)
+const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max)
 
 const initScrollMotion = () => {
   if (!document.body.classList.contains('homepage')) return
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-  const hero = document.querySelector<HTMLElement>('.hero')
-  const sections = Array.from(document.querySelectorAll<HTMLElement>('.design-section'))
+  const hero = document.querySelector('.hero')
+  const sections = Array.from(document.querySelectorAll('.design-section'))
   let ticking = false
 
   const updateMotion = () => {

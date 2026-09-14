@@ -7,7 +7,7 @@ const itemSelector = [
   '[id="contact-form"] > div',
 ].join(', ')
 
-const reveal = (element: Element) => {
+const reveal = (element) => {
   element.classList.add('is-revealed')
 }
 
@@ -20,13 +20,13 @@ const prepareItems = () => {
       if (!item.hasAttribute('data-reveal-item')) {
         item.setAttribute('data-reveal-item', '')
       }
-      ;(item as HTMLElement).style.setProperty('--reveal-delay', `${120 + (index % 6) * 70}ms`)
+      item.style.setProperty('--reveal-delay', `${120 + (index % 6) * 70}ms`)
     })
   })
 
   document.querySelectorAll(sectionSelector).forEach((section) => {
     section.querySelectorAll('[data-reveal]').forEach((item, index) => {
-      ;(item as HTMLElement).style.setProperty('--reveal-delay', `${index * 80}ms`)
+      item.style.setProperty('--reveal-delay', `${index * 80}ms`)
     })
   })
 }
