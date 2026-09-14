@@ -2,13 +2,142 @@
   "data": {
     "contents": [
       {
+        "id": 179488289,
+        "name": "ChatGPT Images 2.5は、制作工程をつなぐAIになった｜AIとわたしの深夜エンタメ会議 #05",
+        "key": "na2a7ecc7a724",
+        "type": "note",
+        "publishAt": "2026-09-10T19:56:00+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/312214922/rectangle_large_type_2_836b5cb92a61caeb0686913fa4a8d65c.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "/assets/images/articles/note_179488289_1789275074183.jpg",
+        "body": "こんばんは、ぐみです。\n\nChatGPT Images 2.5が出て、Xのタイムラインには試作がどっと流れてきました。\n画像がきれい、だけでは終わらない感じです。\n\n歩行アニメを作る人。ストップモーションをつなぐ人。\nVTuberの表情差分、商品広告、Blenderへ渡す資料までありました。\n「お、これ、そのまま次の作業に使えるじゃん。やるじゃん」と、素直に思いました。\n\n今回は、2026年9月8日のOpenAI発表と、その直後に出た20件の投稿を追ってみます。\nただし、ここ",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#生成AI"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ChatGPT"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AI活用"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AI画像生成"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ゲーム制作"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#映像制作"
+            }
+          }
+        ],
+        "toc": [
+          {
+            "level": 2,
+            "text": "OpenAIが発表したImages 2.5の特徴"
+          },
+          {
+            "level": 2,
+            "text": "一枚絵の先で、制作工程が動き出している"
+          },
+          {
+            "level": 3,
+            "text": "ゲーム素材は、歩かせて初めて困る"
+          },
+          {
+            "level": 3,
+            "text": "映像の前に、連番を作る人たち"
+          },
+          {
+            "level": 3,
+            "text": "広告や配信画面では、残すものの方が大事"
+          },
+          {
+            "level": 2,
+            "text": "この先、深掘りするのは"
+          }
+        ]
+      },
+      {
+        "id": 178760658,
+        "name": "Astraは制作ソフトを動かす相棒になるか｜AIとわたしの深夜エンタメ会議 #4",
+        "key": "n2081b75fce91",
+        "type": "note",
+        "publishAt": "2026-09-06T17:19:53+09:00",
+        "eyecatch": "https://assets.st-note.com/production/uploads/images/310813169/rectangle_large_type_2_609a21a2d48207ae1f1060e0dae107ed.png?fit=bounds&quality=85&width=1280",
+        "localImagePath": "/assets/images/articles/note_178760658_1789275072999.jpg",
+        "body": "こんばんは、ぐみです。\n\n話題のAstraを早く届けたくて、今週は日曜日に更新しました！\nその代わり、次の月曜日の更新はお休みします。\n\nここ数日、Astraにゲームや絵や音楽を作らせた投稿が一気に流れてきました。\n派手な完成画面に、つい目を奪われます。\n\nただし、ここで紹介するのは、投稿者が試しに動かした検証や試作の報告です。\n実際の案件や商用制作で使われた例として読まないようにしたいと思います。\n\nこれまでの生成AIは、できあがった画像を受け取る使い方が中心でした。\nちょ",
+        "hashtags": [
+          {
+            "hashtag": {
+              "name": "#イラスト"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#生成AI"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ChatGPT"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#ゲーム制作"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AI音楽"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AIエンタメ"
+            }
+          },
+          {
+            "hashtag": {
+              "name": "#AIとわたしの深夜エンタメ会議"
+            }
+          }
+        ],
+        "toc": [
+          {
+            "level": 2,
+            "text": "ティザーサイトとガチャゲームを、触れる試作品にする"
+          },
+          {
+            "level": 2,
+            "text": "ペイントソフトに入って、絵の途中を作る"
+          },
+          {
+            "level": 2,
+            "text": "曲を一曲ではなく、10本のパートに分けて残す"
+          }
+        ]
+      },
+      {
         "id": 178466656,
         "name": "話題のローカルLLM、MacBook Air 16GBでは二回とも無理だった話",
         "key": "n2f5d996c4a44",
         "type": "note",
         "publishAt": "2026-09-06T00:39:38+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/310273427/rectangle_large_type_2_2e97107bdb20bd690d3a296b734ce42c.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_178466656_1788669728294.jpg",
+        "localImagePath": "/assets/images/articles/note_178466656_1789275074604.jpg",
         "body": "最近、タイムラインで「ローカルLLM」という言葉をよく見かけます。\nクラウドのAIに頼らず、自分のPCの中だけでLLMを動かす仕組みです。2026年に入ってからは、「もうお遊びの域を卒業した」と言われるほど、実用的なモデルも増えてきたらしい。\n正直、少し惹かれました。私が試したかったのは、小説を書かせることです。クラウドのAIでは、文字数の制限や利用規約上の線引きが気になることがあります。自分のMacの中だけで完結するなら、もっと自由に、長い文章を書かせられるのではないか。そ",
         "hashtags": [],
         "toc": [
@@ -41,7 +170,7 @@
         "type": "note",
         "publishAt": "2026-09-03T22:28:00+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/309965302/rectangle_large_type_2_32abc420f62364c0515a080f4ab2896a.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_178308545_1788669729383.jpg",
+        "localImagePath": "/assets/images/articles/note_178308545_1789275075516.jpg",
         "body": "こんばんは、ぐみです。\n\n「AIとわたしの深夜エンタメ会議」第3回です。今回はいつもの映画やゲームの新作からちょっと離れて、AIを「作る側・使う側・届ける側」に近い話を5件並べてみました。LLMの値下げ、Macで動くローカルAI、個人研究向けのオープンモデル、AI映像制作、それからAI音楽の権利訴訟です。深夜にニュースを追っていると、こういう裏側のほうがつい気になってしまいます😌\n\n今回のラインナップはこちら。\n\nGPT-5.6、API価格を期間限定で引き下げOpenAIがG",
         "hashtags": [
           {
@@ -109,7 +238,7 @@
         "type": "note",
         "publishAt": "2026-08-31T19:54:24+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/308907257/rectangle_large_type_2_d40d64a7cecba2620c694e82ffff7d5b.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_177757509_1788669730239.jpg",
+        "localImagePath": "/assets/images/articles/note_177757509_1789275076615.jpg",
         "body": "こんばんは、ぐみです。\n\n「AIとわたしの深夜エンタメ会議」第2回です。今回は動画生成AIの明暗がくっきり分かれた週でした。個人開発者のAI開示モデル、AIアイドルとキャラクターチャットの拡大戦略もあわせて、5件まとめて紹介します😌\n\n今回のラインナップはこちら。\n\n個人開発、38日でSteamに――『TASMON: Taskbar Monsters』のAI開示モデル個人開発チーム「ProjectZeta」が、タスクバーに常駐する放置RPG『TASMON: Taskbar M",
         "hashtags": [
           {
@@ -172,12 +301,12 @@
       },
       {
         "id": 177161951,
-        "name": "AIとわたしの深夜エンタメ会議 #1：『ライザ』とAI、チャートを揺るがす夜",
+        "name": "『ライザ』とAI、チャートを揺るがす夜 | AIとわたしの深夜エンタメ会議 #1",
         "key": "nf5fee2e2f291",
         "type": "note",
         "publishAt": "2026-08-28T11:45:32+09:00",
         "eyecatch": "https://assets.st-note.com/production/uploads/images/307755222/rectangle_large_type_2_2e675ebe9473d2e5d1e8e838fc797e9a.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_177161951_1788669731176.jpg",
+        "localImagePath": "/assets/images/articles/note_177161951_1789275077498.jpg",
         "body": "こんばんは、ぐみです。\n\n今日から始める新マガジン「AIとわたしの深夜エンタメ会議」、記念すべき第1回です。深夜、ひとりでニュースを追いながら「これ、誰かと話したいな」と思うことがあります。そのネタを、AI×エンタメの切り口でゆるっとまとめていきます。気になったニュースは、まず全部ここで紹介します。そのうえで、続きでは今回のニュースを1件ずつ、開発元企業まで掘り下げて深掘りします😌\n\n今回のラインナップはこちら。\n\n『ライザのアトリエ』が公式AIチャットRPGにコーエーテクモ",
         "hashtags": [
           {
@@ -231,158 +360,6 @@
           {
             "level": 2,
             "text": "この先、深掘りするのは"
-          }
-        ]
-      },
-      {
-        "id": 176930507,
-        "name": "「〇〇エンジニアリング」という言葉についていけなくなった私が、結局大事にしていた3つのこと",
-        "key": "nde21e9d70819",
-        "type": "note",
-        "publishAt": "2026-08-27T19:44:28+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/307564446/rectangle_large_type_2_462d142b2b6fffbd16d2c39d348b19ad.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_176930507_1788669731502.jpg",
-        "body": "AI関連のニュースを追いかけていて、正直ちょっと疲れてきました。\n「プロンプトエンジニアリング」に慣れたと思ったら「コンテキストエンジニアリング」。気づけば「ハーネスエンジニアリング」、さらに「ループエンジニアリング」まで登場です。\n正直、「〇〇エンジニアリング」、増えすぎ問題だと思っています😅\n新しい言葉が出るたびに「勉強しなきゃ」と焦る自分と、「また名前が増えただけでは」と冷めてる自分が、いつも半分ずつ同居してる感じ。\nでも、その焦りをきっかけに実務を振り返ってみたら、名",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#生成AI"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#AI活用"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#キャリア"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#気づき"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#仕事術"
-            }
-          }
-        ],
-        "toc": [
-          {
-            "level": 2,
-            "text": "気づいたら、AIとの仕事のしかたがまるっきり変わっていた"
-          },
-          {
-            "level": 3,
-            "text": "用語を整理してみたけど、答えはそこになかった。"
-          },
-          {
-            "level": 3,
-            "text": "おわりに"
-          },
-          {
-            "level": 3,
-            "text": "📚 関連リンク"
-          },
-          {
-            "level": 3,
-            "text": "参考"
-          }
-        ]
-      },
-      {
-        "id": 159440828,
-        "name": "noteカバー画像をGPT Image 2で作るプロンプト集",
-        "key": "n141b8aaf342d",
-        "type": "note",
-        "publishAt": "2026-05-09T11:54:32+09:00",
-        "eyecatch": "https://assets.st-note.com/production/uploads/images/274374534/rectangle_large_type_2_e33ab9e37afa147f4f5a694e76770c7e.png?fit=bounds&quality=85&width=1280",
-        "localImagePath": "/assets/images/articles/note_159440828_1788669732260.jpg",
-        "body": "こんにちは、ぐみです。\n\nnoteの記事を書き終えて、「よし、できた！」と達成感に浸っているとき。\nふと手が止まってしまう瞬間、ありませんか？\n\nそれが、「カバー画像」 です。\n\n本文を書き上げた時点で、気持ちとしてはかなり満足しています。\nしかし、いざ投稿しようとすると「あ、カバー画像も作らなきゃ」と思い出す。\n\nタイトルをどう入れるか、\n記事の雰囲気とどう合わせるか、\nタイムラインで流れてきたときに、パッと目を引くものになっているか……。\n\n毎回のこととなると、これが 意",
-        "hashtags": [
-          {
-            "hashtag": {
-              "name": "#note"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#生成AI"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#プロンプト"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#AI画像生成"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#有料記事"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#GPTimage2"
-            }
-          },
-          {
-            "hashtag": {
-              "name": "#カバー画像"
-            }
-          }
-        ],
-        "toc": [
-          {
-            "level": 2,
-            "text": "なぜ過去記事を題材にしたのか"
-          },
-          {
-            "level": 2,
-            "text": "初期プロンプト：細部へのこだわりが裏目に？"
-          },
-          {
-            "level": 2,
-            "text": "「ざっくり生成 → 微調整」のサイクルが最強だった"
-          },
-          {
-            "level": 2,
-            "text": "実際に生成した画像"
-          },
-          {
-            "level": 2,
-            "text": "AIと共に働く時代、“待ち時間”がゴールドタイムになる理由"
-          },
-          {
-            "level": 3,
-            "text": "完成画像"
-          },
-          {
-            "level": 2,
-            "text": "ドキュメントは「未来のために育て続けるもの」だと思う話"
-          },
-          {
-            "level": 3,
-            "text": "完成画像"
-          },
-          {
-            "level": 2,
-            "text": "理想のAIプロダクト中核チームとは何か"
-          },
-          {
-            "level": 3,
-            "text": "完成画像"
-          },
-          {
-            "level": 2,
-            "text": "最終的にたどり着いた「魔法の型」"
           }
         ]
       }
